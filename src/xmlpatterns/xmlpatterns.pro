@@ -1,3 +1,5 @@
+load(qt_module)
+
 TARGET = QtXmlPatterns
 QPRO_PWD = $$PWD
 QT = core \
@@ -7,8 +9,8 @@ DEFINES += QT_BUILD_XMLPATTERNS_LIB \
 win32-msvc*|win32-icc:QMAKE_LFLAGS += /BASE:0x61000000
 unix|win32-g++*:QMAKE_PKGCONFIG_REQUIRES = QtCore \
     QtNetwork
-include(../qbase.pri)
-PRECOMPILED_HEADER = ../corelib/global/qt_pch.h
+include($$QT_SOURCE_TREE/src/qbase.pri)
+PRECOMPILED_HEADER = $$QT_SOURCE_TREE/src/corelib/global/qt_pch.h
 include($$PWD/common.pri)
 include($$PWD/acceltree/acceltree.pri)
 include($$PWD/api/api.pri)
