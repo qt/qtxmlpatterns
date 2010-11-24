@@ -11,9 +11,6 @@ unix|win32-g++*:QMAKE_PKGCONFIG_REQUIRES = QtCore \
     QtNetwork
 include($$QT_SOURCE_TREE/src/qbase.pri)
 PRECOMPILED_HEADER = $$QT_SOURCE_TREE/src/corelib/global/qt_pch.h
-INCLUDEPATH += $$OUT_PWD/../../include \
-    $$OUT_PWD/../../include/QtXmlPatterns \
-    $$OUT_PWD/../../include/QtXmlPatterns/private
 include($$PWD/common.pri)
 include($$PWD/acceltree/acceltree.pri)
 include($$PWD/api/api.pri)
