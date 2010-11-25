@@ -9,3 +9,6 @@
     "core" => "#include <QtCore/QtCore>\n",
     "network" => "#include <QtNetwork/QtNetwork>\n",
 );
+%modulepris = (
+    "QtXmlPatterns" => "$basedir/modules/qt_xmlpatterns.pri",
+);
