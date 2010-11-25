@@ -7,5 +7,3 @@ QT.xmlpatterns.name = QtXmlPatterns
 QT.xmlpatterns.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtXmlPatterns
 QT.xmlpatterns.libs = $$QT_MODULE_LIB_BASE
 QT.xmlpatterns.depends = core network
-
-QT_CONFIG += xmlpatterns
