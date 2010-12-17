@@ -5,5 +5,6 @@ QT_XMLPATTERNS_PATCH_VERSION = $$QT_PATCH_VERSION
 
 QT.xmlpatterns.name = QtXmlPatterns
 QT.xmlpatterns.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtXmlPatterns
+QT.xmlpatterns.sources = $$QT_MODULE_BASE/src/xmlpatterns
 QT.xmlpatterns.libs = $$QT_MODULE_LIB_BASE
 QT.xmlpatterns.depends = core network
