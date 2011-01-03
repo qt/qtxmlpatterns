@@ -9,3 +9,6 @@ QT.xmlpatterns.private_includes = $$QT_MODULE_INCLUDE_BASE/QtXmlPatterns/private
 QT.xmlpatterns.sources = $$QT_MODULE_BASE/src/xmlpatterns
 QT.xmlpatterns.libs = $$QT_MODULE_LIB_BASE
 QT.xmlpatterns.depends = core network
+QT.xmlpatterns.DEFINES = QT_XMLPATTERNS_LIB
+
+QT_CONFIG += xmlpatterns
