@@ -3,4 +3,4 @@ SOURCES += tst_qapplicationargumentparser.cpp                           \
            ../../../tools/xmlpatterns/qapplicationargument.cpp          \
            ../../../tools/xmlpatterns/qapplicationargumentparser.cpp
 QT -= gui
-INCLUDEPATH += $$QT_SOURCE_TREE/tools/xmlpatterns/
+INCLUDEPATH += ../../../tools/xmlpatterns/

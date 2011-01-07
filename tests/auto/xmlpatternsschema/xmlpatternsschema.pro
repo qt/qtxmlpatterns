@@ -1,6 +1,8 @@
 load(qttest_p4)
+load(qt_module)
+
 SOURCES += tst_xmlpatternsschema.cpp \
 
 include (../xmlpatterns.pri)
 
-INCLUDEPATH += $$QT_BUILD_TREE/include/QtXmlPatterns/private
+INCLUDEPATH += $$QT.xmlpatterns.private_includes

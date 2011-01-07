@@ -1,3 +1,5 @@
+load(qt_module)
+
 include (../xmlpatterns.pri)
 
 TARGET   = $$XMLPATTERNS_SDK
@@ -27,9 +29,8 @@ DESTDIR    = $$QT_BUILD_TREE/lib
 
 # syncqt doesn't copy headers in tools/ so let's manually ensure
 # it works with shadow builds and source builds.
-INCLUDEPATH += $$QT_BUILD_TREE/include/QtXmlPatterns/private    \
-               $$QT_SOURCE_TREE/include/QtXmlPatterns/private   \
-               $$QT_SOURCE_TREE/tools/xmlpatterns
+INCLUDEPATH += $$QT.xmlpatterns.private_includes \
+               ../../../tools/xmlpatterns
 
 HEADERS = ASTItem.h                     \
           DebugExpressionFactory.h      \
