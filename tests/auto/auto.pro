@@ -47,3 +47,4 @@ xmlpatternsxqts.depends = xmlpatternssdk
            xmlpatternsxqts \
            xmlpatternsxslts \
 
+!cross_compile:                             SUBDIRS += host.pro
