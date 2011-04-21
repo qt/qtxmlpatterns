@@ -2,7 +2,7 @@ load(qt_module)
 
 TARGET = QtXmlPatterns
 QPRO_PWD = $$PWD
-QT = core \
+QT = core-private \
     network
 
 CONFIG += module

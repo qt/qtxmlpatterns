@@ -2,7 +2,7 @@ TEMPLATE = app
 TARGET = xmlpatterns
 DESTDIR = ../../bin
 QT -= gui
-QT += xmlpatterns
+QT += xmlpatterns-private
 
 target.path = $$[QT_INSTALL_BINS]
 INSTALLS += target
