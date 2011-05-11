@@ -1,7 +1,5 @@
-contains(QT_CONFIG,xmlpatterns) {
-    DEFINES += QTEST_XMLPATTERNS
-    QT += xmlpatterns
-}
+DEFINES += QTEST_XMLPATTERNS
+QT += xmlpatterns
 
 wince*: {
     patternsdk.files = $$QT_BUILD_TREE/lib/QtXmlPatternsSDK*.dll

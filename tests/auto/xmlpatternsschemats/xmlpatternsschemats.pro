@@ -4,10 +4,8 @@ SOURCES += tst_xmlpatternsschemats.cpp \
 
 include (../xmlpatterns.pri)
 
-contains(QT_CONFIG,xmlpatterns) {
 HEADERS += ../xmlpatternsxqts/tst_suitetest.h
 SOURCES += ../xmlpatternsxqts/tst_suitetest.cpp
-}
 
 PATTERNIST_SDK = QtXmlPatternsSDK
 if(!debug_and_release|build_pass):CONFIG(debug, debug|release) {
