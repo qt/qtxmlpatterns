@@ -14,7 +14,8 @@ module_qtxmlpatterns_examples.depends = module_qtxmlpatterns_src
 module_qtxmlpatterns_tests.subdir = tests
 module_qtxmlpatterns_tests.target = module-qtxmlpatterns-tests
 module_qtxmlpatterns_tests.depends = module_qtxmlpatterns_src
-module_qtxmlpatterns_tests.CONFIG = no_default_target no_default_install
+module_qtxmlpatterns_tests.CONFIG = no_default_install
+!contains(QT_BUILD_PARTS,tests):module_qtxmlpatterns_tests.CONFIG += no_default_target
 
 SUBDIRS += module_qtxmlpatterns_src \
            module_qtxmlpatterns_tools \
