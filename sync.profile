@@ -4,6 +4,7 @@
 %moduleheaders = ( # restrict the module headers to those found in relative path
 );
 %classnames = (
+    "qtxmlpatternsversion.h" => "QtXmlPatternsVersion",
 );
 %mastercontent = (
     "core" => "#include <QtCore/QtCore>\n",

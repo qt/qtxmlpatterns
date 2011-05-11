@@ -14,6 +14,9 @@ win32-msvc*|win32-icc:QMAKE_LFLAGS += /BASE:0x61000000
 unix|win32-g++*:QMAKE_PKGCONFIG_REQUIRES = QtCore \
     QtNetwork
 include($$QT_SOURCE_TREE/src/qbase.pri)
+
+HEADERS += qtxmlpatternsversion.h
+
 PRECOMPILED_HEADER = $$QT_SOURCE_TREE/src/corelib/global/qt_pch.h
 include($$PWD/common.pri)
 include($$PWD/acceltree/acceltree.pri)
