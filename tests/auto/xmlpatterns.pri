@@ -1,7 +1,5 @@
-contains(QT_CONFIG,xmlpatterns) {
-    DEFINES += QTEST_XMLPATTERNS
-    QT += xmlpatterns
-}
+DEFINES += QTEST_XMLPATTERNS
+QT += core-private xmlpatterns xmlpatterns-private
 
 wince*: {
     patternsdk.files = $$QT_BUILD_TREE/lib/QtXmlPatternsSDK*.dll
@@ -20,17 +18,18 @@ if(!debug_and_release|build_pass):CONFIG(debug, debug|release) {
     else:       XMLPATTERNS_SDK = $${XMLPATTERNS_SDK}_debug
 }
 
+XMLPATTERNS_SOURCES = $$QT.xmlpatterns.sources
 INCLUDEPATH += \
-               $$QT_SOURCE_TREE/src/xmlpatterns/acceltree \
-               $$QT_SOURCE_TREE/src/xmlpatterns/api \
-               $$QT_SOURCE_TREE/src/xmlpatterns/data \
-               $$QT_SOURCE_TREE/src/xmlpatterns/environment \
-               $$QT_SOURCE_TREE/src/xmlpatterns/expr \
-               $$QT_SOURCE_TREE/src/xmlpatterns/functions \
-               $$QT_SOURCE_TREE/src/xmlpatterns/iterators \
-               $$QT_SOURCE_TREE/src/xmlpatterns/janitors \
-               $$QT_SOURCE_TREE/src/xmlpatterns/parser \
-               $$QT_SOURCE_TREE/src/xmlpatterns/projection \
-               $$QT_SOURCE_TREE/src/xmlpatterns/schema \
-               $$QT_SOURCE_TREE/src/xmlpatterns/type \
-               $$QT_SOURCE_TREE/src/xmlpatterns/utils
+               $$XMLPATTERNS_SOURCES/acceltree \
+               $$XMLPATTERNS_SOURCES/api \
+               $$XMLPATTERNS_SOURCES/data \
+               $$XMLPATTERNS_SOURCES/environment \
+               $$XMLPATTERNS_SOURCES/expr \
+               $$XMLPATTERNS_SOURCES/functions \
+               $$XMLPATTERNS_SOURCES/iterators \
+               $$XMLPATTERNS_SOURCES/janitors \
+               $$XMLPATTERNS_SOURCES/parser \
+               $$XMLPATTERNS_SOURCES/projection \
+               $$XMLPATTERNS_SOURCES/schema \
+               $$XMLPATTERNS_SOURCES/type \
+               $$XMLPATTERNS_SOURCES/utils

@@ -43,6 +43,7 @@ xmlpatternsxqts.depends = xmlpatternssdk
 !contains(QT_CONFIG, private_tests): SUBDIRS -= \
            xmlpatternsdiagnosticsts \
            xmlpatternsview \
+           xmlpatternsschemats \
            xmlpatternssdk \
            xmlpatternsxqts \
            xmlpatternsxslts \

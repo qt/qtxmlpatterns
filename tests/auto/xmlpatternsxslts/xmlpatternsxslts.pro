@@ -4,11 +4,9 @@ SOURCES += tst_xmlpatternsxslts.cpp \
 
 include (../xmlpatterns.pri)
 
-contains(QT_CONFIG,xmlpatterns) {
 HEADERS += ../xmlpatternsxqts/tst_suitetest.h
 SOURCES += ../xmlpatternsxqts/tst_suitetest.cpp
 LIBS += -l$$XMLPATTERNS_SDK
-}
 
 QT += xml
 INCLUDEPATH += $$(QTSRCDIR)/tests/auto/xmlpatternssdk  \

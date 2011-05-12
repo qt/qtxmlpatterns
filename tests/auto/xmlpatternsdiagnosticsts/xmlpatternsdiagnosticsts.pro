@@ -6,11 +6,9 @@ include (../xmlpatterns.pri)
 
 TARGET = tst_xmlpatternsdiagnosticsts
 
-contains(QT_CONFIG, xmlpatterns) {
 HEADERS += ../xmlpatternsxqts/tst_suitetest.h
 SOURCES += ../xmlpatternsxqts/tst_suitetest.cpp
 LIBS += -l$$XMLPATTERNS_SDK
-}
 
 QT += xml
 
