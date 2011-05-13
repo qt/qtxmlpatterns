@@ -1,6 +1,6 @@
-QT.xmlpatterns.VERSION = 4.8.0
-QT.xmlpatterns.MAJOR_VERSION = 4
-QT.xmlpatterns.MINOR_VERSION = 8
+QT.xmlpatterns.VERSION = 5.0.0
+QT.xmlpatterns.MAJOR_VERSION = 5
+QT.xmlpatterns.MINOR_VERSION = 0
 QT.xmlpatterns.PATCH_VERSION = 0
 
 QT.xmlpatterns.name = QtXmlPatterns
