@@ -1,4 +1,4 @@
-QT          += xmlpatterns
+QT          += widgets xmlpatterns
 HEADERS     = mainwindow.h stationdialog.h stationquery.h timequery.h
 SOURCES     = main.cpp mainwindow.cpp stationdialog.cpp stationquery.cpp timequery.cpp
 FORMS       = stationdialog.ui

@@ -38,7 +38,8 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
+#include <QMessageBox>
+#include <QFileDialog>
 #include <QtXmlPatterns>
 
 #include "querymainwindow.h"

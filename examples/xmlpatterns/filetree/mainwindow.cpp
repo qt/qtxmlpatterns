@@ -38,7 +38,8 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
+#include <QFileDialog>
+#include <QMessageBox>
 #include <QLibraryInfo>
 #include <QtXmlPatterns>
 

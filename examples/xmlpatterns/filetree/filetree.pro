@@ -1,7 +1,7 @@
 SOURCES += main.cpp filetree.cpp mainwindow.cpp ../shared/xmlsyntaxhighlighter.cpp
 HEADERS += filetree.h  mainwindow.h ../shared/xmlsyntaxhighlighter.h
 FORMS += forms/mainwindow.ui
-QT += xmlpatterns
+QT += widgets xmlpatterns
 RESOURCES += queries.qrc
 INCLUDEPATH += ../shared/
 
