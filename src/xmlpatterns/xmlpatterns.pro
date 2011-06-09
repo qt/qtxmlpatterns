@@ -13,7 +13,7 @@ DEFINES += QT_BUILD_XMLPATTERNS_LIB \
 win32-msvc*|win32-icc:QMAKE_LFLAGS += /BASE:0x61000000
 unix|win32-g++*:QMAKE_PKGCONFIG_REQUIRES = QtCore \
     QtNetwork
-include($$QT_SOURCE_TREE/src/qbase.pri)
+load(qt_module_config)
 
 HEADERS += qtxmlpatternsversion.h
 
