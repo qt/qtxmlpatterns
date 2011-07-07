@@ -994,14 +994,12 @@ void tst_QXmlQuery::evaluateToReceiver_data() const
 {
     QTest::addColumn<QString>("inputQuery");
 
-    const QStringList qs(queries());
-
-    for(int i = 0; i < qs.size(); ++i)
+    foreach (QString const& query, queries())
     {
         /* This outputs a URI specific to the environment, so we can't use it for this
          * particular test. */
-        if(qs.at(i) != QLatin1String("staticBaseURI.xq"))
-            QTest::newRow(qs.at(i).toUtf8().constData()) << qs.at(i);
+        if (query != QLatin1String("staticBaseURI.xq"))
+            QTest::newRow(query.toUtf8().constData()) << query;
     }
 }
 
