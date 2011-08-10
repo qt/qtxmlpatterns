@@ -1,9 +1,9 @@
 TEMPLATE = app
 TARGET = xmlpatterns
-DESTDIR = ../../bin
 QT -= gui
 QT += xmlpatterns-private
 
+DESTDIR = $$QT.xmlpatterns.bins
 target.path = $$[QT_INSTALL_BINS]
 INSTALLS += target
 

@@ -1,9 +1,9 @@
 TEMPLATE = app
 TARGET = xmlpatternsvalidator
-DESTDIR = ../../bin
 QT -= gui
 QT += xmlpatterns
 
+DESTDIR = $$QT.xmlpatterns.bins
 target.path = $$[QT_INSTALL_BINS]
 INSTALLS += target
 
