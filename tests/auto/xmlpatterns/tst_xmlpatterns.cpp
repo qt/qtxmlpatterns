@@ -101,7 +101,7 @@ private:
 tst_XmlPatterns::tst_XmlPatterns() : m_generatedTests(0)
                                    , m_normalizeTestName(QLatin1String("[\\*\\?#\\-\\/:; ()',&]"))
                                    , m_filenameInStderr(QLatin1String("file:\\/\\/.*(\\.xq|\\.gccxml|\\.xml|\\.xsl|-)(,|:)"))
-                                   , m_command(QLatin1String("xmlpatterns"))
+                                   , m_command(QLibraryInfo::location(QLibraryInfo::BinariesPath) + QLatin1String("/xmlpatterns"))
                                    , m_dontRun(false)
 {
 }
@@ -117,9 +117,13 @@ void tst_XmlPatterns::initTestCase()
     if(!process.waitForFinished())
     {
         m_dontRun = true;
-        QEXPECT_FAIL("", "The command line tool is not in the path, most likely because Qt "
-                         "has been partially built, such as only the sub-src rule. No tests will be run.", Abort);
-        QVERIFY(false);
+        QSKIP(
+            qPrintable(QString(
+                "The command line tool (%1) could not be run, possibly because Qt was "
+                "incompletely built or installed. No tests will be run."
+            ).arg(m_command)),
+            SkipAll
+        );
     }
 
 }

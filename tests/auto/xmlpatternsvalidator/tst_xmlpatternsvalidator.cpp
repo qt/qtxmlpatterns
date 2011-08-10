@@ -41,6 +41,7 @@
 
 #include <QFile>
 #include <QtTest/QtTest>
+#include <QLibraryInfo>
 
 #include "../qxmlquery/TestFundament.h"
 #include "../network-settings.h"
@@ -70,7 +71,7 @@ private:
 };
 
 tst_XmlPatternsValidator::tst_XmlPatternsValidator()
-    : m_command(QLatin1String("xmlpatternsvalidator"))
+    : m_command(QLibraryInfo::location(QLibraryInfo::BinariesPath) + QLatin1String("/xmlpatternsvalidator"))
     , m_dontRun(false)
 {
 }
@@ -83,9 +84,13 @@ void tst_XmlPatternsValidator::initTestCase()
     if(!process.waitForFinished())
     {
         m_dontRun = true;
-        QEXPECT_FAIL("", "The command line tool is not in the path, most likely because Qt "
-                         "has been partically built, such as only the sub-src rule. No tests will be run.", Abort);
-        QVERIFY(false);
+        QSKIP(
+            qPrintable(QString(
+                "The command line tool (%1) could not be run, possibly because Qt was "
+                "incompletely built or installed. No tests will be run."
+            ).arg(m_command)),
+            SkipAll
+        );
     }
 }
 
