@@ -24,8 +24,8 @@ symbian {
 # We add gui, because xmlpatterns.pri pull it out.
 QT      += xmlpatterns xml network testlib gui
 
-DESTDIR    = $$QT_BUILD_TREE/lib
-!wince*:DLLDESTDIR = $$QT_BUILD_TREE/bin
+DESTDIR    = $$QT.xmlpatterns.libs
+!wince*:DLLDESTDIR = $$QT.xmlpatterns.bins
 
 # syncqt doesn't copy headers in tools/ so let's manually ensure
 # it works with shadow builds and source builds.
