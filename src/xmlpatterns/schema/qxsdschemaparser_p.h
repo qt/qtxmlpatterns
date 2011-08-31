@@ -70,7 +70,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QSet>
 #include <QtCore/QUrl>
-#include <QtXml/QXmlStreamReader>
+#include <QtCore/QXmlStreamReader>
 #include <QtXmlPatterns/QXmlNamePool>
 
 QT_BEGIN_HEADER
