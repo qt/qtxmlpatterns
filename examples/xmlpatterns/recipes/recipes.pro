@@ -1,4 +1,4 @@
-QT          += xmlpatterns
+QT          += widgets xmlpatterns
 FORMS       += forms/querywidget.ui \
                forms/querywidget_mobiles.ui
 HEADERS     = querymainwindow.h ../shared/xmlsyntaxhighlighter.h

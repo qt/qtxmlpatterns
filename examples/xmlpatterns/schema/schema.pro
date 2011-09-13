@@ -1,4 +1,4 @@
-QT          += xmlpatterns
+QT          += widgets xmlpatterns
 FORMS       += schema.ui schema_mobiles.ui
 HEADERS     = mainwindow.h ../shared/xmlsyntaxhighlighter.h
 RESOURCES   = schema.qrc

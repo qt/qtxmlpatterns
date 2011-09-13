@@ -41,7 +41,7 @@
 #ifndef STATIONDIALOG_H
 #define STATIONDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QtWidgets/QDialog>
 
 #include "stationquery.h"
 #include "ui_stationdialog.h"

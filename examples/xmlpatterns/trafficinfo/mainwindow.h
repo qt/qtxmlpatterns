@@ -44,7 +44,7 @@
 #include "stationquery.h"
 #include "timequery.h"
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 
 class MainWindow : public QWidget
 {

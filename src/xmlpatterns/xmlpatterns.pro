@@ -1,23 +1,20 @@
 load(qt_module)
 
-TARGET = QtXmlPatterns
-QPRO_PWD = $$PWD
-QT = core-private \
-    network
+TARGET     = QtXmlPatterns
+QPRO_PWD   = $$PWD
 
 CONFIG += module
-MODULE_PRI = ../../modules/qt_xmlpatterns.pri
+MODULE_PRI += ../../modules/qt_xmlpatterns.pri
 
-DEFINES += QT_BUILD_XMLPATTERNS_LIB \
-    QT_NO_USING_NAMESPACE
+QT = core-private network
+
+DEFINES += QT_BUILD_XMLPATTERNS_LIB QT_NO_USING_NAMESPACE
 win32-msvc*|win32-icc:QMAKE_LFLAGS += /BASE:0x61000000
-unix|win32-g++*:QMAKE_PKGCONFIG_REQUIRES = QtCore \
-    QtNetwork
+unix|win32-g++*:QMAKE_PKGCONFIG_REQUIRES = QtCore QtNetwork
 load(qt_module_config)
 
 HEADERS += qtxmlpatternsversion.h
 
-PRECOMPILED_HEADER = $$QT_SOURCE_TREE/src/corelib/global/qt_pch.h
 include($$PWD/common.pri)
 include($$PWD/acceltree/acceltree.pri)
 include($$PWD/api/api.pri)

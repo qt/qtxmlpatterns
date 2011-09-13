@@ -43,8 +43,8 @@
 
 #include <QtCore/QSettings>
 #include <QtCore/QTimer>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
 #include <QtGui/QBitmap>
 #include <QtGui/QLinearGradient>
 #include <QtGui/QMouseEvent>
