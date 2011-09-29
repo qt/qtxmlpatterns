@@ -95,7 +95,6 @@ public:
                            , m_pushTestsCount(0)
                            , m_testNetwork(true)
     {
-        Q_SET_DEFAULT_IAP
     }
 
 private Q_SLOTS:

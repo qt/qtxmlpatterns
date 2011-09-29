@@ -106,7 +106,6 @@ tst_XmlPatterns::tst_XmlPatterns() : m_generatedTests(0)
                                    , m_command(QLatin1String("xmlpatterns"))
                                    , m_dontRun(false)
 {
-    Q_SET_DEFAULT_IAP
 }
 
 void tst_XmlPatterns::initTestCase()
