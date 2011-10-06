@@ -1,5 +1,6 @@
-load(qttest_p4)
+TARGET = tst_qxmlschema
+CONFIG += testcase
 SOURCES += tst_qxmlschema.cpp
-QT += network
+QT += network testlib
 
 include (../xmlpatterns.pri)

@@ -1,4 +1,6 @@
-load(qttest_p4)
+TARGET = tst_qabstractxmlnodemodel
+CONFIG += testcase
+QT += testlib
 SOURCES += tst_qabstractxmlnodemodel.cpp    \
            LoadingModel.cpp                 \
            ../qxmlquery/TestFundament.cpp

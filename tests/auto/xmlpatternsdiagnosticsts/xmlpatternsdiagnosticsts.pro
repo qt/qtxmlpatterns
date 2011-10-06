@@ -1,4 +1,5 @@
-load(qttest_p4)
+TARGET = tst_xmlpatternsdiagnosticsts
+CONFIG += testcase
 SOURCES += tst_xmlpatternsdiagnosticsts.cpp \
            ../qxmlquery/TestFundament.cpp
 
@@ -10,7 +11,7 @@ HEADERS += ../xmlpatternsxqts/tst_suitetest.h
 SOURCES += ../xmlpatternsxqts/tst_suitetest.cpp
 LIBS += -l$$XMLPATTERNS_SDK
 
-QT += xml
+QT += xml testlib
 
 INCLUDEPATH += $$(QTSRCDIR)/tests/auto/xmlpatternssdk  \
                $$(QTDIR)/include/QtXmlPatterns/private \

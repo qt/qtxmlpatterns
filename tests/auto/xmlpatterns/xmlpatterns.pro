@@ -1,4 +1,6 @@
-load(qttest_p4)
+TARGET = tst_xmlpatterns
+CONFIG += testcase
+QT += testlib
 SOURCES += tst_xmlpatterns.cpp \
            ../qxmlquery/TestFundament.cpp
 

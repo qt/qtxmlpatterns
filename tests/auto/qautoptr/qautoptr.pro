@@ -1,4 +1,5 @@
-load(qttest_p4)
+TARGET = tst_qautoptr
+CONFIG += testcase
 SOURCES += tst_qautoptr.cpp
-QT = core
+QT = core testlib
 include(../xmlpatterns.pri)

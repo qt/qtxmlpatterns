@@ -1,6 +1,7 @@
-load(qttest_p4)
+TARGET = tst_patternistexamples
+CONFIG += testcase
 SOURCES += tst_patternistexamples.cpp
-CONFIG += qtestlib
+QT += testlib
 wince*|symbian: {
 	snippets.files = $$QT_SOURCE_TREE/doc/src/snippets/patternist/*
 	snippets.path = patternist

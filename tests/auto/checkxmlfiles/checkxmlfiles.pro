@@ -1,8 +1,8 @@
-load(qttest_p4)
+TARGET = tst_checkxmlfiles
+CONFIG += testcase
 SOURCES += tst_checkxmlfiles.cpp \
            ../qxmlquery/TestFundament.cpp
-CONFIG += qtestlib
-QT -= gui
+QT = core gui testlib
 
 include (../xmlpatterns.pri)
 

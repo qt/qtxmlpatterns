@@ -1,4 +1,5 @@
-load(qttest_p4)
+TARGET = tst_xmlpatternsschemats
+CONFIG += testcase
 SOURCES += tst_xmlpatternsschemats.cpp \
            ../qxmlquery/TestFundament.cpp
 
@@ -16,7 +17,7 @@ if(!debug_and_release|build_pass):CONFIG(debug, debug|release) {
 
 LIBS += -l$$PATTERNIST_SDK
 
-QT += xml
+QT += xml testlib
 
 INCLUDEPATH += $$QT_SOURCE_TREE/tests/auto/xmlpatternssdk/   \
                $$QT_BUILD_TREE/include/QtXmlPatterns/private \

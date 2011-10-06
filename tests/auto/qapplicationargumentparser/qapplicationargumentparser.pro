@@ -1,6 +1,7 @@
-load(qttest_p4)
+TARGET = tst_qapplicationargumentparser
+CONFIG += testcase
 SOURCES += tst_qapplicationargumentparser.cpp                           \
            ../../../tools/xmlpatterns/qapplicationargument.cpp          \
            ../../../tools/xmlpatterns/qapplicationargumentparser.cpp
-QT -= gui
+QT = core testlib
 INCLUDEPATH += ../../../tools/xmlpatterns/

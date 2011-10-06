@@ -1,5 +1,6 @@
-load(qttest_p4)
+TARGET = tst_qabstractmessagehandler
+CONFIG += testcase
 SOURCES += tst_qabstractmessagehandler.cpp
-QT = core
+QT = core testlib
 
 include (../xmlpatterns.pri)

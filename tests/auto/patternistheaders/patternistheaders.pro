@@ -1,5 +1,6 @@
-load(qttest_p4)
+TARGET = tst_patternistheaders
+CONFIG += testcase
 SOURCES += tst_patternistheaders.cpp
-QT = core
+QT = core testlib
 
 include (../xmlpatterns.pri)

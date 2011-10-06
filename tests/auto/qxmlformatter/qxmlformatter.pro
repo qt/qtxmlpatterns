@@ -1,4 +1,6 @@
-load(qttest_p4)
+TARGET = tst_qxmlformatter
+CONFIG += testcase
+QT += testlib
 SOURCES += tst_qxmlformatter.cpp
 
 include (../xmlpatterns.pri)

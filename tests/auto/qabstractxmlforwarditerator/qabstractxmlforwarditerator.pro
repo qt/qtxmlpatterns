@@ -1,5 +1,6 @@
-load(qttest_p4)
+TARGET = tst_qabstractxmlforwarditerator
+CONFIG += testcase
 SOURCES += tst_qabstractxmlforwarditerator.cpp
-QT = core
+QT = core testlib
 
 include (../xmlpatterns.pri)

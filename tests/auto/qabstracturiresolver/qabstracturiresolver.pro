@@ -1,6 +1,7 @@
-load(qttest_p4)
+TARGET = tst_qabstracturiresolver
+CONFIG += testcase
 SOURCES += tst_qabstracturiresolver.cpp
 HEADERS += TestURIResolver.h
-QT = core
+QT = core testlib
 
 include (../xmlpatterns.pri)

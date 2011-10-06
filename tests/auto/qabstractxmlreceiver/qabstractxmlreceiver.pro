@@ -1,5 +1,6 @@
-load(qttest_p4)
+TARGET = tst_qabstractxmlreceiver
+CONFIG += testcase
 SOURCES += tst_qabstractxmlreceiver.cpp
-QT = core
+QT = core testlib
 
 include (../xmlpatterns.pri)
