@@ -83,7 +83,7 @@ QXmlName XsdSchemaParserContext::createAnonymousName(const QString &targetNamesp
 {
     m_anonymousNameCounter.ref();
 
-    const QString name = QString::fromLatin1("__AnonymousClass_%1").arg((int)m_anonymousNameCounter);
+    const QString name = QString::fromLatin1("__AnonymousClass_%1").arg(m_anonymousNameCounter.load());
 
     return m_namePool->allocateQName(targetNamespace, name);
 }
