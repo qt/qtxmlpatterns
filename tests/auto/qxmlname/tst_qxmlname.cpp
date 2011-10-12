@@ -42,7 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
 #include <QtXmlPatterns/QXmlNamePool>
 #include <QtXmlPatterns/QXmlName>
 
@@ -559,7 +558,5 @@ void tst_QXmlName::fromClarkNameSignature() const
 QTEST_MAIN(tst_QXmlName)
 
 #include "tst_qxmlname.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
+
 // vim: et:ts=4:sw=4:sts=4

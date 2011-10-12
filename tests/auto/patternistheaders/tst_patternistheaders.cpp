@@ -42,7 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
 /*!
  \class tst_PatternistHeaders
  \internal
@@ -136,8 +135,5 @@ void tst_PatternistHeaders::run() const
 QTEST_MAIN(tst_PatternistHeaders)
 
 #include "tst_patternistheaders.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
 
 // vim: et:ts=4:sw=4:sts=4

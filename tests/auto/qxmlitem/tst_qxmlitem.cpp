@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include <QXmlItem>
 
 /*!
@@ -368,6 +366,3 @@ void tst_QXmlItem::withinQVariant() const
 QTEST_MAIN(tst_QXmlItem)
 
 #include "tst_qxmlitem.moc"
-#else //QTEST_XMLPATTERNS
-QTEST_NOOP_MAIN
-#endif

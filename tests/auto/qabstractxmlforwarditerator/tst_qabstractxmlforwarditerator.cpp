@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include "private/qabstractxmlforwarditerator_p.h"
 
 /*!
@@ -82,6 +80,3 @@ void tst_QAbstractXmlForwardIterator::objectSize() const
 QTEST_MAIN(tst_QAbstractXmlForwardIterator)
 
 #include "tst_qabstractxmlforwarditerator.moc"
-#else //QTEST_XMLPATTERNS
-QTEST_NOOP_MAIN
-#endif

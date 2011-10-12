@@ -43,8 +43,6 @@
 #include <QFile>
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include <QSourceLocation>
 #include <QXmlFormatter>
 #include <QXmlNamePool>
@@ -400,8 +398,5 @@ void tst_QAbstractXmlNodeModel::sourceLocation() const
 QTEST_MAIN(tst_QAbstractXmlNodeModel)
 
 #include "tst_qabstractxmlnodemodel.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
 
 // vim: et:ts=4:sw=4:sts=4

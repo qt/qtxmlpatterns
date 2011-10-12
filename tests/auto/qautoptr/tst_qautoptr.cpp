@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include "private/qautoptr_p.h"
 
 using namespace QPatternist;
@@ -334,6 +332,3 @@ void tst_QAutoPtr::operatorBoolSignature() const
 QTEST_MAIN(tst_QAutoPtr)
 
 #include "tst_qautoptr.moc"
-#else
-QTEST_NOOP_MAIN
-#endif

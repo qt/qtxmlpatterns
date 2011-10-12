@@ -1,4 +1,3 @@
-DEFINES += QTEST_XMLPATTERNS
 QT += core-private xmlpatterns xmlpatterns-private
 
 wince*: {

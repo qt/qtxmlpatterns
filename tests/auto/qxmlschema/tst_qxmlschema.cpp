@@ -41,8 +41,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include <QAbstractMessageHandler>
 #include <QAbstractUriResolver>
 #include <QtNetwork/QNetworkAccessManager>
@@ -401,6 +399,3 @@ void tst_QXmlSchema::uriResolver() const
 QTEST_MAIN(tst_QXmlSchema)
 
 #include "tst_qxmlschema.moc"
-#else //QTEST_PATTERNIST
-QTEST_NOOP_MAIN
-#endif

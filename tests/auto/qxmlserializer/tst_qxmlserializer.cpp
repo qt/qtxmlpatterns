@@ -42,7 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
 #include <QtCore/QTextCodec>
 #include <QtXmlPatterns/QXmlSerializer>
 #include <QtXmlPatterns/QXmlQuery>
@@ -191,8 +190,5 @@ void tst_QXmlSerializer::cleanUpTestCase() const
 QTEST_MAIN(tst_QXmlSerializer)
 
 #include "tst_qxmlserializer.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
 
 // vim: et:ts=4:sw=4:sts=4

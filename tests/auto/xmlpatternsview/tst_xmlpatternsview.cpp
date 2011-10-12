@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 /*!
  \class tst_XmlPatternsView
  \internal
@@ -69,6 +67,3 @@ void tst_XmlPatternsView::run() const
 QTEST_MAIN(tst_XmlPatternsView)
 
 #include "tst_xmlpatternsview.moc"
-#else //QTEST_XMLPATTERNS
-QTEST_NOOP_MAIN
-#endif

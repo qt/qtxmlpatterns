@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include <QAbstractMessageHandler>
 #include <QFileInfo>
 #include <QNetworkReply>
@@ -3477,6 +3475,3 @@ void tst_QXmlQuery::identityConstraintFailure_data() const
 QTEST_MAIN(tst_QXmlQuery)
 
 #include "tst_qxmlquery.moc"
-#else //QTEST_XMLPATTERNS
-QTEST_NOOP_MAIN
-#endif

@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include "tst_suitetest.h"
 
 /*!
@@ -73,8 +71,5 @@ void tst_XmlPatternsDiagnosticsTS::catalogPath(QString &write) const
 QTEST_MAIN(tst_XmlPatternsDiagnosticsTS)
 
 #include "tst_xmlpatternsdiagnosticsts.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
 
 // vim: et:ts=4:sw=4:sts=4

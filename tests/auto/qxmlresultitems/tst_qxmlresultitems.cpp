@@ -42,7 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
 #include <QtXmlPatterns/QXmlItem>
 #include <QtXmlPatterns/QXmlQuery>
 #include <QtXmlPatterns/QXmlResultItems>
@@ -234,7 +233,5 @@ void tst_QXmlResultItems::evalateWithQueryError() const
 QTEST_MAIN(tst_QXmlResultItems)
 
 #include "tst_qxmlresultitems.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
+
 // vim: et:ts=4:sw=4:sts=4

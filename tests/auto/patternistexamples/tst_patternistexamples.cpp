@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include <QtCore/QDir>
 #include <QtXmlPatterns/QXmlQuery>
 #include <QtXmlPatterns/QXmlSerializer>
@@ -366,8 +364,5 @@ void tst_PatternistExamples::buildSnippets() const
 QTEST_MAIN(tst_PatternistExamples)
 
 #include "tst_patternistexamples.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
 
 // vim: et:ts=4:sw=4:sts=4

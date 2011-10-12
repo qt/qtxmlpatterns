@@ -42,7 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
 #include <QtXmlPatterns/QAbstractXmlReceiver>
 #include <QtXmlPatterns/QXmlName>
 
@@ -89,7 +88,5 @@ void tst_QAbstractXmlReceiver::charactersStringRef() const
 QTEST_MAIN(tst_QAbstractXmlReceiver)
 
 #include "tst_qabstractxmlreceiver.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
+
 // vim: et:ts=4:sw=4:sts=4

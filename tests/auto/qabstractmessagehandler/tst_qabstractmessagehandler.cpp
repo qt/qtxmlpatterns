@@ -43,9 +43,6 @@
 #include <QFile>
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-#include <QtXmlPatterns/QAbstractMessageHandler>
-
 /* We expect these headers to be available. */
 #include <QtXmlPatterns/QAbstractMessageHandler>
 #include <QtXmlPatterns/qabstractmessagehandler.h>
@@ -185,8 +182,5 @@ void tst_QAbstractMessageHandler::hasQ_OBJECTMacro() const
 QTEST_MAIN(tst_QAbstractMessageHandler)
 
 #include "tst_qabstractmessagehandler.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
 
 // vim: et:ts=4:sw=4:sts=4

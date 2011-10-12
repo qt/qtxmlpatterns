@@ -42,8 +42,6 @@
 #include <QFile>
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include "../qxmlquery/TestFundament.h"
 #include "../network-settings.h"
 
@@ -227,8 +225,5 @@ void tst_XmlPatternsValidator::xsdSupport_data() const
 QTEST_MAIN(tst_XmlPatternsValidator)
 
 #include "tst_xmlpatternsvalidator.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
 
 // vim: et:ts=4:sw=4:sts=4

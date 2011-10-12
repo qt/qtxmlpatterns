@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include <QProcess>
 #include "TestSuite.h"
 #include "TestSuiteResult.h"
@@ -172,7 +170,5 @@ bool tst_SuiteTest::dontRun() const
 {
     return m_abortRun;
 }
-#endif
-
 
 // vim: et:ts=4:sw=4:sts=4

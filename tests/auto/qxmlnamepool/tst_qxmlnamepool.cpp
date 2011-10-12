@@ -42,7 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
 #include <QtXmlPatterns/QXmlNamePool>
 #include <QtXmlPatterns/QXmlName>
 
@@ -84,7 +83,5 @@ void tst_QXmlNamePool::assignmentOperator() const
 QTEST_MAIN(tst_QXmlNamePool)
 
 #include "tst_qxmlnamepool.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
+
 // vim: et:ts=4:sw=4:sts=4

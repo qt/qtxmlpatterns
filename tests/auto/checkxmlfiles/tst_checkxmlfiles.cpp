@@ -43,9 +43,6 @@
 #include <QtCore/QDirIterator>
 #include <QtTest/QtTest>
 
-/* We use Patternist, so without it, we won't build. */
-#ifdef QTEST_XMLPATTERNS
-
 #include <QtXmlPatterns/QXmlQuery>
 #include <QtXmlPatterns/QXmlSerializer>
 #include "../qxmlquery/TestFundament.h"
@@ -119,8 +116,5 @@ void tst_CheckXMLFiles::checkXMLFiles_data() const
 QTEST_MAIN(tst_CheckXMLFiles)
 
 #include "tst_checkxmlfiles.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
 
 // vim: et:ts=4:sw=4:sts=4

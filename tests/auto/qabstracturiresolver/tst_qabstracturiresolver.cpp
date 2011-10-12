@@ -43,8 +43,6 @@
 #include <QFile>
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 /* We expect these headers to be available. */
 #include <QtXmlPatterns/QAbstractUriResolver>
 #include <QtXmlPatterns/qabstracturiresolver.h>
@@ -125,8 +123,5 @@ void tst_QAbstractUriResolver::hasQ_OBJECTMacro() const
 QTEST_MAIN(tst_QAbstractUriResolver)
 
 #include "tst_qabstracturiresolver.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
 
 // vim: et:ts=4:sw=4:sts=4

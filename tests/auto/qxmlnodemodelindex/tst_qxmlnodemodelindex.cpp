@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include <QXmlNodeModelIndex>
 
 /*!
@@ -192,6 +190,3 @@ void tst_QXmlNodeModelIndex::withqHash() const
 QTEST_MAIN(tst_QXmlNodeModelIndex)
 
 #include "tst_qxmlnodemodelindex.moc"
-#else //QTEST_XMLPATTERNS
-QTEST_NOOP_MAIN
-#endif

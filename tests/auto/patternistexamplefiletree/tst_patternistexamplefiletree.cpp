@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 /*!
  \class tst_PatternistExampleFileTree
  \internal
@@ -67,8 +65,5 @@ void tst_PatternistExampleFileTree::run() const
 QTEST_MAIN(tst_PatternistExampleFileTree)
 
 #include "tst_patternistexamplefiletree.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
 
 // vim: et:ts=4:sw=4:sts=4

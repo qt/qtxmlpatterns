@@ -42,8 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
-
 #include <QSimpleXmlNodeModel>
 #include <QXmlNamePool>
 #include <QXmlQuery>
@@ -167,6 +165,3 @@ void tst_QSimpleXmlNodeModel::stringValue() const
 QTEST_MAIN(tst_QSimpleXmlNodeModel)
 
 #include "tst_qsimplexmlnodemodel.moc"
-#else //QTEST_XMLPATTERNS
-QTEST_NOOP_MAIN
-#endif

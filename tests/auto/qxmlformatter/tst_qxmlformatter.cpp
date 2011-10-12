@@ -42,7 +42,6 @@
 
 #include <QtTest/QtTest>
 
-#ifdef QTEST_XMLPATTERNS
 #include <QtXmlPatterns/QXmlFormatter>
 #include <QtXmlPatterns/QXmlQuery>
 
@@ -199,7 +198,5 @@ void tst_QXmlFormatter::cleanupTestCase() const
 QTEST_MAIN(tst_QXmlFormatter)
 
 #include "tst_qxmlformatter.moc"
-#else
-QTEST_NOOP_MAIN
-#endif
+
 // vim: et:ts=4:sw=4:sts=4

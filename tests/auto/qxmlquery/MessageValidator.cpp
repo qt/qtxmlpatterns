@@ -39,7 +39,6 @@
 **
 ****************************************************************************/
 
-#ifdef QTEST_XMLPATTERNS
 #include <QXmlStreamReader>
 
 #include "MessageValidator.h"
@@ -97,5 +96,3 @@ QString MessageValidator::received() const
 {
     return m_received;
 }
-
-#endif //QTEST_XMLPATTERNS

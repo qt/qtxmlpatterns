@@ -42,7 +42,6 @@
 #include <QFile>
 #include <QStack>
 
-#ifdef QTEST_XMLPATTERNS
 #include <QXmlNamePool>
 #include <QXmlStreamReader>
 #include <QtDebug>
@@ -367,4 +366,3 @@ QAbstractXmlNodeModel::Ptr LoadingModel::create(const QXmlNamePool &np)
 
     return Ptr(new LoadingModel(loader.m_result, np));
 }
-#endif //QTEST_XMLPATTERNS
