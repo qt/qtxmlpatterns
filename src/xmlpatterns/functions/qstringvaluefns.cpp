@@ -345,9 +345,8 @@ Item EncodeString::evaluateSingleton(const DynamicContext::Ptr &context) const
     if(!item)
         return CommonValues::EmptyString;
 
-    return AtomicString::fromValue(QString::fromAscii(QUrl::toPercentEncoding(item.stringValue(),
-                                                                        m_excludeChars,
-                                                                        m_includeChars).constData()));
+    return AtomicString::fromValue(item.stringValue().toUtf8().toPercentEncoding(m_excludeChars,
+                                                                        m_includeChars).constData());
 }
 
 const char *const EncodeForURIFN::include = "#!*'()";

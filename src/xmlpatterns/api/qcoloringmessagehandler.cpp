@@ -84,14 +84,14 @@ void ColoringMessageHandler::handleMessage(QtMsgType type,
         {
             if(hasLine)
             {
-                writeUncolored(QXmlPatternistCLI::tr("Warning in %1, at line %2, column %3: %4").arg(QString::fromLatin1(sourceLocation.uri().toEncoded()),
+                writeUncolored(QXmlPatternistCLI::tr("Warning in %1, at line %2, column %3: %4").arg(sourceLocation.uri().toString(),
                                                                                                  QString::number(sourceLocation.line()),
                                                                                                  QString::number(sourceLocation.column()),
                                                                                                  colorifyDescription(description)));
             }
             else
             {
-                writeUncolored(QXmlPatternistCLI::tr("Warning in %1: %2").arg(QString::fromLatin1(sourceLocation.uri().toEncoded()),
+                writeUncolored(QXmlPatternistCLI::tr("Warning in %1: %2").arg(sourceLocation.uri().toString(),
                                                                           colorifyDescription(description)));
             }
 
@@ -109,7 +109,7 @@ void ColoringMessageHandler::handleMessage(QtMsgType type,
             if(sourceLocation.isNull())
                 location = QXmlPatternistCLI::tr("Unknown location");
             else
-                location = QString::fromLatin1(sourceLocation.uri().toEncoded());
+                location = sourceLocation.uri().toString();
 
             QString errorId;
             /* If it's a standard error code, we don't want to output the
@@ -117,7 +117,7 @@ void ColoringMessageHandler::handleMessage(QtMsgType type,
             if(uri.toString() == QLatin1String("http://www.w3.org/2005/xqt-errors"))
                 errorId = errorCode;
             else
-                errorId = QString::fromLatin1(identifier.toEncoded());
+                errorId = identifier.toString();
 
             if(hasLine)
             {
