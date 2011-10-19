@@ -1998,7 +1998,7 @@ void tst_QXmlQuery::fnDocNetworkAccessSuccess() const
     QStringList testsToSkip;
     testsToSkip << "http scheme" << "ftp scheme";
     if (testsToSkip.contains(QTest::currentDataTag()))
-        QSKIP("Network tests are currently unsupported on Windows CE.", SkipSingle);
+        QSKIP("Network tests are currently unsupported on Windows CE.");
 #endif
 
     QFETCH(QUrl, uriToOpen);
@@ -2532,7 +2532,7 @@ void tst_QXmlQuery::setQueryQUrlSuccess() const
     QStringList testsToSkip;
     testsToSkip << "A valid query via the ftp scheme" << "A valid query via the http scheme";
     if (testsToSkip.contains(QTest::currentDataTag()))
-        QSKIP("Network tests are currently unsupported on Windows CE.", SkipSingle);
+        QSKIP("Network tests are currently unsupported on Windows CE.");
 #endif
 
     QFETCH(QUrl, queryURI);

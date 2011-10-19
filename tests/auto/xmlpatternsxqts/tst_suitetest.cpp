@@ -79,7 +79,7 @@ void tst_SuiteTest::initTestCase()
 void tst_SuiteTest::runTestSuite() const
 {
     if(m_abortRun)
-        QSKIP("The test suite is not available, no tests are run.", SkipAll);
+        QSKIP("The test suite is not available, no tests are run.");
 
     QString errMsg;
     const QFileInfo fi(m_catalogPath);
@@ -121,7 +121,7 @@ void tst_SuiteTest::runTestSuite() const
 void tst_SuiteTest::checkTestSuiteResult() const
 {
     if(m_abortRun)
-        QSKIP("This test takes too long time to run on the majority of platforms.", SkipAll);
+        QSKIP("This test takes too long time to run on the majority of platforms.");
 
     typedef QList<QFileInfo> QFileInfoList;
 

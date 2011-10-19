@@ -66,7 +66,7 @@ tst_XmlPatternsXQTS::tst_XmlPatternsXQTS() : tst_SuiteTest(tst_SuiteTest::XQuery
 void tst_XmlPatternsXQTS::catalogPath(QString &write) const
 {
     if(dontRun())
-        QSKIP("This test takes too long time to run on the majority of platforms.", SkipAll);
+        QSKIP("This test takes too long time to run on the majority of platforms.");
 
     QProcess p4;
 

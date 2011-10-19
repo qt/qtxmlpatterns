@@ -121,8 +121,7 @@ void tst_XmlPatterns::initTestCase()
             qPrintable(QString(
                 "The command line tool (%1) could not be run, possibly because Qt was "
                 "incompletely built or installed. No tests will be run."
-            ).arg(m_command)),
-            SkipAll
+            ).arg(m_command))
         );
     }
 
@@ -131,12 +130,12 @@ void tst_XmlPatterns::initTestCase()
 void tst_XmlPatterns::xquerySupport()
 {
     if(m_dontRun)
-        QSKIP("The command line utility is not in the path.", SkipAll);
+        QSKIP("The command line utility is not in the path.");
 
 #ifdef Q_OS_WINCE
-    QSKIP("WinCE: This test uses unsupported WinCE functionality", SkipAll);
+    QSKIP("WinCE: This test uses unsupported WinCE functionality");
 #elif defined(Q_OS_SYMBIAN)
-    QSKIP("Symbian: This test uses unsupported Symbian functionality (QProcess with std streams)", SkipAll);
+    QSKIP("Symbian: This test uses unsupported Symbian functionality (QProcess with std streams)");
 #endif
 
     QFETCH(int,         expectedExitCode);
@@ -854,12 +853,12 @@ void tst_XmlPatterns::xsltSupport()
 void tst_XmlPatterns::xsltSupport_data() const
 {
     if(m_dontRun)
-        QSKIP("The command line utility is not in the path.", SkipAll);
+        QSKIP("The command line utility is not in the path.");
 
 #ifdef Q_OS_WINCE
-    QSKIP("WinCE: This test uses unsupported WinCE functionality", SkipAll);
+    QSKIP("WinCE: This test uses unsupported WinCE functionality");
 #elif defined(Q_OS_SYMBIAN)
-    QSKIP("Symbian: This test uses unsupported Symbian functionality (QProcess with std streams)", SkipAll);
+    QSKIP("Symbian: This test uses unsupported Symbian functionality (QProcess with std streams)");
 #endif
 
     QTest::addColumn<int>("expectedExitCode");

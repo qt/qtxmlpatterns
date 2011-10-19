@@ -88,8 +88,7 @@ void tst_XmlPatternsValidator::initTestCase()
             qPrintable(QString(
                 "The command line tool (%1) could not be run, possibly because Qt was "
                 "incompletely built or installed. No tests will be run."
-            ).arg(m_command)),
-            SkipAll
+            ).arg(m_command))
         );
     }
 }
@@ -97,10 +96,10 @@ void tst_XmlPatternsValidator::initTestCase()
 void tst_XmlPatternsValidator::xsdSupport()
 {
     if(m_dontRun)
-        QSKIP("The command line utility is not in the path.", SkipAll);
+        QSKIP("The command line utility is not in the path.");
 
 #ifdef Q_OS_WINCE
-    QSKIP("WinCE: This test uses unsupported WinCE functionality", SkipAll);
+    QSKIP("WinCE: This test uses unsupported WinCE functionality");
 #endif
 
     QFETCH(int,         expectedExitCode);
