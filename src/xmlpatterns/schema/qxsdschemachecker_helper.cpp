@@ -283,6 +283,7 @@ bool XsdSchemaChecker::elementSequenceAccepted(const XsdModelGroup::Ptr &sequenc
         const XsdParticle::List particles(sequence->particles());
         for (int i = 0; i < particles.count(); ++i) {
             bool isValid = false;
+            Q_UNUSED(isValid)
             if (particles.at(i)->term()->isElement()) {
                 const XsdElement::Ptr seqElement(particles.at(i)->term());
 
