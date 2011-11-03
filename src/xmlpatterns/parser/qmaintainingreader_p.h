@@ -58,8 +58,8 @@
 #include <QStringList>
 #include <QXmlStreamReader>
 
-#include "qxpathhelper_p.h"
-#include "qxslttokenlookup_p.h"
+#include <private/qxpathhelper_p.h>
+#include <private/qxslttokenlookup_p.h>
 
 class QUrl;
 

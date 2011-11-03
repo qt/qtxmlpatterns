@@ -52,15 +52,15 @@
 #ifndef QXMLSCHEMA_P_H
 #define QXMLSCHEMA_P_H
 
-#include "qabstractmessagehandler.h"
-#include "qabstracturiresolver.h"
-#include "qautoptr_p.h"
-#include "qcoloringmessagehandler_p.h"
-#include "qreferencecountedvalue_p.h"
+#include <QAbstractMessageHandler>
+#include <QAbstractUriResolver>
+#include <private/qautoptr_p.h>
+#include <private/qcoloringmessagehandler_p.h>
+#include <private/qreferencecountedvalue_p.h>
 
-#include "qxsdschemacontext_p.h"
-#include "qxsdschemaparser_p.h"
-#include "qxsdschemaparsercontext_p.h"
+#include <private/qxsdschemacontext_p.h>
+#include <private/qxsdschemaparser_p.h>
+#include <private/qxsdschemaparsercontext_p.h>
 
 #include <QtCore/QSharedData>
 #include <QtNetwork/QNetworkAccessManager>

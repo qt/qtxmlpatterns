@@ -52,9 +52,9 @@
 #ifndef Patternist_SortTuple_H
 #define Patternist_SortTuple_H
 
-#include "qitem_p.h"
-#include "qitem_p.h"
-#include "qitemtype_p.h"
+#include <private/qitem_p.h>
+#include <private/qitem_p.h>
+#include <private/qitemtype_p.h>
 
 QT_BEGIN_HEADER
 

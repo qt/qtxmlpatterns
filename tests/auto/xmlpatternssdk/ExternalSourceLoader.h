@@ -46,9 +46,9 @@
 #include <QUrl>
 #include <QXmlQuery>
 
-#include "qdynamiccontext_p.h"
-#include "qresourceloader_p.h"
-#include "qexternalvariableloader_p.h"
+#include <private/qdynamiccontext_p.h>
+#include <private/qresourceloader_p.h>
+#include <private/qexternalvariableloader_p.h>
 
 QT_BEGIN_HEADER
 

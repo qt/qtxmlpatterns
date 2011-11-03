@@ -52,7 +52,7 @@
 #ifndef Patternist_Focus_H
 #define Patternist_Focus_H
 
-#include "qdelegatingdynamiccontext_p.h"
+#include <private/qdelegatingdynamiccontext_p.h>
 
 QT_BEGIN_HEADER
 

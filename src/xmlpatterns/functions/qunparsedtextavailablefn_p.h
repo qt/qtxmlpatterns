@@ -52,7 +52,7 @@
 #ifndef Patternist_UnparsedTextAvailableFN_H
 #define Patternist_UnparsedTextAvailableFN_H
 
-#include "qstaticbaseuricontainer_p.h"
+#include <private/qstaticbaseuricontainer_p.h>
 
 QT_BEGIN_HEADER
 

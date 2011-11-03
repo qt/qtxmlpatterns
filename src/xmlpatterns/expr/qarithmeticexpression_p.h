@@ -52,8 +52,8 @@
 #ifndef Patternist_ArithmeticExpression_H
 #define Patternist_ArithmeticExpression_H
 
-#include "qatomicmathematician_p.h"
-#include "qpaircontainer_p.h"
+#include <private/qatomicmathematician_p.h>
+#include <private/qpaircontainer_p.h>
 
 QT_BEGIN_HEADER
 

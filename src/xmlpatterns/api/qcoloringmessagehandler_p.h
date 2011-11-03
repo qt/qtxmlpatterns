@@ -54,8 +54,8 @@
 
 #include <QHash>
 
-#include "qcoloroutput_p.h"
-#include "qabstractmessagehandler.h"
+#include <private/qcoloroutput_p.h>
+#include <QAbstractMessageHandler>
 
 QT_BEGIN_HEADER
 

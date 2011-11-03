@@ -52,7 +52,7 @@
 #ifndef Patternist_StaticFocusContext_H
 #define Patternist_StaticFocusContext_H
 
-#include "qdelegatingstaticcontext_p.h"
+#include <private/qdelegatingstaticcontext_p.h>
 
 QT_BEGIN_HEADER
 

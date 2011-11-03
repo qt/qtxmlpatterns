@@ -52,7 +52,7 @@
 #ifndef Patternist_XSLTNodeTest_H
 #define Patternist_XSLTNodeTest_H
 
-#include "qanynodetype_p.h"
+#include <private/qanynodetype_p.h>
 
 QT_BEGIN_HEADER
 

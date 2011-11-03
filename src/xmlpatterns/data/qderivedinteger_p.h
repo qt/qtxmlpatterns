@@ -52,10 +52,10 @@
 #ifndef Patternist_DerivedInteger_H
 #define Patternist_DerivedInteger_H
 
-#include "qbuiltintypes_p.h"
-#include "qinteger_p.h"
-#include "qpatternistlocale_p.h"
-#include "qvalidationerror_p.h"
+#include <private/qbuiltintypes_p.h>
+#include <private/qinteger_p.h>
+#include <private/qpatternistlocale_p.h>
+#include <private/qvalidationerror_p.h>
 
 QT_BEGIN_HEADER
 

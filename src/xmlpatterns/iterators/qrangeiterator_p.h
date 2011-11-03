@@ -52,7 +52,7 @@
 #ifndef Patternist_RangeIterator_H
 #define Patternist_RangeIterator_H
 
-#include "qitem_p.h"
+#include <private/qitem_p.h>
 
 QT_BEGIN_HEADER
 

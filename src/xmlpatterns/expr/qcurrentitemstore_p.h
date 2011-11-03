@@ -52,7 +52,7 @@
 #ifndef Patternist_CurrentItemStore_H
 #define Patternist_CurrentItemStore_H
 
-#include "qsinglecontainer_p.h"
+#include <private/qsinglecontainer_p.h>
 
 QT_BEGIN_HEADER
 

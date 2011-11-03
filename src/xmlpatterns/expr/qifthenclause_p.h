@@ -52,7 +52,7 @@
 #ifndef Patternist_IfThenClause_H
 #define Patternist_IfThenClause_H
 
-#include "qtriplecontainer_p.h"
+#include <private/qtriplecontainer_p.h>
 
 QT_BEGIN_HEADER
 

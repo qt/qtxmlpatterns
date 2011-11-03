@@ -52,7 +52,7 @@
 #ifndef Patternist_XsdSchemaMerger_H
 #define Patternist_XsdSchemaMerger_H
 
-#include "qxsdschema_p.h"
+#include <private/qxsdschema_p.h>
 
 QT_BEGIN_HEADER
 

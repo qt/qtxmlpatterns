@@ -52,8 +52,8 @@
 #ifndef Patternist_DayTimeDuration_H
 #define Patternist_DayTimeDuration_H
 
-#include "qabstractduration_p.h"
-#include "qitem_p.h"
+#include <private/qabstractduration_p.h>
+#include <private/qitem_p.h>
 
 QT_BEGIN_HEADER
 

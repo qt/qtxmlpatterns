@@ -52,10 +52,10 @@
 #ifndef Patternist_SequenceFNs_H
 #define Patternist_SequenceFNs_H
 
-#include "qatomiccomparator_p.h"
-#include "qcomparisonplatform_p.h"
-#include "qliteral_p.h"
-#include "qfunctioncall_p.h"
+#include <private/qatomiccomparator_p.h>
+#include <private/qcomparisonplatform_p.h>
+#include <private/qliteral_p.h>
+#include <private/qfunctioncall_p.h>
 
 /**
  * @file

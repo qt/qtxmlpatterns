@@ -55,15 +55,15 @@
 #include <QSet>
 #include <QStack>
 
-#include "private/qxmlutils_p.h"
-#include "qacceltree_p.h"
-#include "qbuiltintypes_p.h"
-#include "qcompressedwhitespace_p.h"
-#include "qnamepool_p.h"
-#include "qnodebuilder_p.h"
-#include "qreportcontext_p.h"
-#include "qsourcelocationreflection_p.h"
-#include "qpatternistlocale_p.h"
+#include <private/qxmlutils_p.h>
+#include <private/qacceltree_p.h>
+#include <private/qbuiltintypes_p.h>
+#include <private/qcompressedwhitespace_p.h>
+#include <private/qnamepool_p.h>
+#include <private/qnodebuilder_p.h>
+#include <private/qreportcontext_p.h>
+#include <private/qsourcelocationreflection_p.h>
+#include <private/qpatternistlocale_p.h>
 #include <QtDebug>
 
 QT_BEGIN_HEADER

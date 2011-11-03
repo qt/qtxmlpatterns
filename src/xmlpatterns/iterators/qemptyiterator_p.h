@@ -52,8 +52,8 @@
 #ifndef Patternist_EmptyIterator_H
 #define Patternist_EmptyIterator_H
 
-#include "qabstractxmlforwarditerator_p.h"
-#include "qprimitives_p.h"
+#include <private/qabstractxmlforwarditerator_p.h>
+#include <private/qprimitives_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,7 +52,7 @@
 #ifndef Patternist_YearMonthDuration_H
 #define Patternist_YearMonthDuration_H
 
-#include "qabstractduration_p.h"
+#include <private/qabstractduration_p.h>
 
 QT_BEGIN_HEADER
 

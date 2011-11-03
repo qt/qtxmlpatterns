@@ -54,7 +54,7 @@
 
 #include <QUrl>
 
-#include "qpaircontainer_p.h"
+#include <private/qpaircontainer_p.h>
 
 QT_BEGIN_HEADER
 

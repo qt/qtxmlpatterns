@@ -52,8 +52,8 @@
 #ifndef Patternist_CastAs_H
 #define Patternist_CastAs_H
 
-#include "qsinglecontainer_p.h"
-#include "qcastingplatform_p.h"
+#include <private/qsinglecontainer_p.h>
+#include <private/qcastingplatform_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,12 +52,12 @@
 #ifndef Patternist_AbstractFloatMathematician_H
 #define Patternist_AbstractFloatMathematician_H
 
-#include "qabstractfloat_p.h"
-#include "qatomicmathematician_p.h"
-#include "qinteger_p.h"
-#include "qschemanumeric_p.h"
-#include "qpatternistlocale_p.h"
-#include "qsourcelocationreflection_p.h"
+#include <private/qabstractfloat_p.h>
+#include <private/qatomicmathematician_p.h>
+#include <private/qinteger_p.h>
+#include <private/qschemanumeric_p.h>
+#include <private/qpatternistlocale_p.h>
+#include <private/qsourcelocationreflection_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

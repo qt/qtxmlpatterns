@@ -52,7 +52,7 @@
 #ifndef Patternist_GenerateIDFN_H
 #define Patternist_GenerateIDFN_H
 
-#include "qfunctioncall_p.h"
+#include <private/qfunctioncall_p.h>
 
 QT_BEGIN_HEADER
 

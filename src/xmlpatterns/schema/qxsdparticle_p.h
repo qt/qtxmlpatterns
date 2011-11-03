@@ -52,8 +52,8 @@
 #ifndef Patternist_XsdParticle_H
 #define Patternist_XsdParticle_H
 
-#include "qnamedschemacomponent_p.h"
-#include "qxsdterm_p.h"
+#include <private/qnamedschemacomponent_p.h>
+#include <private/qxsdterm_p.h>
 
 #include <QtCore/QList>
 

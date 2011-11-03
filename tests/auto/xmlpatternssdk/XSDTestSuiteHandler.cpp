@@ -41,8 +41,8 @@
 
 #include <QtDebug>
 
-#include "qacceltreeresourceloader_p.h"
-#include "qnetworkaccessdelegator_p.h"
+#include <private/qacceltreeresourceloader_p.h>
+#include <private/qnetworkaccessdelegator_p.h>
 
 #include "Global.h"
 #include "TestBaseLine.h"

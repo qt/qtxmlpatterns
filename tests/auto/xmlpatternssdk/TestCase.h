@@ -44,7 +44,7 @@
 
 #include <QtXmlPatterns/QXmlQuery>
 
-#include "qexternalvariableloader_p.h"
+#include <private/qexternalvariableloader_p.h>
 
 #include "ErrorHandler.h"
 #include "TestBaseLine.h"

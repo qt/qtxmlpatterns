@@ -54,9 +54,9 @@
 
 #include <QSet>
 
-#include "qdynamiccontext_p.h"
+#include <private/qdynamiccontext_p.h>
 #include "qabstractxmlreceiver.h"
-#include "qsourcelocationreflection_p.h"
+#include <private/qsourcelocationreflection_p.h>
 
 QT_BEGIN_HEADER
 

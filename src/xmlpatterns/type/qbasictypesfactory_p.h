@@ -53,7 +53,7 @@
 #define Patternist_BuiltinTypesFactory_H
 
 #include <QHash>
-#include "qschematypefactory_p.h"
+#include <private/qschematypefactory_p.h>
 
 QT_BEGIN_HEADER
 

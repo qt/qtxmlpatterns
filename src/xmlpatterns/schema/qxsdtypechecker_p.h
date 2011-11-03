@@ -54,9 +54,9 @@
 
 #include <QtXmlPatterns/QSourceLocation>
 
-#include "qschematype_p.h"
-#include "qsourcelocationreflection_p.h"
-#include "qxsdschemacontext_p.h"
+#include <private/qschematype_p.h>
+#include <private/qsourcelocationreflection_p.h>
+#include <private/qxsdschemacontext_p.h>
 
 QT_BEGIN_HEADER
 

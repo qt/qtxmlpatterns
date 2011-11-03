@@ -56,8 +56,8 @@
 #include <QAbstractUriResolver>
 #include <QSourceLocation>
 
-#include "qnamepool_p.h"
-#include "qxmlname.h"
+#include <private/qnamepool_p.h>
+#include <QXmlName>
 
 QT_BEGIN_HEADER
 

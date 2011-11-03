@@ -52,8 +52,8 @@
 #ifndef Patternist_QNameValue_H
 #define Patternist_QNameValue_H
 
-#include "qitem_p.h"
-#include "qxmlname.h"
+#include <private/qitem_p.h>
+#include <QXmlName>
 
 QT_BEGIN_HEADER
 

@@ -52,9 +52,9 @@
 #ifndef Patternist_SequenceGeneratingFNs_H
 #define Patternist_SequenceGeneratingFNs_H
 
-#include "qanyuri_p.h"
-#include "qcontextnodechecker_p.h"
-#include "qstaticbaseuricontainer_p.h"
+#include <private/qanyuri_p.h>
+#include <private/qcontextnodechecker_p.h>
+#include <private/qstaticbaseuricontainer_p.h>
 
 /**
  * @file

@@ -54,7 +54,7 @@
 
 template<typename T> class QVector;
 
-#include "qxmlname.h"
+#include <QXmlName>
 
 QT_BEGIN_HEADER
 

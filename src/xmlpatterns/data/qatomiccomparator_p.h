@@ -54,8 +54,8 @@
 
 #include <QFlags>
 
-#include "qitem_p.h"
-#include "qatomictypedispatch_p.h"
+#include <private/qitem_p.h>
+#include <private/qatomictypedispatch_p.h>
 
 QT_BEGIN_HEADER
 

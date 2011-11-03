@@ -43,7 +43,7 @@
 #define PatternistSDK_ExpressionInfo_H
 
 #include "Global.h"
-#include "qexpressiondispatch_p.h"
+#include <private/qexpressiondispatch_p.h>
 
 #include <QPair>
 #include <QString>

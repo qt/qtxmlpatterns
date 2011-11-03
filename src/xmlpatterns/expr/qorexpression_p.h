@@ -52,7 +52,7 @@
 #ifndef Patternist_OrExpression_H
 #define Patternist_OrExpression_H
 
-#include "qandexpression_p.h"
+#include <private/qandexpression_p.h>
 
 QT_BEGIN_HEADER
 

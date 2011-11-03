@@ -54,7 +54,7 @@
 
 #include <QByteArray>
 
-#include "qfunctioncall_p.h"
+#include <private/qfunctioncall_p.h>
 
 /**
  * @file

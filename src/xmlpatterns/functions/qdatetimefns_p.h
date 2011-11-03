@@ -52,13 +52,13 @@
 #ifndef Patternist_DateTimeFNs_H
 #define Patternist_DateTimeFNs_H
 
-#include "qatomiccomparator_p.h"
-#include "qcommonvalues_p.h"
-#include "qschemadatetime_p.h"
-#include "qdaytimeduration_p.h"
-#include "qdecimal_p.h"
-#include "qinteger_p.h"
-#include "qfunctioncall_p.h"
+#include <private/qatomiccomparator_p.h>
+#include <private/qcommonvalues_p.h>
+#include <private/qschemadatetime_p.h>
+#include <private/qdaytimeduration_p.h>
+#include <private/qdecimal_p.h>
+#include <private/qinteger_p.h>
+#include <private/qfunctioncall_p.h>
 
 /**
  * @file

@@ -52,8 +52,8 @@
 #ifndef Patternist_XsdIdcHelper_H
 #define Patternist_XsdIdcHelper_H
 
-#include "qreportcontext_p.h"
-#include "qschematype_p.h"
+#include <private/qreportcontext_p.h>
+#include <private/qschematype_p.h>
 
 #include <QtXmlPatterns/QXmlItem>
 

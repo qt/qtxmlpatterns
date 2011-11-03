@@ -52,9 +52,9 @@
 #ifndef Patternist_NodeBuilder_H
 #define Patternist_NodeBuilder_H
 
-#include "qitem_p.h"
+#include <private/qitem_p.h>
 #include "qabstractxmlreceiver.h"
-#include "qautoptr_p.h"
+#include <private/qautoptr_p.h>
 
 QT_BEGIN_HEADER
 

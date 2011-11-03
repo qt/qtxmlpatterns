@@ -52,8 +52,8 @@
 #ifndef Patternist_TypeAvailableFN_H
 #define Patternist_TypeAvailableFN_H
 
-#include "qschematypefactory_p.h"
-#include "qstaticnamespacescontainer_p.h"
+#include <private/qschematypefactory_p.h>
+#include <private/qstaticnamespacescontainer_p.h>
 
 QT_BEGIN_HEADER
 

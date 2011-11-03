@@ -51,7 +51,7 @@
 #include "XMLWriter.h"
 #include "XSLTTestSuiteHandler.h"
 #include "XSDTestSuiteHandler.h"
-#include "qdebug_p.h"
+#include <private/qdebug_p.h>
 
 #include "TestSuite.h"
 

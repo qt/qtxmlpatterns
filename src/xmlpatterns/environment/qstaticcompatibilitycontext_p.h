@@ -52,7 +52,7 @@
 #ifndef Patternist_StaticCompatibilityContext_H
 #define Patternist_StaticCompatibilityContext_H
 
-#include "qdelegatingstaticcontext_p.h"
+#include <private/qdelegatingstaticcontext_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

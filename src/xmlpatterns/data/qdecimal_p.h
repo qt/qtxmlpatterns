@@ -52,7 +52,7 @@
 #ifndef Patternist_Decimal_H
 #define Patternist_Decimal_H
 
-#include "qschemanumeric_p.h"
+#include <private/qschemanumeric_p.h>
 
 QT_BEGIN_HEADER
 

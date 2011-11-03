@@ -54,8 +54,8 @@
 
 #include <QXmlQuery>
 
-#include "qexpression_p.h"
-#include "qtokenizer_p.h"
+#include <private/qexpression_p.h>
+#include <private/qtokenizer_p.h>
 
 #include <QSharedData>
 #include <QUrl>

@@ -52,7 +52,7 @@
 #ifndef Patternist_SubStringFNs_H
 #define Patternist_SubStringFNs_H
 
-#include "qcomparescaseaware_p.h"
+#include <private/qcomparescaseaware_p.h>
 
 /**
  * @file

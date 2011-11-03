@@ -45,7 +45,7 @@
 #include <QXmlQuery>
 #include <QXmlResultItems>
 #include <QXmlSerializer>
-#include <qxmlquery_p.h>
+#include <private/qxmlquery_p.h>
 
 #include "DebugExpressionFactory.h"
 #include "ExternalSourceLoader.h"

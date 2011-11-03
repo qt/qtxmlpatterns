@@ -52,9 +52,9 @@
 #ifndef Patternist_XsdSimpleType_H
 #define Patternist_XsdSimpleType_H
 
-#include "qanysimpletype_p.h"
-#include "qxsdfacet_p.h"
-#include "qxsduserschematype_p.h"
+#include <private/qanysimpletype_p.h>
+#include <private/qxsdfacet_p.h>
+#include <private/qxsduserschematype_p.h>
 
 #include <QtCore/QSet>
 

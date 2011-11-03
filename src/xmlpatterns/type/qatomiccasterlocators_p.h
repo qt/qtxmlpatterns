@@ -52,9 +52,9 @@
 #ifndef Patternist_AtomicCasterLocators_H
 #define Patternist_AtomicCasterLocators_H
 
-#include "qatomiccasterlocator_p.h"
-#include "qatomiccasters_p.h"
-//#include "qderivedinteger_p.h"
+#include <private/qatomiccasterlocator_p.h>
+#include <private/qatomiccasters_p.h>
+//#include <private/qderivedinteger_p.h>
 
 /**
  * @file

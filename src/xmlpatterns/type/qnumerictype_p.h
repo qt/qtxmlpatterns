@@ -52,7 +52,7 @@
 #ifndef Patternist_NumericType_H
 #define Patternist_NumericType_H
 
-#include "qatomictype_p.h"
+#include <private/qatomictype_p.h>
 
 QT_BEGIN_HEADER
 

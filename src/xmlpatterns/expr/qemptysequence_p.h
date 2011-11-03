@@ -52,7 +52,7 @@
 #ifndef Patternist_EmptySequence_H
 #define Patternist_EmptySequence_H
 
-#include "qemptycontainer_p.h"
+#include <private/qemptycontainer_p.h>
 
 QT_BEGIN_HEADER
 

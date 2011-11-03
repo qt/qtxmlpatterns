@@ -52,16 +52,16 @@
 #ifndef Patternist_TokenSource_H
 #define Patternist_TokenSource_H
 
-#include "qatomiccomparator_p.h"
-#include "qatomicmathematician_p.h"
-#include "qcombinenodes_p.h"
-#include "qfunctionargument_p.h"
-#include "qitem_p.h"
-#include "qitemtype_p.h"
-#include "qorderby_p.h"
-#include "qpath_p.h"
-#include "qquerytransformparser_p.h"
-#include "qvalidate_p.h"
+#include <private/qatomiccomparator_p.h>
+#include <private/qatomicmathematician_p.h>
+#include <private/qcombinenodes_p.h>
+#include <private/qfunctionargument_p.h>
+#include <private/qitem_p.h>
+#include <private/qitemtype_p.h>
+#include <private/qorderby_p.h>
+#include <private/qpath_p.h>
+#include <private/qquerytransformparser_p.h>
+#include <private/qvalidate_p.h>
 
 QT_BEGIN_HEADER
 

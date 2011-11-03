@@ -52,7 +52,7 @@
 #ifndef Patternist_BooleanFNs_H
 #define Patternist_BooleanFNs_H
 
-#include "qfunctioncall_p.h"
+#include <private/qfunctioncall_p.h>
 
 /**
  * @file

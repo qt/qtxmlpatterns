@@ -43,7 +43,7 @@
 #define PatternistSDK_ExpressionNamer_H
 
 #include "Global.h"
-#include "qexpressiondispatch_p.h"
+#include <private/qexpressiondispatch_p.h>
 
 QT_BEGIN_HEADER
 

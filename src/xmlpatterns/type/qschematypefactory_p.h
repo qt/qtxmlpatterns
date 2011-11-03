@@ -54,9 +54,9 @@
 
 #include <QSharedData>
 
-#include "qreportcontext_p.h"
-#include "qitemtype_p.h"
-#include "qschematype_p.h"
+#include <private/qreportcontext_p.h>
+#include <private/qitemtype_p.h>
+#include <private/qschematype_p.h>
 
 QT_BEGIN_HEADER
 

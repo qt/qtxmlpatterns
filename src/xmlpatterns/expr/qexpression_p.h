@@ -55,14 +55,14 @@
 #include <QFlags>
 #include <QSharedData>
 
-#include "qcppcastinghelper_p.h"
-#include "qdebug_p.h"
-#include "qdynamiccontext_p.h"
-#include "qexpressiondispatch_p.h"
-#include "qitem_p.h"
-#include "qsequencetype_p.h"
-#include "qsourcelocationreflection_p.h"
-#include "qstaticcontext_p.h"
+#include <private/qcppcastinghelper_p.h>
+#include <private/qdebug_p.h>
+#include <private/qdynamiccontext_p.h>
+#include <private/qexpressiondispatch_p.h>
+#include <private/qitem_p.h>
+#include <private/qsequencetype_p.h>
+#include <private/qsourcelocationreflection_p.h>
+#include <private/qstaticcontext_p.h>
 
 QT_BEGIN_HEADER
 

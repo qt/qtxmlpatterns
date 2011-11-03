@@ -52,7 +52,7 @@
 #ifndef Patternist_AnyType_H
 #define Patternist_AnyType_H
 
-#include "qschematype_p.h"
+#include <private/qschematype_p.h>
 
 QT_BEGIN_HEADER
 

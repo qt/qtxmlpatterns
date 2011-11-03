@@ -52,8 +52,8 @@
 #ifndef Patternist_LetClause_H
 #define Patternist_LetClause_H
 
-#include "qpaircontainer_p.h"
-#include "qvariabledeclaration_p.h"
+#include <private/qpaircontainer_p.h>
+#include <private/qvariabledeclaration_p.h>
 
 QT_BEGIN_HEADER
 

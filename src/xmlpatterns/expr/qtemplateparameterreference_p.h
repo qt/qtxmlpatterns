@@ -52,8 +52,8 @@
 #ifndef Patternist_TemplateParameterReference_H
 #define Patternist_TemplateParameterReference_H
 
-#include "qvariabledeclaration_p.h"
-#include "qemptycontainer_p.h"
+#include <private/qvariabledeclaration_p.h>
+#include <private/qemptycontainer_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

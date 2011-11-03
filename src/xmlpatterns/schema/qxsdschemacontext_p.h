@@ -52,13 +52,13 @@
 #ifndef Patternist_XsdSchemaContext_H
 #define Patternist_XsdSchemaContext_H
 
-#include "qnamedschemacomponent_p.h"
-#include "qreportcontext_p.h"
-#include "qschematypefactory_p.h"
-#include "qxsdschematoken_p.h"
-#include "qxsdschema_p.h"
-#include "qxsdschemachecker_p.h"
-#include "qxsdschemaresolver_p.h"
+#include <private/qnamedschemacomponent_p.h>
+#include <private/qreportcontext_p.h>
+#include <private/qschematypefactory_p.h>
+#include <private/qxsdschematoken_p.h>
+#include <private/qxsdschema_p.h>
+#include <private/qxsdschemachecker_p.h>
+#include <private/qxsdschemaresolver_p.h>
 
 #include <QtCore/QUrl>
 #include <QtNetwork/QNetworkAccessManager>

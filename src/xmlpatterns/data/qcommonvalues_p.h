@@ -52,9 +52,9 @@
 #ifndef Patternist_CommonValues_H
 #define Patternist_CommonValues_H
 
-#include "qdaytimeduration_p.h"
-#include "qyearmonthduration_p.h"
-#include "qemptyiterator_p.h"
+#include <private/qdaytimeduration_p.h>
+#include <private/qyearmonthduration_p.h>
+#include <private/qemptyiterator_p.h>
 
 QT_BEGIN_HEADER
 

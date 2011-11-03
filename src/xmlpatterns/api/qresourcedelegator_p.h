@@ -55,7 +55,7 @@
 #include <QSet>
 #include <QUrl>
 
-#include "qdeviceresourceloader_p.h"
+#include <private/qdeviceresourceloader_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

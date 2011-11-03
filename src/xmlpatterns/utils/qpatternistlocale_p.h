@@ -56,9 +56,9 @@
 #include <QString>
 #include <QUrl>
 
-#include "qcardinality_p.h"
-#include "qnamepool_p.h"
-#include "qprimitives_p.h"
+#include <private/qcardinality_p.h>
+#include <private/qnamepool_p.h>
+#include <private/qprimitives_p.h>
 
 QT_BEGIN_NAMESPACE
 

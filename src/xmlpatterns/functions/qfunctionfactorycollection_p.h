@@ -53,7 +53,7 @@
 #ifndef Patternist_FunctionFactoryCollection_H
 #define Patternist_FunctionFactoryCollection_H
 
-#include "qfunctionfactory_p.h"
+#include <private/qfunctionfactory_p.h>
 
 QT_BEGIN_HEADER
 

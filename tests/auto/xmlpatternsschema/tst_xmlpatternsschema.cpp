@@ -41,8 +41,8 @@
 
 #include <QtTest/QtTest>
 
-#include "qxsdstatemachine_p.h"
-#include "qxsdschematoken_p.h"
+#include <private/qxsdstatemachine_p.h>
+#include <private/qxsdschematoken_p.h>
 
 using namespace QPatternist;
 

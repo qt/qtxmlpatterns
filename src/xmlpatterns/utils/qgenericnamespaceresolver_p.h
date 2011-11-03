@@ -54,7 +54,7 @@
 
 #include <QHash>
 
-#include "qnamespaceresolver_p.h"
+#include <private/qnamespaceresolver_p.h>
 
 QT_BEGIN_HEADER
 

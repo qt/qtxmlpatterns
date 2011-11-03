@@ -52,11 +52,11 @@
 #ifndef Patternist_UserFunctionCallsite_H
 #define Patternist_UserFunctionCallsite_H
 
-#include "qcallsite_p.h"
-#include "qfunctionsignature_p.h"
-#include "qunlimitedcontainer_p.h"
-#include "quserfunction_p.h"
-#include "qvariabledeclaration_p.h"
+#include <private/qcallsite_p.h>
+#include <private/qfunctionsignature_p.h>
+#include <private/qunlimitedcontainer_p.h>
+#include <private/quserfunction_p.h>
+#include <private/qvariabledeclaration_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

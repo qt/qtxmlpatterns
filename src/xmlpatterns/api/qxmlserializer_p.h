@@ -59,8 +59,8 @@
 #include <QtXmlPatterns/QXmlNamePool>
 #include <QtXmlPatterns/QXmlSerializer>
 
-#include "qnamepool_p.h"
-#include "qabstractxmlreceiver_p.h"
+#include <private/qnamepool_p.h>
+#include <private/qabstractxmlreceiver_p.h>
 
 QT_BEGIN_HEADER
 

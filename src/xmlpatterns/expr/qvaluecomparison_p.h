@@ -52,9 +52,9 @@
 #ifndef Patternist_ValueComparison_H
 #define Patternist_ValueComparison_H
 
-#include "qatomiccomparator_p.h"
-#include "qpaircontainer_p.h"
-#include "qcomparisonplatform_p.h"
+#include <private/qatomiccomparator_p.h>
+#include <private/qpaircontainer_p.h>
+#include <private/qcomparisonplatform_p.h>
 
 QT_BEGIN_HEADER
 

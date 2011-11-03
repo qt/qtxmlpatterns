@@ -52,10 +52,10 @@
 #ifndef Patternist_AggregateFNs_H
 #define Patternist_AggregateFNs_H
 
-#include "qaggregator_p.h"
-#include "qatomiccomparator_p.h"
-#include "qatomicmathematician_p.h"
-#include "qcomparisonplatform_p.h"
+#include <private/qaggregator_p.h>
+#include <private/qatomiccomparator_p.h>
+#include <private/qatomicmathematician_p.h>
+#include <private/qcomparisonplatform_p.h>
 
 /**
  * @file

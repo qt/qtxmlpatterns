@@ -52,7 +52,7 @@
 #ifndef Patternist_AttributeNameValidator_H
 #define Patternist_AttributeNameValidator_H
 
-#include "qsinglecontainer_p.h"
+#include <private/qsinglecontainer_p.h>
 
 QT_BEGIN_HEADER
 

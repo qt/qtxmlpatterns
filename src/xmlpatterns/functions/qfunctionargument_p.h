@@ -55,8 +55,8 @@
 #include <QList>
 #include <QSharedData>
 
-#include "qxmlname.h"
-#include "qsequencetype_p.h"
+#include <QXmlName>
+#include <private/qsequencetype_p.h>
 
 QT_BEGIN_HEADER
 

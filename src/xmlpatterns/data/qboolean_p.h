@@ -52,7 +52,7 @@
 #ifndef Patternist_Boolean_H
 #define Patternist_Boolean_H
 
-#include "qitem_p.h"
+#include <private/qitem_p.h>
 
 QT_BEGIN_HEADER
 

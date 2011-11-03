@@ -53,7 +53,7 @@
 #define Patternist_XsdSchemaTypesFactory_H
 
 #include <QtCore/QHash>
-#include "qschematypefactory_p.h"
+#include <private/qschematypefactory_p.h>
 
 QT_BEGIN_HEADER
 

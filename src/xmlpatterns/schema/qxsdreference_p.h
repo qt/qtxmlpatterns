@@ -52,7 +52,7 @@
 #ifndef Patternist_XsdReference_H
 #define Patternist_XsdReference_H
 
-#include "qxsdterm_p.h"
+#include <private/qxsdterm_p.h>
 
 #include <QtXmlPatterns/QSourceLocation>
 

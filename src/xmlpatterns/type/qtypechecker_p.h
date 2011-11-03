@@ -52,8 +52,8 @@
 #ifndef Patternist_TypeChecker_H
 #define Patternist_TypeChecker_H
 
-#include "qstaticcontext_p.h"
-#include "qexpression_p.h"
+#include <private/qstaticcontext_p.h>
+#include <private/qexpression_p.h>
 
 QT_BEGIN_HEADER
 

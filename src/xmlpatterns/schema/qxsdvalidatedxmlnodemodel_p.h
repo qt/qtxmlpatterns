@@ -54,10 +54,10 @@
 
 #include "qabstractxmlnodemodel.h"
 
-#include "qabstractxmlforwarditerator_p.h"
-#include "qitem_p.h"
-#include "qschematype_p.h"
-#include "qxsdelement_p.h"
+#include <private/qabstractxmlforwarditerator_p.h>
+#include <private/qitem_p.h>
+#include <private/qschematype_p.h>
+#include <private/qxsdelement_p.h>
 
 QT_BEGIN_HEADER
 

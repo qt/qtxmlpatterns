@@ -52,12 +52,12 @@
 #ifndef Patternist_AtomicCasters_H
 #define Patternist_AtomicCasters_H
 
-#include "qatomiccaster_p.h"
-#include "qdecimal_p.h"
-#include "qderivedinteger_p.h"
-#include "qderivedstring_p.h"
-#include "qinteger_p.h"
-#include "qvalidationerror_p.h"
+#include <private/qatomiccaster_p.h>
+#include <private/qdecimal_p.h>
+#include <private/qderivedinteger_p.h>
+#include <private/qderivedstring_p.h>
+#include <private/qinteger_p.h>
+#include <private/qvalidationerror_p.h>
 
 /**
  * @file

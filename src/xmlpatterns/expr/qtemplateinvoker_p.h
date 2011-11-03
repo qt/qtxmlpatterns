@@ -52,8 +52,8 @@
 #ifndef Patternist_TemplateInvoker_H
 #define Patternist_TemplateInvoker_H
 
-#include "qcallsite_p.h"
-#include "qwithparam_p.h"
+#include <private/qcallsite_p.h>
+#include <private/qwithparam_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

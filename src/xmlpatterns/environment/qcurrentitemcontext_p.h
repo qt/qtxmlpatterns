@@ -52,7 +52,7 @@
 #ifndef Patternist_CurrentItemContext_H
 #define Patternist_CurrentItemContext_H
 
-#include "qdelegatingdynamiccontext_p.h"
+#include <private/qdelegatingdynamiccontext_p.h>
 
 QT_BEGIN_HEADER
 

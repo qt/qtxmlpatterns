@@ -55,13 +55,13 @@
 #include <QtCore/QEventLoop>
 #include <QtNetwork/QNetworkReply>
 
-#include "qabstractxmlreceiver.h"
-#include "qacceltree_p.h"
-#include "qacceltreebuilder_p.h"
-#include "qdeviceresourceloader_p.h"
-#include "qnamepool_p.h"
-#include "qnetworkaccessdelegator_p.h"
-#include "qreportcontext_p.h"
+#include <QAbstractXmlReceiver>
+#include <private/qacceltree_p.h>
+#include <private/qacceltreebuilder_p.h>
+#include <private/qdeviceresourceloader_p.h>
+#include <private/qnamepool_p.h>
+#include <private/qnetworkaccessdelegator_p.h>
+#include <private/qreportcontext_p.h>
 
 QT_BEGIN_HEADER
 

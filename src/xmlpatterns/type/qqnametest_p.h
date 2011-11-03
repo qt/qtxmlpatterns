@@ -52,7 +52,7 @@
 #ifndef Patternist_QNameTest_H
 #define Patternist_QNameTest_H
 
-#include "qabstractnodetest_p.h"
+#include <private/qabstractnodetest_p.h>
 
 template<typename Key, typename Value> class QHash;
 

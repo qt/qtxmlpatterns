@@ -52,7 +52,7 @@
 #ifndef Patternist_ForClause_H
 #define Patternist_ForClause_H
 
-#include "qpaircontainer_p.h"
+#include <private/qpaircontainer_p.h>
 
 QT_BEGIN_HEADER
 

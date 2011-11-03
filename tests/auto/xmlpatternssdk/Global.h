@@ -44,8 +44,8 @@
 
 #include <QString>
 
-#include "private/qitem_p.h"
-#include "private/qnamepool_p.h"
+#include <private/qitem_p.h>
+#include <private/qnamepool_p.h>
 
 #if defined(Q_OS_WIN) || defined(Q_OS_SYMBIAN)
 #   ifdef Q_PATTERNISTSDK_BUILDING

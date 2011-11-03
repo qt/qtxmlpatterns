@@ -52,7 +52,7 @@
 #ifndef Patternist_GMonth_H
 #define Patternist_GMonth_H
 
-#include "qabstractdatetime_p.h"
+#include <private/qabstractdatetime_p.h>
 
 QT_BEGIN_HEADER
 

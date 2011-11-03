@@ -52,20 +52,20 @@
 #ifndef Patternist_XsdSchemaParser_H
 #define Patternist_XsdSchemaParser_H
 
-#include "qnamespacesupport_p.h"
-#include "qxsdalternative_p.h"
-#include "qxsdattribute_p.h"
-#include "qxsdattributegroup_p.h"
-#include "qxsdattributeterm_p.h"
-#include "qxsdcomplextype_p.h"
-#include "qxsdelement_p.h"
-#include "qxsdidcache_p.h"
-#include "qxsdmodelgroup_p.h"
-#include "qxsdnotation_p.h"
-#include "qxsdsimpletype_p.h"
-#include "qxsdschemacontext_p.h"
-#include "qxsdschemaparsercontext_p.h"
-#include "qxsdstatemachine_p.h"
+#include <private/qnamespacesupport_p.h>
+#include <private/qxsdalternative_p.h>
+#include <private/qxsdattribute_p.h>
+#include <private/qxsdattributegroup_p.h>
+#include <private/qxsdattributeterm_p.h>
+#include <private/qxsdcomplextype_p.h>
+#include <private/qxsdelement_p.h>
+#include <private/qxsdidcache_p.h>
+#include <private/qxsdmodelgroup_p.h>
+#include <private/qxsdnotation_p.h>
+#include <private/qxsdsimpletype_p.h>
+#include <private/qxsdschemacontext_p.h>
+#include <private/qxsdschemaparsercontext_p.h>
+#include <private/qxsdstatemachine_p.h>
 
 #include <QtCore/QHash>
 #include <QtCore/QSet>

@@ -52,9 +52,9 @@
 #ifndef Patternist_BuiltinAtomicTypes_H
 #define Patternist_BuiltinAtomicTypes_H
 
-#include "qatomiccasterlocators_p.h"
-#include "qatomiccomparatorlocators_p.h"
-#include "qbuiltinatomictype_p.h"
+#include <private/qatomiccasterlocators_p.h>
+#include <private/qatomiccomparatorlocators_p.h>
+#include <private/qbuiltinatomictype_p.h>
 
 QT_BEGIN_HEADER
 

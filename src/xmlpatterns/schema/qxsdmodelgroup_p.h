@@ -52,8 +52,8 @@
 #ifndef Patternist_XsdModelGroup_H
 #define Patternist_XsdModelGroup_H
 
-#include "qxsdparticle_p.h"
-#include "qxsdterm_p.h"
+#include <private/qxsdparticle_p.h>
+#include <private/qxsdterm_p.h>
 
 QT_BEGIN_HEADER
 

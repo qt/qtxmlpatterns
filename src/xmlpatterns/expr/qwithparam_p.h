@@ -52,7 +52,7 @@
 #ifndef Patternist_TemplateParam_H
 #define Patternist_TemplateParam_H
 
-#include "qfunctionargument_p.h"
+#include <private/qfunctionargument_p.h>
 
 QT_BEGIN_HEADER
 

@@ -57,8 +57,8 @@
 #include <QString>
 #include <QUrl>
 
-#include "qparsercontext_p.h"
-#include "qtokensource_p.h"
+#include <private/qparsercontext_p.h>
+#include <private/qtokensource_p.h>
 
 /**
  * @file
@@ -136,7 +136,7 @@ QT_END_NAMESPACE
  */
 #define YYSTYPE QPatternist::TokenValue
 
-#include "qquerytransformparser_p.h" /* This inclusion must be after TokenValue. */
+#include <private/qquerytransformparser_p.h> /* This inclusion must be after TokenValue. */
 
 QT_BEGIN_NAMESPACE
 

@@ -56,8 +56,8 @@ template<typename T> class QList;
 
 #include <QSharedData>
 
-#include "qcardinality_p.h"
-#include "qitemtype_p.h"
+#include <private/qcardinality_p.h>
+#include <private/qitemtype_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,12 +52,12 @@
 #ifndef Patternist_XsdSchemaParserContext_H
 #define Patternist_XsdSchemaParserContext_H
 
-#include "qmaintainingreader_p.h" // for definition of ElementDescription
-#include "qxsdschematoken_p.h"
-#include "qxsdschema_p.h"
-#include "qxsdschemachecker_p.h"
-#include "qxsdschemacontext_p.h"
-#include "qxsdschemaresolver_p.h"
+#include <private/qmaintainingreader_p.h> // for definition of ElementDescription
+#include <private/qxsdschematoken_p.h>
+#include <private/qxsdschema_p.h>
+#include <private/qxsdschemachecker_p.h>
+#include <private/qxsdschemacontext_p.h>
+#include <private/qxsdschemaresolver_p.h>
 
 #include <QtCore/QSharedData>
 

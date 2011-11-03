@@ -52,10 +52,10 @@
 #ifndef Patternist_QNameConstructor_H
 #define Patternist_QNameConstructor_H
 
-#include "qsinglecontainer_p.h"
-#include "qbuiltintypes_p.h"
-#include "qpatternistlocale_p.h"
-#include "qxpathhelper_p.h"
+#include <private/qsinglecontainer_p.h>
+#include <private/qbuiltintypes_p.h>
+#include <private/qpatternistlocale_p.h>
+#include <private/qxpathhelper_p.h>
 
 QT_BEGIN_HEADER
 

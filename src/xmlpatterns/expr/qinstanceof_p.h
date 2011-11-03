@@ -52,7 +52,7 @@
 #ifndef Patternist_InstanceOf_H
 #define Patternist_InstanceOf_H
 
-#include "qsinglecontainer_p.h"
+#include <private/qsinglecontainer_p.h>
 
 QT_BEGIN_HEADER
 

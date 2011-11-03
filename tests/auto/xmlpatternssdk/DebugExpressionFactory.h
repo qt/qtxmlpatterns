@@ -43,8 +43,8 @@
 #define PatternistSDK_DebugExpressionFactory_H
 
 #include "Global.h"
-#include "qexpressionfactory_p.h"
-#include "qfunctionfactory_p.h"
+#include <private/qexpressionfactory_p.h>
+#include <private/qfunctionfactory_p.h>
 
 QT_BEGIN_HEADER
 

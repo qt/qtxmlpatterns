@@ -52,10 +52,10 @@
 #ifndef Patternist_ResourceLoader_H
 #define Patternist_ResourceLoader_H
 
-#include "qitem_p.h"
-#include "qreportcontext_p.h"
-#include "qsequencetype_p.h"
-#include "qsourcelocationreflection_p.h"
+#include <private/qitem_p.h>
+#include <private/qreportcontext_p.h>
+#include <private/qsequencetype_p.h>
+#include <private/qsourcelocationreflection_p.h>
 
 QT_BEGIN_HEADER
 

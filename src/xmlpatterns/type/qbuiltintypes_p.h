@@ -52,13 +52,13 @@
 #ifndef Patternist_BuiltinTypes_H
 #define Patternist_BuiltinTypes_H
 
-#include "qanynodetype_p.h"
-#include "qanysimpletype_p.h"
-#include "qanytype_p.h"
-#include "qbuiltinatomictype_p.h"
-#include "qitemtype_p.h"
-#include "qnumerictype_p.h"
-#include "quntyped_p.h"
+#include <private/qanynodetype_p.h>
+#include <private/qanysimpletype_p.h>
+#include <private/qanytype_p.h>
+#include <private/qbuiltinatomictype_p.h>
+#include <private/qitemtype_p.h>
+#include <private/qnumerictype_p.h>
+#include <private/quntyped_p.h>
 
 QT_BEGIN_HEADER
 

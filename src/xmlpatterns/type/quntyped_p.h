@@ -52,7 +52,7 @@
 #ifndef Patternist_Untyped_H
 #define Patternist_Untyped_H
 
-#include "qanytype_p.h"
+#include <private/qanytype_p.h>
 
 QT_BEGIN_HEADER
 

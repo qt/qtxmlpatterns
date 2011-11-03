@@ -58,14 +58,14 @@
  * and <tt>fn:min()</tt>, MinFN, and the class ComparingAggregator.
  */
 
-#include "qabstractfloat_p.h"
-#include "qdecimal_p.h"
-#include "qcastingplatform_p.h"
-#include "qcomparisonplatform_p.h"
-#include "qliteral_p.h"
-#include "qaggregator_p.h"
-#include "quntypedatomicconverter_p.h"
-#include "qpatternistlocale_p.h"
+#include <private/qabstractfloat_p.h>
+#include <private/qdecimal_p.h>
+#include <private/qcastingplatform_p.h>
+#include <private/qcomparisonplatform_p.h>
+#include <private/qliteral_p.h>
+#include <private/qaggregator_p.h>
+#include <private/quntypedatomicconverter_p.h>
+#include <private/qpatternistlocale_p.h>
 
 QT_BEGIN_HEADER
 

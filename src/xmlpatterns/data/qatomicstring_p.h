@@ -54,7 +54,7 @@
 
 #include <QUrl>
 
-#include "qitem_p.h"
+#include <private/qitem_p.h>
 
 QT_BEGIN_HEADER
 

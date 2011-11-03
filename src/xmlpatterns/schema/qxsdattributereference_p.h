@@ -52,7 +52,7 @@
 #ifndef Patternist_XsdAttributeReference_H
 #define Patternist_XsdAttributeReference_H
 
-#include "qxsdattributeuse_p.h"
+#include <private/qxsdattributeuse_p.h>
 
 #include <QtXmlPatterns/QSourceLocation>
 

@@ -52,7 +52,7 @@
 #ifndef Patternist_TripleContainer_H
 #define Patternist_TripleContainer_H
 
-#include "qexpression_p.h"
+#include <private/qexpression_p.h>
 
 QT_BEGIN_HEADER
 

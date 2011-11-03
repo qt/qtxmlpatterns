@@ -52,10 +52,10 @@
 #ifndef Patternist_XPathHelper_H
 #define Patternist_XPathHelper_H
 
-#include "qcommonnamespaces_p.h"
-#include "qitem_p.h"
-#include "qpatternistlocale_p.h"
-#include "qreportcontext_p.h"
+#include <private/qcommonnamespaces_p.h>
+#include <private/qitem_p.h>
+#include <private/qpatternistlocale_p.h>
+#include <private/qreportcontext_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,7 +52,7 @@
 #ifndef Patternist_SystemPropertyFN_H
 #define Patternist_SystemPropertyFN_H
 
-#include "qstaticnamespacescontainer_p.h"
+#include <private/qstaticnamespacescontainer_p.h>
 
 QT_BEGIN_HEADER
 

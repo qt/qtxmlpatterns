@@ -52,7 +52,7 @@
 #ifndef Patternist_PatternMatchingFNs_H
 #define Patternist_PatternMatchingFNs_H
 
-#include "qpatternplatform_p.h"
+#include <private/qpatternplatform_p.h>
 
 /**
  * @file

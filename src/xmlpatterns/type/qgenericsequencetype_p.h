@@ -52,8 +52,8 @@
 #ifndef Patternist_GenericSequenceType_H
 #define Patternist_GenericSequenceType_H
 
-#include "qcommonsequencetypes_p.h"
-#include "qsequencetype_p.h"
+#include <private/qcommonsequencetypes_p.h>
+#include <private/qsequencetype_p.h>
 
 QT_BEGIN_HEADER
 

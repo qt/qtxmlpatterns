@@ -56,7 +56,7 @@ QT_BEGIN_HEADER
 
 QT_BEGIN_NAMESPACE
 
-#include "qarithmeticexpression_p.h"
+#include <private/qarithmeticexpression_p.h>
 
 namespace QPatternist
 {

@@ -52,9 +52,9 @@
 #ifndef Patternist_OptimizationBlocks_H
 #define Patternist_OptimizationBlocks_H
 
-#include "qatomiccomparator_p.h"
-#include "qexpression_p.h"
-#include "qoptimizerframework_p.h"
+#include <private/qatomiccomparator_p.h>
+#include <private/qexpression_p.h>
+#include <private/qoptimizerframework_p.h>
 
 QT_BEGIN_HEADER
 

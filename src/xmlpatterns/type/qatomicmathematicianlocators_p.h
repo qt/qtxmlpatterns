@@ -52,8 +52,8 @@
 #ifndef Patternist_AtomicMathematicianLocators_H
 #define Patternist_AtomicMathematicianLocators_H
 
-#include "qatomicmathematician_p.h"
-#include "qatomicmathematicianlocator_p.h"
+#include <private/qatomicmathematician_p.h>
+#include <private/qatomicmathematicianlocator_p.h>
 
 /**
  * @file

@@ -52,10 +52,10 @@
 #ifndef Patternist_XsdNotation_H
 #define Patternist_XsdNotation_H
 
-#include "qanyuri_p.h"
-#include "qderivedstring_p.h"
-#include "qnamedschemacomponent_p.h"
-#include "qxsdannotated_p.h"
+#include <private/qanyuri_p.h>
+#include <private/qderivedstring_p.h>
+#include <private/qnamedschemacomponent_p.h>
+#include <private/qxsdannotated_p.h>
 
 #include <QtCore/QList>
 

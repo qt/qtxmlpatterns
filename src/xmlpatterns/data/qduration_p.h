@@ -52,7 +52,7 @@
 #ifndef Patternist_Duration_H
 #define Patternist_Duration_H
 
-#include "qabstractduration_p.h"
+#include <private/qabstractduration_p.h>
 
 QT_BEGIN_HEADER
 

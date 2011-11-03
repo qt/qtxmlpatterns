@@ -52,9 +52,9 @@
 #ifndef Patternist_ExternalVariableLoader_H
 #define Patternist_ExternalVariableLoader_H
 
-#include "qitem_p.h"
-#include "qsequencetype_p.h"
-#include "qxmlname.h"
+#include <private/qitem_p.h>
+#include <private/qsequencetype_p.h>
+#include <QXmlName>
 
 QT_BEGIN_HEADER
 

@@ -52,10 +52,10 @@
 #ifndef Patternist_XsdAlternative_H
 #define Patternist_XsdAlternative_H
 
-#include "qnamedschemacomponent_p.h"
-#include "qschematype_p.h"
-#include "qxsdannotated_p.h"
-#include "qxsdxpathexpression_p.h"
+#include <private/qnamedschemacomponent_p.h>
+#include <private/qschematype_p.h>
+#include <private/qxsdannotated_p.h>
+#include <private/qxsdxpathexpression_p.h>
 
 #include <QtCore/QList>
 

@@ -52,8 +52,8 @@
 #ifndef Patternist_TimezoneFNs_H
 #define Patternist_TimezoneFNs_H
 
-#include "qatomiccomparator_p.h"
-#include "qfunctioncall_p.h"
+#include <private/qatomiccomparator_p.h>
+#include <private/qfunctioncall_p.h>
 
 /**
  * @file

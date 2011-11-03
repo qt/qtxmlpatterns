@@ -43,8 +43,8 @@
 #include <QPointer>
 #include <QVariant>
 
-#include "qreportcontext_p.h"
-#include "qcommonnamespaces_p.h"
+#include <private/qreportcontext_p.h>
+#include <private/qcommonnamespaces_p.h>
 
 #include "ErrorItem.h"
 

@@ -52,7 +52,7 @@
 #ifndef Patternist_AtomicTypeVisitorResultLocator_H
 #define Patternist_AtomicTypeVisitorResultLocator_H
 
-#include "qatomictypedispatch_p.h"
+#include <private/qatomictypedispatch_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,7 +52,7 @@
 #ifndef Patternist_EmptyContainer_H
 #define Patternist_EmptyContainer_H
 
-#include "qexpression_p.h"
+#include <private/qexpression_p.h>
 
 QT_BEGIN_HEADER
 

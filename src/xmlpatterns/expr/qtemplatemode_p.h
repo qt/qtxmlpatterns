@@ -55,7 +55,7 @@
 #include <QtCore/QSharedData>
 #include <QXmlName>
 
-#include "qtemplatepattern_p.h"
+#include <private/qtemplatepattern_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

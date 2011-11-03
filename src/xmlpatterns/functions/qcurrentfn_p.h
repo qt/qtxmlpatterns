@@ -52,7 +52,7 @@
 #ifndef Patternist_CurrentFN_H
 #define Patternist_CurrentFN_H
 
-#include "qfunctioncall_p.h"
+#include <private/qfunctioncall_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,11 +52,11 @@
 #ifndef Patternist_ComparisonFactory_H
 #define Patternist_ComparisonFactory_H
 
-#include "qatomiccomparator_p.h"
-#include "qderivedstring_p.h"
-#include "qitem_p.h"
-#include "qreportcontext_p.h"
-#include "qschematype_p.h"
+#include <private/qatomiccomparator_p.h>
+#include <private/qderivedstring_p.h>
+#include <private/qitem_p.h>
+#include <private/qreportcontext_p.h>
+#include <private/qschematype_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

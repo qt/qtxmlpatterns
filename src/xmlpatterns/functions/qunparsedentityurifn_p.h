@@ -52,7 +52,7 @@
 #ifndef Patternist_UnparsedEntityURIFN_H
 #define Patternist_UnparsedEntityURIFN_H
 
-#include "qcontextnodechecker_p.h"
+#include <private/qcontextnodechecker_p.h>
 
 QT_BEGIN_HEADER
 

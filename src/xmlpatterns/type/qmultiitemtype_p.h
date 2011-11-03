@@ -54,7 +54,7 @@
 
 #include <QList>
 
-#include "qitemtype_p.h"
+#include <private/qitemtype_p.h>
 
 QT_BEGIN_HEADER
 

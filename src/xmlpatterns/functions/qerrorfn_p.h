@@ -52,7 +52,7 @@
 #ifndef Patternist_ErrorFN_H
 #define Patternist_ErrorFN_H
 
-#include "qfunctioncall_p.h"
+#include <private/qfunctioncall_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,8 +52,8 @@
 #ifndef Patternist_FunctionAvailableFN_H
 #define Patternist_FunctionAvailableFN_H
 
-#include "qstaticnamespacescontainer_p.h"
-#include "qfunctionfactory_p.h"
+#include <private/qstaticnamespacescontainer_p.h>
+#include <private/qfunctionfactory_p.h>
 
 QT_BEGIN_HEADER
 

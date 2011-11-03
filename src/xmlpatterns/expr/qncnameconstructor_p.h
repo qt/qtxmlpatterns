@@ -52,9 +52,9 @@
 #ifndef Patternist_NCNameConstructor_H
 #define Patternist_NCNameConstructor_H
 
-#include "qsinglecontainer_p.h"
-#include "qpatternistlocale_p.h"
-#include "private/qxmlutils_p.h"
+#include <private/qsinglecontainer_p.h>
+#include <private/qpatternistlocale_p.h>
+#include <private/qxmlutils_p.h>
 
 QT_BEGIN_HEADER
 

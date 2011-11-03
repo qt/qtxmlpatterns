@@ -52,9 +52,9 @@
 #ifndef QXMLRESULTITEMS_P_H
 #define QXMLRESULTITEMS_P_H
 
-#include "qcommonvalues_p.h"
-#include "qdynamiccontext_p.h"
-#include "qitem_p.h"
+#include <private/qcommonvalues_p.h>
+#include <private/qdynamiccontext_p.h>
+#include <private/qitem_p.h>
 
 QT_BEGIN_NAMESPACE
 

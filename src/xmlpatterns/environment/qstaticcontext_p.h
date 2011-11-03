@@ -52,12 +52,12 @@
 #ifndef Patternist_StaticContext_H
 #define Patternist_StaticContext_H
 
-#include "qexternalvariableloader_p.h"
-#include "qitemtype_p.h"
-#include "qnamepool_p.h"
-#include "qnamespaceresolver_p.h"
-#include "qreportcontext_p.h"
-#include "qresourceloader_p.h"
+#include <private/qexternalvariableloader_p.h>
+#include <private/qitemtype_p.h>
+#include <private/qnamepool_p.h>
+#include <private/qnamespaceresolver_p.h>
+#include <private/qreportcontext_p.h>
+#include <private/qresourceloader_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,13 +52,13 @@
 #ifndef Patternist_XsdComplexType_H
 #define Patternist_XsdComplexType_H
 
-#include "qanytype_p.h"
-#include "qxsdassertion_p.h"
-#include "qxsdattributeuse_p.h"
-#include "qxsdparticle_p.h"
-#include "qxsdsimpletype_p.h"
-#include "qxsduserschematype_p.h"
-#include "qxsdwildcard_p.h"
+#include <private/qanytype_p.h>
+#include <private/qxsdassertion_p.h>
+#include <private/qxsdattributeuse_p.h>
+#include <private/qxsdparticle_p.h>
+#include <private/qxsdsimpletype_p.h>
+#include <private/qxsduserschematype_p.h>
+#include <private/qxsdwildcard_p.h>
 
 #include <QtCore/QSet>
 

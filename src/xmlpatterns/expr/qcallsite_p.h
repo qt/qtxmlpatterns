@@ -52,9 +52,9 @@
 #ifndef Patternist_CallSite_H
 #define Patternist_CallSite_H
 
-#include "qunlimitedcontainer_p.h"
-#include "qcalltargetdescription_p.h"
-#include "qxmlname.h"
+#include <private/qunlimitedcontainer_p.h>
+#include <private/qcalltargetdescription_p.h>
+#include <QXmlName>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

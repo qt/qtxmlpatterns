@@ -54,7 +54,7 @@
 
 #include <QSharedData>
 
-#include "qexpression_p.h"
+#include <private/qexpression_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,7 +52,7 @@
 #ifndef Patternist_XsdSchemaDebugger_H
 #define Patternist_XsdSchemaDebugger_H
 
-#include "qxsdschema_p.h"
+#include <private/qxsdschema_p.h>
 
 QT_BEGIN_HEADER
 

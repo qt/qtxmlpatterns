@@ -52,7 +52,7 @@
 #ifndef Patternist_AbstractNodeTest_H
 #define Patternist_AbstractNodeTest_H
 
-#include "qanynodetype_p.h"
+#include <private/qanynodetype_p.h>
 
 QT_BEGIN_HEADER
 

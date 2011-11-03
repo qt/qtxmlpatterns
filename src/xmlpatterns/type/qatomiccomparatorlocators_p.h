@@ -52,7 +52,7 @@
 #ifndef Patternist_AtomicComparatorLocators_H
 #define Patternist_AtomicComparatorLocators_H
 
-#include "qatomiccomparatorlocator_p.h"
+#include <private/qatomiccomparatorlocator_p.h>
 
 /**
  * @file

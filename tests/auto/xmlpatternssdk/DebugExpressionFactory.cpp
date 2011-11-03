@@ -44,7 +44,7 @@
 #include <QtDebug>
 #include <QXmlNamePool>
 
-#include "qfunctionfactorycollection_p.h"
+#include <private/qfunctionfactorycollection_p.h>
 
 #include "ASTItem.h"
 #include "ExpressionInfo.h"

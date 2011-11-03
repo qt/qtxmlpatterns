@@ -56,10 +56,10 @@
 #include <QStack>
 #include <QUrl>
 
-#include "qmaintainingreader_p.h"
-#include "qreportcontext_p.h"
-#include "qtokenizer_p.h"
-#include "qxslttokenlookup_p.h"
+#include <private/qmaintainingreader_p.h>
+#include <private/qreportcontext_p.h>
+#include <private/qtokenizer_p.h>
+#include <private/qxslttokenlookup_p.h>
 
 QT_BEGIN_HEADER
 

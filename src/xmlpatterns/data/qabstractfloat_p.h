@@ -56,11 +56,11 @@
 
 #include <qnumeric.h>
 
-#include "qcommonvalues_p.h"
-#include "qdecimal_p.h"
-#include "qschemanumeric_p.h"
-#include "qvalidationerror_p.h"
-#include "qbuiltintypes_p.h"
+#include <private/qcommonvalues_p.h>
+#include <private/qdecimal_p.h>
+#include <private/qschemanumeric_p.h>
+#include <private/qvalidationerror_p.h>
+#include <private/qbuiltintypes_p.h>
 
 QT_BEGIN_HEADER
 

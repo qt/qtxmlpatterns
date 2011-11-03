@@ -46,7 +46,7 @@
 #include <QString>
 #include <QUrl>
 
-#include "qexternalvariableloader_p.h"
+#include <private/qexternalvariableloader_p.h>
 
 #include "TestBaseLine.h"
 #include "TestCase.h"

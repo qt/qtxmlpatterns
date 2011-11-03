@@ -52,14 +52,14 @@
 #ifndef Patternist_XsdSchemaChecker_H
 #define Patternist_XsdSchemaChecker_H
 
-#include "qschematype_p.h"
-#include "qxsdattribute_p.h"
-#include "qxsdattributegroup_p.h"
-#include "qxsdelement_p.h"
-#include "qxsdmodelgroup_p.h"
-#include "qxsdnotation_p.h"
-#include "qxsdschema_p.h"
-#include "qxsdsimpletype_p.h"
+#include <private/qschematype_p.h>
+#include <private/qxsdattribute_p.h>
+#include <private/qxsdattributegroup_p.h>
+#include <private/qxsdelement_p.h>
+#include <private/qxsdmodelgroup_p.h>
+#include <private/qxsdnotation_p.h>
+#include <private/qxsdschema_p.h>
+#include <private/qxsdsimpletype_p.h>
 
 #include <QtCore/QExplicitlySharedDataPointer>
 

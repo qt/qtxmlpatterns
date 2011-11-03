@@ -52,10 +52,10 @@
 #ifndef Patternist_XsdValidatingInstanceReader_H
 #define Patternist_XsdValidatingInstanceReader_H
 
-#include "qxsdidchelper_p.h"
-#include "qxsdinstancereader_p.h"
-#include "qxsdstatemachine_p.h"
-#include "qxsdvalidatedxmlnodemodel_p.h"
+#include <private/qxsdidchelper_p.h>
+#include <private/qxsdinstancereader_p.h>
+#include <private/qxsdstatemachine_p.h>
+#include <private/qxsdvalidatedxmlnodemodel_p.h>
 
 #include <QtCore/QStack>
 

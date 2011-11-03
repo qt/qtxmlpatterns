@@ -52,7 +52,7 @@
 #ifndef Patternist_ContextItem_H
 #define Patternist_ContextItem_H
 
-#include "qemptycontainer_p.h"
+#include <private/qemptycontainer_p.h>
 
 QT_BEGIN_HEADER
 

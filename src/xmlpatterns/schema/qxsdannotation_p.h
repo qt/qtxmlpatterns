@@ -52,9 +52,9 @@
 #ifndef Patternist_XsdAnnotation_H
 #define Patternist_XsdAnnotation_H
 
-#include "qderivedstring_p.h"
-#include "qxsdapplicationinformation_p.h"
-#include "qxsddocumentation_p.h"
+#include <private/qderivedstring_p.h>
+#include <private/qxsdapplicationinformation_p.h>
+#include <private/qxsddocumentation_p.h>
 
 QT_BEGIN_HEADER
 

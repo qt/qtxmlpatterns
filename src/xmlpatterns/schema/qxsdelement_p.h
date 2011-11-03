@@ -52,11 +52,11 @@
 #ifndef Patternist_XsdElement_H
 #define Patternist_XsdElement_H
 
-#include "qschemacomponent_p.h"
-#include "qschematype_p.h"
-#include "qxsdalternative_p.h"
-#include "qxsdidentityconstraint_p.h"
-#include "qxsdcomplextype_p.h"
+#include <private/qschemacomponent_p.h>
+#include <private/qschematype_p.h>
+#include <private/qxsdalternative_p.h>
+#include <private/qxsdidentityconstraint_p.h>
+#include <private/qxsdcomplextype_p.h>
 
 #include <QtCore/QList>
 #include <QtCore/QSet>

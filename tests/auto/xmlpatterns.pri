@@ -16,19 +16,3 @@ if(!debug_and_release|build_pass):CONFIG(debug, debug|release) {
     else:win32: XMLPATTERNS_SDK = $${XMLPATTERNS_SDK}d
     else:       XMLPATTERNS_SDK = $${XMLPATTERNS_SDK}_debug
 }
-
-XMLPATTERNS_SOURCES = $$QT.xmlpatterns.sources
-INCLUDEPATH += \
-               $$XMLPATTERNS_SOURCES/acceltree \
-               $$XMLPATTERNS_SOURCES/api \
-               $$XMLPATTERNS_SOURCES/data \
-               $$XMLPATTERNS_SOURCES/environment \
-               $$XMLPATTERNS_SOURCES/expr \
-               $$XMLPATTERNS_SOURCES/functions \
-               $$XMLPATTERNS_SOURCES/iterators \
-               $$XMLPATTERNS_SOURCES/janitors \
-               $$XMLPATTERNS_SOURCES/parser \
-               $$XMLPATTERNS_SOURCES/projection \
-               $$XMLPATTERNS_SOURCES/schema \
-               $$XMLPATTERNS_SOURCES/type \
-               $$XMLPATTERNS_SOURCES/utils

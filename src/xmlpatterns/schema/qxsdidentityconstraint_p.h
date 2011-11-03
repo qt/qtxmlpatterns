@@ -52,9 +52,9 @@
 #ifndef Patternist_XsdIdentityConstraint_H
 #define Patternist_XsdIdentityConstraint_H
 
-#include "qnamedschemacomponent_p.h"
-#include "qxsdannotated_p.h"
-#include "qxsdxpathexpression_p.h"
+#include <private/qnamedschemacomponent_p.h>
+#include <private/qxsdannotated_p.h>
+#include <private/qxsdxpathexpression_p.h>
 
 #include <QtCore/QStringList>
 

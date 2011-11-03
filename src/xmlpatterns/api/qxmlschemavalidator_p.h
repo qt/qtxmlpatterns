@@ -54,13 +54,13 @@
 
 #include "qabstractmessagehandler.h"
 #include "qabstracturiresolver.h"
-#include "qautoptr_p.h"
-#include "qcoloringmessagehandler_p.h"
+#include <private/qautoptr_p.h>
+#include <private/qcoloringmessagehandler_p.h>
 #include "qxmlschema.h"
-#include "qxmlschema_p.h"
+#include <private/qxmlschema_p.h>
 
-#include "qxsdschemacontext_p.h"
-#include "qxsdschema_p.h"
+#include <private/qxsdschemacontext_p.h>
+#include <private/qxsdschema_p.h>
 
 #include <QtNetwork/QNetworkAccessManager>
 

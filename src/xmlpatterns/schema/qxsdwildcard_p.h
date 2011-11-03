@@ -52,7 +52,7 @@
 #ifndef Patternist_XsdWildcard_H
 #define Patternist_XsdWildcard_H
 
-#include "qxsdterm_p.h"
+#include <private/qxsdterm_p.h>
 
 #include <QtCore/QSet>
 

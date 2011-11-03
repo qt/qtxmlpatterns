@@ -52,9 +52,9 @@
 #ifndef Patternist_XsdAttribute_H
 #define Patternist_XsdAttribute_H
 
-#include "qanysimpletype_p.h"
-#include "qnamedschemacomponent_p.h"
-#include "qxsdannotated_p.h"
+#include <private/qanysimpletype_p.h>
+#include <private/qnamedschemacomponent_p.h>
+#include <private/qxsdannotated_p.h>
 
 #include <QtCore/QList>
 

@@ -52,9 +52,9 @@
 #ifndef Patternist_XsdUserSchemaType_H
 #define Patternist_XsdUserSchemaType_H
 
-#include "qnamedschemacomponent_p.h"
-#include "qschematype_p.h"
-#include "qxsdannotated_p.h"
+#include <private/qnamedschemacomponent_p.h>
+#include <private/qschematype_p.h>
+#include <private/qxsdannotated_p.h>
 
 template<typename N, typename M> class QHash;
 template<typename N> class QList;

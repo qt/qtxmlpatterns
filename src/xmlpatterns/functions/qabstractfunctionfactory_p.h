@@ -52,9 +52,9 @@
 #ifndef Patternist_AbstractFunctionFactory_H
 #define Patternist_AbstractFunctionFactory_H
 
-#include "qcommonnamespaces_p.h"
-#include "qfunctionfactory_p.h"
-#include "qfunctionsignature_p.h"
+#include <private/qcommonnamespaces_p.h>
+#include <private/qfunctionfactory_p.h>
+#include <private/qfunctionsignature_p.h>
 
 QT_BEGIN_HEADER
 

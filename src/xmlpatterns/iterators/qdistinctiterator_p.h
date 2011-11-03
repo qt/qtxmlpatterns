@@ -54,11 +54,11 @@
 
 #include <QList>
 
-#include "qexpression_p.h"
-#include "qitem_p.h"
-#include "qatomiccomparator_p.h"
-#include "qcomparisonplatform_p.h"
-#include "qsourcelocationreflection_p.h"
+#include <private/qexpression_p.h>
+#include <private/qitem_p.h>
+#include <private/qatomiccomparator_p.h>
+#include <private/qcomparisonplatform_p.h>
+#include <private/qsourcelocationreflection_p.h>
 
 QT_BEGIN_HEADER
 

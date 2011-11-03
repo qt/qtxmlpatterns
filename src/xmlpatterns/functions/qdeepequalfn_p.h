@@ -52,9 +52,9 @@
 #ifndef Patternist_DeepEqualFN_H
 #define Patternist_DeepEqualFN_H
 
-#include "qatomiccomparator_p.h"
-#include "qcomparisonplatform_p.h"
-#include "qfunctioncall_p.h"
+#include <private/qatomiccomparator_p.h>
+#include <private/qcomparisonplatform_p.h>
+#include <private/qfunctioncall_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,8 +52,8 @@
 #ifndef Patternist_DocumentContentValidator_H
 #define Patternist_DocumentContentValidator_H
 
-#include "qdynamiccontext_p.h"
-#include "qexpression_p.h"
+#include <private/qdynamiccontext_p.h>
+#include <private/qexpression_p.h>
 #include "qabstractxmlreceiver.h"
 
 QT_BEGIN_HEADER

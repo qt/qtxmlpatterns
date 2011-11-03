@@ -52,9 +52,9 @@
 #ifndef Patternist_SchemaType_H
 #define Patternist_SchemaType_H
 
-#include "qnamepool_p.h"
-#include "qschemacomponent_p.h"
-#include "qxmlname.h"
+#include <private/qnamepool_p.h>
+#include <private/qschemacomponent_p.h>
+#include <QXmlName>
 
 template<typename N, typename M> class QHash;
 template<typename N> class QList;

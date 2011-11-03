@@ -52,7 +52,7 @@
 #ifndef Patternist_XsdAnnotated_H
 #define Patternist_XsdAnnotated_H
 
-#include "qxsdannotation_p.h"
+#include <private/qxsdannotation_p.h>
 
 QT_BEGIN_HEADER
 

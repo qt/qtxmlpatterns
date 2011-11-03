@@ -52,8 +52,8 @@
 #ifndef Patternist_ItemMappingIterator_H
 #define Patternist_ItemMappingIterator_H
 
-#include "qabstractxmlforwarditerator_p.h"
-#include "qdynamiccontext_p.h"
+#include <private/qabstractxmlforwarditerator_p.h>
+#include <private/qdynamiccontext_p.h>
 
 QT_BEGIN_HEADER
 

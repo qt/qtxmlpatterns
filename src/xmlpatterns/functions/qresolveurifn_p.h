@@ -52,7 +52,7 @@
 #ifndef Patternist_ResolveURIFN_H
 #define Patternist_ResolveURIFN_H
 
-#include "qfunctioncall_p.h"
+#include <private/qfunctioncall_p.h>
 
 QT_BEGIN_HEADER
 

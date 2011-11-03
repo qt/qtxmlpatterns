@@ -54,7 +54,7 @@
 
 #include <QUrl>
 
-#include "qfunctioncall_p.h"
+#include <private/qfunctioncall_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

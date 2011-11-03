@@ -52,15 +52,15 @@
 #ifndef Patternist_DynamicContext_H
 #define Patternist_DynamicContext_H
 
-#include "qautoptr_p.h"
-#include "qcachecells_p.h"
-#include "qexternalvariableloader_p.h"
-#include "qitem_p.h"
-#include "qnamepool_p.h"
-#include "qnodebuilder_p.h"
-#include "qprimitives_p.h"
-#include "qreportcontext_p.h"
-#include "qresourceloader_p.h"
+#include <private/qautoptr_p.h>
+#include <private/qcachecells_p.h>
+#include <private/qexternalvariableloader_p.h>
+#include <private/qitem_p.h>
+#include <private/qnamepool_p.h>
+#include <private/qnodebuilder_p.h>
+#include <private/qprimitives_p.h>
+#include <private/qreportcontext_p.h>
+#include <private/qresourceloader_p.h>
 
 QT_BEGIN_HEADER
 

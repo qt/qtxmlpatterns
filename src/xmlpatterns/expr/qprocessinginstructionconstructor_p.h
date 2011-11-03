@@ -52,7 +52,7 @@
 #ifndef Patternist_ProcessingInstructionConstructor_H
 #define Patternist_ProcessingInstructionConstructor_H
 
-#include "qpaircontainer_p.h"
+#include <private/qpaircontainer_p.h>
 
 QT_BEGIN_HEADER
 

@@ -52,7 +52,7 @@
 #ifndef Patternist_SubsequenceIterator_H
 #define Patternist_SubsequenceIterator_H
 
-#include "qitem_p.h"
+#include <private/qitem_p.h>
 
 QT_BEGIN_HEADER
 

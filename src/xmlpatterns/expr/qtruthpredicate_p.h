@@ -52,7 +52,7 @@
 #ifndef Patternist_TruthPredicate_H
 #define Patternist_TruthPredicate_H
 
-#include "qgenericpredicate_p.h"
+#include <private/qgenericpredicate_p.h>
 
 QT_BEGIN_HEADER
 

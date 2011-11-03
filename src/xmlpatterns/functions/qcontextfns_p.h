@@ -52,7 +52,7 @@
 #ifndef Patternist_ContextFNs_H
 #define Patternist_ContextFNs_H
 
-#include "qfunctioncall_p.h"
+#include <private/qfunctioncall_p.h>
 
 /**
  * @file

@@ -52,10 +52,10 @@
 #ifndef Patternist_XsdParticleChecker_H
 #define Patternist_XsdParticleChecker_H
 
-#include "qxsdelement_p.h"
-#include "qxsdparticle_p.h"
-#include "qxsdschemacontext_p.h"
-#include "qxsdwildcard_p.h"
+#include <private/qxsdelement_p.h>
+#include <private/qxsdparticle_p.h>
+#include <private/qxsdschemacontext_p.h>
+#include <private/qxsdwildcard_p.h>
 
 QT_BEGIN_HEADER
 

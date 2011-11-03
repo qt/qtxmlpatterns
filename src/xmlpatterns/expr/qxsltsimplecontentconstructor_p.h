@@ -52,7 +52,7 @@
 #ifndef Patternist_XSLTSimpleContentConstructor_H
 #define Patternist_XSLTSimpleContentConstructor_H
 
-#include "qsimplecontentconstructor_p.h"
+#include <private/qsimplecontentconstructor_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

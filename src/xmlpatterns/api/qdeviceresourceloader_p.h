@@ -55,7 +55,7 @@
 template<typename T> class QSet;
 class QUrl;
 
-#include "qresourceloader_p.h"
+#include <private/qresourceloader_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

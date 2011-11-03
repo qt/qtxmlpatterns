@@ -52,7 +52,7 @@
 #ifndef Patternist_ApplyTemplate_H
 #define Patternist_ApplyTemplate_H
 
-#include "qtemplatemode_p.h"
+#include <private/qtemplatemode_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

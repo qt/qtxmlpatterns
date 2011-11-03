@@ -54,7 +54,7 @@
 
 #include <QSet>
 
-#include "qtokenizer_p.h"
+#include <private/qtokenizer_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE

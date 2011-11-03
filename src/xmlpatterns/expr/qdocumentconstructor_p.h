@@ -54,7 +54,7 @@
 
 #include <QUrl>
 
-#include "qsinglecontainer_p.h"
+#include <private/qsinglecontainer_p.h>
 
 QT_BEGIN_HEADER
 
