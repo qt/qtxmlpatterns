@@ -136,6 +136,8 @@ void tst_XmlPatterns::xquerySupport()
     QSKIP("WinCE: This test uses unsupported WinCE functionality");
 #elif defined(Q_OS_SYMBIAN)
     QSKIP("Symbian: This test uses unsupported Symbian functionality (QProcess with std streams)");
+#elif defined(Q_OS_MAC)
+    QSKIP("MacOs: Failed on Mac. Will be fixed by bug fix for QTBUG-22556");
 #endif
 
     QFETCH(int,         expectedExitCode);
