@@ -96,6 +96,7 @@ public:
     }
 
 private Q_SLOTS:
+    void initTestCase();
     void defaultConstructor() const;
     void copyConstructor() const;
     void constructorQXmlNamePool() const;
@@ -256,6 +257,11 @@ private:
     int m_pushTestsCount;
     const bool m_testNetwork;
 };
+
+void tst_QXmlQuery::initTestCase()
+{
+    QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
+}
 
 void tst_QXmlQuery::checkBaseURI(const QUrl &baseURI, const QString &candidate)
 {

@@ -108,6 +108,8 @@ tst_XmlPatterns::tst_XmlPatterns() : m_generatedTests(0)
 
 void tst_XmlPatterns::initTestCase()
 {
+    QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
+
     QVERIFY(m_normalizeTestName.isValid());
     QVERIFY(m_filenameInStderr.isValid());
 
