@@ -44,7 +44,6 @@
 #include <QLibraryInfo>
 
 #include "../qxmlquery/TestFundament.h"
-#include "../network-settings.h"
 
 /*!
  \class tst_XmlPatterns
