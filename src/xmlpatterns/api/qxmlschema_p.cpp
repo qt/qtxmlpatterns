@@ -144,7 +144,7 @@ void QXmlSchemaPrivate::load(QIODevice *source, const QUrl &documentUri, const Q
         m_schemaParserContext->resolver()->resolve();
 
         m_schemaIsValid = true;
-    } catch (QPatternist::Exception exception) {
+    } catch (QPatternist::Exception) {
         m_schemaIsValid = false;
     }
 }

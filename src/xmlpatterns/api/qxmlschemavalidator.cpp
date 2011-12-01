@@ -201,7 +201,7 @@ bool QXmlSchemaValidator::validate(QIODevice *source, const QUrl &documentUri) c
     QPatternist::Item item;
     try {
         item = loader.openDocument(source, normalizedUri, d->m_context);
-    } catch (QPatternist::Exception exception) {
+    } catch (QPatternist::Exception) {
         return false;
     }
 
@@ -214,7 +214,7 @@ bool QXmlSchemaValidator::validate(QIODevice *source, const QUrl &documentUri) c
         reader.addSchema(d->m_schema, d->m_schemaDocumentUri);
     try {
         reader.read();
-    } catch (QPatternist::Exception exception) {
+    } catch (QPatternist::Exception) {
         return false;
     }
 
