@@ -49,6 +49,8 @@
 #include <QXmlQuery>
 #include <QXmlResultItems>
 #include <QXmlSerializer>
+#include <QFileInfo>
+#include <QDir>
 
 #include "TestNodeModel.h"
 #include "LoadingModel.h"
@@ -87,8 +89,15 @@ private:
     QXmlNodeModelIndex          m_rootNode;
 };
 
+const char testFileName[] = "tree.xml";
+
 void tst_QAbstractXmlNodeModel::initTestCase()
 {
+    const QString testFilePath = QFINDTESTDATA(testFileName);
+    QVERIFY2(!testFilePath.isEmpty(), "tree.xml not found");
+    const QString testDirectory = QFileInfo(testFilePath).absolutePath();
+    QVERIFY2(QDir::setCurrent(testDirectory), qPrintable(QStringLiteral("Could not chdir to ") + testDirectory));
+
     m_nodeModel = LoadingModel::create(m_namePool);
     QVERIFY(m_nodeModel);
     m_rootNode = m_nodeModel->root(QXmlNodeModelIndex());
@@ -173,7 +182,8 @@ void tst_QAbstractXmlNodeModel::nextFromSimpleAxis()
     /* Create the baseline. */
     {
         QXmlQuery openDoc(m_namePool);
-        openDoc.bindVariable(QLatin1String("docURI"), QVariant(inputFile(QLatin1String("tree.xml"))));
+        const QString testFilePath = QDir::currentPath() + QLatin1Char('/') + QLatin1String(testFileName);
+        openDoc.bindVariable(QLatin1String("docURI"), QVariant(testFilePath));
         openDoc.setQuery(QLatin1String("doc($docURI)"));
         QXmlResultItems doc;
         QVERIFY(openDoc.isValid());

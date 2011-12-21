@@ -40,6 +40,8 @@
 ****************************************************************************/
 
 #include <QtTest/QtTest>
+#include <QtCore/QDir>
+#include <QtCore/QFileInfo>
 
 #include "tst_suitetest.h"
 
@@ -63,7 +65,13 @@ tst_XmlPatternsSchemaTS::tst_XmlPatternsSchemaTS()
 
 void tst_XmlPatternsSchemaTS::catalogPath(QString &write) const
 {
-    write = QLatin1String("TESTSUITE/testSuites.xml");
+    const char testSuite[] = "TESTSUITE";
+    const QString testSuitePath = QFINDTESTDATA(testSuite);
+    if (!testSuitePath.isEmpty()) {
+        const QString testDirectory = QFileInfo(testSuitePath).absolutePath();
+        QVERIFY2(QDir::setCurrent(testDirectory), qPrintable(QStringLiteral("Could not chdir to ") + testDirectory));
+        write = QLatin1String(testSuite) + QStringLiteral("/testSuites.xml");
+    }
 }
 
 QTEST_MAIN(tst_XmlPatternsSchemaTS)
