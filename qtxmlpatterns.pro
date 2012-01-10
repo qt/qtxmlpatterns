@@ -21,3 +21,5 @@ SUBDIRS += module_qtxmlpatterns_src \
            module_qtxmlpatterns_tools \
            module_qtxmlpatterns_examples \
            module_qtxmlpatterns_tests \
+
+include (doc/doc.pri)
