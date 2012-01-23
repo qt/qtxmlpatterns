@@ -4,7 +4,7 @@ SOURCES += tst_xmlpatternsxqts.cpp ../qxmlquery/TestFundament.cpp tst_suitetest.
 include(../xmlpatterns.pri)
 
 HEADERS += tst_suitetest.h
-LIBS += -l$$XMLPATTERNS_SDK
+LIBS += -L$$QT.xmlpatterns.libs -l$$XMLPATTERNS_SDK
 
 # syncqt doesn't copy headers in tools/ so let's manually ensure
 # it works with shadow builds and source builds.

@@ -9,7 +9,7 @@ TARGET = tst_xmlpatternsdiagnosticsts
 
 HEADERS += ../xmlpatternsxqts/tst_suitetest.h
 SOURCES += ../xmlpatternsxqts/tst_suitetest.cpp
-LIBS += -l$$XMLPATTERNS_SDK
+LIBS += -L$$QT.xmlpatterns.libs -l$$XMLPATTERNS_SDK
 
 QT += xml testlib
 

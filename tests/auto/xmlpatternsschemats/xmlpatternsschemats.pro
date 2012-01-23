@@ -15,7 +15,7 @@ if(!debug_and_release|build_pass):CONFIG(debug, debug|release) {
     else:       PATTERNIST_SDK = $${PATTERNIST_SDK}_debug
 }
 
-LIBS += -l$$PATTERNIST_SDK
+LIBS += -L$$QT.xmlpatterns.libs -l$$PATTERNIST_SDK
 
 QT += xml testlib
 
