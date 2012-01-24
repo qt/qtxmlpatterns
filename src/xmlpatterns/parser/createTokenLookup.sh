@@ -2,7 +2,6 @@
 #############################################################################
 ##
 ## Copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies).
-## All rights reserved.
 ## Contact: http://www.qt-project.org/
 ##
 ## This file is the build configuration utility of the Qt Toolkit.
@@ -36,6 +35,7 @@
 ##
 ##
 ##
+##
 ## $QT_END_LICENSE$
 ##
 #############################################################################
@@ -46,7 +46,6 @@ license=`cat <<EOF
 /****************************************************************************
 **
 ** Copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies).
-** All rights reserved.
 ** Contact: http://www.qt-project.org/
 **
 ** This file is part of the QtXmlPatterns module of the Qt Toolkit.
@@ -75,6 +74,7 @@ license=`cat <<EOF
 ** Other Usage
 ** Alternatively, this file may be used in accordance with the terms and
 ** conditions contained in a signed written agreement between you and Nokia.
+**
 **
 **
 **
