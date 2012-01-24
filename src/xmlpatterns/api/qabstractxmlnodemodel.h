@@ -104,6 +104,13 @@ namespace QPatternist
 
         /* Implementation is in qabstractxmlnodemodel.cpp. */
         inline bool operator!=(const NodeIndexStorage &other) const;
+
+        void reset()
+        {
+            data = 0;
+            additionalData = 0;
+            model = 0;
+        }
     };
 }
 
@@ -216,9 +223,7 @@ public:
 
     inline void reset()
     {
-        m_storage.data = 0;
-        m_storage.additionalData = 0;
-        m_storage.model = 0;
+        m_storage.reset();
     }
 
 private:
