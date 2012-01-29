@@ -43,7 +43,7 @@
 
 #include <QMainWindow>
 
-#if defined(Q_OS_SYMBIAN) || defined(Q_WS_MAEMO_5) || defined(Q_WS_SIMULATOR)
+#if defined(Q_WS_MAEMO_5) || defined(Q_WS_SIMULATOR)
     #include "ui_schema_mobiles.h"
 #else
     #include "ui_schema.h"

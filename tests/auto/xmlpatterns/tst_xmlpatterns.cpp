@@ -46,10 +46,6 @@
 #include "../qxmlquery/TestFundament.h"
 #include "../network-settings.h"
 
-#if defined(Q_OS_SYMBIAN)
-#define SRCDIR ""
-#endif
-
 /*!
  \class tst_XmlPatterns
  \internal
@@ -136,8 +132,6 @@ void tst_XmlPatterns::xquerySupport()
 
 #ifdef Q_OS_WINCE
     QSKIP("WinCE: This test uses unsupported WinCE functionality");
-#elif defined(Q_OS_SYMBIAN)
-    QSKIP("Symbian: This test uses unsupported Symbian functionality (QProcess with std streams)");
 #elif defined(Q_OS_MAC)
     QSKIP("MacOs: Failed on Mac. Will be fixed by bug fix for QTBUG-22556");
 #endif
@@ -230,7 +224,7 @@ void tst_XmlPatterns::xquerySupport()
 
 void tst_XmlPatterns::xquerySupport_data() const
 {
-#if defined(Q_OS_WINCE) || defined(Q_OS_SYMBIAN)
+#if defined(Q_OS_WINCE)
     return;
 #endif
 
@@ -861,8 +855,6 @@ void tst_XmlPatterns::xsltSupport_data() const
 
 #ifdef Q_OS_WINCE
     QSKIP("WinCE: This test uses unsupported WinCE functionality");
-#elif defined(Q_OS_SYMBIAN)
-    QSKIP("Symbian: This test uses unsupported Symbian functionality (QProcess with std streams)");
 #endif
 
     QTest::addColumn<int>("expectedExitCode");

@@ -6,7 +6,7 @@ SOURCES += tst_xmlpatterns.cpp \
 
 wince* {
 DEFINES += SRCDIR=\\\"./\\\"
-} else:!symbian {
+} else {
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 }
 

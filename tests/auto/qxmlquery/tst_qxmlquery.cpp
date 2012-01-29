@@ -63,12 +63,7 @@
 #include "TestFundament.h"
 #include "../network-settings.h"
 
-#if defined(Q_OS_SYMBIAN)
-#define SRCDIR ""
-#define XMLPATTERNSDIR "xmlpatterns"
-#else
 #define XMLPATTERNSDIR SRCDIR "../xmlpatterns"
-#endif
 
 /*!
  \class tst_QXmlQuery

@@ -207,28 +207,6 @@ doc-build
 .pch
 .metadata
 
-# Symbian build system generated files
-# ---------------------
-
-ABLD.BAT
-bld.inf*
-*.mmp
-*.mk
-*.rss
-*.loc
-!s60main.rss
-*.pkg
-plugin_commonu.def
-*.qtplugin
-*.sis
-*.sisx
-*.lst
-*.exe
-*.mif
-*.rsc
-*.sym
-*.lib
-
 # runonphone crash dumps
 d_exc_*.txt
 d_exc_*.stk

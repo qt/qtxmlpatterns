@@ -2,7 +2,7 @@ TARGET = tst_patternistexamples
 CONFIG += testcase
 SOURCES += tst_patternistexamples.cpp
 QT += testlib
-wince*|symbian: {
+wince*: {
 	snippets.files = $$QT_SOURCE_TREE/doc/src/snippets/patternist/*
 	snippets.path = patternist
 	widgetRen.files = $$QT_SOURCE_TREE/examples/xmlpatterns/xquery/widgetRenderer/*

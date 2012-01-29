@@ -6,7 +6,7 @@ QT = core gui testlib
 
 include (../xmlpatterns.pri)
 
-wince*|symbian: {
+wince*: {
 QT += network
 addFiles.files = \
 	$$QT_SOURCE_TREE/examples/sql/masterdetail/albumdetails.xml \

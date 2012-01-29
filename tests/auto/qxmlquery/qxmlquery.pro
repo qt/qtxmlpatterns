@@ -13,23 +13,18 @@ QT += network testlib
 
 wince* {
     DEFINES += SRCDIR=\\\"./\\\"
-} else:!symbian {
+} else {
     DEFINES += SRCDIR=\\\"$$PWD/\\\"
 }
 
 include (../xmlpatterns.pri)
 
-wince*|symbian: {
+wince*: {
    addFiles.files = pushBaselines input.xml
    addFiles.path    = .
 
    patternistFiles.files = ../xmlpatterns/queries
-   symbian: {
-       #../xmlpatterns resolves to an illegal path for deployment
-       patternistFiles.path    = xmlpatterns
-   } else {
-       patternistFiles.path    = ../xmlpatterns
-   }
+   patternistFiles.path    = ../xmlpatterns
 
    DEPLOYMENT += addFiles patternistFiles
 }

@@ -8,5 +8,4 @@ sources.files = $$SOURCES $$HEADERS $$RESOURCES $$FORMS *.cpp *.pro *.xq *.html 
 sources.path = $$[QT_INSTALL_EXAMPLES]/qtxmlpatterns/xmlpatterns/xquery/globalVariables
 INSTALLS += target sources
 
-symbian: CONFIG += qt_example
 maemo5: CONFIG += qt_example

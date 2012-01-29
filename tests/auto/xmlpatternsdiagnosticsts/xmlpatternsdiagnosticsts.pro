@@ -19,7 +19,7 @@ INCLUDEPATH += $$(QTSRCDIR)/tests/auto/xmlpatternssdk  \
                ../xmlpatternsxqts                      \
                ../xmlpatternssdk
 
-wince*|symbian {
+wince* {
    catalog.files = TestSuite Baseline.xml
    catalog.path = .
    DEPLOYMENT += catalog
