@@ -411,3 +411,9 @@ QHash<typename XsdStateMachine<TransitionType>::StateId, typename XsdStateMachin
 {
     return m_states;
 }
+
+template <typename TransitionType>
+QHash<typename XsdStateMachine<TransitionType>::StateId, QHash<TransitionType, QVector<typename XsdStateMachine<TransitionType>::StateId> > > XsdStateMachine<TransitionType>::transitions() const
+{
+    return m_transitions;
+}

@@ -204,14 +204,8 @@ namespace QPatternist
 
             /**
              * Returns the information of all transitions of the state machine.
-             *
-             * The implementation is inlined in order to workaround a compiler
-             * bug on Symbian/winscw.
              */
-            QHash<StateId, QHash<TransitionType, QVector<StateId> > > transitions() const
-            {
-                return m_transitions;
-            }
+            QHash<StateId, QHash<TransitionType, QVector<StateId> > > transitions() const;
 
         private:
             /**
