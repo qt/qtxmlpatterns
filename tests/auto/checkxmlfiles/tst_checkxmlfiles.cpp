@@ -105,11 +105,7 @@ void tst_CheckXMLFiles::checkXMLFiles_data() const
     while(it.hasNext())
     {
         it.next();
-
-        /* We got tons of broken XML files as part of auto tests. */
-        if(!it.filePath().contains(QLatin1String("/tests/auto/")) &&
-           !it.filePath().contains(QLatin1String("/tests/arthur/")))
-            QTest::newRow(it.filePath().toUtf8().constData()) << it.filePath();
+        QTest::newRow(it.filePath().toUtf8().constData()) << it.filePath();
     }
 }
 
