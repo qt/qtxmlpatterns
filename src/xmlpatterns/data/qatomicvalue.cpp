@@ -146,7 +146,7 @@ Item AtomicValue::toXDM(const QVariant &value)
              * have to let it be an xs:string. Calling QVariant::toString()
              * on a QVariant that contains a QUrl returns, surprisingly,
              * an empty string. */
-            return AtomicString::fromValue(value.toUrl().toString());
+            return AtomicString::fromValue(QString::fromLatin1(value.toUrl().toEncoded()));
         }
         case QVariant::ByteArray:
             return HexBinary::fromValue(value.toByteArray());

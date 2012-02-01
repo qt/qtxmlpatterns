@@ -222,7 +222,7 @@ static inline QUrl finalizeURI(const QApplicationArgumentParser &parser,
         const QString stringURI(parser.value(arg).toString());
 
         if(parser.has(isURI))
-            userURI = QUrl::fromEncoded(stringURI.toLatin1());
+            userURI = QUrl(stringURI);
         else
             userURI = QUrl::fromLocalFile(stringURI);
     }

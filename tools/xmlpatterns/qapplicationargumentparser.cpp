@@ -833,7 +833,7 @@ QVariant QApplicationArgumentParser::convertToValue(const QApplicationArgument &
         }
         case QVariant::Url:
         {
-            const QUrl result(QUrl::fromEncoded(input.toLatin1()));
+            const QUrl result(input);
 
             if(result.isValid())
                 return QVariant(result);

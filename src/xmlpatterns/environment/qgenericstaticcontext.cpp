@@ -62,7 +62,7 @@ GenericStaticContext::GenericStaticContext(const NamePool::Ptr &np,
                                                                                 , m_defaultFunctionNamespace(CommonNamespaces::XFN)
                                                                                 , m_orderingEmptySequence(Greatest)
                                                                                 , m_orderingMode(Ordered)
-                                                                                , m_defaultCollation(QUrl::fromEncoded(CommonNamespaces::UNICODE_COLLATION))
+                                                                                , m_defaultCollation(QUrl(QLatin1String(CommonNamespaces::UNICODE_COLLATION)))
                                                                                 , m_baseURI(aBaseURI)
                                                                                 , m_messageHandler(handler)
                                                                                 , m_preserveMode(Preserve)

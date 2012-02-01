@@ -60,14 +60,15 @@ AnyURI::Ptr AnyURI::fromValue(const QString &value)
 
 AnyURI::Ptr AnyURI::fromValue(const QUrl &uri)
 {
-    return AnyURI::Ptr(new AnyURI(uri.toString()));
+    return AnyURI::Ptr(new AnyURI(QString::fromLatin1(uri.toEncoded())));
 }
 
 AnyURI::Ptr AnyURI::resolveURI(const QString &relative,
                                const QString &base)
 {
     const QUrl urlBase(base);
-    return AnyURI::fromValue(urlBase.resolved(relative).toString());
+    const QUrl uri(urlBase.resolved(relative));
+    return AnyURI::fromValue(uri);
 }
 
 ItemType::Ptr AnyURI::type() const

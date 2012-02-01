@@ -2020,10 +2020,6 @@ void tst_QXmlQuery::fnDocNetworkAccessSuccess() const
     QVERIFY(buffer.open(QIODevice::WriteOnly));
 
     QXmlSerializer serializer(query, &buffer);
-
-    // these tests with data: URL fail since QUrl change e650dd3b6d8212d2c54ddb4a50558b508d0bf2b9
-    QEXPECT_FAIL("data scheme with ASCII", "QTBUG-23953, fails", Abort);
-    QEXPECT_FAIL("data scheme with ASCII no MIME type", "QTBUG-23953, fails", Abort);
     QVERIFY(query.evaluateTo(&serializer));
 
     QCOMPARE(result, expectedOutput);
