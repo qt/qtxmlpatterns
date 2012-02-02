@@ -1181,6 +1181,10 @@ QXmlItem::QXmlItem(const QVariant &atomicValue)
         m_node.model = reinterpret_cast<const QAbstractXmlNodeModel *>(~0);
         m_atomicValue = temp.asAtomicValue();
     }
+    else
+    {
+        m_atomicValue = 0;
+    }
 }
 
 /*!
