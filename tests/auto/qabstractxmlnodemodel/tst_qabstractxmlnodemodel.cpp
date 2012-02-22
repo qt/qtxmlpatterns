@@ -183,7 +183,7 @@ void tst_QAbstractXmlNodeModel::nextFromSimpleAxis()
     {
         QXmlQuery openDoc(m_namePool);
         const QString testFilePath = QDir::currentPath() + QLatin1Char('/') + QLatin1String(testFileName);
-        openDoc.bindVariable(QLatin1String("docURI"), QVariant(testFilePath));
+        openDoc.bindVariable(QLatin1String("docURI"), QVariant(QUrl::fromLocalFile(testFilePath)));
         openDoc.setQuery(QLatin1String("doc($docURI)"));
         QXmlResultItems doc;
         QVERIFY(openDoc.isValid());

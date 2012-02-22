@@ -2875,7 +2875,15 @@ void tst_QXmlQuery::useUriResolver() const
                              const QUrl &baseURI) const
         {
             Q_UNUSED(relative);
-            return baseURI.resolved(inputFile(QLatin1String(queriesDirectory) + QLatin1String("simpleDocument.xml")));
+            QString fixedInputFile = inputFile(QLatin1String(queriesDirectory) + QLatin1String("simpleDocument.xml"));
+#ifdef Q_OS_WIN
+            // A file path with drive letter is not a valid relative URI, so remove the drive letter.
+            // Note that can't just use inputFileAsURI() instead of inputFile() as that doesn't
+            // produce a relative URI either.
+            if (fixedInputFile.size() > 1 && fixedInputFile.at(1) == QLatin1Char(':'))
+                fixedInputFile.remove(0, 2);
+#endif
+            return baseURI.resolved(fixedInputFile);
         }
     };
 
