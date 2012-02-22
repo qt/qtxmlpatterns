@@ -81,6 +81,8 @@ private:
     static void createNonWritable(const QString &name);
     static void removeNonWritable(QFile &outFile);
 
+    QString filterStderr(const QString &in);
+
     int             m_generatedTests;
     /**
      * Get rid of characters that complicates on various file systems.
@@ -89,14 +91,12 @@ private:
     /**
      * @note Perforce disallows wildcards in the name.
      */
-    const QRegExp   m_filenameInStderr;
     const QString   m_command;
     bool            m_dontRun;
 };
 
 tst_XmlPatterns::tst_XmlPatterns() : m_generatedTests(0)
                                    , m_normalizeTestName(QLatin1String("[\\*\\?#\\-\\/:; ()',&]"))
-                                   , m_filenameInStderr(QLatin1String("file:\\/\\/.*(\\.xq|\\.gccxml|\\.xml|\\.xsl|-)(,|:)"))
                                    , m_command(QLibraryInfo::location(QLibraryInfo::BinariesPath) + QLatin1String("/xmlpatterns"))
                                    , m_dontRun(false)
 {
@@ -107,7 +107,6 @@ void tst_XmlPatterns::initTestCase()
     QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
 
     QVERIFY(m_normalizeTestName.isValid());
-    QVERIFY(m_filenameInStderr.isValid());
 
     QProcess process;
     process.start(m_command);
@@ -158,7 +157,7 @@ void tst_XmlPatterns::xquerySupport()
     QCOMPARE(process.exitCode(), expectedExitCode);
 
     const QByteArray rawProducedStderr((process.readAllStandardError()));
-    QString fixedStderr(QString::fromLocal8Bit(rawProducedStderr).remove(m_filenameInStderr));
+    QString fixedStderr = filterStderr(QString::fromLocal8Bit(rawProducedStderr));
     // convert Windows line endings to Unix ones
     fixedStderr.replace("\r\n", "\n");
 
@@ -176,7 +175,7 @@ void tst_XmlPatterns::xquerySupport()
         /* On Windows, at least MinGW, this differs. */
         if(qstrcmp(QTest::currentDataTag(), "-output with a non-writable file") == 0)
         {
-            QVERIFY(fixedStderr == rawExpectedStdErr.remove(m_filenameInStderr) ||
+            QVERIFY(fixedStderr == filterStderr(rawExpectedStdErr) ||
                     fixedStderr.trimmed() == "Failed to open file notWritable.out for writing: Access is denied.");
         }
         else if(qstrcmp(QTest::currentDataTag(), "Invoke -version") == 0)
@@ -188,7 +187,7 @@ void tst_XmlPatterns::xquerySupport()
             QCOMPARE(QString(fixedStderr).remove(removeVersion) + QChar('|'), rawExpectedStdErr + QChar('|'));
         }
         else
-            QCOMPARE(fixedStderr, rawExpectedStdErr.remove(m_filenameInStderr));
+            QCOMPARE(fixedStderr, filterStderr(rawExpectedStdErr));
     }
     else
     {
@@ -1007,6 +1006,29 @@ void tst_XmlPatterns::xsltSupport_data() const
     // TODO use invalid URI in focus
 
     // TODO invoke a template which has required params.
+}
+
+/*
+    Return a copy of some stderr text with some irrelevant things filtered.
+*/
+QString tst_XmlPatterns::filterStderr(const QString &in)
+{
+    static QList<QRegExp> irrelevant = QList<QRegExp>()
+
+        // specific filenames
+        << QRegExp(QLatin1String("file:\\/\\/.*(\\.xq|\\.gccxml|\\.xml|\\.xsl|-)(,|:)"))
+
+        // warning messages about old-style plugins
+        << QRegExp(QLatin1String("Old plugin format found in lib [^\n]+\n"))
+        << QRegExp(QLatin1String("Qt plugin loader: Compatibility plugin [^\n]+\n"))
+    ;
+
+    QString out = in;
+    foreach (const QRegExp& rx, irrelevant) {
+        out = out.remove(rx);
+    }
+
+    return out;
 }
 
 QTEST_MAIN(tst_XmlPatterns)
