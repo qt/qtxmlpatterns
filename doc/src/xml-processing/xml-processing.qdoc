@@ -54,14 +54,14 @@
     \section1 Topics:
 
     \list
-    \o \l {Classes for XML Processing}
-    \o \l {An Introduction to Namespaces}
-    \o \l {XML Streaming}
-    \o \l {The SAX Interface}
-    \o \l {Working with the DOM Tree}
-    \o \l {XQuery}{XQuery/XPath and XML Schema}
+    \li \l {Classes for XML Processing}
+    \li \l {An Introduction to Namespaces}
+    \li \l {XML Streaming}
+    \li \l {The SAX Interface}
+    \li \l {Working with the DOM Tree}
+    \li \l {XQuery}{XQuery/XPath and XML Schema}
         \list
-        \o \l{A Short Path to XQuery}
+        \li \l{A Short Path to XQuery}
         \endlist
     \endlist
     
@@ -168,10 +168,10 @@
     default namespace. So why didn't we simply use the default namespace
     we'd already declared? The answer is quite complex:
     \list
-    \o attributes without a prefix don't belong to any XML namespace at
+    \li attributes without a prefix don't belong to any XML namespace at
     all, not even to the default namespace;
-    \o additionally omitting the prefix would lead to a \e title-title clash;
-    \o writing it as \e xmlns:title would declare a new namespace with the
+    \li additionally omitting the prefix would lead to a \e title-title clash;
+    \li writing it as \e xmlns:title would declare a new namespace with the
     prefix \e title instead of applying the default \e xmlns namespace.
     \endlist
 
@@ -189,16 +189,16 @@
     The following terms are used to distinguish the parts of names within
     the context of namespaces:
     \list
-    \o  The \e {qualified name}
+    \li  The \e {qualified name}
         is the name as it appears in the document. (In the above example \e
         book:title is a qualified name.)
-    \o  A \e {namespace prefix} in a qualified name
+    \li  A \e {namespace prefix} in a qualified name
         is the part to the left of the ":". (\e book is the namespace prefix in
         \e book:title.)
-    \o  The \e {local part} of a name (also refered to as the \e {local
+    \li  The \e {local part} of a name (also refered to as the \e {local
         name}) appears to the right of the ":". (Thus \e title is the
         local part of \e book:title.)
-    \o  The \e {namespace URI} ("Uniform Resource Identifier") is a unique
+    \li  The \e {namespace URI} ("Uniform Resource Identifier") is a unique
         identifier for a namespace. It looks like a URL
         (e.g. \e http://www.example.com/fnord/ ) but does not require
         data to be accessible by the given protocol at the named address.
@@ -320,9 +320,9 @@
     Whilst reading (a SAX2 parser is usually referred to as "reader") 
     the above document three events would be triggered:
     \list 1
-    \o A start tag occurs (\c{<quote>}).
-    \o Character data (i.e. text) is found, "A quotation.".
-    \o An end tag is parsed (\c{</quote>}).
+    \li A start tag occurs (\c{<quote>}).
+    \li Character data (i.e. text) is found, "A quotation.".
+    \li An end tag is parsed (\c{</quote>}).
     \endlist
 
     Each time such an event occurs the parser reports it; you can set up
@@ -342,21 +342,21 @@
 
     The reader reports parsing events through special handler classes:
     \table
-    \header \o Handler class \o Description
-    \row \o \l QXmlContentHandler
-         \o Reports events related to the content of a document (e.g. the start tag
+    \header \li Handler class \li Description
+    \row \li \l QXmlContentHandler
+         \li Reports events related to the content of a document (e.g. the start tag
             or characters).
-    \row \o \l QXmlDTDHandler
-         \o Reports events related to the DTD (e.g. notation declarations).
-    \row \o \l QXmlErrorHandler
-         \o Reports errors or warnings that occurred during parsing.
-    \row \o \l QXmlEntityResolver
-         \o Reports external entities during parsing and allows users to resolve
+    \row \li \l QXmlDTDHandler
+         \li Reports events related to the DTD (e.g. notation declarations).
+    \row \li \l QXmlErrorHandler
+         \li Reports errors or warnings that occurred during parsing.
+    \row \li \l QXmlEntityResolver
+         \li Reports external entities during parsing and allows users to resolve
             external entities themselves instead of leaving it to the reader.
-    \row \o \l QXmlDeclHandler
-         \o Reports further DTD related events (e.g. attribute declarations).
-    \row \o \l QXmlLexicalHandler
-         \o Reports events related to the lexical structure of the
+    \row \li \l QXmlDeclHandler
+         \li Reports further DTD related events (e.g. attribute declarations).
+    \row \li \l QXmlLexicalHandler
+         \li Reports events related to the lexical structure of the
             document (the beginning of the DTD, comments etc.).
     \endtable
 
@@ -370,13 +370,13 @@
     Apart from those already mentioned, the following SAX2 support classes 
     provide additional useful functionality:
     \table
-    \header \o Class \o Description
-    \row \o \l QXmlAttributes
-         \o Used to pass attributes in a start element event.
-    \row \o \l QXmlLocator
-         \o Used to obtain the actual parsing position of an event.
-    \row \o \l QXmlNamespaceSupport
-         \o Used to implement namespace support for a reader. Note that
+    \header \li Class \li Description
+    \row \li \l QXmlAttributes
+         \li Used to pass attributes in a start element event.
+    \row \li \l QXmlLocator
+         \li Used to obtain the actual parsing position of an event.
+    \row \li \l QXmlNamespaceSupport
+         \li Used to implement namespace support for a reader. Note that
             namespaces do not change the parsing behavior. They are only
             reported through the handler.
     \endtable
@@ -435,12 +435,12 @@
 
     They influence the reporting behavior in the following way:
     \list 1
-    \o Namespace prefixes and local parts of elements and attributes can
+    \li Namespace prefixes and local parts of elements and attributes can
     be reported.
-    \o The qualified names of elements and attributes are reported.
-    \o \l QXmlContentHandler::startPrefixMapping() and \l
+    \li The qualified names of elements and attributes are reported.
+    \li \l QXmlContentHandler::startPrefixMapping() and \l
     QXmlContentHandler::endPrefixMapping() are called by the reader.
-    \o Attributes that declare namespaces (i.e. the attribute \e xmlns and
+    \li Attributes that declare namespaces (i.e. the attribute \e xmlns and
     attributes starting with \e{xmlns:}) are reported.
     \endlist
 
@@ -485,15 +485,15 @@
     \l QXmlSimpleReader implements the following behavior:
 
     \table
-    \header \o (namespaces, namespace-prefixes)
-            \o Namespace prefix and local part
-            \o Qualified names
-            \o Prefix mapping
-            \o xmlns attributes
-    \row \o (true, false) \o Yes \o Yes* \o Yes \o No
-    \row \o (true, true) \o Yes \o Yes \o Yes \o Yes
-    \row \o (false, true) \o No* \o Yes \o No* \o Yes
-    \row \o (false, false) \i41 Illegal
+    \header \li (namespaces, namespace-prefixes)
+            \li Namespace prefix and local part
+            \li Qualified names
+            \li Prefix mapping
+            \li xmlns attributes
+    \row \li (true, false) \li Yes \li Yes* \li Yes \li No
+    \row \li (true, true) \li Yes \li Yes \li Yes \li Yes
+    \row \li (false, true) \li No* \li Yes \li No* \li Yes
+    \row \li (false, false) \li {4,1} Illegal
     \endtable
 
     The behavior of the entries marked with an asterisk (*) is not specified by SAX.
@@ -548,60 +548,60 @@
     Here are the available node classes and their potential child classes:
 
     \list
-    \o \l QDomDocument: Possible children are
+    \li \l QDomDocument: Possible children are
             \list
-            \o \l QDomElement (at most one)
-            \o \l QDomProcessingInstruction
-            \o \l QDomComment
-            \o \l QDomDocumentType
+            \li \l QDomElement (at most one)
+            \li \l QDomProcessingInstruction
+            \li \l QDomComment
+            \li \l QDomDocumentType
             \endlist
-    \o \l QDomDocumentFragment: Possible children are
+    \li \l QDomDocumentFragment: Possible children are
             \list
-            \o \l QDomElement
-            \o \l QDomProcessingInstruction
-            \o \l QDomComment
-            \o \l QDomText
-            \o \l QDomCDATASection
-            \o \l QDomEntityReference
+            \li \l QDomElement
+            \li \l QDomProcessingInstruction
+            \li \l QDomComment
+            \li \l QDomText
+            \li \l QDomCDATASection
+            \li \l QDomEntityReference
             \endlist
-    \o \l QDomDocumentType: No children
-    \o \l QDomEntityReference: Possible children are
+    \li \l QDomDocumentType: No children
+    \li \l QDomEntityReference: Possible children are
             \list
-            \o \l QDomElement
-            \o \l QDomProcessingInstruction
-            \o \l QDomComment
-            \o \l QDomText
-            \o \l QDomCDATASection
-            \o \l QDomEntityReference
+            \li \l QDomElement
+            \li \l QDomProcessingInstruction
+            \li \l QDomComment
+            \li \l QDomText
+            \li \l QDomCDATASection
+            \li \l QDomEntityReference
             \endlist
-    \o \l QDomElement: Possible children are
+    \li \l QDomElement: Possible children are
             \list
-            \o \l QDomElement
-            \o \l QDomText
-            \o \l QDomComment
-            \o \l QDomProcessingInstruction
-            \o \l QDomCDATASection
-            \o \l QDomEntityReference
+            \li \l QDomElement
+            \li \l QDomText
+            \li \l QDomComment
+            \li \l QDomProcessingInstruction
+            \li \l QDomCDATASection
+            \li \l QDomEntityReference
             \endlist
-    \o \l QDomAttr: Possible children are
+    \li \l QDomAttr: Possible children are
             \list
-            \o \l QDomText
-            \o \l QDomEntityReference
+            \li \l QDomText
+            \li \l QDomEntityReference
             \endlist
-    \o \l QDomProcessingInstruction: No children
-    \o \l QDomComment: No children
-    \o \l QDomText: No children
-    \o \l QDomCDATASection: No children
-    \o \l QDomEntity: Possible children are
+    \li \l QDomProcessingInstruction: No children
+    \li \l QDomComment: No children
+    \li \l QDomText: No children
+    \li \l QDomCDATASection: No children
+    \li \l QDomEntity: Possible children are
             \list
-            \o \l QDomElement
-            \o \l QDomProcessingInstruction
-            \o \l QDomComment
-            \o \l QDomText
-            \o \l QDomCDATASection
-            \o \l QDomEntityReference
+            \li \l QDomElement
+            \li \l QDomProcessingInstruction
+            \li \l QDomComment
+            \li \l QDomText
+            \li \l QDomCDATASection
+            \li \l QDomEntityReference
             \endlist
-    \o \l QDomNotation: No children
+    \li \l QDomNotation: No children
     \endlist
 
     With \l QDomNodeList and \l QDomNamedNodeMap two collection classes 

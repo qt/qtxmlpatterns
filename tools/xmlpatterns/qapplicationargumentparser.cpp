@@ -65,13 +65,13 @@ QT_BEGIN_NAMESPACE
  QApplicationArgumentParser simplifies writing command line applications by taking care of:
 
  \list
-    \o Generating help and version arguments
-    \o Taking care of converting arguments to QVariant types, since each argument
+    \li Generating help and version arguments
+    \li Taking care of converting arguments to QVariant types, since each argument
        has a type: QApplicationArgument::type()
-    \o Validates the command line such that the user operates on well-defined input. For instance,
+    \li Validates the command line such that the user operates on well-defined input. For instance,
        that the argument is a valid integer if that is the case, that an argument does not
        occur more times than allowed, and so on.
-    \o Allows customization through sub-classing.
+    \li Allows customization through sub-classing.
  \endlist
 
  The user declares what arguments that can be given to the application with QApplicationArgument. Provided
@@ -107,12 +107,12 @@ QT_BEGIN_NAMESPACE
  parse(). It would do the following:
 
  \list
-    \o Call input() to retrieve the strings the user specified on the command line.
-    \o Call declaredArguments() to retrieve the arguments that the implementor has
+    \li Call input() to retrieve the strings the user specified on the command line.
+    \li Call declaredArguments() to retrieve the arguments that the implementor has
        decided can be specified.
-    \o Parse and validate the input. Salt and pepper as per taste.
-    \o If an error occurred, call setExitCode() and return \c false.
-    \o Otherwise, call setExitCode(Success), provide access to the
+    \li Parse and validate the input. Salt and pepper as per taste.
+    \li If an error occurred, call setExitCode() and return \c false.
+    \li Otherwise, call setExitCode(Success), provide access to the
        arguments by calling setUsedArguments(), and return \c true. If a
        help message was requested, call setExitCode(Success) and return \c false.
  \endlist

@@ -161,18 +161,18 @@ bool QAbstractXmlNodeModel::isIgnorableInDeepEqual(const QXmlNodeModelIndex &n)
 
   \list 1
 
-    \o Instantiate QXmlQuery and give it the XQuery to be run;
+    \li Instantiate QXmlQuery and give it the XQuery to be run;
 
-    \o Instantiate a subclass of QAbstractXmlNodeModel or
+    \li Instantiate a subclass of QAbstractXmlNodeModel or
     QSimpleXmlNodeModel;
 
-    \o Retrieve a QXmlNodeModelIndex for the node in the model where
+    \li Retrieve a QXmlNodeModelIndex for the node in the model where
     the QXmlQuery should start the query;
 
-    \o Use QXmlQuery::bindVariable() to bind the QXmlNodeModelIndex
+    \li Use QXmlQuery::bindVariable() to bind the QXmlNodeModelIndex
     to \c {$variable name};
 
-    \o Call one of the QXmlQuery evaluation functions to run the
+    \li Call one of the QXmlQuery evaluation functions to run the
     query.
 
   \endlist
@@ -339,15 +339,15 @@ QAbstractXmlNodeModel::~QAbstractXmlNodeModel()
 
   \list
 
-  \o For document nodes, the base URI and the document URI are the same.
+  \li For document nodes, the base URI and the document URI are the same.
 
-  \o For elements, the base URI is the URI appearing in the element's
+  \li For elements, the base URI is the URI appearing in the element's
      \c xml:base attribute, if present, or it is resolved to the
      parent element's base URI.
 
-  \o Namespace nodes have no base URI.
+  \li Namespace nodes have no base URI.
 
-  \o The base URI for a processing instruction, comment, attribute,
+  \li The base URI for a processing instruction, comment, attribute,
   or text node is the base URI of the node's parent element.
 
   \endlist
@@ -380,11 +380,11 @@ QAbstractXmlNodeModel::~QAbstractXmlNodeModel()
 
   \list
 
-  \o If \a n is a document node, return an absolute QUrl containing
+  \li If \a n is a document node, return an absolute QUrl containing
      the document URI, or a default constructed QUrl. The latter
      signals that no document URI is available for the document node.
 
-  \o For all other nodes, return a default constructed QUrl.
+  \li For all other nodes, return a default constructed QUrl.
 
   \endlist
 
@@ -761,9 +761,9 @@ QAbstractXmlNodeModel::iterate(const QXmlNodeModelIndex &ni,
   cases by guaranteeing that it will never ask for:
 
   \list
-    \o Children or siblings for attributes.
-    \o Children for comments, processing instructions, and text nodes.
-    \o Siblings or parents for document nodes.
+    \li Children or siblings for attributes.
+    \li Children for comments, processing instructions, and text nodes.
+    \li Siblings or parents for document nodes.
   \endlist
 
   A typical implementation performs a \c switch on the value of \a
@@ -895,19 +895,19 @@ void QAbstractXmlNodeModel::sendNamespaces(const QXmlNodeModelIndex &n,
 
   \list
 
-  \o For processing instructions, the string value is the data
+  \li For processing instructions, the string value is the data
   section(excluding any whitespace appearing between the name and the
   data).
 
-  \o For text nodes, the string value equals the text node.
+  \li For text nodes, the string value equals the text node.
 
-  \o For comments, the content of the comment
+  \li For comments, the content of the comment
 
-  \o For elements, the concatenation of all text nodes that are
+  \li For elements, the concatenation of all text nodes that are
   descendants. Note, this is not only the children, but the
   childrens' childrens' text nodes, and so forth.
 
-  \o For document nodes, the concatenation of all text nodes in the
+  \li For document nodes, the concatenation of all text nodes in the
   document.
 
   \endlist
@@ -1308,9 +1308,9 @@ bool QXmlItem::isNull() const
   {XML node model}. It contains:
 
   \list
-    \o A pointer to an \l{QAbstractXmlNodeModel} {XML node model},
+    \li A pointer to an \l{QAbstractXmlNodeModel} {XML node model},
     which is returned by model(), and
-    \o Some data, which is returned by data(), internalPointer(),
+    \li Some data, which is returned by data(), internalPointer(),
     and additionalData().
   \endlist
 
@@ -1323,10 +1323,10 @@ bool QXmlItem::isNull() const
 
   \list
 
-  \o Send the output of your XQuery to an \l{QAbstractXmlReceiver}
+  \li Send the output of your XQuery to an \l{QAbstractXmlReceiver}
   {XML receiver}, or
 
-  \o Let your XQuery do all the work to produce the desired result.
+  \li Let your XQuery do all the work to produce the desired result.
 
   \endlist
 

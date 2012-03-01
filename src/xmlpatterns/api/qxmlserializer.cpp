@@ -116,14 +116,14 @@ QXmlSerializerPrivate::QXmlSerializerPrivate(const QXmlQuery &query,
   QXmlSerializer will:
 
   \list
-  \o Declare namespaces when needed,
+  \li Declare namespaces when needed,
 
-  \o Use appropriate escaping, when characters can't be
+  \li Use appropriate escaping, when characters can't be
   represented in the XML,
 
-  \o Handle line endings appropriately,
+  \li Handle line endings appropriately,
 
-  \o Report errors, when it can't serialize the content, e.g.,
+  \li Report errors, when it can't serialize the content, e.g.,
   when asked to serialize an attribute that is a top-level node,
   or when more than one top-level element is encountered.
 

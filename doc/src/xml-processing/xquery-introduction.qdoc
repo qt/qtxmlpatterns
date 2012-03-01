@@ -126,9 +126,9 @@ first step creates the initial focus by calling the \c{doc()}
 function. We can paraphrase what the query engine does at each step:
 
 \list 1
-    \o for each node in the initial focus (the document node)...
-    \o for each descendant node that is a \c{<recipe>} element...
-    \o collect the child nodes that are \c{<title>} elements.
+    \li for each node in the initial focus (the document node)...
+    \li for each descendant node that is a \c{<recipe>} element...
+    \li collect the child nodes that are \c{<title>} elements.
 \endlist
 
 Again the double slash means select all the \c{<recipe>} elements in the
@@ -181,49 +181,49 @@ supports the following axes.
 
 \table
 \header
-  \o Axis Specifier
-  \o refers to the axis containing...
+  \li Axis Specifier
+  \li refers to the axis containing...
   \row
-    \o \c{self::}
-    \o the context node itself
+    \li \c{self::}
+    \li the context node itself
   \row
-    \o \c{attribute::}
-    \o all attribute nodes of the context node
+    \li \c{attribute::}
+    \li all attribute nodes of the context node
   \row
-    \o \c{child::}
-    \o all child nodes of the context node (not attributes)
+    \li \c{child::}
+    \li all child nodes of the context node (not attributes)
   \row
-    \o \c{descendant::}
-    \o all descendants of the context node (children, grandchildren, etc)
+    \li \c{descendant::}
+    \li all descendants of the context node (children, grandchildren, etc)
   \row
-    \o \c{descendant-or-self::}
-    \o all nodes in \c{descendant} + \c{self}
+    \li \c{descendant-or-self::}
+    \li all nodes in \c{descendant} + \c{self}
   \row
-    \o \c{parent::}
-    \o the parent node of the context node, or empty if there is no parent
+    \li \c{parent::}
+    \li the parent node of the context node, or empty if there is no parent
   \row
-    \o \c{ancestor::}
-    \o all ancestors of the context node (parent, grandparent, etc)
+    \li \c{ancestor::}
+    \li all ancestors of the context node (parent, grandparent, etc)
   \row
-    \o \c{ancestor-or-self::}
-    \o all nodes in \c{ancestor} + \c{self}
+    \li \c{ancestor-or-self::}
+    \li all nodes in \c{ancestor} + \c{self}
   \row
-    \o \c{following::}
-    \o all nodes in the tree containing the context node, \e not
+    \li \c{following::}
+    \li all nodes in the tree containing the context node, \e not
     including \c{descendant}, \e and that follow the context node
     in the document
   \row
-    \o \c{preceding::}
-    \o all nodes in the tree contianing the context node, \e not
+    \li \c{preceding::}
+    \li all nodes in the tree contianing the context node, \e not
     including \c{ancestor}, \e and that precede the context node in
     the document
   \row
-    \o \c{following-sibling::}
-    \o all children of the context node's \c{parent} that follow the
+    \li \c{following-sibling::}
+    \li all children of the context node's \c{parent} that follow the
     context node in the document
   \row
-    \o \c{preceding-sibling::}
-    \o all children of the context node's \c{parent} that precede the
+    \li \c{preceding-sibling::}
+    \li all children of the context node's \c{parent} that precede the
     context node in the document
 \endtable
 
@@ -243,41 +243,41 @@ and are often called the \l{Name Tests}.
 
 \table
 \header
-  \o Node Test
-  \o matches all...
+  \li Node Test
+  \li matches all...
   \row
-    \o \c{node()}
-    \o nodes of any kind
+    \li \c{node()}
+    \li nodes of any kind
   \row
-    \o \c{text()}
-    \o text nodes
+    \li \c{text()}
+    \li text nodes
   \row
-    \o \c{comment()}
-    \o comment nodes
+    \li \c{comment()}
+    \li comment nodes
   \row
-    \o \c{element()}
-    \o element nodes (same as star: *)
+    \li \c{element()}
+    \li element nodes (same as star: *)
   \row
-    \o \c{element(name)}
-    \o element nodes named \c{name}
+    \li \c{element(name)}
+    \li element nodes named \c{name}
   \row
-    \o \c{attribute()}
-    \o attribute nodes
+    \li \c{attribute()}
+    \li attribute nodes
   \row
-    \o \c{attribute(name)}
-    \o attribute nodes named \c{name}
+    \li \c{attribute(name)}
+    \li attribute nodes named \c{name}
    \row
-    \o \c{processing-instruction()}
-    \o processing-instructions
+    \li \c{processing-instruction()}
+    \li processing-instructions
   \row
-    \o \c{processing-instruction(name)}
-    \o processing-instructions named \c{name}
+    \li \c{processing-instruction(name)}
+    \li processing-instructions named \c{name}
   \row
-    \o \c{document-node()}
-    \o document nodes (there is only one)
+    \li \c{document-node()}
+    \li document nodes (there is only one)
   \row
-    \o \c{document-node(element(name))}
-    \o document node with document element \c{name}
+    \li \c{document-node(element(name))}
+    \li document node with document element \c{name}
 \endtable
 
 \target Shorthand Form
@@ -292,39 +292,39 @@ form. Here is a table of some frequently used shorthand forms:
 
 \table
 \header
-  \o Shorthand syntax
-  \o Short for...
-  \o matches all...
+  \li Shorthand syntax
+  \li Short for...
+  \li matches all...
   \row
-    \o \c{name}
-    \o \c{child::element(name)}
-    \o child nodes that are \c{name} elements
+    \li \c{name}
+    \li \c{child::element(name)}
+    \li child nodes that are \c{name} elements
 
   \row
-    \o \c{*}
-    \o \c{child::element()}
-    \o child nodes that are elements (\c{node()} matches
+    \li \c{*}
+    \li \c{child::element()}
+    \li child nodes that are elements (\c{node()} matches
     \e all child nodes)
 
   \row
-    \o \c{..}
-    \o \c{parent::node()}
-    \o parent nodes (there is only one)
+    \li \c{..}
+    \li \c{parent::node()}
+    \li parent nodes (there is only one)
 
   \row
-    \o \c{@*}
-    \o \c{attribute::attribute()}
-    \o attribute nodes
+    \li \c{@*}
+    \li \c{attribute::attribute()}
+    \li attribute nodes
 
   \row
-    \o \c{@name}
-    \o \c{attribute::attribute(name)}
-    \o \c{name} attributes
+    \li \c{@name}
+    \li \c{attribute::attribute(name)}
+    \li \c{name} attributes
 
   \row
-    \o \c{//}
-    \o \c{descendant-or-self::node()}
-    \o descendent nodes (when used instead of '/')
+    \li \c{//}
+    \li \c{descendant-or-self::node()}
+    \li descendent nodes (when used instead of '/')
 
 \endtable
 
@@ -555,15 +555,15 @@ boolean predicate takes the value of its expression and determines its
 \e{effective boolean value} according to the following rules:
 
 \list
-    \o An expression that evaluates to a single node is \c{true}.
+    \li An expression that evaluates to a single node is \c{true}.
 
-    \o An expression that evaluates to a string is \c{false} if the
+    \li An expression that evaluates to a string is \c{false} if the
        string is empty and \c{true} if the string is not empty.
 
-    \o An expression that evaluates to a boolean value (i.e. type
+    \li An expression that evaluates to a boolean value (i.e. type
     \c{xs:boolean}) is that value.
 
-    \o If the expression evaluates to anything else, it's an error
+    \li If the expression evaluates to anything else, it's an error
     (e.g. type \c{xs:date}).
 
 \endlist
@@ -742,9 +742,9 @@ quite informative. An XQuery textbook will be a good investment.
 You can also ask questions on XQuery mail lists:
 
 \list
-\o
+\li
 \l{http://qt.nokia.com/lists/qt-interest/}{qt-interest}
-\o
+\li
 \l{http://www.x-query.com/mailman/listinfo/talk}{talk at x-query.com}.
 \endlist
 
@@ -757,10 +757,10 @@ difficult, though, so consider investing in a textbook:
 
 \list
 
-    \o \l{http://www.w3.org/TR/xquery/}{XQuery 1.0: An XML Query
+    \li \l{http://www.w3.org/TR/xquery/}{XQuery 1.0: An XML Query
     Language} - the main source for syntax and semantics.
 
-    \o \l{http://www.w3.org/TR/xpath-functions/}{XQuery 1.0 and XPath
+    \li \l{http://www.w3.org/TR/xpath-functions/}{XQuery 1.0 and XPath
        2.0 Functions and Operators} - the builtin functions and operators.
 
 \endlist
@@ -861,17 +861,17 @@ misplaced, and placed correctly:
 
 \table
 \header
-  \o element constructor with expression...
-  \o evaluates to...
+  \li element constructor with expression...
+  \li evaluates to...
   \row
-    \o <e>sum((1, 2, 3))</e>
-    \o <e>sum((1, 2, 3))</e>
+    \li <e>sum((1, 2, 3))</e>
+    \li <e>sum((1, 2, 3))</e>
   \row
-    \o <e>sum({(1, 2, 3)})</e>
-    \o <e>sum(1 2 3)</e>
+    \li <e>sum({(1, 2, 3)})</e>
+    \li <e>sum(1 2 3)</e>
   \row
-    \o <e>{sum((1, 2, 3))}</e>
-    \o <e>6</e>
+    \li <e>{sum((1, 2, 3))}</e>
+    \li <e>6</e>
 \endtable
 
 \section2 My predicate is correct, so why doesn't it select the right stuff?

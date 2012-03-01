@@ -52,10 +52,10 @@
   An item can be instantiated in QAbstractXmlForwardIterator if:
   \list
 
-  \o It has a default constructor, a copy constructor, and an
+  \li It has a default constructor, a copy constructor, and an
   assignment operator, and
 
-  \o It has an appropriate qIsForwardIteratorEnd() function.
+  \li It has an appropriate qIsForwardIteratorEnd() function.
   \endlist
 
    @ingroup Patternist_iterators

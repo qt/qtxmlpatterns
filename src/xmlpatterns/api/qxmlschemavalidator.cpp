@@ -254,23 +254,23 @@ QXmlSchema QXmlSchemaValidator::schema() const
 
   \table
   \header
-    \o message() argument
-    \o Semantics
+    \li message() argument
+    \li Semantics
   \row
-    \o QtMsgType type
-    \o Only QtWarningMsg and QtFatalMsg are used. The former
+    \li QtMsgType type
+    \li Only QtWarningMsg and QtFatalMsg are used. The former
        identifies a warning, while the latter identifies an error.
   \row
-    \o const QString & description
-    \o An XHTML document which is the actual message. It is translated
+    \li const QString & description
+    \li An XHTML document which is the actual message. It is translated
        into the current language.
   \row
-    \o const QUrl &identifier
-    \o Identifies the error with a URI, where the fragment is
+    \li const QUrl &identifier
+    \li Identifies the error with a URI, where the fragment is
        the error code, and the rest of the URI is the error namespace.
   \row
-    \o const QSourceLocation & sourceLocation
-    \o Identifies where the error occurred.
+    \li const QSourceLocation & sourceLocation
+    \li Identifies where the error occurred.
   \endtable
 
  */

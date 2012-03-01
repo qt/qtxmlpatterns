@@ -59,23 +59,23 @@ QT_BEGIN_NAMESPACE
 
  \table
    \header
-        \o Characteristic
-        \o Functions
+        \li Characteristic
+        \li Functions
     \row
-        \o A name. For instance, "backend"
-        \o setName() and name()
+        \li A name. For instance, "backend"
+        \li setName() and name()
     \row
-        \o A description, for human consumption.
-        \o setDescription() and description()
+        \li A description, for human consumption.
+        \li setDescription() and description()
     \row
-        \o How many times the argument can occur. For instance, whether the argument is optional or not.
-        \o setMinimumOccurrence() & minimumOccurrence(), setMaximumOccurrence() & maximumOccurrence()
+        \li How many times the argument can occur. For instance, whether the argument is optional or not.
+        \li setMinimumOccurrence() & minimumOccurrence(), setMaximumOccurrence() & maximumOccurrence()
     \row
-        \o The type of the argument's value, if it has one. For instance, \c int or \c bool.
-        \o setType() and type()
+        \li The type of the argument's value, if it has one. For instance, \c int or \c bool.
+        \li setType() and type()
     \row
-        \o The value that should be used in case the argument isn't used.
-        \o setDefaultValue() and defaultValue()
+        \li The value that should be used in case the argument isn't used.
+        \li setDefaultValue() and defaultValue()
  \endtable
 
  \sa QApplicationArgumentParser

@@ -435,17 +435,17 @@ bool QXmlName::isNCName(const QString &candidate)
 
     \table
     \header
-        \o Clark Name
-        \o Description
+        \li Clark Name
+        \li Description
     \row
-        \o \c html
-        \o The local name \c html, in no namespace
+        \li \c html
+        \li The local name \c html, in no namespace
     \row
-        \o \c {http://www.w3.org/1999/xhtml}html
-        \o The local name \c html, in the XHTML namespace
+        \li \c {http://www.w3.org/1999/xhtml}html
+        \li The local name \c html, in the XHTML namespace
     \row
-        \o \c {http://www.w3.org/1999/xhtml}my:html
-        \o The local name \c html, in the XHTML namespace, with the prefix \c my
+        \li \c {http://www.w3.org/1999/xhtml}my:html
+        \li The local name \c html, in the XHTML namespace, with the prefix \c my
     \endtable
 
     If the namespace contains braces, the returned value is either invalid or

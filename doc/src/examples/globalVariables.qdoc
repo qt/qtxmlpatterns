@@ -107,16 +107,16 @@
 
     Global variables with complex types:
     \list 1
-    \o \span {class="variableName"} {mutableComplex1} in globals.cpp at line 14
-    \o \span {class="variableName"} {mutableComplex2} in globals.cpp at line 15
-    \o \span {class="variableName"} {constComplex1} in globals.cpp at line 16
-    \o \span {class="variableName"} {constComplex2} in globals.cpp at line 17
+    \li \span {class="variableName"} {mutableComplex1} in globals.cpp at line 14
+    \li \span {class="variableName"} {mutableComplex2} in globals.cpp at line 15
+    \li \span {class="variableName"} {constComplex1} in globals.cpp at line 16
+    \li \span {class="variableName"} {constComplex2} in globals.cpp at line 17
     \endlist
 
     Mutable global variables with primitives types:
     \list 1
-    \o \span {class="variableName"} {mutablePrimitive1} in globals.cpp at line 1
-    \o \span {class="variableName"} {mutablePrimitive2} in globals.cpp at line 2
+    \li \span {class="variableName"} {mutablePrimitive1} in globals.cpp at line 1
+    \li \span {class="variableName"} {mutablePrimitive2} in globals.cpp at line 2
     \endlist
 
     \div {class="details"} End report: 2008-12-16T13:43:49.65Z \enddiv

@@ -92,22 +92,22 @@ QT_BEGIN_NAMESPACE
 
   \list
 
-  \o An \e {Element Node} represents an XML element.
+  \li An \e {Element Node} represents an XML element.
 
-  \o An \e {Attribute Node} represents an XML attribute.
+  \li An \e {Attribute Node} represents an XML attribute.
 
-  \o A \e {Document Node} represents an entire XML document.
+  \li A \e {Document Node} represents an entire XML document.
 
-  \o A \e {Text Node} represents character data (element content).
+  \li A \e {Text Node} represents character data (element content).
 
-  \o A \e {Processing Instruction Node} represents an XML
+  \li A \e {Processing Instruction Node} represents an XML
   processing instruction, which is used in an XML document
   to tell the application reading the document to perform
   some action. A typical example is to use a processing
   instruction to tell the application to use a particular
   XSLT stylesheet to display the document.
 
-  \o And a \e {Comment node} represents an XML comment.
+  \li And a \e {Comment node} represents an XML comment.
 
   \endlist
 
@@ -117,34 +117,34 @@ QT_BEGIN_NAMESPACE
 
   \list
 
-  \o Each \e node appears in the \e sequence before its children
+  \li Each \e node appears in the \e sequence before its children
   and their descendants appear.
 
-  \o A \e node's descendants appear in the \e sequence before
+  \li A \e node's descendants appear in the \e sequence before
   any of its siblings appear.
 
-  \o A \e {Document Node} represents an entire document. Zero or
+  \li A \e {Document Node} represents an entire document. Zero or
   more \e {Document Nodes} can appear in a \e sequence, but they
   can only be top level items (i.e., a \e {Document Node} can't
   be a child of another \e node.
 
-  \o \e {Namespace Nodes} immediately follow the \e {Element Node}
+  \li \e {Namespace Nodes} immediately follow the \e {Element Node}
    with which they are associated.
 
-  \o \e {Attribute Nodes} immediately follow the \e {Namespace Nodes}
+  \li \e {Attribute Nodes} immediately follow the \e {Namespace Nodes}
    of the element with which they are associated, or...
 
-   \o If there are no \e {Namespace Nodes} following an element, then
+   \li If there are no \e {Namespace Nodes} following an element, then
    the \e {Attribute Nodes} immediately follow the element.
 
-   \o An \e {atomic value} can only appear as a top level \e item,
+   \li An \e {atomic value} can only appear as a top level \e item,
    i.e., it can't appear as a child of a \e node.
 
-   \o \e {Processing Instruction Nodes} do not have children, and
+   \li \e {Processing Instruction Nodes} do not have children, and
    their parent is either a \e {Document Node} or an \e {Element
    Node}.
 
-   \o \e {Comment Nodes} do not have children, and
+   \li \e {Comment Nodes} do not have children, and
    their parent is either a \e {Document Node} or an \e {Element
    Node}.
 
@@ -158,27 +158,27 @@ QT_BEGIN_NAMESPACE
 
   \list
 
-  \o startDocument() and endDocument() are called for each
+  \li startDocument() and endDocument() are called for each
   \e {Document Node} in the \e sequence. endDocument() is not
   called until all the \e {Document Node's} children have
   appeared in the \e sequence.
 
-  \o startElement() and endElement() are called for each
+  \li startElement() and endElement() are called for each
   \e {Element Node}. endElement() is not called until all the
   \e {Element Node's} children have appeared in the \e sequence.
 
-  \o attribute() is called for each \e {Attribute Node}.
+  \li attribute() is called for each \e {Attribute Node}.
 
-  \o comment() is called for each \e {Comment Node}.
+  \li comment() is called for each \e {Comment Node}.
 
-  \o characters() is called for each \e {Text Node}.
+  \li characters() is called for each \e {Text Node}.
 
-  \o processingInstruction() is called for each \e {Processing
+  \li processingInstruction() is called for each \e {Processing
   Instruction Node}.
 
-  \o namespaceBinding() is called for each \e {Namespace Node}.
+  \li namespaceBinding() is called for each \e {Namespace Node}.
 
-  \o atomicValue() is called for each \e {atomic value}.
+  \li atomicValue() is called for each \e {atomic value}.
 
   \endlist
 

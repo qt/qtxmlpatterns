@@ -98,7 +98,7 @@ QT_BEGIN_NAMESPACE
 
   \list
 
-  \o evaluateTo(QAbstractXmlReceiver *) is called with a pointer to an
+  \li evaluateTo(QAbstractXmlReceiver *) is called with a pointer to an
   XML \l {QAbstractXmlReceiver} {receiver}, which receives the query
   results as a sequence of callbacks. The receiver callback class is
   like the callback class used for translating the output of a SAX
@@ -110,7 +110,7 @@ QT_BEGIN_NAMESPACE
 
   \list
 
-  \o evaluateTo(QXmlResultItems *) is called with a pointer to an
+  \li evaluateTo(QXmlResultItems *) is called with a pointer to an
   iterator for an empty sequence of query \l {QXmlResultItems} {result
   items}.  The Java-like iterator allows the query results to be
   accessed sequentially.
@@ -119,7 +119,7 @@ QT_BEGIN_NAMESPACE
 
   \list
 
-  \o evaluateTo(QStringList *) is like evaluateTo(QXmlResultItems *),
+  \li evaluateTo(QStringList *) is like evaluateTo(QXmlResultItems *),
   but the query must evaluate to a sequence of strings.
 
   \endlist
@@ -184,12 +184,12 @@ QT_BEGIN_NAMESPACE
 
   \list
 
-  \o The error message is sent to the messageHandler().
+  \li The error message is sent to the messageHandler().
 
-  \o QXmlResultItems::hasError() will return \c{true}, or
+  \li QXmlResultItems::hasError() will return \c{true}, or
   evaluateTo() will return \c{false};
 
-  \o The results of the evaluation are undefined.
+  \li The results of the evaluation are undefined.
 
   \endlist
 
@@ -345,24 +345,24 @@ QXmlQuery &QXmlQuery::operator=(const QXmlQuery &other)
 
   \table
   \header
-    \o message() argument
-    \o Semantics
+    \li message() argument
+    \li Semantics
   \row
-    \o QtMsgType type
-    \o Only QtWarningMsg and QtFatalMsg are used. The former
+    \li QtMsgType type
+    \li Only QtWarningMsg and QtFatalMsg are used. The former
        identifies a compile or runtime warning, while the
        latter identifies a dynamic or static error.
   \row
-    \o const QString & description
-    \o An XHTML document which is the actual message. It is translated
+    \li const QString & description
+    \li An XHTML document which is the actual message. It is translated
        into the current language.
   \row
-    \o const QUrl &identifier
-    \o Identifies the error with a URI, where the fragment is
+    \li const QUrl &identifier
+    \li Identifies the error with a URI, where the fragment is
        the error code, and the rest of the URI is the error namespace.
   \row
-    \o const QSourceLocation & sourceLocation
-    \o Identifies where the error occurred.
+    \li const QSourceLocation & sourceLocation
+    \li Identifies where the error occurred.
   \endtable
 
  */

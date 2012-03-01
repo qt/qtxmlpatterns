@@ -62,11 +62,11 @@
 
     The parameters have the following meanings:
     \list
-        \o \e{f} The unique station ID of Nydalen.
-        \o \e{t} The hour in 0-23 format.
-        \o \e{m} The minute in 0-59 format.
-        \o \e{d} The date in dd.mm.yyyy format.
-        \o \e{start} Not interesting for our use but should be passed.
+        \li \e{f} The unique station ID of Nydalen.
+        \li \e{t} The hour in 0-23 format.
+        \li \e{m} The minute in 0-59 format.
+        \li \e{d} The date in dd.mm.yyyy format.
+        \li \e{start} Not interesting for our use but should be passed.
     \endlist
 
     As a result we get the following document:
