@@ -40,12 +40,12 @@
     violations and instances of bad or inefficient patterns. We can do
     it using the common searching and pattern matching utilities to
     process the C++ files (e.g., \c{grep}, \c{sed}, and \c{awk}). Now
-    we can also use XQuery with the QtXmlPatterns module.
+    we can also use XQuery with the Qt XML Patterns module.
 
     An extension to the \c{g++} open source C++ compiler
     (\l{http://public.kitware.com/GCC_XML/HTML/Index.html} {GCC-XML})
     generates an XML description of C++ source code declarations. This
-    XML description can then be processed by QtXmlPatterns using
+    XML description can then be processed by Qt XML Patterns using
     XQueries to navigate the XML description of the C++ source and
     produce a report. Consider the problem of finding mutable global
     variables:

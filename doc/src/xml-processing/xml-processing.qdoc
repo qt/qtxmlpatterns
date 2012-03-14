@@ -44,7 +44,7 @@
     \brief An Overview of the XML processing facilities in Qt.
 
     In addition to core XML support, classes for higher level querying
-    and manipulation of XML data are provided by the QtXmlPatterns
+    and manipulation of XML data are provided by the Qt XML Patterns
     module. In the QtSvg module, the QSvgRenderer and QSvgGenerator
     classes can read and write a subset of SVG, an XML-based file
     format. Qt also provides helper functions that may be useful to

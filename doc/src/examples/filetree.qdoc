@@ -29,7 +29,7 @@
   \example xmlpatterns/filetree
   \title File System Example
 
-  This example shows how to use QtXmlPatterns for querying non-XML
+  This example shows how to use Qt XML Patterns for querying non-XML
   data that is modeled to look like XML. 
 
   \tableofcontents
@@ -80,7 +80,7 @@
   The strategy is to create a custom node model that represents the
   directory tree of the computer's file system. That tree structure is
   non-XML data. The custom node model must have the same callback
-  interface as the XML node models that the QtXmlPatterns query engine
+  interface as the XML node models that the Qt XML Patterns query engine
   uses to execute queries. The query engine can then traverse the
   custom node model as if it were traversing the node model built from
   an XML document.
@@ -89,7 +89,7 @@
   create a custom node model by subclassing QAbstractXmlNodeModel and
   providing implementations for its pure virtual functions. For many
   cases, the implementations of several of the virtual functions are
-  always the same, so QtXmlPatterns also provides QSimpleXmlNodeModel,
+  always the same, so Qt XML Patterns also provides QSimpleXmlNodeModel,
   which subclasses QAbstractXmlNodeModel and provides implementations
   for the callback functions that you can ignore. By subclassing
   QSimpleXmlNodeModel instead of QAbstractXmlNodeModel, you can reduce
@@ -326,7 +326,7 @@
   \snippet examples/xmlpatterns/filetree/mainwindow.cpp 4
 
   \c{loadDirectory()} demonstrates a standard code pattern for using
-  QtXmlPatterns programatically. First it gets the node model index
+  Qt XML Patterns programatically. First it gets the node model index
   for the root of the selected directory. Then it creates an instance
   of QXmlQuery and calls QXmlQuery::bindVariable() to bind the node
   index to the XQuery variable \c{$fileTree}. It then calls

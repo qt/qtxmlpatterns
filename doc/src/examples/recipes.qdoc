@@ -29,7 +29,7 @@
   \example xmlpatterns/recipes
   \title Recipes Example
 
-  The Recipes example shows how to use QtXmlPatterns to query XML data
+  The Recipes example shows how to use Qt XML Patterns to query XML data
   loaded from a file. 
 
   \tableofcontents
@@ -109,7 +109,7 @@
   \snippet examples/xmlpatterns/recipes/querymainwindow.cpp 1
 
   \l{evaluate() function} {evaluate()} demonstrates the standard
-  QtXmlPatterns usage pattern. First, an instance of QXmlQuery is
+  Qt XML Patterns usage pattern. First, an instance of QXmlQuery is
   created (\c{query}). The \c{query's} \l{QXmlQuery::bindVariable()}
   {bindVariable()} function is then called to bind the \c cookbook.xml
   file to the XQuery variable \c inputDocument. \e{After} the variable
@@ -120,7 +120,7 @@
   \e{after} \l{QXmlQuery::bindVariable()} {bindVariable()}.
 
   Passing the XQuery to \l{QXmlQuery::setQuery()} {setQuery()} causes
-  QtXmlPatterns to parse the XQuery. \l{QXmlQuery::isValid()} is
+  Qt XML Patterns to parse the XQuery. \l{QXmlQuery::isValid()} is
   called to ensure that the XQuery was correctly parsed.
 
   \target evaluate() function

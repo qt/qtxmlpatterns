@@ -74,7 +74,7 @@ locating a file in a hierarchical file system. It is a sequence of one
 or more \e{steps} separated by slash '/' or double slash '//'.
 Although path expressions are used for traversing XML trees, not file
 systems, in QtXmlPatterms we can model a file system to look like an
-XML tree, so in QtXmlPatterns we can use XQuery to traverse a file
+XML tree, so in Qt XML Patterns we can use XQuery to traverse a file
 system. See the \l {File System Example} {file system example}.
 
 Think of a path expression as an algorithm for traversing an XML tree
@@ -89,7 +89,7 @@ result of the XQuery.  The items in the result set are presented in
 \l{http://www.w3.org/TR/xquery/#id-document-order} {document order}
 and without duplicates.
 
-With QtXmlPatterns, a standard way to present the initial focus to a
+With Qt XML Patterns, a standard way to present the initial focus to a
 query is to call QXmlQuery::setFocus(). Another common way is to let
 the XQuery itself create the initial focus by using the first step of
 the path expression to call the XQuery \c{doc()} function. The
@@ -176,7 +176,7 @@ that are available.
 \section2 Axis Specifiers
 
 An axis specifier defines the direction you want the query engine to
-take, when it navigates away from the context node. QtXmlPatterns
+take, when it navigates away from the context node. Qt XML Patterns
 supports the following axes.
 
 \table
@@ -235,9 +235,9 @@ expression can test just the \e kind of node, or it can test the \e
 kind of node and the \e name of the node. The XQuery specification for
 \l{http://www.w3.org/TR/xquery/#node-tests} {node tests} also defines
 a third condition, the node's \e {Schema Type}, but schema type tests
-are not supported in QtXmlPatterns.
+are not supported in Qt XML Patterns.
 
-QtXmlPatterns supports the following node tests. The tests that have a
+Qt XML Patterns supports the following node tests. The tests that have a
 \c{name} parameter test the node's name in addition to its \e{kind}
 and are often called the \l{Name Tests}.
 
@@ -404,14 +404,14 @@ Both methods will work and produce the same output, all the
 
 But note how the output is slightly different from the output we saw
 before we added the default namespace declaration to the cookbook file.
-QtXmlPatterns automatically includes the correct namespace attribute
-in each \c{<title>} element in the output. When QtXmlPatterns loads a
+Qt XML Patterns automatically includes the correct namespace attribute
+in each \c{<title>} element in the output. When Qt XML Patterns loads a
 document and expands a QName, it creates an instance of QXmlName,
 which retains the namespace prefix along with the namespace URI and
 the local name. See QXmlName for further details.
 
 One thing to keep in mind from this namespace discussion, whether you
-run XQueries in a Qt program using QtXmlPatterns, or you run them from
+run XQueries in a Qt program using Qt XML Patterns, or you run them from
 the command line using xmlpatterns, is that if you don't get the
 output you expect, it might be because the data you are querying uses
 namespaces, but you didn't declare those namespaces in your XQuery.
