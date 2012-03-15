@@ -57,7 +57,7 @@ public:
   \threadsafe
   \since 4.4
   \ingroup xml-tools
-
+  \inmodule QtXmlPatterns
   \brief The QAbstractMessageHandler class provides a callback interface for handling messages.
 
   QAbstractMessageHandler is an abstract base class that provides a

@@ -45,6 +45,7 @@
   \reentrant
   \since 4.4
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
   \internal
 
   This abstract base class is for creating iterators for

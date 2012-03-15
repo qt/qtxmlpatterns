@@ -63,7 +63,7 @@ QT_BEGIN_NAMESPACE
   \reentrant
   \since 4.4
   \ingroup xml-tools
-
+  \inmodule QtXmlPatterns
   QXmlName represents the name of an XML node in a way that
   is both efficient and safe for comparing names. Normally,
   an XML node represents an XML element or attribute, but

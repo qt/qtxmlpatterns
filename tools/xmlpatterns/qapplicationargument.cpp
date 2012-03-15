@@ -53,6 +53,7 @@ QT_BEGIN_NAMESPACE
  \reentrant
  \internal
  \since 4.4
+ \inmodule QtXmlPatterns
 
  QApplicationArgument describes a valid command line argument,
  by having a set of characteristics:

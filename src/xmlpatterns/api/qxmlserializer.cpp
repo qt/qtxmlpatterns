@@ -97,6 +97,7 @@ QXmlSerializerPrivate::QXmlSerializerPrivate(const QXmlQuery &query,
   \reentrant
   \since 4.4
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   QXmlSerializer translates an \l {XQuery Sequence} {XQuery sequence}, usually
   the output of an QXmlQuery, into XML. Consider the example:

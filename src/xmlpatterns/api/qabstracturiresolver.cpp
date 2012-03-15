@@ -51,7 +51,7 @@ QT_BEGIN_NAMESPACE
   \since 4.4
   \reentrant
   \ingroup xml-tools
-
+  \inmodule QtXmlPatterns
   A Uniform Resource Identifier (URI) is a string that uniquely
   identifies a resource. URIs are versatile global identifiers. It is
   often useful to transform a URI that identifies something logical

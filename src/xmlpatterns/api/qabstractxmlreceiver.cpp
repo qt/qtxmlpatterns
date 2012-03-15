@@ -55,6 +55,7 @@ QT_BEGIN_NAMESPACE
   \reentrant
   \since 4.4
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   QAbstractXmlReceiver is an abstract base class that provides
   a callback interface for receiving an \l {XQuery Sequence}

@@ -84,6 +84,7 @@ QXmlFormatterPrivate::QXmlFormatterPrivate(const QXmlQuery &query,
    \reentrant
    \since 4.4
    \ingroup xml-tools
+   \inmodule QtXmlPatterns
 
    QXmlFormatter is a subclass of QXmlSerializer that formats the XML
    output to make it easier for humans to read.

@@ -70,6 +70,7 @@ public:
   \reentrant
   \since 4.4
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   Subclassing QAbstractXmlNodeModel can be a significant task, because it
   requires implementing several, complex member functions. QSimpleXmlNodeModel

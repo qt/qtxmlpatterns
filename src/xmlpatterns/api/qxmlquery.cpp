@@ -63,6 +63,7 @@ QT_BEGIN_NAMESPACE
   \reentrant
   \since 4.4
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   The QXmlQuery class compiles and executes queries written in the
   \l {http://www.w3.org/TR/xquery/}{XQuery language}. QXmlQuery is

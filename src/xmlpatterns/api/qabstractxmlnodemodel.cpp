@@ -79,6 +79,7 @@ bool QAbstractXmlNodeModel::isIgnorableInDeepEqual(const QXmlNodeModelIndex &n)
   \threadsafe
   \since 4.4
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   The QAbstractXmlNodeModel specifies the interface that a node model
   must implement for that node model be accessible to the query engine
@@ -1098,6 +1099,7 @@ bool QAbstractXmlNodeModel::isDeepEqual(const QXmlNodeModelIndex &n1,
   \since 4.4
   \brief The QXmlItem class contains either an XML node or an atomic value.
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   In XQuery, all expressions evaluate to a sequence of items, where
   each item is either an XML node or an atomic value. The query in the
@@ -1303,6 +1305,7 @@ bool QXmlItem::isNull() const
   \reentrant
   \since 4.4
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   QXmlNodeModelIndex is an index into an \l{QAbstractXmlNodeModel}
   {XML node model}. It contains:

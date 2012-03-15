@@ -61,6 +61,7 @@ QT_BEGIN_NAMESPACE
   \reentrant
   \since 4.6
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   The QXmlSchemaValidator class loads, parses an XML instance document and validates it
   against a W3C XML Schema that has been compiled with \l{QXmlSchema}.

@@ -55,6 +55,7 @@ QT_BEGIN_NAMESPACE
   \reentrant
   \since 4.6
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   The QXmlSchema class loads, compiles and validates W3C XML Schema files
   that can be used further for validation of XML instance documents via

@@ -51,6 +51,7 @@ QT_BEGIN_NAMESPACE
   \reentrant
   \since 4.4
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   QXmlResultItems presents the evaluation of an associated query as a
   sequence of \l{QXmlItem}{QXmlItems}. The sequence is traversed by
