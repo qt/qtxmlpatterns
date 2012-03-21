@@ -87,7 +87,7 @@ bool QAbstractXmlNodeModel::isIgnorableInDeepEqual(const QXmlNodeModelIndex &n)
   structure that can be queried as if the data were XML.
 
   The node model represented by a subclass of QAbstractXmlNodeModel is
-  meant to be accessed by the QtXmlPatterns query engine. If the API
+  meant to be accessed by the Qt XML Patterns query engine. If the API
   seems a little strange in a few places, it is because the member
   functions are called by the query engine as it evaluates an
   XQuery. They aren't meant to be used programatically.
@@ -190,7 +190,7 @@ bool QAbstractXmlNodeModel::isIgnorableInDeepEqual(const QXmlNodeModelIndex &n)
   \section1 Thread Safety
 
   Because the node model can be accessed concurrently by threads in
-  the QtXmlPatterns module, subclasses of QAbstractXmlNodeModel must
+  the Qt XML Patterns module, subclasses of QAbstractXmlNodeModel must
   be written to be \l{Reentrancy and Thread-Safety}{thread-safe}.
   Classes that simplify implementing thread-safety include QReadLocker
   and QWriteLocker.
@@ -557,8 +557,8 @@ QAbstractXmlNodeModel::mapToSequence(const QXmlNodeModelIndex &ni,
   available on AxisAttribute.
 
   The value past in \a axis is not guaranteed based on what is used in
-  a query. QtXmlPatterns may call this function arbitrarily with any
-  value for \a axis. This is because QtXmlPatterns may rewrite queries
+  a query. Qt XML Patterns may call this function arbitrarily with any
+  value for \a axis. This is because Qt XML Patterns may rewrite queries
   to be more efficient, using axes in different ways from the original
   query.
 
@@ -750,7 +750,7 @@ QAbstractXmlNodeModel::iterate(const QXmlNodeModelIndex &ni,
 /*!
   \fn QXmlNodeModelIndex QAbstractXmlNodeModel::nextFromSimpleAxis(SimpleAxis axis, const QXmlNodeModelIndex &origin) const
 
-  When QtXmlPatterns evaluate path expressions, it emulate them through a
+  When Qt XML Patterns evaluate path expressions, it emulate them through a
   combination of calls with QSimpleXmlNodeModel::SimpleAxis values. Therefore,
   the implementation of this function must return the node, if any, that
   appears on the \a axis emanating from the \a origin.
@@ -1111,7 +1111,7 @@ bool QAbstractXmlNodeModel::isDeepEqual(const QXmlNodeModelIndex &n1,
   in base64), a date, a float, and an attribute.
 
   QXmlItem is the class that represents these XQuery items in the
-  QtXmlPatterns API. A non-null instance of QXmlItem is either a node
+  Qt XML Patterns API. A non-null instance of QXmlItem is either a node
   or an atomic value. Calling isNode() or isAtomicValue() tells you
   which it is. Atomic values are represented elsewhere in the Qt API
   as instances of QVariant, and an instance of QXmlItem that

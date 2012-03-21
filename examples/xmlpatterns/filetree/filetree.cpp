@@ -180,7 +180,7 @@ QXmlNodeModelIndex FileTree::nextSibling(const QXmlNodeModelIndex &nodeIndex,
 //! [5]
 
 /*!
-  This function is called by the QtXmlPatterns query engine when it
+  This function is called by the Qt XML Patterns query engine when it
   wants to move to the next node in the model. It moves along an \a
   axis, \e from the node specified by \a nodeIndex.
 

@@ -73,7 +73,7 @@ A path expression looks somewhat like a typical \e{file pathname} for
 locating a file in a hierarchical file system. It is a sequence of one
 or more \e{steps} separated by slash '/' or double slash '//'.
 Although path expressions are used for traversing XML trees, not file
-systems, in QtXmlPatterms we can model a file system to look like an
+systems, in Qt XML Patterns we can model a file system to look like an
 XML tree, so in Qt XML Patterns we can use XQuery to traverse a file
 system. See the \l {File System Example} {file system example}.
 

@@ -305,13 +305,13 @@ void QXmlSchemaValidator::setUriResolver(const QAbstractUriResolver *resolver)
 
 /*!
   Returns the schema's URI resolver. If no URI resolver has been set,
-  QtXmlPatterns will use the URIs in instance documents as they are.
+  Qt XML Patterns will use the URIs in instance documents as they are.
 
   The URI resolver provides a level of abstraction, or \e{polymorphic
   URIs}. A resolver can rewrite \e{logical} URIs to physical ones, or
   it can translate obsolete or invalid URIs to valid ones.
 
-  When QtXmlPatterns calls QAbstractUriResolver::resolve() the
+  When Qt XML Patterns calls QAbstractUriResolver::resolve() the
   absolute URI is the URI mandated by the schema specification, and the
   relative URI is the URI specified by the user.
 

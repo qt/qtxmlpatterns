@@ -50,7 +50,7 @@
  \class tst_XmlPatternsDiagnosticsTS
  \internal
  \since 4.5
- \brief Test QtXmlPatterns test suite driver in tests/auto/xmlpatternsxqts/lib/.
+ \brief Test Qt XML Patterns test suite driver in tests/auto/xmlpatternsxqts/lib/.
  */
 class tst_XmlPatternsDiagnosticsTS : public tst_SuiteTest
 {

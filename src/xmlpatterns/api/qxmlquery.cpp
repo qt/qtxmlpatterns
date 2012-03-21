@@ -895,13 +895,13 @@ void QXmlQuery::setUriResolver(const QAbstractUriResolver *resolver)
 
 /*!
   Returns the query's URI resolver. If no URI resolver has been set,
-  QtXmlPatterns will use the URIs in queries as they are.
+  Qt XML Patterns will use the URIs in queries as they are.
 
   The URI resolver provides a level of abstraction, or \e{polymorphic
   URIs}. A resolver can rewrite \e{logical} URIs to physical ones, or
   it can translate obsolete or invalid URIs to valid ones.
 
-  QtXmlPatterns calls the URI resolver for all URIs it encounters,
+  Qt XML Patterns calls the URI resolver for all URIs it encounters,
   except for namespaces. Specifically, all builtin functions that deal
   with URIs (\c{fn:doc()}, and \c{fn:doc-available()}).
 
@@ -910,7 +910,7 @@ void QXmlQuery::setUriResolver(const QAbstractUriResolver *resolver)
   Rather than use the URI the user specified, the return value of
   QAbstractUriResolver::resolve() will be used.
 
-  When QtXmlPatterns calls QAbstractUriResolver::resolve() the
+  When Qt XML Patterns calls QAbstractUriResolver::resolve() the
   absolute URI is the URI mandated by the XQuery language, and the
   relative URI is the URI specified by the user.
 

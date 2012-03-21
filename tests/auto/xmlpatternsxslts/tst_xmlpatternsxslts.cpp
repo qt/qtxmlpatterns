@@ -50,7 +50,7 @@
  \class tst_XmlPatternsXSLTS
  \internal
  \since 4.5
- \brief Test QtXmlPatterns against W3C's XSL-T 2.0 test suite, XSLTS.
+ \brief Test Qt XML Patterns against W3C's XSL-T 2.0 test suite, XSLTS.
  */
 class tst_XmlPatternsXSLTS : public tst_SuiteTest
 {
