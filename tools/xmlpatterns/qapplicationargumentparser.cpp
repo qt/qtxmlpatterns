@@ -61,7 +61,6 @@ QT_BEGIN_NAMESPACE
  \reentrant
  \internal
  \since 4.4
- \inmodule QtXmlPatterns
 
  QApplicationArgumentParser simplifies writing command line applications by taking care of:
 
