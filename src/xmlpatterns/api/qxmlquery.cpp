@@ -77,7 +77,7 @@ QT_BEGIN_NAMESPACE
   {http://www.w3.org/TR/xpath-datamodel/} {XQuery 1.0 and XPath 2.0
   Data Model}.
 
-  \snippet doc/src/snippets/code/src_xmlpatterns_api_qabstractxmlreceiver.cpp 0
+  \snippet code/src_xmlpatterns_api_qabstractxmlreceiver.cpp 0
 
   The example uses QXmlQuery to match the first paragraph of an XML
   document and then \l {QXmlSerializer} {output the result} to a
@@ -139,7 +139,7 @@ QT_BEGIN_NAMESPACE
   an XSLT stylesheet instead of as an XQuery. You must also set the
   input document by calling setFocus().
 
-  \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlquery.cpp 7
+  \snippet code/src_xmlpatterns_api_qxmlquery.cpp 7
 
   \note Currently, setFocus() must be called \e before setQuery() when
   using XSLT.
@@ -552,7 +552,7 @@ void QXmlQuery::bindVariable(const QXmlName &name, const QXmlItem &value)
   query's \l {QXmlNamePool} {namespace}. The function then behaves as
   the overloaded function. It is equivalent to the following snippet.
 
-  \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlquery.cpp 0
+  \snippet code/src_xmlpatterns_api_qxmlquery.cpp 0
  */
 void QXmlQuery::bindVariable(const QString &localName, const QXmlItem &value)
 {
@@ -567,7 +567,7 @@ void QXmlQuery::bindVariable(const QString &localName, const QXmlItem &value)
   this function can be used to pass an XML document in memory to
   \c{fn:doc}.
 
-  \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlquery.cpp 1
+  \snippet code/src_xmlpatterns_api_qxmlquery.cpp 1
 
   The caller must ensure that \a device has been opened with at least
   QIODevice::ReadOnly prior to this binding. Otherwise, behavior is
@@ -577,7 +577,7 @@ void QXmlQuery::bindVariable(const QString &localName, const QXmlItem &value)
   a QBuffer as shown in the following snippet. Suppose \e myQString
   contains \c{<document>content</document>}
 
-  \snippet doc/src/snippets/qxmlquery/bindingExample.cpp 0
+  \snippet qxmlquery/bindingExample.cpp 0
 
   \a name must not be \e null. \a {name}.isNull() must return false.
   If \a name has already been bound, its previous binding will be
@@ -638,7 +638,7 @@ void QXmlQuery::bindVariable(const QXmlName &name, QIODevice *device)
   If \a localName is a valid \l {QXmlName::isNCName()} {NCName}, this
   function is equivalent to the following snippet.
 
-  \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlquery.cpp 2
+  \snippet code/src_xmlpatterns_api_qxmlquery.cpp 2
 
   A QXmlName is constructed from \a localName, and is passed
   to the appropriate overload along with \a device.

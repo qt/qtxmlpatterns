@@ -102,7 +102,7 @@ QAbstractUriResolver::~QAbstractUriResolver()
   about resolving the \a relative URI, it should simply return the \a
   relative URI resolved against the \a baseURI, i.e.:
 
-  \snippet doc/src/snippets/code/src_xmlpatterns_api_qabstracturiresolver.cpp 0
+  \snippet code/src_xmlpatterns_api_qabstracturiresolver.cpp 0
 
   \sa QUrl::isRelative(), QUrl::isValid()
  */

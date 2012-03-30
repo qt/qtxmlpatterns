@@ -67,7 +67,7 @@
 
     Consider the declarations in this hypothetical C++ application:
 
-    \snippet examples/xmlpatterns/xquery/globalVariables/globals.cpp 0
+    \snippet xmlpatterns/xquery/globalVariables/globals.cpp 0
 
     \section3 The XML description of the C++ application
 
@@ -75,7 +75,7 @@
     \l{http://public.kitware.com/GCC_XML/HTML/Index.html} {GCC-XML}
     produces this XML description:
 
-    \quotefromfile examples/xmlpatterns/xquery/globalVariables/globals.gccxml
+    \quotefromfile xmlpatterns/xquery/globalVariables/globals.gccxml
     \printuntil
 
     \section3 The XQuery for finding global variables
@@ -84,7 +84,7 @@
     description. Here is our XQuery source. We walk through it in
     \l{XQuery Code Walk-Through}.
 
-    \quotefromfile examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
     \printuntil
 
     \section3 Running the XQuery
@@ -127,7 +127,7 @@
     \c{examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq}
     It begins with two variable declarations that begin the XQuery:
 
-    \quotefromfile examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
     \skipto declare variable
     \printto (:
 
@@ -148,7 +148,7 @@
     instructions for displaying the text, and then the \c{<body>}
     element.
 
-    \quotefromfile examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
     \skipto <html xmlns
     \printuntil
 
@@ -157,7 +157,7 @@
     the two \c{return} clauses separated by the \e {comma operator}
     about halfway down:
 
-    \quotefromfile examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
     \skipto declare function local:report()
     \printuntil };
 
@@ -171,7 +171,7 @@
     Here is the html generated for the \c{<body>} element. Compare
     it with the XQuery code above:
 
-    \quotefromfile examples/xmlpatterns/xquery/globalVariables/globals.html
+    \quotefromfile xmlpatterns/xquery/globalVariables/globals.html
     \skipto <body>
     \printuntil </body>
      
@@ -180,21 +180,21 @@
     returns true if the variable has a complex type. The variable can
     be mutable or const.
     
-    \quotefromfile examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
     \skipto declare function local:isComplexType
     \printuntil };
 
     \c{isPrimitive()} returns true if the variable has a primitive
     type. The variable must be mutable.
 
-    \quotefromfile examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
     \skipto declare function local:isPrimitive
     \printuntil };
 
     \c{location()} returns a text constructed from the variable's file
     and line number attributes.
 
-    \quotefromfile examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
     \skipto declare function local:location
     \printuntil };
 

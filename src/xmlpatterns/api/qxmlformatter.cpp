@@ -100,11 +100,11 @@ QXmlFormatterPrivate::QXmlFormatterPrivate(const QXmlQuery &query,
    For example, where the base class QXmlSerializer would
    output this:
 
-   \quotefile doc/src/snippets/patternist/notIndented.xml
+   \quotefile patternist/notIndented.xml
 
    QXmlFormatter outputs this:
 
-   \quotefile doc/src/snippets/patternist/indented.xml
+   \quotefile patternist/indented.xml
 
    If you just want to serialize your XML in a human-readable
    format, use QXmlFormatter as it is. The default indentation
@@ -129,7 +129,7 @@ QXmlFormatterPrivate::QXmlFormatterPrivate(const QXmlQuery &query,
    Alternatively, you can subclass QXmlFormatter and reimplement
    the callbacks there.
 
-   \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlformatter.cpp 0
+   \snippet code/src_xmlpatterns_api_qxmlformatter.cpp 0
 */
 
 /*!

@@ -64,7 +64,7 @@
     library:
 
     \target qtxmlpatterns_example_query
-    \quotefile snippets/patternist/introductionExample.xq
+    \quotefile patternist/introductionExample.xq
 
     First, the query opens a \c{<bibliography>} element in the
     output. The
@@ -120,7 +120,7 @@
     \c{myquery.xq}), we can run it from a Qt application using a
     standard Qt XML Patterns code sequence:
 
-    \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlquery.cpp 3
+    \snippet code/src_xmlpatterns_api_qxmlquery.cpp 3
 
     First construct a QFile for the text file containing the XQuery
     (\c{myquery.xq}). Then create an instance of QXmlQuery and call
@@ -143,7 +143,7 @@
     \e xmlpatterns is a command line utility for running XQueries.  It
     expects the name of a file containing the XQuery text.
 
-    \snippet doc/src/snippets/code/doc_src_qtxmlpatterns.qdoc 2
+    \snippet code/doc_src_qtxmlpatterns.qdoc 2
 
     The XQuery in \c{myQuery.xq} will be evaluated and its output
     written to \c stdout. Pass the \c -help switch to get the list of
@@ -182,13 +182,13 @@
     (\c{$publisher}), and the year of publication (\c{$year}):
 
     \target qtxmlpatterns_example_query2
-    \quotefile snippets/patternist/introExample2.xq
+    \quotefile patternist/introExample2.xq
 
     Modify the Qt XML Patterns code to use one of the \l{QXmlQuery::}
     {bindVariable()} functions to bind a program variable to each
     XQuery $variable:
 
-    \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlquery.cpp 4
+    \snippet code/src_xmlpatterns_api_qxmlquery.cpp 4
 
     Each program variable is passed to Qt XML Patterns as a QVariant of
     the type of the C++ variable or constant from which it is
@@ -302,7 +302,7 @@
     populates a sequence of \l {QXmlResultItems} {result items} with
     the XQuery results:
 
-    \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlquery.cpp 5
+    \snippet code/src_xmlpatterns_api_qxmlquery.cpp 5
 
     Iterate through the \l {QXmlResultItems} {result items} and test
     each QXmlItem to see if it is an atomic value or a node. If it is
@@ -417,7 +417,7 @@
     friend of QMetaType (qMetaTypeId<T>()) and a friend of QVariant
     (qvariant_cast<T>()):
 
-    \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlquery.cpp 6
+    \snippet code/src_xmlpatterns_api_qxmlquery.cpp 6
 
     To access the strings in a QXmlName returned by an
     \l{QXmlQuery::evaluateTo()} {XQuery evaluation}, the QXmlName must
@@ -452,7 +452,7 @@
     to find all the skin care product orders and output them ordered
     by shipping date.
 
-    \quotefile snippets/patternist/introAcneRemover.xq
+    \quotefile patternist/introAcneRemover.xq
 
     Qt XML Patterns can be used out of the box to perform this
     query, provided \e myOrders.xml actually contains well-formed XML. It
@@ -464,7 +464,7 @@
     description of it. Such an XML file, if it existed, might look
     something like this:
 
-    \quotefile snippets/patternist/introFileHierarchy.xml
+    \quotefile patternist/introFileHierarchy.xml
 
     The \l{File System Example}{File System Example} does exactly this.
 
@@ -483,7 +483,7 @@
     Now we can write an XQuery to find all the XML files and parse
     them to find the ones that don't contain well-formed XML.
 
-    \quotefromfile snippets/patternist/introNavigateFS.xq
+    \quotefromfile patternist/introNavigateFS.xq
     \skipto <html>
     \printuntil
 

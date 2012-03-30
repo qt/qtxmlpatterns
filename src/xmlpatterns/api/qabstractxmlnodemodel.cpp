@@ -110,7 +110,7 @@ bool QAbstractXmlNodeModel::isIgnorableInDeepEqual(const QXmlNodeModelIndex &n)
   present it through the \l
   {http://www.w3.org/TR/xpath-datamodel/}{XPath Data Model interface}.
 
-  \snippet doc/src/snippets/code/src_xmlpatterns_api_qabstractxmlnodemodel.cpp 1
+  \snippet code/src_xmlpatterns_api_qabstractxmlnodemodel.cpp 1
 
   The application first creates an instance of QXmlQuery and calls \l
   {QXmlQuery::setQuery()}{setQuery()} to read \c queryFile containing
@@ -1105,7 +1105,7 @@ bool QAbstractXmlNodeModel::isDeepEqual(const QXmlNodeModelIndex &n1,
   each item is either an XML node or an atomic value. The query in the
   following snippet evaluates to sequence of five items.
 
-  \quotefile doc/src/snippets/patternist/items.xq
+  \quotefile patternist/items.xq
 
   The five items are: An element, an atomic value (binary data encoded
   in base64), a date, a float, and an attribute.
@@ -1495,7 +1495,7 @@ bool QXmlNodeModelIndex::operator!=(const QXmlNodeModelIndex &other) const
  Resets this QXmlNodeModelIndex to be null. It is equivalent to
  writing:
 
- \snippet doc/src/snippets/code/src_xmlpatterns_api_qabstractxmlnodemodel.cpp 0
+ \snippet code/src_xmlpatterns_api_qabstractxmlnodemodel.cpp 0
  */
 
 /*!

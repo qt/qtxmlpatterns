@@ -102,7 +102,7 @@ QXmlSerializerPrivate::QXmlSerializerPrivate(const QXmlQuery &query,
   QXmlSerializer translates an \l {XQuery Sequence} {XQuery sequence}, usually
   the output of an QXmlQuery, into XML. Consider the example:
 
-  \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlserializer.cpp 0
+  \snippet code/src_xmlpatterns_api_qxmlserializer.cpp 0
 
   First it constructs a \l {QXmlQuery} {query} that gets the
   first paragraph from document \c index.html. Then it constructs

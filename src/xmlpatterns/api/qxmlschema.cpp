@@ -64,7 +64,7 @@ QT_BEGIN_NAMESPACE
   The following example shows how to load a XML Schema file from the network
   and test whether it is a valid schema document:
 
-  \snippet doc/src/snippets/qxmlschema/main.cpp 0
+  \snippet qxmlschema/main.cpp 0
 
   \section1 XML Schema Version
 
@@ -109,7 +109,7 @@ QXmlSchema::~QXmlSchema()
 
   Example:
 
-  \snippet doc/src/snippets/qxmlschema/main.cpp 0
+  \snippet qxmlschema/main.cpp 0
 
   \sa isValid()
  */
@@ -137,7 +137,7 @@ bool QXmlSchema::load(const QUrl &source)
 
   Example:
 
-  \snippet doc/src/snippets/qxmlschema/main.cpp 1
+  \snippet qxmlschema/main.cpp 1
 
   \sa isValid()
  */
@@ -163,7 +163,7 @@ bool QXmlSchema::load(QIODevice *source, const QUrl &documentUri)
 
   Example:
 
-  \snippet doc/src/snippets/qxmlschema/main.cpp 2
+  \snippet qxmlschema/main.cpp 2
 
   \sa isValid()
  */

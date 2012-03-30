@@ -58,7 +58,7 @@ QT_BEGIN_NAMESPACE
   repeatedly calling next(), which actually produces the sequence by
   lazy evaluation of the query.
 
-  \snippet doc/src/snippets/code/src_xmlpatterns_api_qxmlresultitems.cpp 0
+  \snippet code/src_xmlpatterns_api_qxmlresultitems.cpp 0
 
   An effect of letting next() produce the sequence by lazy evaluation
   is that a query error can occur on any call to next(). If an error

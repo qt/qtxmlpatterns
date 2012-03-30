@@ -44,7 +44,7 @@ Where Java and C++ are \e{statement-based} languages, the XQuery
 language is \e{expression-based}. The simplest XQuery expression is an
 XML element constructor:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 20
+\snippet code/doc_src_qtxmlpatterns.qdoc 20
 
 This \c{<recipe/>} element is an XQuery expression that forms a
 complete XQuery. In fact, this XQuery doesn't actually query
@@ -56,7 +56,7 @@ An XQuery expression can also be enclosed in curly braces and embedded
 in another XQuery expression. This XQuery has a document expression
 embedded in a node expression:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 21
+\snippet code/doc_src_qtxmlpatterns.qdoc 21
 
 It creates a new \c{<html>} element in the output and sets its \c{id}
 attribute to be the \c{id} attribute from an \c{<html>} element in the
@@ -104,7 +104,7 @@ initial focus set. The document node will have one child node, and
 that child node will represent the document element.  Consider the
 following XQuery:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 18
+\snippet code/doc_src_qtxmlpatterns.qdoc 18
 
 The \c{doc()} function loads the \c{cookbook.xml} file and returns the
 document node. The document node then becomes the focus for the next
@@ -119,7 +119,7 @@ Conceptually, evaluation of the steps of a path expression is similar
 to iterating through the same number of nested \e{for} loops. Consider
 the following XQuery, which builds on the previous one:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 19
+\snippet code/doc_src_qtxmlpatterns.qdoc 19
 
 This XQuery is a single path expression composed of three steps. The
 first step creates the initial focus by calling the \c{doc()}
@@ -159,7 +159,7 @@ implied. XQueries are normally written in this shorthand form, but
 they can also be written in the longhand form. If we rewrite the
 XQuery in the longhand form, it looks like this:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 22
+\snippet code/doc_src_qtxmlpatterns.qdoc 22
 
 The two axis steps have been expanded. The first step (\c{//recipe})
 has been rewritten as \c{/descendant-or-self::element(recipe)}, where
@@ -343,7 +343,7 @@ The name tests are the \l{Node Tests} that have the \c{name}
 parameter. A name test must match the node \e name in addition to the
 node \e kind. We have already seen name tests used:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 19
+\snippet code/doc_src_qtxmlpatterns.qdoc 19
 
 In this path expression, both \c{recipe} and \c{title} are name tests
 written in the shorthand form. XQuery resolves these names
@@ -363,11 +363,11 @@ namespace(s) in an XQuery is a common cause of XQuery failures. Let's
 add a \e{default} namespace to \c{cookbook.xml} now. Change the
 \e{document element} in \c{cookbook.xml} from:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 23
+\snippet code/doc_src_qtxmlpatterns.qdoc 23
 
 to...
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 24
+\snippet code/doc_src_qtxmlpatterns.qdoc 24
 
 This is called a \e{default namespace} declaration because it doesn't
 include a namespace prefix. By including this default namespace
@@ -390,17 +390,17 @@ can declare the namespace in the XQuery. We can give it a \e{namespace
 prefix} (e.g. \c{c} for cookbook) and prefix each name test with the
 namespace prefix:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 3
+\snippet code/doc_src_qtxmlpatterns.qdoc 3
 
 Or we can declare the namespace to be the \e{default element
 namespace}, and then we can still run the original XQuery:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 4
+\snippet code/doc_src_qtxmlpatterns.qdoc 4
 
 Both methods will work and produce the same output, all the
 \c{<title>} elements:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 5
+\snippet code/doc_src_qtxmlpatterns.qdoc 5
 
 But note how the output is slightly different from the output we saw
 before we added the default namespace declaration to the cookbook file.
@@ -423,7 +423,7 @@ attributes in the cookbook but select only the ones in the \c{xml}
 namespace, use the \c{xml:} namespace prefix but replace the
 \e{local name} (the attribute name) with the wildcard:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 7
+\snippet code/doc_src_qtxmlpatterns.qdoc 7
 
 Oops! If you save this XQuery in \c{file.xq} and run it through
 \c{xmlpatterns}, it doesn't work. You get an error message instead,
@@ -451,12 +451,12 @@ all regardless of their namespace, replace the namespace prefix with
 the wildcard and write \c{name} (the attribute name) as the local
 name:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 8
+\snippet code/doc_src_qtxmlpatterns.qdoc 8
 
 To find and select all the attributes of the \e{document element} in
 the cookbook, replace the entire name test with the wildcard:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 9
+\snippet code/doc_src_qtxmlpatterns.qdoc 9
 
 \section1 Using Predicates In Path Expressions
 
@@ -469,14 +469,14 @@ filter, the node is included in the result set.  The query below
 selects the recipe element that has the \c{<title>} element
 \c{"Hard-Boiled Eggs"}.
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 10
+\snippet code/doc_src_qtxmlpatterns.qdoc 10
 
 The dot expression ('.') can be used in predicates and path
 expressions to refer to the current context node. The following query
 uses the dot expression to refer to the current \c{<method>} element.
 The query selects the empty \c{<method>} elements from the cookbook.
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 11
+\snippet code/doc_src_qtxmlpatterns.qdoc 11
 
 Note that passing the dot expression to the
 \l{http://www.w3.org/TR/xpath-functions/#func-string-length}
@@ -485,19 +485,19 @@ Note that passing the dot expression to the
 {string-length()} is called with no parameter, the context node is
 assumed:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 12
+\snippet code/doc_src_qtxmlpatterns.qdoc 12
 
 Actually, selecting an empty \c{<method>} element might not be very
 useful by itself. It doesn't tell you which recipe has the empty
 method:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 31
+\snippet code/doc_src_qtxmlpatterns.qdoc 31
 
 \target Empty Method Not Robust
 What you probably want to see instead are the \c{<recipe>} elements that
 have empty \c{<method>} elements:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 32
+\snippet code/doc_src_qtxmlpatterns.qdoc 32
 
 The predicate uses the
 \l{http://www.w3.org/TR/xpath-functions/#func-string-length}
@@ -509,7 +509,7 @@ text, the predicate evaluates to \c{false}, and the \c{<recipe>}
 element is discarded.  The output is the entire recipe that has no
 instructions for preparation:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 33
+\snippet code/doc_src_qtxmlpatterns.qdoc 33
 
 The astute reader will have noticed that this use of
 \c{string-length()} to find an empty element is unreliable. It works
@@ -533,7 +533,7 @@ documents, the normal sequence is
 This query returns the second \c{<recipe>} element in the
 \c{cookbook.xml} file:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 13
+\snippet code/doc_src_qtxmlpatterns.qdoc 13
 
 The other frequently used positional function is
 \l{http://www.w3.org/TR/xpath-functions/#func-last} {last()}, which
@@ -542,11 +542,11 @@ another way, \l{http://www.w3.org/TR/xpath-functions/#func-last}
 {last()} returns the size of the focus set. This query returns the
 last recipe in the cookbook:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 16
+\snippet code/doc_src_qtxmlpatterns.qdoc 16
 
 And this query returns the next to last \c{<recipe>}:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 17
+\snippet code/doc_src_qtxmlpatterns.qdoc 17
 
 \section2 Boolean Predicates
 
@@ -576,7 +576,7 @@ method element was written with both opening and closing tags and
 there was whitespace between the tags. Here is a more robust way that
 uses a different boolean predicate.
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 34
+\snippet code/doc_src_qtxmlpatterns.qdoc 34
 
 This one uses the
 \l{http://www.w3.org/TR/xpath-functions/#func-empty} {empty()} and
@@ -589,7 +589,7 @@ steps, but all the steps themselves are empty. That's still a case of
 a recipe with no instructions that won't be detected. There is a
 better way:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 35
+\snippet code/doc_src_qtxmlpatterns.qdoc 35
 
 This version uses the
 \l{http://www.w3.org/TR/xpath-functions/#func-not} {not} and
@@ -608,12 +608,12 @@ function in a comparison to inspect positions with conditional logic. The
 function returns the position index of the current context item in the
 sequence of items:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 14
+\snippet code/doc_src_qtxmlpatterns.qdoc 14
 
 Note that the first position in the sequence is position 1, not 0. We
 can also select \e{all} the recipes after the first one:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 15
+\snippet code/doc_src_qtxmlpatterns.qdoc 15
 
 \target Constructing Elements
 \section1 Constructing Elements
@@ -634,14 +634,14 @@ the result set, we must create an XML element. We can do that using a
 \l{http://www.w3.org/TR/xquery/#id-orderby-return} {\e{return}
 clause} with an element constructor:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 25
+\snippet code/doc_src_qtxmlpatterns.qdoc 25
 
 The \e{for} clause produces a sequence of attribute nodes from the result
 of the path expression. Each attribute node in the sequence is bound
 to the variable \c{$i}. The \e{return} clause then constructs a \c{<p>}
 element around the attribute node. Here is the output:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 28
+\snippet code/doc_src_qtxmlpatterns.qdoc 28
 
 The output contains one \c{<p>} element for each \c{xml:id} attribute
 in the cookbook. Note that XQuery puts each attribute in the right
@@ -653,27 +653,27 @@ The other two examples from the \l{Wildcards in Name Tests} {wildcard}
 section can be rewritten the same way. Here is the XQuery that selects
 all the \c{name} attributes, regardless of namespace:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 26
+\snippet code/doc_src_qtxmlpatterns.qdoc 26
 
 And here is its output:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 29
+\snippet code/doc_src_qtxmlpatterns.qdoc 29
 
 And here is the XQuery that selects all the attributes from the
 \e{document element}:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 27
+\snippet code/doc_src_qtxmlpatterns.qdoc 27
 
 And here is its output:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 30
+\snippet code/doc_src_qtxmlpatterns.qdoc 30
 
 \section2 Element Constructors are Expressions
 
 Because node constructors are expressions, they can be used in
 XQueries wherever expressions are allowed.
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 40
+\snippet code/doc_src_qtxmlpatterns.qdoc 40
 
 If \c{cookbook.xml} is loaded without error, a \c{<oppskrift>} element
 (Norwegian word for recipe) is constructed for each \c{<recipe>}
@@ -697,22 +697,22 @@ detailed specification.
 To construct an atomic value as element content, enclose an expression
 in curly braces and embed it in the element constructor:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 36
+\snippet code/doc_src_qtxmlpatterns.qdoc 36
 
 Sending this XQuery through xmlpatterns produces:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 37
+\snippet code/doc_src_qtxmlpatterns.qdoc 37
 
 To compute the value of an attribute, enclose the expression in
 curly braces and embed it in the attribute value:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 38
+\snippet code/doc_src_qtxmlpatterns.qdoc 38
 
 Sending this XQuery through xmlpatterns produces:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 39
+\snippet code/doc_src_qtxmlpatterns.qdoc 39
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 40
+\snippet code/doc_src_qtxmlpatterns.qdoc 40
 
 If \c{cookbook.xml} is loaded without error, a \c{<oppskrift>} element
 (Norweigian word for recipe) is constructed for each \c{<recipe>}
@@ -729,7 +729,7 @@ Copy the \c{cookbook.xml} to your current directory, save one of the
 cookbook XQuery examples in a \c{.xq} file (e.g., \c{file.xq}), and
 run the XQuery using Qt's command line utility:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 6
+\snippet code/doc_src_qtxmlpatterns.qdoc 6
 
 \section1 Further Reading
 
@@ -777,7 +777,7 @@ The most common cause of this bug is failure to declare one or more
 namespaces in your XQuery. Consider the following query for selecting
 all the examples in an XHTML document:
 
-\quotefile snippets/patternist/simpleHTML.xq
+\quotefile patternist/simpleHTML.xq
 
 It won't match anything because \c{index.html} is an XHTML file, and
 all XHTML files declare the default namespace
@@ -788,19 +788,19 @@ But the actual expanded name is
 \c{{http://www.w3.org/1999/xhtml}html}. One possible fix is to declare the
 correct default namespace in the XQuery:
 
-\quotefile snippets/patternist/simpleXHTML.xq
+\quotefile patternist/simpleXHTML.xq
 
 Another common cause of this bug is to confuse the \e{document node}
 with the top element node. They are different. This query won't match
 anything:
 
-\quotefile snippets/patternist/docPlainHTML.xq
+\quotefile patternist/docPlainHTML.xq
 
 The \c{doc()} function returns the \e{document node}, not the top
 element node (\c{<html>}). Don't forget to match the top element node
 in the path expression:
 
-\quotefile snippets/patternist/docPlainHTML2.xq
+\quotefile patternist/docPlainHTML2.xq
 
 \section2 What if my input namespace is different from my output namespace?
 
@@ -808,7 +808,7 @@ Just remember to declare both namespaces in your XQuery and use them
 properly. Consider the following query, which is meant to generate
 XHTML output from XML input:
 
-\quotefile snippets/patternist/embedDataInXHTML.xq
+\quotefile patternist/embedDataInXHTML.xq
 
 We want the \c{<html>}, \c{<body>}, and \c{<p>} nodes we create in the
 output to be in the standard XHTML namespace, so we declare the
@@ -821,7 +821,7 @@ empty namespace. So we must declare that namespace too, with a
 namespace prefix, and then use the prefix with the node names in
 the path expression. This one will probably work better:
 
-\quotefile snippets/patternist/embedDataInXHTML2.xq
+\quotefile patternist/embedDataInXHTML2.xq
 
 \section2 Why doesn't my return clause work?
 
@@ -830,7 +830,7 @@ Recall that XQuery is an \e{expression-based} language, not
 understanding XQuery expression precedence is very important.
 Consider the following query:
 
-\quotefile snippets/patternist/forClause2.xq
+\quotefile patternist/forClause2.xq
 
 It looks ok, but it isn't. It is supposed to be a FLWOR expression
 comprising a \e{for} clause and a \e{return} clause, but it isn't just
@@ -848,7 +848,7 @@ FLWOR expression as its left operand. And, since the scope of variable
 scope error will be reported. Correct these problems by using
 parentheses.
 
-\quotefile snippets/patternist/forClause.xq
+\quotefile patternist/forClause.xq
 
 \section2 Why didn't my expression get evaluated?
 
@@ -880,25 +880,25 @@ Either you put your predicate in the wrong place in your path
 expression, or you forgot to add some parentheses.  Consider this
 input file \c{doc.txt}:
 
-\quotefile snippets/patternist/doc.txt
+\quotefile patternist/doc.txt
 
 Suppose you want the first \c{<span>} element of every \c{<p>}
 element. Apply a position filter (\c{[1]}) to the \c{/span} path step:
 
-\quotefile snippets/patternist/filterOnStep.xq
+\quotefile patternist/filterOnStep.xq
 
 Applying the \c{[1]} filter to the \c{/span} step returns the first
 \c{<span>} element of each \c{<p>} element:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 41
+\snippet code/doc_src_qtxmlpatterns.qdoc 41
 
 \note: You can write the same query this way:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 44
+\snippet code/doc_src_qtxmlpatterns.qdoc 44
 
 Or you can reduce it right down to this:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 45
+\snippet code/doc_src_qtxmlpatterns.qdoc 45
 
 On the other hand, suppose you really want only one \c{<span>}
 element, the first one in the document (i.e., you only want the first
@@ -907,17 +907,17 @@ more filtering. There are two ways you can do it. You can apply the
 \c{[1]} filter in the same place as above but enclose the path
 expression in parentheses:
 
-\quotefile snippets/patternist/filterOnPath.xq
+\quotefile patternist/filterOnPath.xq
 
 Or you can apply a second position filter (\c{[1]} again) to the
 \c{/p} path step:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 43
+\snippet code/doc_src_qtxmlpatterns.qdoc 43
 
 Either way the query will return only the first \c{<span>} element in
 the document:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 42
+\snippet code/doc_src_qtxmlpatterns.qdoc 42
 
 \section2 Why doesn't my FLWOR behave as expected?
 
@@ -925,7 +925,7 @@ The quick answer is you probably expected your XQuery FLWOR to behave
 just like a C++ \e{for} loop. But they aren't the same. Consider a
 simple example:
 
-\quotefile snippets/patternist/letOrderBy.xq
+\quotefile patternist/letOrderBy.xq
 
 This query evaluates to \e{4 -4 -2 2 -8 8}. The \e{for} clause does
 set up a \e{for} loop style iteration, which does evaluate the rest of
@@ -957,7 +957,7 @@ the variable on the left. In the example above, it binds (4 -4) to
 8) on the third iteration. So the following query doesn't iterate
 through anything, and doesn't do any ordering:
 
-\quotefile snippets/patternist/invalidLetOrderBy.xq
+\quotefile patternist/invalidLetOrderBy.xq
 
 It binds the entire sequence (2, 3, 1) to \c{$i} one time only; the
 \e{order by} clause only has one thing to order and hence does
@@ -974,7 +974,7 @@ order, because when appearing as operands to a path expression,
 there is no correct order. Consider the following query,
 which again uses the input file \c{doc.txt}:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 46
+\snippet code/doc_src_qtxmlpatterns.qdoc 46
 
 The query finds all the \c{<p>} elements in the file. For each \c{<p>}
 element, it builds a \c{<p>} element in the output containing the
@@ -982,16 +982,16 @@ concatenated contents of all the \c{<p>} element's child \c{<span>}
 elements. Running the query through \c{xmlpatterns} might produce the
 following output, which is not sorted in the expected order.
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 47
+\snippet code/doc_src_qtxmlpatterns.qdoc 47
 
 You can use a \e{for} loop to ensure that the order of
 the result set corresponds to the order of the input sequence:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 48
+\snippet code/doc_src_qtxmlpatterns.qdoc 48
 
 This version produces the same result set but in the expected order:
 
-\snippet snippets/code/doc_src_qtxmlpatterns.qdoc 49
+\snippet code/doc_src_qtxmlpatterns.qdoc 49
 
 \section2 Why can't I use \c{true} and \c{false} in my XQuery?
 
@@ -1002,5 +1002,5 @@ to use the builtin functions \c{true()} and \c{false()} wherever
 you want to use \c{true} and \c{false}. The other way is to invoke the
 boolean constructor:
 
-\quotefile snippets/patternist/xsBooleanTrue.xq
+\quotefile patternist/xsBooleanTrue.xq
 */

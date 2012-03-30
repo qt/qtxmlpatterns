@@ -75,7 +75,7 @@ QT_BEGIN_NAMESPACE
   URI}, the \e {local name}, and the \e {prefix}. To see what these
   refer to in XML, consider the following snippet.
 
-  \quotefile doc/src/snippets/patternist/mobeyDick.xml
+  \quotefile patternist/mobeyDick.xml
 
   For the element named \e book, localName() returns \e book,
   namespaceUri() returns \e http://example.com/MyDefault,
@@ -123,9 +123,9 @@ QT_BEGIN_NAMESPACE
   used in name comparisons. For example, the following two element
   nodes represent the same element and compare equal.
 
-  \quotefile doc/src/snippets/patternist/svgDocumentElement.xml
+  \quotefile patternist/svgDocumentElement.xml
 
-  \quotefile doc/src/snippets/patternist/xsvgDocumentElement.xml
+  \quotefile patternist/xsvgDocumentElement.xml
 
   Although the second name has the prefix \e x, the two names compare
   equal as instances of QXmlName, because the prefix is not used in
@@ -150,7 +150,7 @@ QT_BEGIN_NAMESPACE
 
    Setting of the mask enums use essentially this:
 
-   \quotefile doc/src/snippets/code/src_xmlpatterns_api_qxmlname.cpp
+   \quotefile code/src_xmlpatterns_api_qxmlname.cpp
 
    The masks, such as LocalNameMask, are positive. That is, for the
    area which the name resides, the bits are set.

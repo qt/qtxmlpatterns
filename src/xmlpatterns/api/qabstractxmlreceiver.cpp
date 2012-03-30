@@ -63,7 +63,7 @@ QT_BEGIN_NAMESPACE
   transforming that sequence into a structure of your choosing,
   usually XML. Consider the example:
 
-  \snippet doc/src/snippets/code/src_xmlpatterns_api_qabstractxmlreceiver.cpp 0
+  \snippet code/src_xmlpatterns_api_qabstractxmlreceiver.cpp 0
 
   First it constructs a \l {QXmlQuery} {query} that gets the
   first paragraph from document \c index.html. Then it constructs
@@ -316,7 +316,7 @@ allow null QUrls.
   processing instruction to tell the application to use a
   particular XSLT stylesheet to process the document.
 
-  \quotefile doc/src/snippets/patternist/xmlStylesheet.xq
+  \quotefile patternist/xmlStylesheet.xq
 
   \a target is the \l {QXmlName} {name} of the processing
   instruction. Its \e prefix and \e {namespace URI} must both

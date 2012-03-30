@@ -70,7 +70,7 @@ QT_BEGIN_NAMESPACE
   file, check whether it is a valid schema document and use it for validation
   of an XML instance document:
 
-  \snippet doc/src/snippets/qxmlschemavalidator/main.cpp 3
+  \snippet qxmlschemavalidator/main.cpp 3
 
   \section1 XML Schema Version
 
@@ -129,7 +129,7 @@ void QXmlSchemaValidator::setSchema(const QXmlSchema &schema)
 
   Example:
 
-  \snippet doc/src/snippets/qxmlschemavalidator/main.cpp 2
+  \snippet qxmlschemavalidator/main.cpp 2
  */
 bool QXmlSchemaValidator::validate(const QByteArray &data, const QUrl &documentUri) const
 {
@@ -149,7 +149,7 @@ bool QXmlSchemaValidator::validate(const QByteArray &data, const QUrl &documentU
 
   Example:
 
-  \snippet doc/src/snippets/qxmlschemavalidator/main.cpp 0
+  \snippet qxmlschemavalidator/main.cpp 0
  */
 bool QXmlSchemaValidator::validate(const QUrl &source) const
 {
@@ -174,7 +174,7 @@ bool QXmlSchemaValidator::validate(const QUrl &source) const
 
   Example:
 
-  \snippet doc/src/snippets/qxmlschemavalidator/main.cpp 1
+  \snippet qxmlschemavalidator/main.cpp 1
  */
 bool QXmlSchemaValidator::validate(QIODevice *source, const QUrl &documentUri) const
 {

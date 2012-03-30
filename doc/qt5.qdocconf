@@ -7,10 +7,14 @@ project = Qt Xml Patterns
 # Images should be placed in <rootdir>/dic/images and examples in
 # <rootdir>/examples.
 # Paths are relative to the  location of this file.
-exampledirs += ../doc/src
+exampledirs += src \
+               ../examples\
+               src/snippets
 headerdirs += ..
 imagedirs += images
 sourcedirs += ..
+excludedirs += ../tests/auto \
+               ../tools
 
 # The following parameters are for creating a qhp file, the qhelpgenerator
 # program can convert the qhp file into a qch file which can be opened in

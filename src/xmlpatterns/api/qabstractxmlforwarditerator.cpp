@@ -228,7 +228,7 @@
    that is converted to OutputType by calling a function on Derived
    that has the following signature:
 
-   \snippet doc/src/snippets/code/src_xmlpatterns_api_qabstractxmlforwarditerator.cpp 0
+   \snippet code/src_xmlpatterns_api_qabstractxmlforwarditerator.cpp 0
 
    TODO Document why this class doesn't duplicate ItemMappingIterator.
  */

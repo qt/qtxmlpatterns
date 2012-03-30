@@ -71,7 +71,7 @@
 
     As a result we get the following document:
 
-    \quotefile examples/xmlpatterns/trafficinfo/time_example.wml
+    \quotefile xmlpatterns/trafficinfo/time_example.wml
 
     So for every departure we have a \c <a> tag that contains the time as a
     text element, and the following text element contains the line number
@@ -82,7 +82,7 @@
     that takes a station ID and date/time as input and returns the list of
     times and directions:
 
-    \snippet examples/xmlpatterns/trafficinfo/timequery.cpp 1
+    \snippet xmlpatterns/trafficinfo/timequery.cpp 1
 
     The first lines of this function synthesize the XQuery strings that fetch
     the document and extract the data.
@@ -113,7 +113,7 @@
 
     will return the following document:
 
-    \snippet examples/xmlpatterns/trafficinfo/station_example.wml 0
+    \snippet xmlpatterns/trafficinfo/station_example.wml 0
 
     The names of the available stations are listed as separate text elements
     and the station ID is part of the \c href attribute of the parent \c a
@@ -121,7 +121,7 @@
     the action of querying the stations that match the given name pattern with
     the following code:
 
-    \snippet examples/xmlpatterns/trafficinfo/stationquery.cpp 0
+    \snippet xmlpatterns/trafficinfo/stationquery.cpp 0
 
     Just as in the \c TimeQuery implementation, the first step is to
     synthesize the XQuery strings for selecting the station names and the

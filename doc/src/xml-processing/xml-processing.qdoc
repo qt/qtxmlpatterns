@@ -91,7 +91,7 @@
 
     Consider the following example:
 
-    \snippet doc/src/snippets/code/doc_src_qtxml.qdoc 6
+    \snippet code/doc_src_qtxml.qdoc 6
 
     Here we find three different uses of the name \e title. If you wish to
     process this document you will encounter problems because each of the
@@ -102,7 +102,7 @@
     occurrence of \e title as the title of a book, i.e. to use the \e
     title element of a book namespace to distinguish it from, for example,
     the chapter title, e.g.:
-    \snippet doc/src/snippets/code/doc_src_qtxml.qdoc 7
+    \snippet code/doc_src_qtxml.qdoc 7
 
     \e book in this case is a \e prefix denoting the namespace.
 
@@ -118,12 +118,12 @@
     http://www.example.com/fnord/ the document's default XML namespace \e
     xmlns we write
 
-    \snippet doc/src/snippets/code/doc_src_qtxml.qdoc 8
+    \snippet code/doc_src_qtxml.qdoc 8
 
     To distinguish the \e http://www.example.com/fnord/book/ namespace from
     the default, we must supply it with a prefix:
 
-    \snippet doc/src/snippets/code/doc_src_qtxml.qdoc 9
+    \snippet code/doc_src_qtxml.qdoc 9
 
     A namespace that is declared like this can be applied to element and
     attribute names by prepending the appropriate prefix and a ":"
@@ -144,7 +144,7 @@
     within a \e chapter.
 
     Let's clarify this with an example:
-    \snippet doc/src/snippets/code/doc_src_qtxml.qdoc 10
+    \snippet code/doc_src_qtxml.qdoc 10
 
     Within the \e document element we have two namespaces declared. The
     default namespace \e http://www.example.com/fnord/ applies to the \e
@@ -315,7 +315,7 @@
     or an end tag, etc.
 
     To make it less abstract consider the following example:
-    \snippet doc/src/snippets/code/doc_src_qtxml.qdoc 3
+    \snippet code/doc_src_qtxml.qdoc 3
 
     Whilst reading (a SAX2 parser is usually referred to as "reader") 
     the above document three events would be triggered:
@@ -400,7 +400,7 @@
     and switched on or off using QXmlReader::setFeature(). 
 
     Consider the example 
-    \snippet doc/src/snippets/code/doc_src_qtxml.qdoc 4
+    \snippet code/doc_src_qtxml.qdoc 4
     A reader that does not support the \e
     http://xml.org/sax/features/namespace-prefixes feature would report
     the element name \e document but not its attributes \e xmlns:book and
@@ -445,7 +445,7 @@
     \endlist
 
     Consider the following element:
-    \snippet doc/src/snippets/code/doc_src_qtxml.qdoc 5
+    \snippet code/doc_src_qtxml.qdoc 5
     With \e http://xml.org/sax/features/namespace-prefixes set to true 
     the reader will report four attributes; but with the \e
     namespace-prefixes feature set to false only three, with the \e
