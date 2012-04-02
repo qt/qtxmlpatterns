@@ -64,9 +64,6 @@ tst_SuiteTest::tst_SuiteTest(const SuiteType suiteType,
 /*!
  Returns an absolute path to the XQTS catalog, or flags a failure using
  QTestLib's mechanisms.
-
- Finding the location of the catalog is done with `p4 where` such that we don't have
- to care about where it is checked out.
  */
 void tst_SuiteTest::initTestCase()
 {
@@ -85,7 +82,7 @@ void tst_SuiteTest::runTestSuite() const
     const QFileInfo fi(m_catalogPath);
     const QUrl catalogPath(QUrl::fromLocalFile(fi.absoluteFilePath()));
 
-    TestSuite::SuiteType suiteType;
+    TestSuite::SuiteType suiteType(TestSuite::XQuerySuite);
     switch (m_suiteType) {
     case XQuerySuite:
         suiteType = TestSuite::XQuerySuite;

@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 #############################################################################
 ##
 ## Copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies).
 ## Contact: http://www.qt-project.org/
 ##
-## This file is part of the test suite of the Qt Toolkit.
+## This file is the build configuration utility of the Qt Toolkit.
 ##
 ## $QT_BEGIN_LICENSE:LGPL$
 ## GNU Lesser General Public License Usage
@@ -40,26 +40,33 @@
 ##
 #############################################################################
 
-# This script updates the suite from W3C's server.
+# This script updates the suite from W3C's CVS server.
 #
 # NOTE: the files checked out CANNOT be added to Qt's
-# repository at the moment, due to legal complications.
-#
-# To run the script, Saxon package version 9 and above shall be installed
-#
+# repository at the moment, due to legal complications. However,
+# when the test suite is publically released, it is possible as
+# according to W3C's usual license agreements.
 
-DIRECTORY_NAME="xmlschema2006-11-06"
-ARCHIVE_NAME="xsts-2007-06-20.tar.gz"
+echo "*** This script typically doesn't need to be run."
 
-rm -Rf $DIRECTORY_NAME
+# There are two ways to retrieve test suites, via  cvs or direct downloading.
+# CVS always receive the latest release.
 
-wget http://www.w3.org/XML/2004/xml-schema-test-suite/xmlschema2006-11-06/$ARCHIVE_NAME
-tar -xzf $ARCHIVE_NAME
-rm $ARCHIVE_NAME
+# download test suite from http://dev.w3.org/2006/xquery-test-suite/
 
-# cvs script is used to retrieve newer version of test suite.
-#CVSROOT=:pserver:anonymous@dev.w3.org:/sources/public cvs login
-#CVSROOT=:pserver:anonymous@dev.w3.org:/sources/public cvs checkout -d xmlschema2006-11-06-new XML/xml-schema-test-suite/2004-01-14/xmlschema2006-11-06
+TMPFILE='tmpfile'
+wget http://dev.w3.org/2006/xquery-test-suite/PublicPagesStagingArea/XQTS_1_0_3.zip -O $TMPFILE
+unzip $TMPFILE
+rm $TMPFILE
 
-#Saxon need to be installed before the following command works.
-java -jar /usr/share/java/saxon.jar -xsl:unifyCatalog.xsl -s:$DIRECTORY_NAME/suite.xml > testSuites.xml
+# This is W3C's internal CVS server, not the public dev.w3.org.
+# export CVSROOT=":pserver:anonymous@dev.w3.org:/sources/public"
+
+# echo "*** Enter 'anonymous' as password. ***"
+# cvs login
+# cvs get 2006/xquery-test-suite
+
+# Substitute entity values for entity references
+mv XQTSCatalog.xml XQTSCatalogUnsolved.xml
+xmllint -noent -output XQTSCatalog.xml XQTSCatalogUnsolved.xml
+
