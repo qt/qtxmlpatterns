@@ -1,18 +1,13 @@
-load(qt_module)
+load(qt_build_config)
 
 TARGET     = QtXmlPatterns
-QPRO_PWD   = $$PWD
-
-CONFIG += module exceptions
-
+CONFIG += exceptions
 QT = core-private network
 
-DEFINES += QT_BUILD_XMLPATTERNS_LIB QT_NO_USING_NAMESPACE
+DEFINES += QT_NO_USING_NAMESPACE
 win32-msvc*|win32-icc:QMAKE_LFLAGS += /BASE:0x61000000
-unix|win32-g++*:QMAKE_PKGCONFIG_REQUIRES = QtCore QtNetwork
-load(qt_module_config)
 
-HEADERS += qtxmlpatternsversion.h
+load(qt_module_config)
 
 include($$PWD/common.pri)
 include($$PWD/acceltree/acceltree.pri)
