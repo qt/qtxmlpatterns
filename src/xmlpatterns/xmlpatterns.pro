@@ -4,7 +4,6 @@ TARGET     = QtXmlPatterns
 QPRO_PWD   = $$PWD
 
 CONFIG += module exceptions
-MODULE_PRI += ../../modules/qt_xmlpatterns.pri
 
 QT = core-private network
 
