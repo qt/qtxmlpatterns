@@ -64,7 +64,7 @@ namespace QPatternist
     class PatternFlag
     {
     public:
-        typedef QHash<QChar, PatternFlag> Hash;
+        typedef QMap<QChar, PatternFlag> Hash;
 
         inline PatternFlag() : flag(PatternPlatform::NoFlags)
         {
