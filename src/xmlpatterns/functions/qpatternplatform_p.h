@@ -113,7 +113,7 @@ namespace QPatternist
          * settings its flags, and everything else required for getting it ready to use. If an error
          * occurs, an appropriate error is raised via @p context.
          */
-        const QRegExp pattern(const DynamicContext::Ptr &context) const;
+        QRegExp pattern(const DynamicContext::Ptr &context) const;
 
         /**
          * @returns the number of captures, also called parenthesized sub-expressions, the pattern has.

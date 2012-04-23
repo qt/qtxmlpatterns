@@ -1124,7 +1124,7 @@ void XsdSchemaChecker::checkConstrainingFacets(const XsdFacet::Hash &facets, con
 
         for (int i = 0; i < multiValue.count(); ++i) {
             const DerivedString<TypeString>::Ptr value = multiValue.at(i);
-            const QRegExp exp = PatternPlatform::parsePattern(value->stringValue(), m_context, &reflection);
+            QRegExp exp = PatternPlatform::parsePattern(value->stringValue(), m_context, &reflection);
             if (!exp.isValid()) {
                 m_context->error(QtXmlPatterns::tr("%1 facet contains invalid regular expression").arg(formatKeyword("pattern.")), XsdSchemaContext::XSDError, sourceLocation(simpleType));
                 return;

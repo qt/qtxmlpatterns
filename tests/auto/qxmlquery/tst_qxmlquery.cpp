@@ -1728,7 +1728,7 @@ void tst_QXmlQuery::messageXML() const
 
     query.setQuery(QLatin1String("1basicSyntaxError"));
 
-    const QRegExp removeFilename(QLatin1String("Location: file:.*\\#"));
+    QRegExp removeFilename(QLatin1String("Location: file:.*\\#"));
     QVERIFY(removeFilename.isValid());
 
     QVERIFY(messageValidator.success());

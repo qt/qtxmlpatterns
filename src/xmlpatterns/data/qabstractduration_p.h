@@ -116,7 +116,7 @@ namespace QPatternist
                 Q_ASSERT(yearP == -1 || yearP == 2);
             }
 
-            const QRegExp regExp;
+            QRegExp regExp;
             const qint8 year;
             const qint8 month;
             const qint8 day;

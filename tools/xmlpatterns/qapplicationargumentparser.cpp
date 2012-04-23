@@ -824,7 +824,7 @@ QVariant QApplicationArgumentParser::convertToValue(const QApplicationArgument &
         }
         case QVariant::RegExp:
         {
-            const QRegExp exp(input);
+            QRegExp exp(input);
 
             if(exp.isValid())
                 return QVariant(exp);

@@ -59,7 +59,7 @@ MatchesFN::MatchesFN() : PatternPlatform(2)
 
 Item MatchesFN::evaluateSingleton(const DynamicContext::Ptr &context) const
 {
-    const QRegExp regexp(pattern(context));
+    QRegExp regexp(pattern(context));
     QString input;
 
     const Item arg(m_operands.first()->evaluateSingleton(context));
@@ -75,7 +75,7 @@ ReplaceFN::ReplaceFN() : PatternPlatform(3)
 
 Item ReplaceFN::evaluateSingleton(const DynamicContext::Ptr &context) const
 {
-    const QRegExp regexp(pattern(context));
+    QRegExp regexp(pattern(context));
     QString input;
 
     const Item arg(m_operands.first()->evaluateSingleton(context));
@@ -219,7 +219,7 @@ Item::Iterator::Ptr TokenizeFN::evaluateSequence(const DynamicContext::Ptr &cont
     if(input.isEmpty())
         return CommonValues::emptyIterator;
 
-    const QRegExp regExp(pattern(context));
+    QRegExp regExp(pattern(context));
     const QStringList result(input.split(regExp, QString::KeepEmptyParts));
 
     return makeItemMappingIterator<Item>(ConstPtr(this),

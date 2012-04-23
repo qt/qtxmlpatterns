@@ -3735,7 +3735,7 @@ yyreduce:
 /* Line 1269 of yacc.c.  */
 #line 1412 "querytransformparser.ypp"
     {
-        const QRegExp encNameRegExp(QLatin1String("[A-Za-z][A-Za-z0-9._\\-]*"));
+        QRegExp encNameRegExp(QLatin1String("[A-Za-z][A-Za-z0-9._\\-]*"));
 
         if(!encNameRegExp.exactMatch((yyvsp[(2) - (2)].sval)))
         {

@@ -140,7 +140,7 @@ namespace QPatternist
                 Q_ASSERT(exp.isValid());
             }
 
-            const QRegExp regExp;
+            QRegExp regExp;
             const qint8 zoneOffsetSign;
             const qint8 zoneOffsetHour;
             const qint8 zoneOffsetMinute;

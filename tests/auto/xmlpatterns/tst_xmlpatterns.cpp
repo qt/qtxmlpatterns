@@ -182,7 +182,7 @@ void tst_XmlPatterns::xquerySupport()
         {
             /* There's a wide range of different version strings used. For
              * instance, "4.4.0-rc1". */
-            const QRegExp removeVersion(QLatin1String(" Qt \\d\\.\\d.*"));
+            QRegExp removeVersion(QLatin1String(" Qt \\d\\.\\d.*"));
             QVERIFY(removeVersion.isValid());
             QCOMPARE(QString(fixedStderr).remove(removeVersion) + QChar('|'), rawExpectedStdErr + QChar('|'));
         }

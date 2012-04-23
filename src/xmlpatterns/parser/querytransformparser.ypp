@@ -1470,7 +1470,7 @@ VersionDecl: /* empty */                                                        
 Encoding: /* empty */                                                               /* [X] */
 | ENCODING StringLiteral
     {
-        const QRegExp encNameRegExp(QLatin1String("[A-Za-z][A-Za-z0-9._\\-]*"));
+        QRegExp encNameRegExp(QLatin1String("[A-Za-z][A-Za-z0-9._\\-]*"));
 
         if(!encNameRegExp.exactMatch($2))
         {

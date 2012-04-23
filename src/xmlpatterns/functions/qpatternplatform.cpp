@@ -115,7 +115,7 @@ PatternPlatform::PatternPlatform(const qint8 flagsPosition) : m_compiledParts(No
 {
 }
 
-const QRegExp PatternPlatform::pattern(const DynamicContext::Ptr &context) const
+QRegExp PatternPlatform::pattern(const DynamicContext::Ptr &context) const
 {
     if(m_compiledParts == FlagsAndPattern) /* This is the most common case. */
     {

@@ -452,7 +452,7 @@ bool XsdTypeChecker::checkConstrainingFacetsString(const QString &value, const X
         bool found = false;
         for (int j = 0; j < multiValue.count(); ++j) {
             const QString pattern = multiValue.at(j)->as<DerivedString<TypeString> >()->stringValue();
-            const QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
+            QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
             if (exp.exactMatch(value)) {
                 found = true;
                 break;
@@ -547,7 +547,7 @@ bool XsdTypeChecker::checkConstrainingFacetsSignedInteger(long long value, const
         bool found = false;
         for (int j = 0; j < multiValue.count(); ++j) {
             const QString pattern = multiValue.at(j)->as<DerivedString<TypeString> >()->stringValue();
-            const QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
+            QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
             if (exp.exactMatch(lexicalValue)) {
                 found = true;
                 break;
@@ -633,7 +633,7 @@ bool XsdTypeChecker::checkConstrainingFacetsUnsignedInteger(unsigned long long v
         bool found = false;
         for (int j = 0; j < multiValue.count(); ++j) {
             const QString pattern = multiValue.at(j)->as<DerivedString<TypeString> >()->stringValue();
-            const QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
+            QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
             if (exp.exactMatch(lexicalValue)) {
                 found = true;
                 break;
@@ -719,7 +719,7 @@ bool XsdTypeChecker::checkConstrainingFacetsDouble(double value, const QString &
         bool found = false;
         for (int j = 0; j < multiValue.count(); ++j) {
             const QString pattern = multiValue.at(j)->as<DerivedString<TypeString> >()->stringValue();
-            const QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
+            QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
             if (exp.exactMatch(lexicalValue)) {
                 found = true;
                 break;
@@ -820,7 +820,7 @@ bool XsdTypeChecker::checkConstrainingFacetsDateTime(const QDateTime &value, con
         bool found = false;
         for (int j = 0; j < multiValue.count(); ++j) {
             const QString pattern = multiValue.at(j)->as<DerivedString<TypeString> >()->stringValue();
-            const QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
+            QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
             if (exp.exactMatch(lexicalValue)) {
                 found = true;
                 break;
@@ -898,7 +898,7 @@ bool XsdTypeChecker::checkConstrainingFacetsDuration(const AtomicValue::Ptr&, co
         bool found = false;
         for (int j = 0; j < multiValue.count(); ++j) {
             const QString pattern = multiValue.at(j)->as<DerivedString<TypeString> >()->stringValue();
-            const QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
+            QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
             if (exp.exactMatch(lexicalValue)) {
                 found = true;
                 break;
@@ -925,7 +925,7 @@ bool XsdTypeChecker::checkConstrainingFacetsBoolean(bool, const QString &lexical
         bool found = false;
         for (int j = 0; j < multiValue.count(); ++j) {
             const QString pattern = multiValue.at(j)->as<DerivedString<TypeString> >()->stringValue();
-            const QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
+            QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
             if (exp.exactMatch(lexicalValue)) {
                 found = true;
                 break;
@@ -1038,7 +1038,7 @@ bool XsdTypeChecker::checkConstrainingFacetsQName(const QXmlName &value, const Q
         bool found = false;
         for (int j = 0; j < multiValue.count(); ++j) {
             const QString pattern = multiValue.at(j)->as<DerivedString<TypeString> >()->stringValue();
-            const QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
+            QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
             if (exp.exactMatch(lexicalValue)) {
                 found = true;
                 break;
@@ -1215,7 +1215,7 @@ bool XsdTypeChecker::checkConstrainingFacetsList(const QStringList &values, cons
         bool found = false;
         for (int j = 0; j < multiValue.count(); ++j) {
             const QString pattern = multiValue.at(j)->as<DerivedString<TypeString> >()->stringValue();
-            const QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
+            QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
             if (exp.exactMatch(lexicalValue)) {
                 found = true;
                 break;
@@ -1272,7 +1272,7 @@ bool XsdTypeChecker::checkConstrainingFacetsUnion(const QString &value, const QS
         bool found = false;
         for (int j = 0; j < multiValue.count(); ++j) {
             const QString pattern = multiValue.at(j)->as<DerivedString<TypeString> >()->stringValue();
-            const QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
+            QRegExp exp = PatternPlatform::parsePattern(pattern, m_context, m_reflection);
             if (exp.exactMatch(lexicalValue)) {
                 found = true;
                 break;

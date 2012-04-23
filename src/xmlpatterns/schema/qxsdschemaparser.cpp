@@ -511,7 +511,7 @@ void XsdSchemaParser::parseSchema(ParserType parserType)
     if (hasAttribute(CommonNamespaces::XML, QString::fromLatin1("lang"))) {
         const QString value = readAttribute(QString::fromLatin1("lang"), CommonNamespaces::XML);
 
-        const QRegExp exp(QString::fromLatin1("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"));
+        QRegExp exp(QString::fromLatin1("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"));
         if (!exp.exactMatch(value)) {
             attributeContentError("xml:lang", "schema", value);
             return;
@@ -1286,7 +1286,7 @@ XsdDocumentation::Ptr XsdSchemaParser::parseDocumentation()
     if (hasAttribute(CommonNamespaces::XML, QString::fromLatin1("lang"))) {
         const QString value = readAttribute(QString::fromLatin1("lang"), CommonNamespaces::XML);
 
-        const QRegExp exp(QString::fromLatin1("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"));
+        QRegExp exp(QString::fromLatin1("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"));
         if (!exp.exactMatch(value)) {
             attributeContentError("xml:lang", "documentation", value);
             return documentation;

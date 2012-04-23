@@ -262,7 +262,7 @@ namespace QPatternist
                 {
                     const QString simplified(lexical.trimmed());
 
-                    const QRegExp validate(QLatin1String("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"));
+                    QRegExp validate(QLatin1String("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"));
                     Q_ASSERT(validate.isValid());
 
                     if(validate.exactMatch(simplified))
