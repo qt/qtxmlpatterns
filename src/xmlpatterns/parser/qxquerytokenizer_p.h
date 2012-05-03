@@ -173,7 +173,7 @@ namespace QPatternist
          * Equivalent to calling:
          *
          * @code
-         * current().toAscii();
+         * current().toLatin1();
          * @endcode
          */
         inline char peekCurrent() const;

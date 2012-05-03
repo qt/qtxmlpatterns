@@ -111,7 +111,7 @@ QString ReplaceFN::parseReplacement(const int,
     for(int i = 0; i < len; ++i)
     {
         const QChar ch(input.at(i));
-        switch(ch.toAscii())
+        switch(ch.toLatin1())
         {
             case '$':
             {

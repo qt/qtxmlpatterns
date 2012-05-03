@@ -299,7 +299,7 @@ void QApplicationArgumentParserPrivate::displayVersion() const
 {
     QTextStream out(stderr);
 
-    out << tr("%1 version %2 using Qt %3").arg(QCoreApplication::applicationName(), applicationVersion, QString::fromAscii(qVersion()))
+    out << tr("%1 version %2 using Qt %3").arg(QCoreApplication::applicationName(), applicationVersion, QString::fromLatin1(qVersion()))
         << endl;
 }
 

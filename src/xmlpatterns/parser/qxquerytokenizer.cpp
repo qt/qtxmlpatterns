@@ -83,7 +83,7 @@ const QChar XQueryTokenizer::current() const
 
 char XQueryTokenizer::peekCurrent() const
 {
-    return current().toAscii();
+    return current().toLatin1();
 }
 
 int XQueryTokenizer::peekForColonColon() const
@@ -94,7 +94,7 @@ int XQueryTokenizer::peekForColonColon() const
 
     while(pos < m_length)
     {
-        switch(m_data.at(pos).toAscii())
+        switch(m_data.at(pos).toLatin1())
         {
             /* Fallthrough these four. */
             case ' ':
@@ -317,7 +317,7 @@ Tokenizer::TokenType XQueryTokenizer::consumeWhitespace()
 char XQueryTokenizer::peekAhead(const int length) const
 {
     if(m_pos + length < m_length)
-        return m_data.at(m_pos + length).toAscii();
+        return m_data.at(m_pos + length).toLatin1();
     else
         return 0;
 }
@@ -702,7 +702,7 @@ bool XQueryTokenizer::aheadEquals(const char *const chs,
 
     for(int i = offset; i < (len + offset); ++i)
     {
-        if(m_data.at(m_pos + i).toAscii() != chs[i - offset])
+        if(m_data.at(m_pos + i).toLatin1() != chs[i - offset])
             return false;
     }
 
@@ -711,7 +711,7 @@ bool XQueryTokenizer::aheadEquals(const char *const chs,
 
 const TokenMap *XQueryTokenizer::lookupKeyword(const QString &keyword)
 {
-    return TokenLookup::value(keyword.toAscii().constData(), keyword.length());
+    return TokenLookup::value(keyword.toLatin1().constData(), keyword.length());
 }
 
 XQueryTokenizer::State XQueryTokenizer::state() const

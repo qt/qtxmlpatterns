@@ -82,12 +82,12 @@ public:
 
         // Mandriva; old test server
         expected << QByteArray( "* OK [CAPABILITY IMAP4 IMAP4rev1 LITERAL+ ID STARTTLS LOGINDISABLED] " )
-            .append(QtNetworkSettings::serverName().toAscii())
+            .append(QtNetworkSettings::serverName().toLatin1())
             .append(" Cyrus IMAP4 v2.3.11-Mandriva-RPM-2.3.11-6mdv2008.1 server ready\r\n");
 
         // Ubuntu 10.04; new test server
         expected << QByteArray( "* OK " )
-            .append(QtNetworkSettings::serverLocalName().toAscii())
+            .append(QtNetworkSettings::serverLocalName().toLatin1())
             .append(" Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready\r\n");
 
         // Feel free to add more as needed
@@ -107,12 +107,12 @@ public:
 
         // Mandriva; old test server
         expected << QByteArray( "* OK [CAPABILITY IMAP4 IMAP4rev1 LITERAL+ ID AUTH=PLAIN SASL-IR] " )
-            .append(QtNetworkSettings::serverName().toAscii())
+            .append(QtNetworkSettings::serverName().toLatin1())
             .append(" Cyrus IMAP4 v2.3.11-Mandriva-RPM-2.3.11-6mdv2008.1 server ready\r\n");
 
         // Ubuntu 10.04; new test server
         expected << QByteArray( "* OK " )
-            .append(QtNetworkSettings::serverLocalName().toAscii())
+            .append(QtNetworkSettings::serverLocalName().toLatin1())
             .append(" Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready\r\n");
 
         // Feel free to add more as needed
