@@ -173,11 +173,16 @@ TreeItem *TreeModel::root() const
 void TreeModel::setRoot(TreeItem *r)
 {
     TreeItem *const oldRoot = m_root;
+
+    /* Notify views that we are radically changing. */
+    beginResetModel();
     m_root = r;
 
     if(m_root)
         connect(r, SIGNAL(changed(TreeItem *)), SLOT(childChanged(TreeItem *)));
-    reset(); /* Notify views that we have radically changed. */
+
+    endResetModel();
+
     delete oldRoot;
 }
 
