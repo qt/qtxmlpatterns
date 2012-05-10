@@ -202,11 +202,11 @@ const char *const ColorOutputPrivate::backgrounds[] =
   output.write("Jack, I'm only the selected official!", Error);
   \endcode
 
-  \sa {http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html}                        {Bash Prompt HOWTO, 6.1. Colours}
-     {http://linuxgazette.net/issue51/livingston-blade.html}                    {Linux Gazette, Tweaking Eterm, Edward Livingston-Blade}
-     {http://www.ecma-international.org/publications/standards/Ecma-048.htm}    {Standard ECMA-48, Control Functions for Coded Character Sets, ECMA International},
-     {http://en.wikipedia.org/wiki/ANSI_escape_code}                            {Wikipedia, ANSI escape code}
-     {http://linuxgazette.net/issue65/padala.html}                              {Linux Gazette, So You Like Color!, Pradeep Padala}
+  \sa {http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html}{Bash Prompt HOWTO, 6.1. Colours},
+      {http://linuxgazette.net/issue51/livingston-blade.html}{Linux Gazette, Tweaking Eterm, Edward Livingston-Blade},
+      {http://www.ecma-international.org/publications/standards/Ecma-048.htm}{Standard ECMA-48, Control Functions for Coded Character Sets, ECMA International},
+      {http://en.wikipedia.org/wiki/ANSI_escape_code}{Wikipedia, ANSI escape code},
+      {http://linuxgazette.net/issue65/padala.html}{Linux Gazette, So You Like Color!, Pradeep Padala}
  */
 
 /*!

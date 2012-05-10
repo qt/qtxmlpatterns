@@ -140,7 +140,7 @@ QT_BEGIN_NAMESPACE
   QXmlName represents what is sometimes called an \e {expanded QName},
   or simply a QName.
 
-  \sa {http://www.w3.org/TR/REC-xml-names/#NT-NCName} {Namespaces in XML 1.0 (Second Edition), [4] NCName}
+  \sa {http://www.w3.org/TR/REC-xml-names/#NT-NCName}{Namespaces in XML 1.0 (Second Edition), [4] NCName}
  */
 
 /*!
@@ -396,8 +396,7 @@ QString QXmlName::localName(const QXmlNamePool &namePool) const
 
   This function can be useful for debugging.
 
- \sa {http://www.jclark.com/xml/xmlns.htm} {XML Namespaces, James Clark}
- \sa fromClarkName()
+ \sa {http://www.jclark.com/xml/xmlns.htm}{XML Namespaces, James Clark}, fromClarkName()
  */
 QString QXmlName::toClarkName(const QXmlNamePool &namePool) const
 {
@@ -419,7 +418,7 @@ QXmlName &QXmlName::operator=(const QXmlName &other)
  e.g., the prefix or local name in an element or attribute,
  or the name of a variable.
 
- \sa {http://www.w3.org/TR/REC-xml-names/#NT-NCName} {Namespaces in XML 1.0 (Second Edition), [4] NCName}
+ \sa {http://www.w3.org/TR/REC-xml-names/#NT-NCName}{Namespaces in XML 1.0 (Second Edition), [4] NCName}
  */
 bool QXmlName::isNCName(const QString &candidate)
 {
