@@ -54,11 +54,11 @@
 
 #include <private/qabstractnodetest_p.h>
 
-template<typename Key, typename Value> class QHash;
-
 QT_BEGIN_HEADER
 
 QT_BEGIN_NAMESPACE
+
+template<typename Key, typename Value> class QHash;
 
 namespace QPatternist
 {

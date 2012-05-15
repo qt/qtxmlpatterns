@@ -56,12 +56,12 @@
 #include <private/qschematype_p.h>
 #include <private/qxsdannotated_p.h>
 
-template<typename N, typename M> class QHash;
-template<typename N> class QList;
-
 QT_BEGIN_HEADER
 
 QT_BEGIN_NAMESPACE
+
+template<typename N, typename M> class QHash;
+template<typename N> class QList;
 
 namespace QPatternist
 {

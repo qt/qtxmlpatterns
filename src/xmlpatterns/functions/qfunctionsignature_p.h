@@ -52,9 +52,6 @@
 #ifndef Patternist_FunctionSignature_H
 #define Patternist_FunctionSignature_H
 
-template<typename Key, typename Value> class QHash;
-template<typename T> class QList;
-
 #include <QSharedData>
 
 #include <private/qcalltargetdescription_p.h>
@@ -66,6 +63,9 @@ template<typename T> class QList;
 QT_BEGIN_HEADER
 
 QT_BEGIN_NAMESPACE
+
+template<typename Key, typename Value> class QHash;
+template<typename T> class QList;
 
 namespace QPatternist
 {

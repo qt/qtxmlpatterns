@@ -58,11 +58,11 @@
 #include <QtCore/QSet>
 #include <QtCore/QTextStream>
 
-class QIODevice;
-
 QT_BEGIN_HEADER
 
 QT_BEGIN_NAMESPACE
+
+class QIODevice;
 
 namespace QPatternist
 {

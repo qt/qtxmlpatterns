@@ -52,8 +52,6 @@
 #ifndef Patternist_UserFunction_H
 #define Patternist_UserFunction_H
 
-template<typename T> class QList;
-
 #include <QSharedData>
 
 #include <private/qexpression_p.h>
@@ -63,6 +61,8 @@ template<typename T> class QList;
 QT_BEGIN_HEADER
 
 QT_BEGIN_NAMESPACE
+
+template<typename T> class QList;
 
 namespace QPatternist
 {

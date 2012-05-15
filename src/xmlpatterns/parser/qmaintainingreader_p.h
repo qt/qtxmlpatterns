@@ -61,10 +61,10 @@
 #include <private/qxpathhelper_p.h>
 #include <private/qxslttokenlookup_p.h>
 
-class QUrl;
-
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE
+
+class QUrl;
 
 namespace QPatternist
 {

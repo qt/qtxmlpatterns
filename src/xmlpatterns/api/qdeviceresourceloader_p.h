@@ -52,13 +52,13 @@
 #ifndef QPatternist_DeviceResourceLoader_p_H
 #define QPatternist_DeviceResourceLoader_p_H
 
-template<typename T> class QSet;
-class QUrl;
-
 #include <private/qresourceloader_p.h>
 
 QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE
+
+template<typename T> class QSet;
+class QUrl;
 
 namespace QPatternist
 {
