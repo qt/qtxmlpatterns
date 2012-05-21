@@ -845,7 +845,7 @@ QVariant QApplicationArgumentParser::convertToValue(const QApplicationArgument &
             QVariant result(input);
 
             if(QApplicationArgumentParserPrivate::isBuiltinVariant(type) &&
-               result.convert(QVariant::Type(type)))
+               result.convert(type))
                 return result;
             else
                 return QApplicationArgumentParserPrivate::conversionError(typeToName(argument), input);
@@ -859,7 +859,7 @@ QVariant QApplicationArgumentParser::convertToValue(const QApplicationArgument &
   convertToValue() calls this function when requiring a string for referring to \a type,
   when generating user messages.
 
-  The implementation uses QVariant::typeToName() for most types, but special handles
+  The implementation uses QMetaType::typeName() for most types, but special handles
   some types, in order to let the message be better tailored for humans.
 
  \sa convertToValue()
@@ -880,10 +880,7 @@ QString QApplicationArgumentParser::typeToName(const QApplicationArgument &argum
             return QLatin1String("string");
         default:
         {
-            if(QApplicationArgumentParserPrivate::isBuiltinVariant(type))
-                return QString::fromLatin1(QVariant::typeToName(QVariant::Type(type)));
-            else
-                return QLatin1String(QVariant(type, static_cast<void *>(0)).typeName());
+            return QString::fromLatin1(QMetaType::typeName(type));
         }
     }
 }
