@@ -1,7 +1,7 @@
 QT += core-private xmlpatterns xmlpatterns-private
 
 wince*: {
-    patternsdk.files = $$QT_BUILD_TREE/lib/QtXmlPatternsSDK*.dll
+    patternsdk.files = $$QT.xmlpatterns.libs/QtXmlPatternsSDK*.dll
     patternsdk.path = .
     basedata.files = xmlpaternsxqts/Baseline.xml
     basedata.path = .

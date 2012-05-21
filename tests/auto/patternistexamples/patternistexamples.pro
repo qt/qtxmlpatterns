@@ -3,17 +3,17 @@ CONFIG += testcase
 SOURCES += tst_patternistexamples.cpp
 QT += testlib
 wince*: {
-	snippets.files = $$QT_SOURCE_TREE/doc/src/snippets/patternist/*
+	snippets.files = ../../../doc/src/snippets/patternist/*
 	snippets.path = patternist
-	widgetRen.files = $$QT_SOURCE_TREE/examples/xmlpatterns/xquery/widgetRenderer/*
+	widgetRen.files = ../../../examples/xquery/widgetRenderer/*
 	widgetRen.path = widgetRenderer
-	globVar.files = $$QT_SOURCE_TREE/examples/xmlpatterns/xquery/globalVariables/*
+	globVar.files = ../../../examples/xquery/globalVariables/*
 	globVar.path = globalVariables
-	filetree.files = $$QT_SOURCE_TREE/examples/xmlpatterns/filetree/*
+	filetree.files = ../../../examples/filetree/*
 	filetree.path = filetree
-	recipes.files = $$QT_SOURCE_TREE/examples/xmlpatterns/recipes/*
+	recipes.files = ../../../examples/recipes/*
 	recipes.path = recipes
-	files.files = $$QT_SOURCE_TREE/examples/xmlpatterns/recipes/files/*
+	files.files = ../../../examples/recipes/files/*
 	files.path = recipes\\files
 
 	DEPLOYMENT += snippets widgetRen globVar filetree recipes files

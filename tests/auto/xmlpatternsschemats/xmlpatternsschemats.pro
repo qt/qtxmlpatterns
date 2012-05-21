@@ -18,8 +18,6 @@ LIBS += -L$$QT.xmlpatterns.libs -l$$PATTERNIST_SDK
 
 QT += xml testlib
 
-INCLUDEPATH += $$QT_SOURCE_TREE/tests/auto/xmlpatternssdk/   \
-               $$QT_BUILD_TREE/include/QtXmlPatterns/private \
-               $$QT_SOURCE_TREE/tests/auto/xmlpatternsxqts   \
-               ../xmlpatternsxqts                            \
-               ../xmlpatternssdk
+INCLUDEPATH += \
+    ../xmlpatternsxqts \
+    ../xmlpatternssdk

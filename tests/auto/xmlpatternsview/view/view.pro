@@ -1,6 +1,6 @@
 TARGET   = xmlpatternsview
 TEMPLATE = app
-DESTDIR  = $$QT_BUILD_TREE/bin
+DESTDIR  = $$QT.xmlpatterns.bins
 
 include (../../xmlpatterns.pri)
 
@@ -32,4 +32,4 @@ FORMS   = ui_BaseLinePage.ui            \
           ui_TestResultView.ui          \
           ui_FunctionSignaturesView.ui
 
-INCLUDEPATH += $$QT_SOURCE_TREE/tests/auto/xmlpatternsxqts/lib/ $$QT_BUILD_TREE/include/QtXmlPatterns/private
+INCLUDEPATH += ../../xmlpatternsxqts/lib
