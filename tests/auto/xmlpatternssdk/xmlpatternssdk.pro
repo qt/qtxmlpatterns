@@ -6,6 +6,8 @@ TARGET   = $$XMLPATTERNS_SDK
 TEMPLATE = lib
 DEFINES += Q_PATTERNISTSDK_BUILDING
 
+CONFIG += exceptions
+
 # lib_bundle ensures we get a framework on OS X, a library bundle.
 CONFIG  += resources
 
