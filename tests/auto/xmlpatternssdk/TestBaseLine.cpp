@@ -179,12 +179,11 @@ void TestBaseLine::toXML(XMLWriter &receiver) const
 
 bool TestBaseLine::isChildrenDeepEqual(const QDomNodeList &cl1, const QDomNodeList &cl2)
 {
-    const unsigned int len = cl1.length();
+    const int len = cl1.length();
 
     if(len == cl2.length())
     {
-        for(unsigned int i = 0; i < len; ++i)
-        {
+        for (int i = 0; i < len; ++i) {
             if(!isDeepEqual(cl1.at(i), cl2.at(i)))
                 return false;
         }
@@ -197,21 +196,19 @@ bool TestBaseLine::isChildrenDeepEqual(const QDomNodeList &cl1, const QDomNodeLi
 
 bool TestBaseLine::isAttributesEqual(const QDomNamedNodeMap &cl1, const QDomNamedNodeMap &cl2)
 {
-    const unsigned int len = cl1.length();
+    const int len = cl1.length();
     pDebug() << "LEN:" << len;
 
     if(len == cl2.length())
     {
-        for(unsigned int i1 = 0; i1 < len; ++i1)
-        {
+        for (int i1 = 0; i1 < len; ++i1) {
             const QDomNode attr1(cl1.item(i1));
             Q_ASSERT(!attr1.isNull());
 
             /* This is set if attr1 cannot be found at all in cl2. */
             bool earlyExit = false;
 
-            for(unsigned int i2 = 0; i2 < len; ++i2)
-            {
+            for (int i2 = 0; i2 < len; ++i2) {
                 const QDomNode attr2(cl2.item(i2));
                 Q_ASSERT(!attr2.isNull());
                 pDebug() << "ATTR1:" << attr1.localName() << attr1.namespaceURI() << attr1.prefix() << attr1.nodeName();

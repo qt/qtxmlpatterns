@@ -133,8 +133,10 @@
             }
         }
         else if (item.isNode()) {
+#ifdef qdoc
             QXmlNodeModelIndex i = item.toNodeModelIndex();
             // process node
+#endif // qdoc
         }
         item = result.next();
     }
@@ -163,8 +165,10 @@
                     break;
                 default:
                     if (v.userType() == qMetaTypeId<QXmlName>()) {
+#ifdef qdoc
                         QXmlName n = qvariant_cast<QXmlName>(v);
                         // process QXmlName n...
+#endif // qdoc
                     }
                     else {
                         // error
@@ -173,8 +177,10 @@
             }
         }
         else if (item.isNode()) {
+#ifdef qdoc
             QXmlNodeModelIndex i = item.toNodeModelIndex();
             // process node
+#endif // qdoc
         }
         item = result.next();
     }

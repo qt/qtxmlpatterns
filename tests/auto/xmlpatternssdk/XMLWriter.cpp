@@ -571,8 +571,9 @@ bool XMLWriter::startDTD(const QString &name,
 
     if(!systemId.isEmpty())
     {
-        if(publicId.isEmpty())
+        if (publicId.isEmpty()) {
             serialize(" SYSTEM");
+        }
 
         serialize(" \"");
         serialize(systemId);

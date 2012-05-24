@@ -50,7 +50,8 @@ if (query.isValid()) {
         // use item
         item = result.next();
     }
-    if (result.hasError())
-        /* Runtime error! */;
+    if (result.hasError()) {
+        /* Runtime error! */
+    }
 }
 //! [0]
