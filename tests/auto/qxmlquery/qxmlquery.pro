@@ -11,6 +11,8 @@ RESOURCES = input.qrc
 
 QT += network testlib
 
+TESTDATA = data/* pushBaselines/* input.xml
+
 wince* {
     DEFINES += SRCDIR=\\\"./\\\"
 } else {

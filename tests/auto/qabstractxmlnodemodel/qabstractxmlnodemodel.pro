@@ -6,6 +6,8 @@ SOURCES += tst_qabstractxmlnodemodel.cpp    \
            ../qxmlquery/TestFundament.cpp
 HEADERS += TestNodeModel.h LoadingModel.h
 
+TESTDATA = tree.xml
+
 include (../xmlpatterns.pri)
 
 wince*: {
