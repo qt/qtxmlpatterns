@@ -1,2 +1,3 @@
 TEMPLATE = subdirs
-SUBDIRS +=  filetree xquery trafficinfo schema recipes
+SUBDIRS += xquery
+!contains(QT_CONFIG, no-widgets): SUBDIRS += filetree trafficinfo schema recipes
