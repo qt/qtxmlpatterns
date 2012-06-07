@@ -44,6 +44,7 @@
 
 #include <QtCore/QMetaType>
 #include <QtCore/QUrl>
+#include <QtXmlPatterns/qtxmlpatternsglobal.h>
 
 QT_BEGIN_HEADER
 

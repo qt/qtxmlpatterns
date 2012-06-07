@@ -44,6 +44,7 @@
 
 #include <QtCore/QString>
 #include <QtCore/QMetaType>
+#include <QtXmlPatterns/qtxmlpatternsglobal.h>
 
 QT_BEGIN_HEADER
 

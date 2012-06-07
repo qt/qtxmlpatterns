@@ -1,9 +1,9 @@
 /****************************************************************************
 **
-** Copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies).
+** Copyright (C) 2012 Intel Corporation.
 ** Contact: http://www.qt-project.org/
 **
-** This file is part of the QtXmlPatterns module of the Qt Toolkit.
+** This file is part of the QtCore module of the Qt Toolkit.
 **
 ** $QT_BEGIN_LICENSE:LGPL$
 ** GNU Lesser General Public License Usage
@@ -39,33 +39,26 @@
 **
 ****************************************************************************/
 
-#ifndef QABSTRACTURIRESOLVER_H
-#define QABSTRACTURIRESOLVER_H
+#ifndef QTXMLPATTERNSGLOBAL_H
+#define QTXMLPATTERNSGLOBAL_H
 
-#include <QtCore/QObject>
-#include <QtXmlPatterns/qtxmlpatternsglobal.h>
+#include <QtCore/qglobal.h>
 
 QT_BEGIN_HEADER
+
 QT_BEGIN_NAMESPACE
 
-
-class QUrl;
-class QAbstractUriResolverPrivate;
-
-class Q_XMLPATTERNS_EXPORT QAbstractUriResolver : public QObject
-{
-    Q_OBJECT
-public:
-    QAbstractUriResolver(QObject *parent = 0);
-    virtual ~QAbstractUriResolver();
-
-    virtual QUrl resolve(const QUrl &relative,
-                         const QUrl &baseURI) const = 0;
-
-private:
-    Q_DISABLE_COPY(QAbstractUriResolver)
-    Q_DECLARE_PRIVATE(QAbstractUriResolver)
-};
+#ifndef Q_XMLPATTERNS_EXPORT
+#  ifndef QT_STATIC
+#    if defined(QT_BUILD_XMLPATTERNS_LIB)
+#      define Q_XMLPATTERNS_EXPORT Q_DECL_EXPORT
+#    else
+#      define Q_XMLPATTERNS_EXPORT Q_DECL_IMPORT
+#    endif
+#  else
+#    define Q_XMLPATTERNS_EXPORT
+#  endif
+#endif
 
 QT_END_NAMESPACE
 

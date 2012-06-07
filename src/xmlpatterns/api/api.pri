@@ -13,6 +13,7 @@ HEADERS += $$PWD/qabstractxmlforwarditerator_p.h \
     $$PWD/qresourcedelegator_p.h \
     $$PWD/qsimplexmlnodemodel.h \
     $$PWD/qsourcelocation.h \
+    $$PWD/qtxmlpatternsglobal.h \
     $$PWD/quriloader_p.h \
     $$PWD/qvariableloader_p.h \
     $$PWD/qxmlformatter.h \

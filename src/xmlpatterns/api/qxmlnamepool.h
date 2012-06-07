@@ -44,6 +44,7 @@
 
 #include <QtCore/QSharedData>
 #include <QtCore/QString>
+#include <QtXmlPatterns/qtxmlpatternsglobal.h>
 
 QT_BEGIN_HEADER
 
