@@ -150,7 +150,7 @@ namespace QPatternist
     template <const bool isDouble>
     Numeric::Ptr createFloat(const xsDouble num);
 
-#include "qabstractfloat.cpp"
+#include "qabstractfloat_tpl_p.h"
 
     /**
      * @short An instantiation of AbsbstractFloat suitable for @c xs:double.

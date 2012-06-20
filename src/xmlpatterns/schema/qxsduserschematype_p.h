@@ -114,7 +114,7 @@ namespace QPatternist
             SchemaType::DerivationConstraints m_derivationConstraints;
     };
 
-    #include "qxsduserschematype.cpp"
+    #include "qxsduserschematype_tpl_p.h"
 }
 
 QT_END_NAMESPACE

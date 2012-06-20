@@ -223,7 +223,7 @@ namespace QPatternist
         Q_DISABLE_COPY(MaintainingReader)
     };
 
-#include "qmaintainingreader.cpp"
+#include "qmaintainingreader_tpl_p.h"
 
 }
 

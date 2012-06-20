@@ -99,7 +99,7 @@ namespace QPatternist
         BuiltinNodeType();
     };
 
-#include "qbuiltinnodetype.cpp"
+#include "qbuiltinnodetype_tpl_p.h"
 
 }
 

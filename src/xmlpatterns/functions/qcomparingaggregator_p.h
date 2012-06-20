@@ -122,7 +122,7 @@ namespace QPatternist
         using CastingPlatform<ComparingAggregator<oper, result>, true>::cast;
     };
 
-#include "qcomparingaggregator.cpp"
+#include "qcomparingaggregator_tpl_p.h"
 
     /**
      * @short An instantiation of ComparingAggregator suitable for <tt>fn:max()</tt>.

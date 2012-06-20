@@ -136,7 +136,7 @@ namespace QPatternist
         const VariableSlotID            m_varSlot;
     };
 
-#include "qevaluationcache.cpp"
+#include "qevaluationcache_tpl_p.h"
 }
 
 QT_END_NAMESPACE

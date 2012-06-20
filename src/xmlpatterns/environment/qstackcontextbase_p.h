@@ -119,7 +119,7 @@ namespace QPatternist
         DynamicContext::TemplateParameterHash   m_templateParameterStore;
     };
 
-    #include "qstackcontextbase.cpp"
+    #include "qstackcontextbase_tpl_p.h"
 
     /**
      * @short A DynamicContext that creates a new scope for variables.

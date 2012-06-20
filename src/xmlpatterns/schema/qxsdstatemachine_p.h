@@ -292,7 +292,7 @@ namespace QPatternist
             TransitionType                                            m_lastTransition;
     };
 
-    #include "qxsdstatemachine.cpp"
+    #include "qxsdstatemachine_tpl_p.h"
 }
 
 QT_END_NAMESPACE

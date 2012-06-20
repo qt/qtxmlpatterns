@@ -197,7 +197,7 @@ namespace QPatternist
         AtomicComparator::Ptr m_comparator;
     };
 
-#include "qcomparisonplatform.cpp"
+#include "qcomparisonplatform_tpl_p.h"
 
 }
 

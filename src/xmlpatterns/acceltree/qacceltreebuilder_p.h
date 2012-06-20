@@ -194,7 +194,7 @@ namespace QPatternist
     Q_DECLARE_OPERATORS_FOR_FLAGS(AccelTreeBuilder<true>::Features)
     Q_DECLARE_OPERATORS_FOR_FLAGS(AccelTreeBuilder<false>::Features)
 
-#include "qacceltreebuilder.cpp"
+#include "qacceltreebuilder_tpl_p.h"
 }
 
 QT_END_NAMESPACE

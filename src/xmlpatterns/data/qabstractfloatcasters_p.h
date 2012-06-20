@@ -113,7 +113,7 @@ namespace QPatternist
                                   const QExplicitlySharedDataPointer<DynamicContext> &context) const;
     };
 
-#include "qabstractfloatcasters.cpp"
+#include "qabstractfloatcasters_tpl_p.h"
 
    /**
     * @short Casts a @c numeric value, such as @c xs:integer or @c xs:float, to @c xs:double.

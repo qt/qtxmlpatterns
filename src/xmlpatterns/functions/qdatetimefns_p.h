@@ -294,7 +294,7 @@ namespace QPatternist
         inline Item extract(const QDateTime &dt) const;
     };
 
-#include "qdatetimefns.cpp"
+#include "qdatetimefns_tpl_p.h"
 
 }
 

@@ -85,7 +85,7 @@ namespace QPatternist
                                     const QExplicitlySharedDataPointer<DynamicContext> &context) const;
     };
 
-#include "qabstractfloatmathematician.cpp"
+#include "qabstractfloatmathematician_tpl_p.h"
 
     /**
      * An instantiation of AbstractFloatMathematician that handles @c xs:double.

@@ -195,7 +195,7 @@ namespace QPatternist
         const ReportContext::ErrorCode m_errorCode;
     };
 
-#include "qcastingplatform.cpp"
+#include "qcastingplatform_tpl_p.h"
 
 }
 
