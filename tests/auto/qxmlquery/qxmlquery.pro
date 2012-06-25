@@ -13,12 +13,6 @@ QT += network testlib
 
 TESTDATA = data/* pushBaselines/* input.xml
 
-wince* {
-    DEFINES += SRCDIR=\\\"./\\\"
-} else {
-    DEFINES += SRCDIR=\\\"$$PWD/\\\"
-}
-
 include (../xmlpatterns.pri)
 
 wince*: {

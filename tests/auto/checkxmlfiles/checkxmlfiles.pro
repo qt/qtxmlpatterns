@@ -16,4 +16,6 @@ addFiles.files = \
 	$$QT_SOURCE_TREE/examples/tools/undo/undo.qrc
 addFiles.path = xmlfiles
 DEPLOYMENT += addFiles
+} else {
+    DEFINES += SOURCETREE=\\\"$$absolute_path(../../..)/\\\"
 }

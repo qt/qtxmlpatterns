@@ -127,6 +127,11 @@ void tst_XmlPatternsValidator::xsdSupport_data() const
     return;
 #endif
 
+    QString path = QFINDTESTDATA("files/");
+
+    /* Check one file for existence, to avoid a flood of failures. */
+    QVERIFY(QFile::exists(path + QLatin1String("instance.xml")));
+
     QTest::addColumn<int>("expectedExitCode");
     QTest::addColumn<QStringList>("arguments");
     QTest::addColumn<QString>("cwd");
@@ -138,90 +143,90 @@ void tst_XmlPatternsValidator::xsdSupport_data() const
 
     QTest::newRow("A valid schema")
         << 0
-        << QStringList(QLatin1String("files/valid_schema.xsd"))
+        << QStringList(path + QLatin1String("valid_schema.xsd"))
         << QString();
 
     QTest::newRow("An invalid schema")
         << 1
-        << QStringList(QLatin1String("files/invalid_schema.xsd"))
+        << QStringList(path + QLatin1String("invalid_schema.xsd"))
         << QString();
 
     QTest::newRow("An instance and valid schema")
         << 0
-        << (QStringList() << QLatin1String("files/instance.xml")
-                          << QLatin1String("files/valid_schema.xsd"))
+        << (QStringList() << path + QLatin1String("instance.xml")
+                          << path + QLatin1String("valid_schema.xsd"))
         << QString();
 
     QTest::newRow("An instance and invalid schema")
         << 1
-        << (QStringList() << QLatin1String("files/instance.xml")
-                          << QLatin1String("files/invalid_schema.xsd"))
+        << (QStringList() << path + QLatin1String("instance.xml")
+                          << path + QLatin1String("invalid_schema.xsd"))
         << QString();
 
     QTest::newRow("An instance and not matching schema")
         << 1
-        << (QStringList() << QLatin1String("files/instance.xml")
-                          << QLatin1String("files/other_valid_schema.xsd"))
+        << (QStringList() << path + QLatin1String("instance.xml")
+                          << path + QLatin1String("other_valid_schema.xsd"))
         << QString();
 
     QTest::newRow("Two instance documents")
         << 1
-        << (QStringList() << QLatin1String("files/instance.xml")
-                          << QLatin1String("files/instance.xml"))
+        << (QStringList() << path + QLatin1String("instance.xml")
+                          << path + QLatin1String("instance.xml"))
         << QString();
 
     QTest::newRow("Three instance documents")
         << 2
-        << (QStringList() << QLatin1String("files/instance.xml")
-                          << QLatin1String("files/instance.xml")
-                          << QLatin1String("files/instance.xml"))
+        << (QStringList() << path + QLatin1String("instance.xml")
+                          << path + QLatin1String("instance.xml")
+                          << path + QLatin1String("instance.xml"))
         << QString();
 
     QTest::newRow("Two schema documents")
         << 1
-        << (QStringList() << QLatin1String("files/valid_schema.xsd")
-                          << QLatin1String("files/valid_schema.xsd"))
+        << (QStringList() << path + QLatin1String("valid_schema.xsd")
+                          << path + QLatin1String("valid_schema.xsd"))
         << QString();
 
     QTest::newRow("A schema aware valid instance document")
         << 0
-        << (QStringList() << QLatin1String("files/sa_valid_instance.xml"))
+        << (QStringList() << path + QLatin1String("sa_valid_instance.xml"))
         << QString();
 
     QTest::newRow("A schema aware invalid instance document")
         << 1
-        << (QStringList() << QLatin1String("files/sa_invalid_instance.xml"))
+        << (QStringList() << path + QLatin1String("sa_invalid_instance.xml"))
         << QString();
 
     QTest::newRow("A non-schema aware instance document")
         << 1
-        << (QStringList() << QLatin1String("files/instance.xml"))
+        << (QStringList() << path + QLatin1String("instance.xml"))
         << QString();
 
     QTest::newRow("QTBUG-8394 A schema with an indirectly included type")
         << 0
-        << (QStringList() << QLatin1String("files/indirect-include-a.xsd"))
+        << (QStringList() << path + QLatin1String("indirect-include-a.xsd"))
         << QString();
 
     QTest::newRow("QTBUG-8394 A schema with an indirectly imported type")
         << 0
-        << (QStringList() << QLatin1String("files/indirect-import-a.xsd"))
+        << (QStringList() << path + QLatin1String("indirect-import-a.xsd"))
         << QString();
 
     QTest::newRow("QTBUG-8394 A schema with an indirectly redefined type")
         << 0
-        << (QStringList() << QLatin1String("files/indirect-redefine-a.xsd"))
+        << (QStringList() << path + QLatin1String("indirect-redefine-a.xsd"))
         << QString();
 
     QTest::newRow("QTBUG-8920 A schema with a complex type that indirectly includes an anonymous type")
         << 0
-        << (QStringList() << QLatin1String("files/complex-type-including-anonymous-type.xsd"))
+        << (QStringList() << path + QLatin1String("complex-type-including-anonymous-type.xsd"))
         << QString();
 
     QTest::newRow("QTBUG-11559 A schema and instance with a dateTime containing microseconds")
         << 0
-        << (QStringList() << QLatin1String("files/dateTime-with-microseconds.xml")
-                          << QLatin1String("files/dateTime-with-microseconds.xsd"))
+        << (QStringList() << path + QLatin1String("dateTime-with-microseconds.xml")
+                          << path + QLatin1String("dateTime-with-microseconds.xsd"))
         << QString();
 }
 

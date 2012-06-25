@@ -67,7 +67,7 @@ void tst_XmlPatternsXQTS::catalogPath(QString &write) const
     if(dontRun())
         QSKIP("This test takes too long time to run on the majority of platforms.");
 
-    write = QLatin1String("TESTSUITE/XQTSCatalog.xml");
+    write = QFINDTESTDATA("TESTSUITE/XQTSCatalog.xml");
     return;
 
 }

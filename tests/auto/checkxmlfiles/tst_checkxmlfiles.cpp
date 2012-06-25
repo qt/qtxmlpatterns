@@ -97,11 +97,11 @@ void tst_CheckXMLFiles::checkXMLFiles_data() const
     patterns.append(QLatin1String("*.xhtml"));
 
 #ifndef Q_OS_WINCE
-    QString path = QLatin1String("../../../");
+    QString path = QLatin1String(SOURCETREE);
 #else
-    QString path = QLatin1String("xmlfiles");
+    QString path = QFINDTESTDATA("xmlfiles");
 #endif
-    QDirIterator it(inputFile(path), patterns, QDir::AllEntries, QDirIterator::Subdirectories);
+    QDirIterator it(path, patterns, QDir::AllEntries, QDirIterator::Subdirectories);
     while(it.hasNext())
     {
         it.next();

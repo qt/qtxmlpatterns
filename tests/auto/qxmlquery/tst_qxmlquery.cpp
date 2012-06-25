@@ -744,7 +744,7 @@ void tst_QXmlQuery::bindVariableQStringQIODeviceWithString() const
 void tst_QXmlQuery::bindVariableQStringQIODeviceWithQFile() const
 {
     QXmlQuery query;
-    QFile inDevice(QLatin1String(SRCDIR "input.xml"));
+    QFile inDevice(QFINDTESTDATA("input.xml"));
 
     QVERIFY(inDevice.open(QIODevice::ReadOnly));
 
@@ -967,7 +967,7 @@ void tst_QXmlQuery::evaluateToReceiver()
     QVERIFY(push.isValid());
     query.evaluateTo(&push);
 
-    const QString baselineName(inputFile(QLatin1String(SRCDIR "pushBaselines/") + inputQuery.left(inputQuery.length() - 2) + QString::fromLatin1("ref")));
+    const QString baselineName(QFINDTESTDATA("pushBaselines/") + inputQuery.left(inputQuery.length() - 2) + QString::fromLatin1("ref"));
     QFile baseline(baselineName);
 
     if(baseline.exists())
@@ -2030,7 +2030,7 @@ void tst_QXmlQuery::fnDocNetworkAccessSuccess_data() const
     QTest::addColumn<QByteArray>("expectedOutput");
 
     QTest::newRow("file scheme")
-        << inputFileAsURI(QLatin1String(SRCDIR "input.xml"))
+        << inputFileAsURI(QFINDTESTDATA("input.xml"))
         << QByteArray("<!-- This is just a file for testing. --><input/>");
 
     QTest::newRow("data scheme with ASCII")

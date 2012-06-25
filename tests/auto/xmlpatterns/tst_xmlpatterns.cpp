@@ -161,9 +161,9 @@ void tst_XmlPatterns::xquerySupport()
     // convert Windows line endings to Unix ones
     fixedStderr.replace("\r\n", "\n");
 
-    const QString errorFileName(inputFile(QLatin1String(SRCDIR "stderrBaselines/") +
-                                          QString::fromUtf8(QTest::currentDataTag()).remove(m_normalizeTestName) +
-                                          QLatin1String(".txt")));
+    const QString errorFileName(QFINDTESTDATA("stderrBaselines/") +
+                                QString::fromUtf8(QTest::currentDataTag()).remove(m_normalizeTestName) +
+                                QLatin1String(".txt"));
 
     QFile writeErr(errorFileName);
 
@@ -227,8 +227,10 @@ void tst_XmlPatterns::xquerySupport_data() const
     return;
 #endif
 
+    QString path = QFINDTESTDATA("queries/");
+
     /* Check one file for existence, to avoid possible false positives. */
-    QVERIFY(QFile::exists(inputFile(QLatin1String(SRCDIR "queries/onePlusOne.xq"))));
+    QVERIFY(QFile::exists(path + QLatin1String("onePlusOne.xq")));
 
     QTest::addColumn<int>("expectedExitCode");
     QTest::addColumn<QByteArray>("expectedQueryOutput");
@@ -239,21 +241,21 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("A simple math query")
         << 0
         << QByteArray("2\n")
-        << QStringList((QLatin1String(SRCDIR "queries/onePlusOne.xq")))
+        << QStringList((path + QLatin1String("onePlusOne.xq")))
         << QString()
         << QString();
 
     QTest::newRow("An unbound external variable")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/externalVariable.xq"))
+        << QStringList(path + QLatin1String("externalVariable.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Bind an external variable")
         << 0
         << QByteArray("1 4<e>1</e>true\n")
-        << (QStringList() << QLatin1String(SRCDIR "queries/externalVariable.xq")
+        << (QStringList() << path + QLatin1String("externalVariable.xq")
                           << QLatin1String("-param")
                           << QLatin1String("externalVariable=1"))
         << QString()
@@ -264,21 +266,21 @@ void tst_XmlPatterns::xquerySupport_data() const
         << QByteArray("1 4<e>1</e>true\n")
         << (QStringList() << QLatin1String("-param")
                           << QLatin1String("externalVariable=1")
-                          << QLatin1String(SRCDIR "queries/externalVariable.xq"))
+                          << path + QLatin1String("externalVariable.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Use fn:doc")
         << 0
         << QByteArray("<e xmlns=\"http://example.com\" xmlns:p=\"http://example.com/P\" attr=\"1\" p:attr=\"\">\n    <?target data?>\n    <!-- a comment -->\n    <e/>text <f/>text node</e>\n")
-        << QStringList(QLatin1String(SRCDIR "queries/openDocument.xq"))
+        << QStringList(path + QLatin1String("openDocument.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Use fn:doc, together with -no-format, last")
         << 0
         << QByteArray("<e xmlns=\"http://example.com\" xmlns:p=\"http://example.com/P\" attr=\"1\" p:attr=\"\"><?target data?><!-- a comment --><e/>text <f/>text node</e>")
-        << (QStringList() << QLatin1String(SRCDIR "queries/openDocument.xq")
+        << (QStringList() << path + QLatin1String("openDocument.xq")
                           << QLatin1String("-no-format"))
         << QString()
         << QString();
@@ -287,7 +289,7 @@ void tst_XmlPatterns::xquerySupport_data() const
         << 0
         << QByteArray("<e xmlns=\"http://example.com\" xmlns:p=\"http://example.com/P\" attr=\"1\" p:attr=\"\"><?target data?><!-- a comment --><e/>text <f/>text node</e>")
         << (QStringList() << QLatin1String("-no-format")
-                          << QLatin1String(SRCDIR "queries/openDocument.xq"))
+                          << path + QLatin1String("openDocument.xq"))
         << QString()
         << QString();
 
@@ -295,28 +297,28 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Make sure query paths are resolved against CWD, not the location of the executable.")
         << 0
         << QByteArray("2\n")
-        << QStringList(QLatin1String(SRCDIR "queries/onePlusOne.xq"))
-        << QString::fromLatin1("queries")
+        << QStringList(QFINDTESTDATA("queries/onePlusOne.xq"))
+        << QFINDTESTDATA("queries")
         << QString();
 
     QTest::newRow("Call fn:error()")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/errorFunction.xq"))
+        << QStringList(path + QLatin1String("errorFunction.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Evaluate a library module")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/simpleLibraryModule.xq"))
+        << QStringList(path + QLatin1String("simpleLibraryModule.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Trigger a static error.")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/staticError.xq"))
+        << QStringList(path + QLatin1String("staticError.xq"))
         << QString()
         << QString();
 
@@ -330,7 +332,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Open an nonexistent file")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/ThisFileDoesNotExist.xq"))
+        << QStringList(path + QLatin1String("ThisFileDoesNotExist.xq"))
         << QString()
         << QString();
 
@@ -339,63 +341,63 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("XQuery-function message markups")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/wrongArity.xq"))
+        << QStringList(path + QLatin1String("wrongArity.xq"))
         << QString()
         << QString();
 
     QTest::newRow("XQuery-type message markups")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/typeError.xq"))
+        << QStringList(path + QLatin1String("typeError.xq"))
         << QString()
         << QString();
 
     QTest::newRow("XQuery-data & XQuery-keyword message markups")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/zeroDivision.xq"))
+        << QStringList(path + QLatin1String("zeroDivision.xq"))
         << QString()
         << QString();
 
     QTest::newRow("XQuery-uri message markups")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/unsupportedCollation.xq"))
+        << QStringList(path + QLatin1String("unsupportedCollation.xq"))
         << QString()
         << QString();
 
     QTest::newRow("XQuery-expression message markups")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/invalidRegexp.xq"))
+        << QStringList(path + QLatin1String("invalidRegexp.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Print a list of available regexp flags(The available flags are formatted in a complex way.)")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/invalidRegexpFlag.xq"))
+        << QStringList(path + QLatin1String("invalidRegexpFlag.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Trigger an assert in QPatternist::ColorOutput. The query naturally contains an error; XPTY0004.")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/flwor.xq"))
+        << QStringList(path + QLatin1String("flwor.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Trigger a second assert in QPatternist::ColorOutput. The query naturally contains XPST0003.")
         << 2
         << QByteArray()
-        << QStringList(QLatin1String(SRCDIR "queries/syntaxError.xq"))
+        << QStringList(path + QLatin1String("syntaxError.xq"))
         << QString()
         << QString();
 
     QTest::newRow("-param is missing so multiple queries appear")
         << 2
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "queries/reportGlobals.xq")
+        << (QStringList() << path + QLatin1String("reportGlobals.xq")
                           << QLatin1String("fileToOpen=globals.gccxml"))
         << QString()
         << QString();
@@ -410,7 +412,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Basic use of -output, query first")
         << 0
         << QByteArray("2\n")
-        << (QStringList() << QLatin1String(SRCDIR "queries/onePlusOne.xq")
+        << (QStringList() << path + QLatin1String("onePlusOne.xq")
                           << QLatin1String("-output")
                           << QLatin1String("basicOutput.out"))
         << QString()
@@ -421,22 +423,22 @@ void tst_XmlPatterns::xquerySupport_data() const
         << QByteArray("<e/>\n")
         << (QStringList() << QLatin1String("-output")
                           << QLatin1String("basicOutput2.out")
-                          << QLatin1String(SRCDIR "queries/oneElement.xq"))
+                          << path + QLatin1String("oneElement.xq"))
         << QString()
         << QString::fromLatin1("basicOutput2.out");
 
     QTest::newRow("A single query, that does not exist")
         << 2
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "doesNotExist.xq"))
+        << (QStringList() << path + QLatin1String("doesNotExist.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Specify two identical query names")
         << 2
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "query.xq")
-                          << QLatin1String(SRCDIR "query.xq"))
+        << (QStringList() << path + QLatin1String("query.xq")
+                          << path + QLatin1String("query.xq"))
         << QString()
         << QString();
 
@@ -466,7 +468,7 @@ void tst_XmlPatterns::xquerySupport_data() const
             << QByteArray()
             << (QStringList() << QLatin1String("-output")
                               << filename
-                              << QLatin1String(SRCDIR "queries/onePlusOne.xq"))
+                              << path + QLatin1String("onePlusOne.xq"))
             << QString()
             << filename;
     }
@@ -483,7 +485,7 @@ void tst_XmlPatterns::xquerySupport_data() const
             << QByteArray("2\n")
             << (QStringList() << QLatin1String("-output")
                               << outName
-                              << QLatin1String(SRCDIR "queries/onePlusOne.xq"))
+                              << path + QLatin1String("onePlusOne.xq"))
             << QString()
             << outName;
     }
@@ -491,7 +493,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("one query, and a terminating dash at the end")
         << 0
         << QByteArray("2\n")
-        << (QStringList() << QLatin1String(SRCDIR "queries/onePlusOne.xq")
+        << (QStringList() << path + QLatin1String("onePlusOne.xq")
                           << QLatin1String("-"))
         << QString()
         << QString();
@@ -500,7 +502,7 @@ void tst_XmlPatterns::xquerySupport_data() const
         << 0
         << QByteArray("2\n")
         << (QStringList() << QLatin1String("-")
-                          << QLatin1String(SRCDIR "queries/onePlusOne.xq"))
+                          << path + QLatin1String("onePlusOne.xq"))
         << QString()
         << QString();
 
@@ -587,21 +589,21 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Run a query which evaluates to the empty sequence.")
         << 0
         << QByteArray("\n")
-        << (QStringList() << QLatin1String(SRCDIR "queries/emptySequence.xq"))
+        << (QStringList() << path + QLatin1String("emptySequence.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Run a query which evaluates to a single document node with no children.")
         << 0
         << QByteArray("\n")
-        << (QStringList() << QLatin1String(SRCDIR "queries/onlyDocumentNode.xq"))
+        << (QStringList() << path + QLatin1String("onlyDocumentNode.xq"))
         << QString()
         << QString();
 
     QTest::newRow("Invoke with invalid -param value.")
         << 1
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "queries/externalVariable.xq")
+        << (QStringList() << path + QLatin1String("externalVariable.xq")
                           << QLatin1String("-param")
                           << QLatin1String("EqualSignIsMissing"))
         << QString()
@@ -610,7 +612,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Invoke with colon in variable name.")
         << 1
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "queries/externalVariable.xq")
+        << (QStringList() << path + QLatin1String("externalVariable.xq")
                           << QLatin1String("-param")
                           << QLatin1String("xs:name=value"))
         << QString()
@@ -619,7 +621,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Invoke with missing name in -param arg.")
         << 1
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "queries/externalVariable.xq")
+        << (QStringList() << path + QLatin1String("externalVariable.xq")
                           << QLatin1String("-param")
                           << QLatin1String("=value"))
         << QString()
@@ -628,7 +630,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Invoke with -param that has two adjacent equal signs.")
         << 0
         << QByteArray("START =text END\n")
-        << (QStringList() << QLatin1String(SRCDIR "queries/externalStringVariable.xq")
+        << (QStringList() << path + QLatin1String("externalStringVariable.xq")
                           << QLatin1String("-param")
                           << QLatin1String("externalString==text"))
         << QString()
@@ -637,7 +639,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Pass in an external variable, but the query doesn't use it.")
         << 0
         << QByteArray("2\n")
-        << (QStringList() << QLatin1String(SRCDIR "queries/onePlusOne.xq")
+        << (QStringList() << path + QLatin1String("onePlusOne.xq")
                           << QLatin1String("-param")
                           << QLatin1String("externalString==text"))
         << QString()
@@ -647,7 +649,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Invoke with -param that has no value.")
         << 0
         << QByteArray("START  END\n")
-        << (QStringList() << QLatin1String(SRCDIR "queries/externalStringVariable.xq")
+        << (QStringList() << path + QLatin1String("externalStringVariable.xq")
                           << QLatin1String("-param")
                           << QLatin1String("externalString="))
         << QString()
@@ -663,7 +665,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Use a native path")
         << 0
         << QByteArray("2\n")
-        << (QStringList() << QDir::toNativeSeparators(QLatin1String(SRCDIR "queries/onePlusOne.xq")))
+        << (QStringList() << QDir::toNativeSeparators(path + QLatin1String("onePlusOne.xq")))
         << QString()
         << QString();
 
@@ -678,8 +680,8 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("A valid, existing query, followed by a bogus one")
         << 1
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "queries/onePlusOne.xq")
-                          << QLatin1String(SRCDIR "doesNotExist.xq"))
+        << (QStringList() << path + QLatin1String("onePlusOne.xq")
+                          << path + QLatin1String("doesNotExist.xq"))
         << QString()
         << QString();
         */
@@ -688,8 +690,8 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Specify two different query names")
         << 1
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "query1.xq")
-                          << QLatin1String(SRCDIR "query2.xq"))
+        << (QStringList() << path + QLatin1String("query1.xq")
+                          << path + QLatin1String("query2.xq"))
         << QString()
         << QString();
         */
@@ -703,7 +705,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Use -param twice")
         << 0
         << QByteArray("param1 param2\n")
-        << (QStringList() << QLatin1String(SRCDIR "queries/twoVariables.xq")
+        << (QStringList() << path + QLatin1String("twoVariables.xq")
                           << QLatin1String("-param")
                           << QLatin1String("var1=param1")
                           << QLatin1String("-param")
@@ -714,7 +716,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Use -param thrice")
         << 0
         << QByteArray("param1 param2 third\n")
-        << (QStringList() << QLatin1String(SRCDIR "queries/threeVariables.xq")
+        << (QStringList() << path + QLatin1String("threeVariables.xq")
                           << QLatin1String("-param")
                           << QLatin1String("var1=param1")
                           << QLatin1String("-param")
@@ -727,7 +729,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Specify the same parameter twice, different values")
         << 1
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "queries/onePlusOne.xq")
+        << (QStringList() << path + QLatin1String("onePlusOne.xq")
                           << QLatin1String("-param")
                           << QLatin1String("duplicated=param1")
                           << QLatin1String("-param")
@@ -738,7 +740,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Specify the same parameter twice, same values")
         << 1
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "queries/onePlusOne.xq")
+        << (QStringList() << path + QLatin1String("onePlusOne.xq")
                           << QLatin1String("-param")
                           << QLatin1String("duplicated=param1")
                           << QLatin1String("-param")
@@ -749,7 +751,7 @@ void tst_XmlPatterns::xquerySupport_data() const
     QTest::newRow("Open a non-existing collection.")
         << 2
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "queries/nonexistingCollection.xq"))
+        << (QStringList() << path + QLatin1String("nonexistingCollection.xq"))
         << QString()
         << QString();
 
@@ -811,7 +813,7 @@ void tst_XmlPatterns::stdoutFailure() const
     //process.setStandardOutputFile(outName);
 
     process.setWorkingDirectory(QDir::current().absoluteFilePath(QString()));
-    process.start(m_command, QStringList(SRCDIR "queries/onePlusOne.xq"));
+    process.start(m_command, QStringList(QFINDTESTDATA("queries/onePlusOne.xq")));
 
     QCOMPARE(process.exitStatus(), QProcess::NormalExit);
     QVERIFY(process.waitForFinished());
@@ -856,6 +858,9 @@ void tst_XmlPatterns::xsltSupport_data() const
     QSKIP("WinCE: This test uses unsupported WinCE functionality");
 #endif
 
+    QString spath = QFINDTESTDATA("stylesheets/");
+    QString qpath = QFINDTESTDATA("queries/");
+
     QTest::addColumn<int>("expectedExitCode");
     QTest::addColumn<QByteArray>("expectedQueryOutput");
     QTest::addColumn<QStringList>("arguments");
@@ -872,8 +877,8 @@ void tst_XmlPatterns::xsltSupport_data() const
     QTest::newRow("Pass in a stylesheet file which contains an XQuery query")
         << 2
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "stylesheets/queryAsStylesheet.xsl")
-                          << QLatin1String(SRCDIR "queries/simpleDocument.xml"))
+        << (QStringList() << spath + QLatin1String("queryAsStylesheet.xsl")
+                          << qpath + QLatin1String("simpleDocument.xml"))
         << QString()
         << QString();
 
@@ -890,7 +895,7 @@ void tst_XmlPatterns::xsltSupport_data() const
         << QByteArray()
         << (QStringList() << QLatin1String("-initial-template")
                           << QLatin1String("name")
-                          << QLatin1String(SRCDIR "queries/onePlusOne.xq"))
+                          << qpath + QLatin1String("onePlusOne.xq"))
         << QString()
         << QString();
 
@@ -925,8 +930,8 @@ void tst_XmlPatterns::xsltSupport_data() const
         << (QStringList() << QLatin1String("-no-format")
                           << QLatin1String("-initial-template")
                           << QLatin1String("main")
-                          << QLatin1String(SRCDIR "stylesheets/namedAndRootTemplate.xsl")
-                          << QLatin1String(SRCDIR "stylesheets/documentElement.xml"))
+                          << spath + QLatin1String("namedAndRootTemplate.xsl")
+                          << spath + QLatin1String("documentElement.xml"))
         << QString()
         << QString();
 
@@ -936,8 +941,8 @@ void tst_XmlPatterns::xsltSupport_data() const
         << (QStringList() << QLatin1String("-no-format")
                           << QLatin1String("-initial-template")
                           << QLatin1String("no-template-by-this-name")
-                          << QLatin1String(SRCDIR "stylesheets/namedAndRootTemplate.xsl")
-                          << QLatin1String(SRCDIR "stylesheets/documentElement.xml"))
+                          << spath + QLatin1String("namedAndRootTemplate.xsl")
+                          << spath + QLatin1String("documentElement.xml"))
         << QString()
         << QString();
 
@@ -947,7 +952,7 @@ void tst_XmlPatterns::xsltSupport_data() const
         << (QStringList() << QLatin1String("-no-format")
                           << QLatin1String("-initial-template")
                           << QLatin1String("main")
-                          << QLatin1String(SRCDIR "stylesheets/namedAndRootTemplate.xsl"))
+                          << spath + QLatin1String("namedAndRootTemplate.xsl"))
         << QString()
         << QString();
 
@@ -957,7 +962,7 @@ void tst_XmlPatterns::xsltSupport_data() const
         << (QStringList() << QLatin1String("-no-format")
                           << QLatin1String("-initial-template")
                           << QLatin1String("{http://example.com/NS}main")
-                          << QLatin1String(SRCDIR "stylesheets/namedAndRootTemplate.xsl"))
+                          << spath + QLatin1String("namedAndRootTemplate.xsl"))
         << QString()
         << QString();
 
@@ -966,7 +971,7 @@ void tst_XmlPatterns::xsltSupport_data() const
         << QByteArray("defParam overridedDefaultedParam implicitlyRequiredValue\n")
         << (QStringList() << QLatin1String("-initial-template")
                           << QLatin1String("main")
-                          << QLatin1String(SRCDIR "stylesheets/useParameters.xsl")
+                          << spath + QLatin1String("useParameters.xsl")
                           << QLatin1String("-param")
                           << QLatin1String("overridedDefaultedParam=overridedDefaultedParam")
                           << QLatin1String("-param")
@@ -977,24 +982,24 @@ void tst_XmlPatterns::xsltSupport_data() const
     QTest::newRow("Use a simplified stylesheet module")
         << 0
         << QByteArray("<output>some text</output>\n")
-        << (QStringList() << QLatin1String(SRCDIR "stylesheets/simplifiedStylesheetModule.xsl")
-                          << QLatin1String(SRCDIR "stylesheets/simplifiedStylesheetModule.xml"))
+        << (QStringList() << spath + QLatin1String("simplifiedStylesheetModule.xsl")
+                          << spath + QLatin1String("simplifiedStylesheetModule.xml"))
         << QString()
         << QString();
 
     QTest::newRow("Not well-formed stylesheet, causes crash in coloring code.")
         << 2
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "stylesheets/notWellformed.xsl")
-                          << QLatin1String(SRCDIR "queries/simpleDocument.xml"))
+        << (QStringList() << spath + QLatin1String("notWellformed.xsl")
+                          << qpath + QLatin1String("simpleDocument.xml"))
         << QString()
         << QString();
 
     QTest::newRow("Not well-formed instance document, causes crash in coloring code.")
         << 2
         << QByteArray()
-        << (QStringList() << QLatin1String(SRCDIR "stylesheets/bool070.xsl")
-                          << QLatin1String(SRCDIR "stylesheets/bool070.xml"))
+        << (QStringList() << spath + QLatin1String("bool070.xsl")
+                          << spath + QLatin1String("bool070.xml"))
         << QString()
         << QString();
 

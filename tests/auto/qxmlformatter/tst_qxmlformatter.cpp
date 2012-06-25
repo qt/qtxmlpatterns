@@ -139,7 +139,7 @@ void tst_QXmlFormatter::format()
 {
     QFETCH(QString, testName);
 
-    const QString location(QLatin1String("input/") + testName);
+    const QString location(QFINDTESTDATA("input/") + testName);
     QFile queryFile(location);
     QVERIFY(queryFile.open(QIODevice::ReadOnly));
 
@@ -154,7 +154,7 @@ void tst_QXmlFormatter::format()
 
     QVERIFY(query.evaluateTo(&formatter));
 
-    QFile expectedFile(QLatin1String("baselines/") + testName.left(testName.length() - 2) + QString::fromLatin1("xml"));
+    QFile expectedFile(QFINDTESTDATA("baselines/") + testName.left(testName.length() - 2) + QString::fromLatin1("xml"));
 
     if(expectedFile.exists())
     {
@@ -178,7 +178,7 @@ void tst_QXmlFormatter::format_data() const
     QTest::addColumn<QString>("testName");
 
     QDir dir;
-    dir.cd(QLatin1String("input"));
+    dir.cd(QFINDTESTDATA("input"));
 
     const QStringList entries(dir.entryList(QStringList(QLatin1String("*.xq"))));
     for(int i = 0; i < entries.count(); ++i)

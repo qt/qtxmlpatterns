@@ -19,5 +19,7 @@ wince*: {
 	DEPLOYMENT += snippets widgetRen globVar filetree recipes files
 	# take care of dependency
 	QT += network
+} else {
+    DEFINES += SOURCETREE=\\\"$$absolute_path(../../..)/\\\"
 }
 include (../xmlpatterns.pri)
