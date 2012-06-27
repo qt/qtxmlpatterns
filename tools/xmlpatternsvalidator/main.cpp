@@ -83,10 +83,7 @@ int main(int argc, char **argv)
     QUrl instanceUri;
 
     {
-        QUrl url = arguments[1];
-
-        if (url.isRelative())
-            url = QUrl::fromLocalFile(arguments[1]);
+        QUrl url = QUrl::fromUserInput(arguments[1]);
 
         if (arguments.size() == 2) {
             // either it is a schema or instance document
@@ -101,10 +98,7 @@ int main(int argc, char **argv)
             }
         } else if (arguments.size() == 3) {
             instanceUri = url;
-            schemaUri = arguments[2];
-
-            if (schemaUri.isRelative())
-                schemaUri = QUrl::fromLocalFile(schemaUri.toString());
+            schemaUri = QUrl::fromUserInput(arguments[2]);
 
             mode = SchemaAndInstanceMode;
         }
