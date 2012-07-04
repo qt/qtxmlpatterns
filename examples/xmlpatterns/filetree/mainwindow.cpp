@@ -94,7 +94,7 @@ void MainWindow::on_queryBox_currentIndexChanged()
 //! [3]
 void MainWindow::evaluateResult()
 {
-    if (queryBox->currentText().isEmpty())
+    if (queryBox->currentText().isEmpty() || m_fileNode.isNull())
         return;
 
     QXmlQuery query(m_namePool);
