@@ -4,7 +4,7 @@ SOURCES     = main.cpp mainwindow.cpp stationdialog.cpp stationquery.cpp timeque
 FORMS       = stationdialog.ui
 
 target.path = $$[QT_INSTALL_EXAMPLES]/qtxmlpatterns/xmlpatterns/trafficinfo
-sources.files = $$SOURCES $$HEADERS $$RESOURCES *.pro
+sources.files = $$SOURCES $$HEADERS $$RESOURCES $$FORMS *.pro
 sources.path = $$[QT_INSTALL_EXAMPLES]/qtxmlpatterns/xmlpatterns/trafficinfo
 INSTALLS += target sources
 
