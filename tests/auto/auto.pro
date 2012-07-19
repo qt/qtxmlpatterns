@@ -1,6 +1,7 @@
 TEMPLATE=subdirs
 SUBDIRS=\
            checkxmlfiles                \
+           cmake                        \
            patternistexamplefiletree    \
            patternistexamples           \
            patternistheaders            \
