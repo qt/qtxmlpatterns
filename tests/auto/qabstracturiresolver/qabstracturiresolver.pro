@@ -5,3 +5,4 @@ HEADERS += TestURIResolver.h
 QT = core testlib
 
 include (../xmlpatterns.pri)
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0

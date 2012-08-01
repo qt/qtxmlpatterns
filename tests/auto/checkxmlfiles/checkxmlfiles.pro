@@ -19,3 +19,4 @@ DEPLOYMENT += addFiles
 } else {
     DEFINES += SOURCETREE=\\\"$$absolute_path(../../..)/\\\"
 }
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0

@@ -24,3 +24,4 @@ wince* {
    catalog.path = .
    DEPLOYMENT += catalog
 }
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0

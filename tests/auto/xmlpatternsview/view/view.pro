@@ -33,3 +33,4 @@ FORMS   = ui_BaseLinePage.ui            \
           ui_FunctionSignaturesView.ui
 
 INCLUDEPATH += ../../xmlpatternsxqts/lib
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
