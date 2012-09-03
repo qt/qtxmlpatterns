@@ -1,5 +1,3 @@
-load(qt_build_config)
-
 TARGET     = QtXmlPatterns
 CONFIG += exceptions
 QT = core-private network

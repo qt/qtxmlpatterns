@@ -1,5 +1,3 @@
-load(qt_build_config)
-
 include (../xmlpatterns.pri)
 
 TARGET   = $$XMLPATTERNS_SDK
