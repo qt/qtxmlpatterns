@@ -124,7 +124,7 @@ namespace QPatternistSDK
          *
          * If @p handler is heap allocated, it will be leaked.
          *
-         * @see qInstallMsgHandler()
+         * @see qInstallMessageHandler()
          */
         static void installQtMessageHandler(ErrorHandler *const handler);
 

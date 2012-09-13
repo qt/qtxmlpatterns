@@ -55,11 +55,11 @@ using namespace QPatternistSDK;
 
 ErrorHandler *ErrorHandler::handler = 0;
 
-void qMessageHandler(QtMsgType type, const char *description)
+void qMessageHandler(QtMsgType type, const QMessageLogContext &, const QString &description)
 {
     if(type == QtDebugMsg)
     {
-        std::fprintf(stderr, "%s\n", description);
+        std::fprintf(stderr, "%s\n", qPrintable(description));
         return;
     }
 
@@ -83,7 +83,7 @@ void qMessageHandler(QtMsgType type, const char *description)
              * But maybe not: when run from "patternistrunsingle" it could be an idea
              * to actually try to record it(but nevertheless fail somehow) such
              * that it gets reported. */
-            std::fprintf(stderr, "Fatal error: %s\n", description);
+            std::fprintf(stderr, "Fatal error: %s\n", qPrintable(description));
             t = QtFatalMsg; /* Dummy, to silence a bogus compiler warning. */
             return;
         }
@@ -100,7 +100,7 @@ void qMessageHandler(QtMsgType type, const char *description)
     /* This message is hacky. Ideally, we should do it the same way
      * ReportContext::error() constructs messages, but this is just testing
      * code. */
-    ErrorHandler::handler->message(t, QLatin1String("<p>") + QPatternist::escape(QLatin1String(description)) + QLatin1String("</p>"));
+    ErrorHandler::handler->message(t, QLatin1String("<p>") + QPatternist::escape(description) + QLatin1String("</p>"));
 }
 
 void ErrorHandler::installQtMessageHandler(ErrorHandler *const h)
@@ -108,9 +108,9 @@ void ErrorHandler::installQtMessageHandler(ErrorHandler *const h)
     handler = h;
 
     if(h)
-        qInstallMsgHandler(qMessageHandler);
+        qInstallMessageHandler(qMessageHandler);
     else
-        qInstallMsgHandler(0);
+        qInstallMessageHandler(0);
 }
 
 void ErrorHandler::handleMessage(QtMsgType type,
