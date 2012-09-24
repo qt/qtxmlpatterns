@@ -1,5 +1,5 @@
 # Name of the project.
-project = Qt Xml Patterns
+project = QtXmlPatterns
 
 # Directories in which to search for files to document and images.
 # By default set to the root directory of the project for sources
