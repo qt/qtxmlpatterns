@@ -2108,10 +2108,7 @@ void tst_QXmlQuery::fnDocNetworkAccessFailure_data() const
         << QUrl(QLatin1String("qrc:/QXmlQueryTestData/notWellformed.xml"));
 
     QTest::newRow("'qrc:/', non-existing file")
-        << QUrl(QLatin1String(":/QXmlQueryTestData/data/thisFileDoesNotExist.xml"));
-
-    QTest::newRow("':/', this scheme is not supported")
-        << QUrl(QLatin1String(":/QXmlQueryTestData/data/notWellformed.xml"));
+        << QUrl(QLatin1String("qrc:/QXmlQueryTestData/data/thisFileDoesNotExist.xml"));
 
     if(!m_testNetwork)
         return;
