@@ -102,7 +102,7 @@ QVariant XQTSTestCase::data(const Qt::ItemDataRole role, int column) const
     if(!tr)
     {
         if(column == 0)
-            return Qt::yellow;
+            return QColor(Qt::yellow);
         else
             return QVariant();
     }
@@ -110,14 +110,14 @@ QVariant XQTSTestCase::data(const Qt::ItemDataRole role, int column) const
     const TestResult::Status status = tr->status();
 
     if(status == TestResult::NotTested || status == TestResult::Unknown)
-        return Qt::yellow;
+        return QColor(Qt::yellow);
 
     switch(column)
     {
         case 1:
-            return status == TestResult::Pass ? Qt::green : QVariant();
+            return status == TestResult::Pass ? QColor(Qt::green) : QVariant();
         case 2:
-            return status == TestResult::Fail ? Qt::red : QVariant();
+            return status == TestResult::Fail ? QColor(Qt::red) : QVariant();
         default:
             return QVariant();
     }

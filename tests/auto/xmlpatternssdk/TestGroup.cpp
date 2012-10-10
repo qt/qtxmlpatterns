@@ -94,7 +94,7 @@ QVariant TestGroup::data(const Qt::ItemDataRole role, int column) const
                     if(sum.first)
                     {
                         /* Pass. */
-                        return Qt::green;
+                        return QColor(Qt::green);
                     }
                     else
                         return QVariant();
@@ -104,7 +104,7 @@ QVariant TestGroup::data(const Qt::ItemDataRole role, int column) const
                     if(failures)
                     {
                         /* Failure. */
-                        return Qt::red;
+                        return QColor(Qt::red);
                     }
                     else
                         return QVariant();
