@@ -5,9 +5,9 @@ QT = core-private network
 DEFINES += QT_NO_USING_NAMESPACE
 win32-msvc*|win32-icc:QMAKE_LFLAGS += /BASE:0x61000000
 
-load(qt_module)
-
 QMAKE_DOCS = $$PWD/../../doc/qt5.qdocconf
+
+load(qt_module)
 
 include($$PWD/common.pri)
 include($$PWD/acceltree/acceltree.pri)
