@@ -9,6 +9,7 @@ wince*: {
     QT += network
 }
 QT -= gui
+QMAKE_RPATHLINKDIR *= $$QT.gui.libs
 
 XMLPATTERNS_SDK = QtXmlPatternsSDK
 if(!debug_and_release|build_pass):CONFIG(debug, debug|release) {
