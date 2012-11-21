@@ -7,7 +7,7 @@ INCLUDEPATH += ../shared/
 
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/qtxmlpatterns/xmlpatterns/filetree
-sources.files = $$SOURCES $$HEADERS $$RESOURCES $$FORMS *.pro *.xq *.html
+sources.files = $$SOURCES $$HEADERS $$RESOURCES forms queries *.pro *.xq *.html
 sources.path = $$[QT_INSTALL_EXAMPLES]/qtxmlpatterns/xmlpatterns/filetree
 INSTALLS += target sources
 
