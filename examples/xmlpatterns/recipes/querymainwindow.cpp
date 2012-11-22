@@ -62,6 +62,8 @@ QueryMainWindow::QueryMainWindow() : ui_defaultQueries(0)
     int len = queries.count();
     for(int i = 0; i < len; ++i)
         ui_defaultQueries->addItem(queries.at(i));
+    if (len > 0)
+        displayQuery(0);
 }
 //! [0]
 
