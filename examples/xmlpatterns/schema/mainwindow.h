@@ -55,16 +55,16 @@ class MainWindow : public QMainWindow,
 {
     Q_OBJECT
 
-  public:
+public:
     MainWindow();
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void schemaSelected(int index);
     void instanceSelected(int index);
     void validate();
     void textChanged();
 
-  private:
+private:
     void moveCursor(int line, int column);
 };
 //! [0]

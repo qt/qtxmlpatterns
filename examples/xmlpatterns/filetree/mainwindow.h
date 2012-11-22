@@ -52,15 +52,15 @@ class MainWindow : public QMainWindow, private Ui_MainWindow
 {
     Q_OBJECT
 
-  public:
+public:
     MainWindow();
 
-  private slots:
+private slots:
     void on_actionOpenDirectory_triggered();
     void on_actionAbout_triggered();
     void on_queryBox_currentIndexChanged();
 
-  private:
+private:
     void loadDirectory(const QString &directory);
     void evaluateResult();
 

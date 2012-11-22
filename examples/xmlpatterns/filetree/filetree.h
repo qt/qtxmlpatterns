@@ -45,7 +45,7 @@
 
 class FileTree : public QSimpleXmlNodeModel
 {
- public:
+public:
     FileTree(const QXmlNamePool &namePool);
 
     QXmlNodeModelIndex nodeFor(const QString &fileName) const;
@@ -58,13 +58,13 @@ class FileTree : public QSimpleXmlNodeModel
     virtual QXmlNodeModelIndex root(const QXmlNodeModelIndex &node) const;
     virtual QVariant typedValue(const QXmlNodeModelIndex &node) const;
     //! [0]
- protected:
+protected:
     //! [1]
     virtual QVector<QXmlNodeModelIndex> attributes(const QXmlNodeModelIndex &element) const;
     virtual QXmlNodeModelIndex nextFromSimpleAxis(SimpleAxis, const QXmlNodeModelIndex&) const;
     //! [1]
 
- private:
+private:
     //! [4]
     enum Type {
         File,

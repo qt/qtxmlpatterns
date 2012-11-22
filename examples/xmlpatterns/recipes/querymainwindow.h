@@ -59,13 +59,13 @@ class QueryMainWindow : public QMainWindow,
 {
     Q_OBJECT
 
-  public:
+public:
     QueryMainWindow();
 
-  public slots:
+public slots:
     void displayQuery(int index);
 
-  private:
+private:
     QComboBox* ui_defaultQueries;
 
     void evaluate(const QString &str);
