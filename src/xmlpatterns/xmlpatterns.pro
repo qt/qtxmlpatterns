@@ -5,7 +5,7 @@ QT = core-private network
 DEFINES += QT_NO_USING_NAMESPACE
 win32-msvc*|win32-icc:QMAKE_LFLAGS += /BASE:0x61000000
 
-QMAKE_DOCS = $$PWD/../../doc/qt5.qdocconf
+QMAKE_DOCS = $$PWD/doc/qtxmlpatterns.qdocconf
 
 load(qt_module)
 

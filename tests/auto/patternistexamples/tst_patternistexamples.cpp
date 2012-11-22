@@ -82,7 +82,7 @@ private:
 void tst_PatternistExamples::initTestCase()
 {
 #ifndef Q_OS_WINCE
-    m_dirs.append(QDir(QLatin1String(SOURCETREE "doc/src/snippets/patternist/")));
+    m_dirs.append(QDir(QLatin1String(SOURCETREE "src/xmlpatterns/doc/snippets/patternist/")));
     m_dirs.append(QDir(QLatin1String(SOURCETREE "examples/xmlpatterns/xquery/globalVariables/")));
     m_dirs.append(QDir(QLatin1String(SOURCETREE "examples/xmlpatterns/filetree/")));
     m_dirs.append(QDir(QLatin1String(SOURCETREE "examples/xmlpatterns/recipes/")));
@@ -219,7 +219,7 @@ static QUrl abstractURI()
 {
     QUrl baseURI;
     QUrl relative;
-#include "../../../doc/src/snippets/code/src_xmlpatterns_api_qabstracturiresolver.cpp"
+#include "../../../src/xmlpatterns/doc/snippets/code/src_xmlpatterns_api_qabstracturiresolver.cpp"
 }
 
 class MyValue
@@ -296,7 +296,7 @@ MyTreeModel::MyTreeModel(const QXmlNamePool &np, const QFile &) : QSimpleXmlNode
 {
 }
 
-#include "../../../doc/src/snippets/code/src_xmlpatterns_api_qsimplexmlnodemodel.cpp"
+#include "../../../src/xmlpatterns/doc/snippets/code/src_xmlpatterns_api_qsimplexmlnodemodel.cpp"
 
 class MyMapper
 {
@@ -305,10 +305,10 @@ public:
     enum OutputType
     {
     };
-#include "../../../doc/src/snippets/code/src_xmlpatterns_api_qabstractxmlforwarditerator.cpp"
+#include "../../../src/xmlpatterns/doc/snippets/code/src_xmlpatterns_api_qabstractxmlforwarditerator.cpp"
 };
 
-#include "../../../doc/src/snippets/code/src_xmlpatterns_api_qxmlname.cpp"
+#include "../../../src/xmlpatterns/doc/snippets/code/src_xmlpatterns_api_qxmlname.cpp"
 
 void tst_PatternistExamples::buildSnippets() const
 {
@@ -322,7 +322,7 @@ void tst_PatternistExamples::buildSnippets() const
     }
 
     {
-#include "../../../doc/src/snippets/code/src_xmlpatterns_api_qxmlresultitems.cpp"
+#include "../../../src/xmlpatterns/doc/snippets/code/src_xmlpatterns_api_qxmlresultitems.cpp"
     }
 
     {
@@ -330,19 +330,19 @@ void tst_PatternistExamples::buildSnippets() const
 
     {
         QIODevice *myOutputDevice = 0;
-#include "../../../doc/src/snippets/code/src_xmlpatterns_api_qxmlformatter.cpp"
+#include "../../../src/xmlpatterns/doc/snippets/code/src_xmlpatterns_api_qxmlformatter.cpp"
     }
 
     {
         QIODevice *myOutputDevice = 0;
-#include "../../../doc/src/snippets/code/src_xmlpatterns_api_qxmlserializer.cpp"
+#include "../../../src/xmlpatterns/doc/snippets/code/src_xmlpatterns_api_qxmlserializer.cpp"
     }
 
     {
         QXmlNodeModelIndex myInstance;
         const char **argv = 0;
         typedef MyTreeModel ChemistryNodeModel;
-#include "../../../doc/src/snippets/code/src_xmlpatterns_api_qabstractxmlnodemodel.cpp"
+#include "../../../src/xmlpatterns/doc/snippets/code/src_xmlpatterns_api_qabstractxmlnodemodel.cpp"
     }
 
     {
@@ -350,14 +350,14 @@ void tst_PatternistExamples::buildSnippets() const
 
     {
         QIODevice *myOutputDevice = 0;
-#include "../../../doc/src/snippets/code/src_xmlpatterns_api_qabstractxmlreceiver.cpp"
+#include "../../../src/xmlpatterns/doc/snippets/code/src_xmlpatterns_api_qabstractxmlreceiver.cpp"
     }
 
     {
         QXmlQuery query;
         QString localName;
         QVariant value;
-#include "../../../doc/src/snippets/code/src_xmlpatterns_api_qxmlquery.cpp"
+#include "../../../src/xmlpatterns/doc/snippets/code/src_xmlpatterns_api_qxmlquery.cpp"
     }
 }
 
