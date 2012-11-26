@@ -134,7 +134,7 @@ Qt::ItemFlags TreeModel::flags(const QModelIndex &idx) const
     if(!idx.isValid())
         return Qt::ItemFlags();
 
-    return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+    return QAbstractItemModel::flags(idx);
 }
 
 int TreeModel::rowCount(const QModelIndex &p) const
