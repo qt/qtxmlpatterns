@@ -28,6 +28,7 @@
 /*!
   \example xmlpatterns/schema
   \title XML Schema Validation Example
+  \ingroup xmlpattern_examples
 
   The XML Schema Validation example shows how to use Qt XML Patterns to
   validate XML with a W3C XML Schema.

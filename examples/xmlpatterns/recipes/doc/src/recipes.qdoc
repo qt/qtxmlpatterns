@@ -28,6 +28,7 @@
 /*!
   \example xmlpatterns/recipes
   \title Recipes Example
+  \ingroup xmlpattern_examples
 
   The Recipes example shows how to use Qt XML Patterns to query XML data
   loaded from a file. 

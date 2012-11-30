@@ -28,6 +28,7 @@
 /*!
     \example xmlpatterns/xquery/globalVariables
     \title C++ Source Code Analyzer Example
+    \ingroup xmlpattern_examples
 
     This example uses XQuery and the \c xmlpatterns command line utility to
     query C++ source code.

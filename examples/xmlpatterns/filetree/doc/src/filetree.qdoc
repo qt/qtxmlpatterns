@@ -28,6 +28,7 @@
 /*!
   \example xmlpatterns/filetree
   \title File System Example
+  \ingroup xmlpattern_examples
 
   This example shows how to use Qt XML Patterns for querying non-XML
   data that is modeled to look like XML. 
