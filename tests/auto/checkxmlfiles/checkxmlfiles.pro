@@ -8,12 +8,13 @@ include (../xmlpatterns.pri)
 
 wince*: {
 QT += network
+requires(!isEmpty(_QMAKE_SUPER_CACHE_))
 addFiles.files = \
-	$$QT.sql.sources/../../examples/sql/masterdetail/albumdetails.xml \
 	../../../examples/xquery/globalVariables/globals.gccxml \
 	../../../../qtdoc/doc/src/diagrams/stylesheet/treeview.svg \
 	../../../../qtdoc/doc/src/diagrams/designer-manual/designer-mainwindow-actions.ui \
-	$$QT.widgets.sources/../../examples/tools/undo/undo.qrc
+	../../../../qtsql/examples/sql/masterdetail/albumdetails.xml \
+	../../../../qtbase/examples/widgets/tools/undo/undo.qrc
 addFiles.path = xmlfiles
 DEPLOYMENT += addFiles
 } else {
