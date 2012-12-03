@@ -36,11 +36,12 @@ qhp.qtxmlpatterns.namespace = org.qt-project.qtxmlpatterns.500
 
 # Title for the package, will be the main title for the package in
 # Assistant/Creator.
-qhp.qtxmlpatterns.indexTitle = Qt XML Patterns Documentation
+qhp.qtxmlpatterns.indexTitle = Qt XML Patterns
 
 # Only update the name of the project for the next variables.
 qhp.qtxmlpatterns.virtualFolder  = qtxmlpatterns
 qhp.qtxmlpatterns.subprojects = classes
-qhp.qtxmlpatterns.subprojects.classes.title = Qt XML Patterns C++ Classes
+qhp.qtxmlpatterns.subprojects.classes.title = C++ Classes
+qhp.qtxmlpatterns.subprojects.classes.indexTitle = Qt XML Patterns C++ Classes
 qhp.qtxmlpatterns.subprojects.classes.selectors = class fake:headerfile
 qhp.qtxmlpatterns.subprojects.classes.sortPages = true
