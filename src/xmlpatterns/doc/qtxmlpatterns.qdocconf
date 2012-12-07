@@ -16,7 +16,7 @@ headerdirs += ..
 imagedirs += images
 sourcedirs += ..
 
-depends += qtcore qtxml qtwidgets
+depends += qtcore qtxml qtwidgets qtdesigner
 
 # The following parameters are for creating a qhp file, the qhelpgenerator
 # program can convert the qhp file into a qch file which can be opened in
