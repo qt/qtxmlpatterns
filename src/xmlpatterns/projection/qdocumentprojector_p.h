@@ -72,19 +72,19 @@ namespace QPatternist
         DocumentProjector(const ProjectedExpression::Vector &paths,
                           QAbstractXmlReceiver *const receiver);
 
-        virtual void namespaceBinding(const QXmlName nb);
+        virtual void namespaceBinding(const QXmlName &nb);
 
-        virtual void characters(const QString &value);
+        virtual void characters(const QStringRef &value);
         virtual void comment(const QString &value);
 
-        virtual void startElement(const QXmlName name);
+        virtual void startElement(const QXmlName &name);
 
         virtual void endElement();
 
-        virtual void attribute(const QXmlName name,
-                               const QString &value);
+        virtual void attribute(const QXmlName &name,
+                               const QStringRef &value);
 
-        virtual void processingInstruction(const QXmlName name,
+        virtual void processingInstruction(const QXmlName &name,
                                            const QString &value);
 
         virtual void item(const Item &item);
