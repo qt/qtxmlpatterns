@@ -71,7 +71,7 @@ namespace QPatternist
             BackgroundShift = 20,
             SpecialShift    = 20,
             ForegroundMask  = ((1 << ForegroundShift) - 1) << ForegroundShift,
-            BackgroundMask  = ((1 << BackgroundShift) - 1) << BackgroundShift
+            BackgroundMask  = ((1 << (sizeof(int) - BackgroundShift)) - 1) << BackgroundShift
         };
 
     public:
