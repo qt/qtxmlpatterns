@@ -58,7 +58,7 @@ DocumentProjector::DocumentProjector(const ProjectedExpression::Vector &paths,
     Q_ASSERT(m_receiver);
 }
 
-void DocumentProjector::startElement(const QXmlName name)
+void DocumentProjector::startElement(const QXmlName &name)
 {
     Q_UNUSED(name);
 
@@ -165,14 +165,14 @@ void DocumentProjector::endElement()
     }
 }
 
-void DocumentProjector::attribute(const QXmlName name,
-                                  const QString &value)
+void DocumentProjector::attribute(const QXmlName &name,
+                                  const QStringRef &value)
 {
     Q_UNUSED(name);
     Q_UNUSED(value);
 }
 
-void DocumentProjector::namespaceBinding(const QXmlName nb)
+void DocumentProjector::namespaceBinding(const QXmlName &nb)
 {
     Q_UNUSED(nb);
 }
@@ -184,12 +184,12 @@ void DocumentProjector::comment(const QString &value)
     Q_UNUSED(value);
 }
 
-void DocumentProjector::characters(const QString &value)
+void DocumentProjector::characters(const QStringRef &value)
 {
     Q_UNUSED(value);
 }
 
-void DocumentProjector::processingInstruction(const QXmlName name,
+void DocumentProjector::processingInstruction(const QXmlName &name,
                                               const QString &value)
 {
     Q_ASSERT_X(!value.contains(QLatin1String("?>")), Q_FUNC_INFO,
