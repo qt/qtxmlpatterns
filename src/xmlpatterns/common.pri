@@ -14,5 +14,3 @@ INCLUDEPATH += $$PWD/acceltree      \
                $$PWD/type           \
                $$PWD/utils
 
-DEPENDPATH += $$INCLUDEPATH
-

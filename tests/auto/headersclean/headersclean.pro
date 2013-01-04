@@ -1,5 +1,3 @@
-TARGET = tst_headersclean
-CONFIG += testcase
-SOURCES  += tst_headersclean.cpp
-QT = core xmlpatterns testlib
+QT = xmlpatterns
+load(qt_headersclean)
 DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
