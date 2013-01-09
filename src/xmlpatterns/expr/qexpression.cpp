@@ -136,7 +136,6 @@ Expression::Ptr Expression::invokeOptimizers(const Expression::Ptr &expr,
     }
 
     const OptimizationPass::List::const_iterator passEnd(opts.constEnd());
-    const OptimizationPass::List::const_iterator end(opts.constEnd());
     OptimizationPass::List::const_iterator passIt(opts.constBegin());
 
     for(; passIt != passEnd; ++passIt) /* Invoke each optimization pass. */
@@ -151,7 +150,6 @@ Expression::Ptr Expression::invokeOptimizers(const Expression::Ptr &expr,
             continue;
         }
 
-        const ExpressionIdentifier::List::const_iterator idEnd(pass->operandIdentifiers.constEnd());
         ExpressionIdentifier::List::const_iterator idIt(pass->operandIdentifiers.constBegin());
         const Expression::List ops(expr->operands());
         const Expression::List::const_iterator opEnd(ops.constEnd());

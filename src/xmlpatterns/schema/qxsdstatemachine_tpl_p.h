@@ -185,6 +185,8 @@ template <typename TransitionType>
 template <typename InputType>
 bool XsdStateMachine<TransitionType>::inputEqualsTransition(InputType input, TransitionType transition) const
 {
+    Q_UNUSED(input);
+    Q_UNUSED(transition);
     return false;
 }
 
