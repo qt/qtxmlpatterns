@@ -74,7 +74,7 @@ QT_BEGIN_NAMESPACE
 class QString;
 
 /**
- * @short The namespace for the internal API of QtXmlPatterns
+ * @short The namespace for the internal API of Qt XML Patterns
  * @internal
  */
 namespace QPatternist

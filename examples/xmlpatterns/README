@@ -1,5 +1,5 @@
 XQuery queries and XPath expressions can be used in Qt with the
-QtXmlPatterns module.
+Qt XML Patterns module.
 
 XQuery is a query language used to query XML in a concise and safe manner.
 

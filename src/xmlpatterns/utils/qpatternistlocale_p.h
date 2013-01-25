@@ -71,7 +71,7 @@ QT_BEGIN_NAMESPACE
 namespace QPatternist
 {
     /**
-     * @short Provides a translation context & functions for the QtXmlPatterns
+     * @short Provides a translation context & functions for the Qt XML Patterns
      * module.
      *
      * This class is not supposed to be instantiated.
