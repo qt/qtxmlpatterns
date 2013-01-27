@@ -62,8 +62,6 @@
 #include <private/qnamepool_p.h>
 #include <private/qabstractxmlreceiver_p.h>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 class QXmlSerializerPrivate : public QAbstractXmlReceiverPrivate
@@ -125,6 +123,5 @@ void QXmlSerializerPrivate::write(const char c)
     device->putChar(c);
 }
 QT_END_NAMESPACE
-QT_END_HEADER
 
 #endif

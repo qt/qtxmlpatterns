@@ -56,8 +56,6 @@
 #include <private/qschematype_p.h>
 #include <private/qxsdannotated_p.h>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 template<typename N, typename M> class QHash;
@@ -118,7 +116,5 @@ namespace QPatternist
 }
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif

@@ -48,8 +48,6 @@
 #include "TreeItem.h"
 #include "Global.h"
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 namespace QPatternistSDK
@@ -108,8 +106,6 @@ ValueComparison(eq)
 }
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif
 // vim: et:ts=4:sw=4:sts=4

@@ -46,8 +46,6 @@
 #include <QtCore/QUrl>
 #include <QtXmlPatterns/qtxmlpatternsglobal.h>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 
@@ -95,7 +93,5 @@ Q_DECLARE_TYPEINFO(QSourceLocation, Q_MOVABLE_TYPE);
 QT_END_NAMESPACE
 
 Q_DECLARE_METATYPE(QSourceLocation) /* This macro must appear after QT_END_NAMESPACE. */
-
-QT_END_HEADER
 
 #endif

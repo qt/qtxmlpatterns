@@ -55,8 +55,6 @@
 #include <QtCore/QtGlobal>
 #include <QtCore/QHash>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 namespace QPatternist
@@ -128,7 +126,5 @@ namespace QPatternist
 Q_DECLARE_OPERATORS_FOR_FLAGS(QPatternist::ColorOutput::ColorCode)
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif

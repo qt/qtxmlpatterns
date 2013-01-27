@@ -52,8 +52,6 @@
 #ifndef QABSTRACTXMLRECEIVER_P_H
 #define QABSTRACTXMLRECEIVER_P_H
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 class QAbstractXmlReceiverPrivate
@@ -65,7 +63,5 @@ public:
 };
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif

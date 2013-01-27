@@ -54,8 +54,6 @@
 
 #include <QtCore/QCoreApplication>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 class QXmlPatternistCLI
@@ -69,6 +67,5 @@ private:
 
 QT_END_NAMESPACE
 
-QT_END_HEADER 
 
 #endif

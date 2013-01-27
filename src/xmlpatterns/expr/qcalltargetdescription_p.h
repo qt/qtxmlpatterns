@@ -56,8 +56,6 @@
 
 #include <private/qexpression_p.h>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 template<typename Key, typename Value> class QHash;
@@ -113,8 +111,6 @@ namespace QPatternist
 }
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif
 

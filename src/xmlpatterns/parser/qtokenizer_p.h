@@ -65,8 +65,6 @@
  * @short Contains functions and classes used by the parser and tokenizer.
  */
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 namespace QPatternist
@@ -210,7 +208,5 @@ namespace QPatternist
 #undef Patternist_DEBUG_PARSER // disable it for now
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif

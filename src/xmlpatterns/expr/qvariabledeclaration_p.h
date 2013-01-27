@@ -58,8 +58,6 @@
 #include <private/qpatternistlocale_p.h>
 #include <private/qvariablereference_p.h>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 template<typename T> class QStack;
@@ -197,7 +195,5 @@ namespace QPatternist
 }
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif

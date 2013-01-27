@@ -57,8 +57,6 @@
 #include <QtCore/QSharedData>
 #include <QtCore/QString>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 
@@ -334,7 +332,5 @@ qint64 QAbstractXmlForwardIterator<T>::sizeHint() const
 }
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif

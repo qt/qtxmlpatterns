@@ -46,7 +46,6 @@
 #include <QtCore/QSharedData>
 #include <QtCore/QScopedPointer>
 
-QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE
 
 
@@ -427,7 +426,5 @@ Q_DECLARE_TYPEINFO(QXmlItem, Q_MOVABLE_TYPE);
 QT_END_NAMESPACE
 
 Q_DECLARE_METATYPE(QXmlItem) /* This macro must appear after QT_END_NAMESPACE. */
-
-QT_END_HEADER
 
 #endif

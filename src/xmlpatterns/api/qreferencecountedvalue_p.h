@@ -52,7 +52,6 @@
 #ifndef QPatternist_ReferenceCountedValue_p_h
 #define QPatternist_ReferenceCountedValue_p_h
 
-QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE
 
 namespace QPatternist
@@ -101,6 +100,5 @@ namespace QPatternist
 }
 
 QT_END_NAMESPACE
-QT_END_HEADER
 
 #endif

@@ -65,8 +65,6 @@
 #include <QtCore/QSharedData>
 #include <QtNetwork/QNetworkAccessManager>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 class QXmlSchemaPrivate : public QSharedData
@@ -103,7 +101,5 @@ class QXmlSchemaPrivate : public QSharedData
 };
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif
