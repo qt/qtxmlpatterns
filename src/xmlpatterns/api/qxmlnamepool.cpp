@@ -50,6 +50,7 @@ QT_BEGIN_NAMESPACE
   \reentrant
   \since 4.4
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   QXmlNamePool is used to optimize operations on instances of
   QXmlName. An instance of QXmlName represents an XML name in
