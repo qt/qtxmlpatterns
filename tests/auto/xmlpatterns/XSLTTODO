@@ -578,7 +578,7 @@ John Snelson of Oracle Berkeley DB XML & XQilla writes in private mail:
 
 What is he referring to?
 
-If one spends some time on fancy diagrams, QtXmlPatterns[LINK]'s, the XQuery
+If one spends some time on fancy diagrams, Qt XML Patterns[LINK]'s, the XQuery
 engine that shipped in Qt 4.4, architecture looks like this:
 
 
@@ -590,7 +590,7 @@ and the whole approach to this is modifying the existing codebase as follows:
 
 
 
-Put differently, when QtXmlPatterns is dealing with XSL-T stylesheets, it
+Put differently, when Qt XML Patterns is dealing with XSL-T stylesheets, it
 replaces the XQuery tokenizer with a tokenizer which translates the
 stylesheet into XQuery tokens, that is consumed by the existing XQuery
 parser, extended with both grammar non-terminals and tokens to accomodate the
@@ -656,7 +656,7 @@ focus(which for doesn't, but paths do), but can do so over atomic values and
 unconditionally without sorting the result by document order(which paths
 can't/doesn't, but for do). For implementations that normalize paths into for
 loops as the formal semantics do, the approach is straight forward. In
-QtXmlPatterns' case, a synthetic token is queued which signals to create
+Qt XML Patterns' case, a synthetic token is queued which signals to create
 a "relaxed" path expression which skips halting on atomic values in its
 operands(XPTY0019) and also skips node sorting.
 
@@ -667,7 +667,7 @@ could have been used, but in anycase the IR yielded is the same, and that
 computed constructors happen to use less tokens.
 
 A particular case is xsl:namespace, an instruction which doesn't have any
-corresponding expression in XQuery. In the case of QtXmlPatterns, the code
+corresponding expression in XQuery. In the case of Qt XML Patterns, the code
 obvious already have a notion of "create this namespace on this element", and
 an AST node was trivially added for fetching the namespace components
 computationally. However, the introduction of xsl:namespace in an XQuery
@@ -702,7 +702,7 @@ but also
 because more decisions can be taken at runtime through all attribute value
 templates. xsl:sort is surely a good example of this with its AVTs for
 language, order, collation, stability and what not. XQuery's order by stands
-in strong contrast, which has these coded in the grammar. In QtXmlPatterns'
+in strong contrast, which has these coded in the grammar. In Qt XML Patterns'
 case, the AST node corresponding to order by was generalized to take things
 such as stability and order from operands. This is paid by the code paths in
 XQuery since for them are constants generated and inserted as operands even
@@ -1038,7 +1038,7 @@ Have top-level xml:space, ensure whitespace as child of xsl:stylesheet is ignore
 
     </xsl:stylesheet>
 
-Compat mode, Saxon & QtXmlPatterns fails:
+Compat mode, Saxon & Qt XML Patterns fails:
 
     <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
 

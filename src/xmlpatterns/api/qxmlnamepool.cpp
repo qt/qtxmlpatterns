@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright (C) 2012 Digia Plc and/or its subsidiary(-ies).
+** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
 ** Contact: http://www.qt-project.org/legal
 **
 ** This file is part of the QtXmlPatterns module of the Qt Toolkit.
@@ -50,6 +50,7 @@ QT_BEGIN_NAMESPACE
   \reentrant
   \since 4.4
   \ingroup xml-tools
+  \inmodule QtXmlPatterns
 
   QXmlNamePool is used to optimize operations on instances of
   QXmlName. An instance of QXmlName represents an XML name in

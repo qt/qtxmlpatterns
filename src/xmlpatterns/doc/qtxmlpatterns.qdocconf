@@ -32,7 +32,7 @@ qhp.qtxmlpatterns.file = qtxmlpatterns.qhp
 
 # Namespace for the output file. This namespace is used to distinguish between
 # different documentation files in Creator/Assistant.
-qhp.qtxmlpatterns.namespace = org.qt-project.qtxmlpatterns.500
+qhp.qtxmlpatterns.namespace = org.qt-project.qtxmlpatterns.501
 
 # Title for the package, will be the main title for the package in
 # Assistant/Creator.
