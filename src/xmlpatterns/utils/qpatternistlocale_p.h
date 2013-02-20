@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright (C) 2012 Digia Plc and/or its subsidiary(-ies).
+** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
 ** Contact: http://www.qt-project.org/legal
 **
 ** This file is part of the QtXmlPatterns module of the Qt Toolkit.
@@ -71,7 +71,7 @@ QT_BEGIN_NAMESPACE
 namespace QPatternist
 {
     /**
-     * @short Provides a translation context & functions for the QtXmlPatterns
+     * @short Provides a translation context & functions for the Qt XML Patterns
      * module.
      *
      * This class is not supposed to be instantiated.
