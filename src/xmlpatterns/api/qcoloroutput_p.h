@@ -55,8 +55,6 @@
 #include <QtCore/QtGlobal>
 #include <QtCore/QHash>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 namespace QPatternist
@@ -70,6 +68,7 @@ namespace QPatternist
             ForegroundShift = 10,
             BackgroundShift = 20,
             SpecialShift    = 20,
+// ### FIXME: this looks very suspicious. Make ForegroundShift = 0x10 etc?
             ForegroundMask  = 0x1f << ForegroundShift,
             BackgroundMask  = 0x7 << BackgroundShift
         };
@@ -127,7 +126,5 @@ namespace QPatternist
 Q_DECLARE_OPERATORS_FOR_FLAGS(QPatternist::ColorOutput::ColorCode)
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif

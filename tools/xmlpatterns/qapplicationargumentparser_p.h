@@ -54,7 +54,6 @@
 
 #include <QtCore/QVariant> /* Needed, because we can't forward declare QVariantList. */
 
-QT_BEGIN_HEADER
 QT_BEGIN_NAMESPACE
 
 class QApplicationArgument;
@@ -108,5 +107,5 @@ private:
 };
 
 QT_END_NAMESPACE
-QT_END_HEADER
+
 #endif

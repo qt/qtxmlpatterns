@@ -187,6 +187,7 @@ bool XsdStateMachine<TransitionType>::inputEqualsTransition(InputType input, Tra
 {
     Q_UNUSED(input);
     Q_UNUSED(transition);
+
     return false;
 }
 

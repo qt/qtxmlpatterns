@@ -59,8 +59,6 @@
 #include <private/qnamepool_p.h>
 #include <QXmlName>
 
-QT_BEGIN_HEADER
-
 QT_BEGIN_NAMESPACE
 
 class QAbstractMessageHandler;
@@ -2458,7 +2456,5 @@ namespace QPatternist
 }
 
 QT_END_NAMESPACE
-
-QT_END_HEADER
 
 #endif

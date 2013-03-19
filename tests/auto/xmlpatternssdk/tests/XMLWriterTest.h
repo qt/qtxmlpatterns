@@ -44,8 +44,6 @@
 
 #include <QObject>
 
-QT_BEGIN_HEADER
-
 namespace QPatternistSDK
 {
     /**
@@ -70,8 +68,6 @@ namespace QPatternistSDK
         void doxygenExample();
     };
 }
-
-QT_END_HEADER
 
 #endif
 // vim: et:ts=4:sw=4:sts=4
