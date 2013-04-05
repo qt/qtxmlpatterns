@@ -52,7 +52,7 @@
 
 using namespace QPatternistSDK;
 
-extern QNetworkAccessManager s_networkManager;
+Q_GLOBAL_STATIC(QNetworkAccessManager, networkAccessManager)
 
 XSLTTestSuiteHandler::XSLTTestSuiteHandler(const QUrl &catalogFile) : m_ts(0)
                                                                     , m_tc(0)
@@ -60,7 +60,7 @@ XSLTTestSuiteHandler::XSLTTestSuiteHandler(const QUrl &catalogFile) : m_ts(0)
                                                                     , m_catalogFile(catalogFile)
                                                                     , m_removeTestcase(false)
 {
-    const QPatternist::NetworkAccessDelegator::Ptr networkDelegator(new QPatternist::NetworkAccessDelegator(&s_networkManager, &s_networkManager));
+    const QPatternist::NetworkAccessDelegator::Ptr networkDelegator(new QPatternist::NetworkAccessDelegator(networkAccessManager(), networkAccessManager()));
 
     m_resourceLoader = QPatternist::ResourceLoader::Ptr(new QPatternist::AccelTreeResourceLoader(Global::namePool(),
                                                                                                  networkDelegator));

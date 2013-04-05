@@ -52,7 +52,7 @@
 
 using namespace QPatternistSDK;
 
-QNetworkAccessManager s_networkManager;
+Q_GLOBAL_STATIC(QNetworkAccessManager, networkAccessManager)
 
 TestSuiteHandler::TestSuiteHandler(const QUrl &catalogFile,
                                    const bool useEList) : m_ts(0)
@@ -275,7 +275,7 @@ bool TestSuiteHandler::endElement(const QString &namespaceURI,
     }
     else if(localName == QLatin1String("sources"))
     {
-        const QPatternist::NetworkAccessDelegator::Ptr networkDelegator(new QPatternist::NetworkAccessDelegator(&s_networkManager, &s_networkManager));
+        const QPatternist::NetworkAccessDelegator::Ptr networkDelegator(new QPatternist::NetworkAccessDelegator(networkAccessManager(), networkAccessManager()));
 
         m_resourceLoader = QPatternist::ResourceLoader::Ptr(new QPatternist::AccelTreeResourceLoader(Global::namePool(),
                                                                                                      networkDelegator));
