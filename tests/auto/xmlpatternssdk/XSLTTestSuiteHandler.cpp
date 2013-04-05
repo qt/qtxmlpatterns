@@ -52,7 +52,22 @@
 
 using namespace QPatternistSDK;
 
-extern QNetworkAccessManager s_networkManager;
+static QNetworkAccessManager *s_networkAccessManager = 0;
+
+static void cleanupNetworkAccessManager()
+{
+    delete s_networkAccessManager;
+    s_networkAccessManager = 0;
+
+}
+static QNetworkAccessManager *networkAccessManager()
+{
+    if (!s_networkAccessManager) {
+        s_networkAccessManager = new QNetworkAccessManager;
+        qAddPostRoutine(cleanupNetworkAccessManager);
+    }
+    return s_networkAccessManager;
+}
 
 XSLTTestSuiteHandler::XSLTTestSuiteHandler(const QUrl &catalogFile) : m_ts(0)
                                                                     , m_tc(0)
@@ -60,7 +75,7 @@ XSLTTestSuiteHandler::XSLTTestSuiteHandler(const QUrl &catalogFile) : m_ts(0)
                                                                     , m_catalogFile(catalogFile)
                                                                     , m_removeTestcase(false)
 {
-    const QPatternist::NetworkAccessDelegator::Ptr networkDelegator(new QPatternist::NetworkAccessDelegator(&s_networkManager, &s_networkManager));
+    const QPatternist::NetworkAccessDelegator::Ptr networkDelegator(new QPatternist::NetworkAccessDelegator(networkAccessManager(), networkAccessManager()));
 
     m_resourceLoader = QPatternist::ResourceLoader::Ptr(new QPatternist::AccelTreeResourceLoader(Global::namePool(),
                                                                                                  networkDelegator));
