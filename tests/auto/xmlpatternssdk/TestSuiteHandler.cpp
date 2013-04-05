@@ -52,7 +52,22 @@
 
 using namespace QPatternistSDK;
 
-Q_GLOBAL_STATIC(QNetworkAccessManager, networkAccessManager)
+static QNetworkAccessManager *s_networkAccessManager = 0;
+
+static void cleanupNetworkAccessManager()
+{
+    delete s_networkAccessManager;
+    s_networkAccessManager = 0;
+
+}
+static QNetworkAccessManager *networkAccessManager()
+{
+    if (!s_networkAccessManager) {
+        s_networkAccessManager = new QNetworkAccessManager;
+        qAddPostRoutine(cleanupNetworkAccessManager);
+    }
+    return s_networkAccessManager;
+}
 
 TestSuiteHandler::TestSuiteHandler(const QUrl &catalogFile,
                                    const bool useEList) : m_ts(0)
