@@ -100,7 +100,6 @@ namespace QPatternist
         /* *** The functions below are internal. */
     private:
         Q_DISABLE_COPY(AbstractXmlPullProvider)
-        AbstractXmlPullProviderPrivate *d;
     };
 }
 
