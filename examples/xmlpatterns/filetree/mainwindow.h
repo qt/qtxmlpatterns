@@ -58,7 +58,7 @@ public:
 private slots:
     void on_actionOpenDirectory_triggered();
     void on_actionAbout_triggered();
-    void on_queryBox_currentIndexChanged();
+    void on_queryBox_currentIndexChanged(const QString &);
 
 private:
     void loadDirectory(const QString &directory);

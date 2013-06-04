@@ -31,7 +31,6 @@
     XQuery, XSLT and XML Schema validation.
 
     \ingroup modules
-    \ingroup technology-apis
 
 The \l{Qt XML Patterns} module provides support for XPath,
     XQuery, XSLT and XML Schema validation.

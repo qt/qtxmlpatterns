@@ -81,9 +81,9 @@ MainWindow::MainWindow() : m_fileTree(m_namePool)
 //! [0]
 
 //! [2]
-void MainWindow::on_queryBox_currentIndexChanged()
+void MainWindow::on_queryBox_currentIndexChanged(const QString &currentText)
 {
-    QFile queryFile(":/queries/" + queryBox->currentText());
+    QFile queryFile(":/queries/" + currentText);
     queryFile.open(QIODevice::ReadOnly);
 
     queryEdit->setPlainText(QString::fromLatin1(queryFile.readAll()));
