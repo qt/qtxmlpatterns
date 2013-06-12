@@ -104,10 +104,11 @@ namespace QPatternist
     {
     public:
         ProjectedStep(const ProjectedNodeTest::Ptr test,
-                      const QXmlNodeModelIndex::Axis axis) : m_test(test),
-                                               m_axis(axis)
+                      const QXmlNodeModelIndex::Axis axis)
         {
-            Q_ASSERT(m_test);
+            Q_ASSERT(test);
+            Q_UNUSED(test);
+            Q_UNUSED(axis);
         }
 
         virtual Action actionForElement(const QXmlName name,
@@ -120,19 +121,17 @@ namespace QPatternist
         }
 
     private:
-        const ProjectedNodeTest::Ptr    m_test;
-        const QXmlNodeModelIndex::Axis                m_axis;
     };
 
     class ProjectedPath : public ProjectedExpression
     {
     public:
         ProjectedPath(const ProjectedExpression::Ptr left,
-                      const ProjectedExpression::Ptr right) : m_left(left),
-                                                              m_right(right)
+                      const ProjectedExpression::Ptr right) : m_left(left)
         {
             Q_ASSERT(m_left);
-            Q_ASSERT(m_right);
+            Q_ASSERT(right);
+            Q_UNUSED(right);
         }
 
         virtual Action actionForElement(const QXmlName name,
@@ -152,7 +151,6 @@ namespace QPatternist
 
     private:
         const ProjectedExpression::Ptr  m_left;
-        const ProjectedExpression::Ptr  m_right;
     };
 }
 
