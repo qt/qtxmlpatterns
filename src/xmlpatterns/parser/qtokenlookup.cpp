@@ -99,7 +99,7 @@ public:
 };
 
 inline unsigned int
-TokenLookup::hash (register const char *str, register unsigned int len)
+TokenLookup::hash (const char *str, unsigned int len)
 {
   static const unsigned char asso_values[] =
     {
@@ -130,7 +130,7 @@ TokenLookup::hash (register const char *str, register unsigned int len)
       230, 230, 230, 230, 230, 230, 230, 230, 230, 230,
       230, 230, 230, 230, 230, 230
     };
-  register int hval = len;
+  int hval = len;
 
   switch (hval)
     {
@@ -146,7 +146,7 @@ TokenLookup::hash (register const char *str, register unsigned int len)
 }
 
 const struct TokenMap *
-TokenLookup::value (register const char *str, register unsigned int len)
+TokenLookup::value (const char *str, unsigned int len)
 {
   enum
     {
@@ -424,11 +424,11 @@ TokenLookup::value (register const char *str, register unsigned int len)
 
   if (len <= MAX_WORD_LENGTH && len >= MIN_WORD_LENGTH)
     {
-      register int key = hash (str, len);
+      int key = hash (str, len);
 
       if (key <= MAX_HASH_VALUE && key >= 0)
         {
-          register const char *s = wordlist[key].name;
+          const char *s = wordlist[key].name;
 
           if (*str == *s && !strcmp (str + 1, s + 1))
             return &wordlist[key];
