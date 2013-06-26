@@ -16,7 +16,7 @@ headerdirs += ..
 imagedirs += images
 sourcedirs += ..
 
-depends += qtcore qtxml qtwidgets qtdesigner
+depends += qtcore qtxml qtwidgets qtdesigner qtdoc
 
 # The following parameters are for creating a qhp file, the qhelpgenerator
 # program can convert the qhp file into a qch file which can be opened in
@@ -45,3 +45,6 @@ qhp.QtXmlPatterns.subprojects.classes.title = C++ Classes
 qhp.QtXmlPatterns.subprojects.classes.indexTitle = Qt XML Patterns C++ Classes
 qhp.QtXmlPatterns.subprojects.classes.selectors = class fake:headerfile
 qhp.QtXmlPatterns.subprojects.classes.sortPages = true
+
+navigation.landingpage = "Qt XML Patterns"
+navigation.cppclassespage = "Qt XML Patterns C++ Classes"
