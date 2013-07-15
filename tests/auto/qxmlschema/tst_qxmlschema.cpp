@@ -184,13 +184,13 @@ void tst_QXmlSchema::copyMutationTest() const
     const QByteArray data( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                            "<xsd:schema"
                            "        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
-                           "        xmlns=\"http://qt.nokia.com/xmlschematest\""
-                           "        targetNamespace=\"http://qt.nokia.com/xmlschematest\""
+                           "        xmlns=\"http://www.qt-project.org/xmlschematest\""
+                           "        targetNamespace=\"http://www.qt-project.org/xmlschematest\""
                            "        version=\"1.0\""
                            "        elementFormDefault=\"qualified\">"
                            "</xsd:schema>" );
 
-    const QUrl documentUri("http://qt.nokia.com/xmlschematest");
+    const QUrl documentUri("http://www.qt-project.org/xmlschematest");
     schema1.load(data, documentUri);
 
     QVERIFY(schema2.isValid() != schema1.isValid());
@@ -208,13 +208,13 @@ void tst_QXmlSchema::documentUri() const
     const QByteArray data( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                            "<xsd:schema"
                            "        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
-                           "        xmlns=\"http://qt.nokia.com/xmlschematest\""
-                           "        targetNamespace=\"http://qt.nokia.com/xmlschematest\""
+                           "        xmlns=\"http://www.qt-project.org/xmlschematest\""
+                           "        targetNamespace=\"http://www.qt-project.org/xmlschematest\""
                            "        version=\"1.0\""
                            "        elementFormDefault=\"qualified\">"
                            "</xsd:schema>" );
 
-    const QUrl documentUri("http://qt.nokia.com/xmlschematest");
+    const QUrl documentUri("http://www.qt-project.org/xmlschematest");
     QXmlSchema schema;
     schema.load(data, documentUri);
 
@@ -245,8 +245,8 @@ void tst_QXmlSchema::loadSchemaDeviceSuccess() const
     QByteArray data( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                      "<xsd:schema"
                      "        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
-                     "        xmlns=\"http://qt.nokia.com/xmlschematest\""
-                     "        targetNamespace=\"http://qt.nokia.com/xmlschematest\""
+                     "        xmlns=\"http://www.qt-project.org/xmlschematest\""
+                     "        targetNamespace=\"http://www.qt-project.org/xmlschematest\""
                      "        version=\"1.0\""
                      "        elementFormDefault=\"qualified\">"
                      "</xsd:schema>" );
@@ -263,8 +263,8 @@ void tst_QXmlSchema::loadSchemaDeviceFail() const
     QByteArray data( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                      "<xsd:schema"
                      "        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
-                     "        xmlns=\"http://qt.nokia.com/xmlschematest\""
-                     "        targetNamespace=\"http://qt.nokia.com/xmlschematest\""
+                     "        xmlns=\"http://www.qt-project.org/xmlschematest\""
+                     "        targetNamespace=\"http://www.qt-project.org/xmlschematest\""
                      "        version=\"1.0\""
                      "        elementFormDefault=\"qualified\">"
                      "</xsd:schema>" );
@@ -281,8 +281,8 @@ void tst_QXmlSchema::loadSchemaDataSuccess() const
     const QByteArray data( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                            "<xsd:schema"
                            "        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
-                           "        xmlns=\"http://qt.nokia.com/xmlschematest\""
-                           "        targetNamespace=\"http://qt.nokia.com/xmlschematest\""
+                           "        xmlns=\"http://www.qt-project.org/xmlschematest\""
+                           "        targetNamespace=\"http://www.qt-project.org/xmlschematest\""
                            "        version=\"1.0\""
                            "        elementFormDefault=\"qualified\">"
                            "</xsd:schema>" );
