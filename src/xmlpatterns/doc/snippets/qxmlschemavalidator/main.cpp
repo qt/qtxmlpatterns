@@ -108,8 +108,8 @@ QXmlSchema SchemaValidator::getSchema() const
     QByteArray data("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                     "<xsd:schema"
                     "        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
-                    "        xmlns=\"http://qt.nokia.com/xmlschematest\""
-                    "        targetNamespace=\"http://qt.nokia.com/xmlschematest\""
+                    "        xmlns=\"http://www.qt-project.org/xmlschematest\""
+                    "        targetNamespace=\"http://www.qt-project.org/xmlschematest\""
                     "        version=\"1.0\""
                     "        elementFormDefault=\"qualified\">"
                     "</xsd:schema>");
