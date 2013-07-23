@@ -94,14 +94,14 @@ static QXmlSchema createValidSchema()
     const QByteArray data( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                            "<xsd:schema"
                            "        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
-                           "        xmlns=\"http://qt.nokia.com/xmlschematest\""
-                           "        targetNamespace=\"http://qt.nokia.com/xmlschematest\""
+                           "        xmlns=\"http://www.qt-project.org/xmlschematest\""
+                           "        targetNamespace=\"http://www.qt-project.org/xmlschematest\""
                            "        version=\"1.0\""
                            "        elementFormDefault=\"qualified\">"
                            "  <xsd:element name=\"myRoot\" type=\"xsd:string\"/>"
                            "</xsd:schema>" );
 
-    const QUrl documentUri("http://qt.nokia.com/xmlschematest");
+    const QUrl documentUri("http://www.qt-project.org/xmlschematest");
 
     QXmlSchema schema;
     schema.load(data, documentUri);
@@ -238,7 +238,7 @@ void tst_QXmlSchemaValidator::loadInstanceDeviceSuccess() const
 {
     const QXmlSchema schema(createValidSchema());
 
-    QByteArray data( "<myRoot xmlns=\"http://qt.nokia.com/xmlschematest\">Testme</myRoot>" );
+    QByteArray data( "<myRoot xmlns=\"http://www.qt-project.org/xmlschematest\">Testme</myRoot>" );
     QBuffer buffer(&data);
     buffer.open(QIODevice::ReadOnly);
 
@@ -250,7 +250,7 @@ void tst_QXmlSchemaValidator::loadInstanceDeviceFail() const
 {
     const QXmlSchema schema(createValidSchema());
 
-    QByteArray data( "<myRoot xmlns=\"http://qt.nokia.com/xmlschematest\">Testme</myRoot>" );
+    QByteArray data( "<myRoot xmlns=\"http://www.qt-project.org/xmlschematest\">Testme</myRoot>" );
     QBuffer buffer(&data);
     // a closed device can not be loaded
 
@@ -262,7 +262,7 @@ void tst_QXmlSchemaValidator::loadInstanceDataSuccess() const
 {
     const QXmlSchema schema(createValidSchema());
 
-    const QByteArray data( "<myRoot xmlns=\"http://qt.nokia.com/xmlschematest\">Testme</myRoot>" );
+    const QByteArray data( "<myRoot xmlns=\"http://www.qt-project.org/xmlschematest\">Testme</myRoot>" );
 
     QXmlSchemaValidator validator(schema);
     QVERIFY(validator.validate(data));
