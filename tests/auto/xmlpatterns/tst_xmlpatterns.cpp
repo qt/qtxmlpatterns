@@ -131,8 +131,6 @@ void tst_XmlPatterns::xquerySupport()
 
 #ifdef Q_OS_WINCE
     QSKIP("WinCE: This test uses unsupported WinCE functionality");
-#elif defined(Q_OS_MAC)
-    QSKIP("MacOs: Failed on Mac. Will be fixed by bug fix for QTBUG-22556");
 #endif
 
     QFETCH(int,         expectedExitCode);
