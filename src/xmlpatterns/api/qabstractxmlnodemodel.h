@@ -92,10 +92,10 @@ namespace QPatternist
         };
         void *pointer() const
         {
-            /* Constructing to qptrdiff means we avoid the warning "cast to pointer
-             * from integer of different size."
+            /* Constructing to qptrdiff means we avoid warnings.
              */
-            return (void *)qptrdiff(data);
+            char *null = 0;
+            return null + qptrdiff(data);
         }
 
         Data additionalData;
