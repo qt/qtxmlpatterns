@@ -221,7 +221,7 @@ Expression::Ptr NormalizeUnicodeFN::compress(const StaticContext::Ptr &context)
         m_normForm = static_cast<QString::NormalizationForm>(
                 determineNormalizationForm(context->dynamicContext()));
 
-        if(m_normForm == -1)
+        if (int(m_normForm) == -1)
             return m_operands.first();
 
         /* Remove the operand since we don't need it anymore. */
