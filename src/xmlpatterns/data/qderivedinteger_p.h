@@ -393,6 +393,8 @@ namespace QPatternist
              * reason get a linker error with GCC. Using this temporary
              * variable solves it. */
             const StorageType minimum = minInclusive;
+            // MSVC2010 complains that this is initialised but not referenced.
+            Q_UNUSED(minimum)
 
             if((limitsUsage & LimitUpwards) &&
                num > maxInclusive)

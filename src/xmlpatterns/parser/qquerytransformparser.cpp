@@ -3368,6 +3368,7 @@ yydestruct (yymsg, yytype, yyvaluep, yylocationp, parseInfo)
     ParserContext *const parseInfo;
 #endif
 {
+  YYUSE (yytype);
   YYUSE (yyvaluep);
   YYUSE (yylocationp);
   YYUSE (parseInfo);
@@ -3375,13 +3376,6 @@ yydestruct (yymsg, yytype, yyvaluep, yylocationp, parseInfo)
   if (!yymsg)
     yymsg = "Deleting";
   YY_SYMBOL_PRINT (yymsg, yytype, yyvaluep, yylocationp);
-
-  switch (yytype)
-    {
-
-      default:
-	break;
-    }
 }
 
 
