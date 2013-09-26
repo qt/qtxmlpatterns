@@ -228,6 +228,18 @@ void tst_XmlPatternsValidator::xsdSupport_data() const
         << (QStringList() << path + QLatin1String("dateTime-with-microseconds.xml")
                           << path + QLatin1String("dateTime-with-microseconds.xsd"))
         << QString();
+
+    QTest::newRow("A document with a valid substitution group")
+        << 0
+        << (QStringList() << path + QLatin1String("substitution-group-valid.xml")
+                          << path + QLatin1String("substitution-group.xsd"))
+        << QString();
+
+    QTest::newRow("A document attempting to use a prohibited substitution")
+        << 1
+        << (QStringList() << path + QLatin1String("substitution-group-invalid.xml")
+                          << path + QLatin1String("substitution-group.xsd"))
+        << QString();
 }
 
 QTEST_MAIN(tst_XmlPatternsValidator)

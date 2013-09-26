@@ -635,7 +635,7 @@ bool XsdSchemaHelper::substitutionGroupOkTransitive(const XsdElement::Ptr &head,
 
         NamedSchemaComponent::BlockingConstraints checkSet(blockSet);
         checkSet |= head->disallowedSubstitutions();
-        if (head->type()->isComplexType()) {
+        if (head->type()->isComplexType() && head->type()->isDefinedBySchema()) {
             const XsdComplexType::Ptr complexType(head->type());
             checkSet |= complexType->prohibitedSubstitutions();
         }
