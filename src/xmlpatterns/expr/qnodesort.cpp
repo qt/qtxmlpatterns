@@ -43,6 +43,8 @@
 #include "qdeduplicateiterator_p.h"
 #include "qnodesort_p.h"
 
+#include <algorithm>
+
 QT_BEGIN_NAMESPACE
 
 using namespace QPatternist;
@@ -83,7 +85,7 @@ Item::Iterator::Ptr NodeSortExpression::evaluateSequence(const DynamicContext::P
         return makeListIterator(nodes);
     else
     {
-        qSort(nodes.begin(), nodes.end(), lessThanUsingNodeModel);
+        std::sort(nodes.begin(), nodes.end(), lessThanUsingNodeModel);
 
         return Item::Iterator::Ptr(new DeduplicateIterator(nodes));
     }
