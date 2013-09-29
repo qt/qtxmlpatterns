@@ -88,8 +88,7 @@ void qMessageHandler(QtMsgType type, const QMessageLogContext &, const QString &
             return;
         }
         case QtDebugMsg: /* This enum is handled above in the if-clause. */
-        /* Fallthrough. */
-        default:
+        case QtTraceMsg:
         {
             Q_ASSERT(false);
             return;

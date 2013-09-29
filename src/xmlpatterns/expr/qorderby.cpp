@@ -51,6 +51,8 @@
 
 #include "qorderby_p.h"
 
+#include <algorithm>
+
 QT_BEGIN_NAMESPACE
 
 using namespace QPatternist;
@@ -182,11 +184,11 @@ Item::Iterator::Ptr OrderBy::evaluateSequence(const DynamicContext::Ptr &context
     /* On one hand we could just disregard stability and always use qStableSort(), but maybe qSort()
      * is a bit faster? */
     if(m_stability == StableOrder)
-        qStableSort(tuples.begin(), tuples.end(), sorter);
+        std::stable_sort(tuples.begin(), tuples.end(), sorter);
     else
     {
         Q_ASSERT(m_stability == UnstableOrder);
-        qSort(tuples.begin(), tuples.end(), sorter);
+        std::sort(tuples.begin(), tuples.end(), sorter);
     }
 
     return makeSequenceMappingIterator<Item>(ConstPtr(this),
