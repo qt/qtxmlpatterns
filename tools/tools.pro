@@ -1,2 +1,2 @@
 TEMPLATE = subdirs
-SUBDIRS +=  xmlpatterns xmlpatternsvalidator
+!android|android_app: SUBDIRS +=  xmlpatterns xmlpatternsvalidator
