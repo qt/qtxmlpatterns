@@ -20,7 +20,11 @@ include($$PWD/iterators/iterators.pri)
 include($$PWD/janitors/janitors.pri)
 include($$PWD/parser/parser.pri)
 include($$PWD/projection/projection.pri)
-include($$PWD/schema/schema.pri)
+
+load(qfeatures)
+!contains(QT_DISABLED_FEATURES, xmlschema) {
+    include($$PWD/schema/schema.pri)
+}
 include($$PWD/type/type.pri)
 include($$PWD/utils/utils.pri)
 include($$PWD/qobjectmodel/qobjectmodel.pri, "", true)

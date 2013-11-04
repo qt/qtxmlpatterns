@@ -21,18 +21,22 @@ SUBDIRS=\
            qxmlnodemodelindex           \
            qxmlquery                    \
            qxmlresultitems              \
-           qxmlschema                   \
-           qxmlschemavalidator          \
            qxmlserializer               \
            xmlpatterns                  \
            xmlpatternsdiagnosticsts     \
-           xmlpatternsschema            \
-           xmlpatternsschemats          \
            xmlpatternssdk               \
            xmlpatternsvalidator         \
            xmlpatternsview              \
            xmlpatternsxqts              \
            xmlpatternsxslts             \
+
+load(qfeatures)
+!contains(QT_DISABLED_FEATURES, xmlschema) {
+    SUBDIRS += qxmlschema               \
+               qxmlschemavalidator      \
+               xmlpatternsschema        \
+               xmlpatternsschemats
+}
 
 xmlpatternsdiagnosticsts.depends = xmlpatternssdk
 xmlpatternsview.depends = xmlpatternssdk

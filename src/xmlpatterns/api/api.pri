@@ -23,10 +23,6 @@ HEADERS += $$PWD/qabstractxmlforwarditerator_p.h \
     $$PWD/qxmlquery_p.h \
     $$PWD/qxmlresultitems.h \
     $$PWD/qxmlresultitems_p.h \
-    $$PWD/qxmlschema.h \
-    $$PWD/qxmlschema_p.h \
-    $$PWD/qxmlschemavalidator.h \
-    $$PWD/qxmlschemavalidator_p.h \
     $$PWD/qxmlserializer.h \
     $$PWD/qxmlserializer_p.h \
     $$PWD/qcoloringmessagehandler_p.h \
@@ -50,9 +46,17 @@ SOURCES += $$PWD/qvariableloader.cpp \
     $$PWD/qxmlnamepool.cpp \
     $$PWD/qxmlquery.cpp \
     $$PWD/qxmlresultitems.cpp \
-    $$PWD/qxmlschema.cpp \
-    $$PWD/qxmlschema_p.cpp \
-    $$PWD/qxmlschemavalidator.cpp \
     $$PWD/qxmlserializer.cpp \
     $$PWD/qcoloringmessagehandler.cpp \
     $$PWD/qcoloroutput.cpp
+
+load(qfeatures)
+!contains(QT_DISABLED_FEATURES, xmlschema) {
+    HEADERS += $$PWD/qxmlschema.h \
+        $$PWD/qxmlschema_p.h \
+        $$PWD/qxmlschemavalidator.h \
+        $$PWD/qxmlschemavalidator_p.h
+    SOURCES += $$PWD/qxmlschema.cpp \
+        $$PWD/qxmlschema_p.cpp \
+        $$PWD/qxmlschemavalidator.cpp
+}
