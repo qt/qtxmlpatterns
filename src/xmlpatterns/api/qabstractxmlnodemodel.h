@@ -92,10 +92,8 @@ namespace QPatternist
         };
         void *pointer() const
         {
-            /* Constructing to qptrdiff means we avoid warnings.
-             */
-            char *null = 0;
-            return null + qptrdiff(data);
+            // Constructing via qptrdiff avoids warnings:
+            return reinterpret_cast<void*>(qptrdiff(data));
         }
 
         Data additionalData;
