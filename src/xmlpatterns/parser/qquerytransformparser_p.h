@@ -49,27 +49,24 @@
 //
 // We mean it.
 
-/* A Bison parser, made by GNU Bison 2.3a.  */
+/* A Bison parser, made by GNU Bison 2.5.  */
 
-/* Skeleton interface for Bison's Yacc-like parsers in C
-
-   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
-   Free Software Foundation, Inc.
-
-   This program is free software; you can redistribute it and/or modify
+/* Bison interface for Yacc-like parsers in C
+   
+      Copyright (C) 1984, 1989-1990, 2000-2011 Free Software Foundation, Inc.
+   
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
-
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-
+   
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor,
-   Boston, MA 02110-1301, USA.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -80,7 +77,7 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-
+   
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
@@ -114,25 +111,6 @@
 #endif
 #ifdef MAP
 #  undef MAP
-#endif
-
-/* These tokens are defined to nothing on Windows because they're
- * used in their documentation parser, for use in things like:
- *
- * int foo(IN char* name, OUT char* path);
- *
- * Hence this un-break fix. Note that this file was auto generated. */
-#ifdef IN
-#  undef IN
-#endif
-#ifdef INSTANCE
-#  undef INSTANCE
-#endif
-#ifdef STRICT
-#  undef STRICT
-#endif
-#ifdef SELF
-#  undef SELF
 #endif
 
 /* Tokens.  */
