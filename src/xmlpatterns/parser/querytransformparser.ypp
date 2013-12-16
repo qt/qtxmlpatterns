@@ -406,7 +406,7 @@ static void registerNamedTemplate(const QXmlName &name,
 
     if(e)
     {
-        parseInfo->staticContext->error(QtXmlPatterns::tr("A template by name %1 "
+        parseInfo->staticContext->error(QtXmlPatterns::tr("A template with name %1 "
                                                           "has already been declared.")
                                         .arg(formatKeyword(parseInfo->staticContext->namePool(),
                                                                          name)),
@@ -1470,7 +1470,7 @@ VersionDecl: /* empty */                                                        
 Encoding: /* empty */                                                               /* [X] */
 | ENCODING StringLiteral
     {
-        QRegExp encNameRegExp(QLatin1String("[A-Za-z][A-Za-z0-9._\\-]*"));
+        const QRegExp encNameRegExp(QLatin1String("[A-Za-z][A-Za-z0-9._\\-]*"));
 
         if(!encNameRegExp.exactMatch($2))
         {
@@ -2063,7 +2063,7 @@ VarDecl: DECLARE VARIABLE IsInternal DOLLAR VarName TypeDeclaration
         allowedIn(QXmlQuery::XQuery10, parseInfo, @$, $3);
         if(variableByName($5, parseInfo))
         {
-            parseInfo->staticContext->error(QtXmlPatterns::tr("A variable by name %1 has already "
+            parseInfo->staticContext->error(QtXmlPatterns::tr("A variable with name %1 has already "
                                                               "been declared.")
                                                .arg(formatKeyword(parseInfo->staticContext->namePool()->toLexical($5))),
                                             parseInfo->isXSLT() ? ReportContext::XTSE0630 : ReportContext::XQST0049,
@@ -2103,7 +2103,7 @@ VarDecl: DECLARE VARIABLE IsInternal DOLLAR VarName TypeDeclaration
                 else
                 {
                     parseInfo->staticContext->error(QtXmlPatterns::tr("No value is available for the external "
-                                                                      "variable by name %1.")
+                                                                      "variable with name %1.")
                                                        .arg(formatKeyword(parseInfo->staticContext->namePool(), $5)),
                                                     parseInfo->isXSLT() ? ReportContext::XTDE0050 : ReportContext::XPDY0002,
                                                     fromYYLTYPE(@$, parseInfo));
@@ -2280,7 +2280,7 @@ ParamList: /* empty */                                                          
         {
             if((*it)->name() == $3->name())
             {
-                parseInfo->staticContext->error(QtXmlPatterns::tr("An argument by name %1 has already "
+                parseInfo->staticContext->error(QtXmlPatterns::tr("An argument with name %1 has already "
                                                    "been declared. Every argument name "
                                                    "must be unique.")
                                                    .arg(formatKeyword(parseInfo->staticContext->namePool(), $3->name())),
@@ -3710,7 +3710,7 @@ FunctionCallExpr: FunctionName LPAREN FunctionArguments RPAREN                  
                 $$ = create(func, @$, parseInfo);
             else
             {
-                parseInfo->staticContext->error(QtXmlPatterns::tr("No function by name %1 is available.")
+                parseInfo->staticContext->error(QtXmlPatterns::tr("No function with name %1 is available.")
                                                    .arg(formatKeyword(parseInfo->staticContext->namePool(), $1)),
                                                 ReportContext::XPST0017, fromYYLTYPE(@$, parseInfo));
             }
@@ -3987,7 +3987,7 @@ DirElemConstructor: G_LT
                                                                                             &ryy, true);
                 if(declaredAttributes.contains(att))
                 {
-                    parseInfo->staticContext->error(QtXmlPatterns::tr("An attribute by name %1 has already appeared on this element.")
+                    parseInfo->staticContext->error(QtXmlPatterns::tr("An attribute with name %1 has already appeared on this element.")
                                                       .arg(formatKeyword(parseInfo->staticContext->namePool(), att)),
                                             ReportContext::XQST0040, fromYYLTYPE(@$, parseInfo));
 

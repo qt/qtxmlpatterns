@@ -276,13 +276,13 @@ FileTree::kind(const QXmlNodeModelIndex &node) const
 
 /*!
   No order is defined for this example, so we always return
-  QXmlNodeModelIndex::Precedes, just to keep everyone happy.
+  QXmlNodeModelIndex::Is, just to keep everyone happy.
  */
 QXmlNodeModelIndex::DocumentOrder
 FileTree::compareOrder(const QXmlNodeModelIndex&,
                        const QXmlNodeModelIndex&) const
 {
-    return QXmlNodeModelIndex::Precedes;
+    return QXmlNodeModelIndex::Is;
 }
 
 /*!
