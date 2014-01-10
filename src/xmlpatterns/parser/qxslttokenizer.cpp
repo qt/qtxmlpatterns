@@ -697,8 +697,6 @@ void XSLTTokenizer::handleStandardAttributes(const bool isXSLTElement)
 
         if(att.qualifiedName() == QLatin1String("xml:space"))
         {
-            const QStringRef val(m_currentAttributes.value(CommonNamespaces::XML, QLatin1String("space")));
-
             /* We raise an error if the value is not recognized.
              *
              * Extensible Markup Language (XML) 1.0 (Fourth Edition), 2.10

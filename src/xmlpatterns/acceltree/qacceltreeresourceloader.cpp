@@ -308,12 +308,6 @@ bool AccelTreeResourceLoader::isDocumentAvailable(const QUrl &uri)
     return retrieveDocument(uri, ReportContext::Ptr());
 }
 
-static inline uint qHash(const QPair<QUrl, QString> &desc)
-{
-    /* Probably a lousy hash. */
-    return qHash(desc.first) + qHash(desc.second);
-}
-
 bool AccelTreeResourceLoader::retrieveUnparsedText(const QUrl &uri,
                                                    const QString &encoding,
                                                    const ReportContext::Ptr &context,
