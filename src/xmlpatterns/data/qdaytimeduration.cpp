@@ -145,8 +145,7 @@ QString DayTimeDuration::stringValue() const
         retval.append(QLatin1Char('D'));
     }
 
-    if(!m_hours && !m_minutes && !m_seconds && !m_seconds)
-    {
+    if (!m_hours && !m_minutes && !m_seconds && !m_mseconds) {
         if(!m_days)
             return QLatin1String("PT0S");
         else
@@ -167,8 +166,7 @@ QString DayTimeDuration::stringValue() const
         retval.append(QLatin1Char('M'));
     }
 
-    if(m_seconds || m_seconds)
-    {
+    if (m_seconds || m_mseconds) {
         retval.append(QString::number(m_seconds));
 
         if(m_mseconds)

@@ -464,7 +464,7 @@ QString QApplicationArgumentParserPrivate::lineWrap(const QString &input,
         return input;
 
     int from = wrapFinder.toPreviousBoundary();
-    output.append(input.left(from));
+    output.append(input.leftRef(from));
 
     while(true)
     {
@@ -476,7 +476,7 @@ QString QApplicationArgumentParserPrivate::lineWrap(const QString &input,
 
             output.append(QLatin1Char('\n'));
             output.append(indent);
-            output.append(input.mid(from, currentWidthPos - from).trimmed());
+            output.append(input.midRef(from, currentWidthPos - from).trimmed().toString());
             from += (currentWidthPos - from);
         }
         else
@@ -484,7 +484,7 @@ QString QApplicationArgumentParserPrivate::lineWrap(const QString &input,
             /* Append the remains.  */
             output.append(QLatin1Char('\n'));
             output.append(indent);
-            output.append(input.mid(from).trimmed());
+            output.append(input.midRef(from).trimmed().toString());
             break;
         }
     }
