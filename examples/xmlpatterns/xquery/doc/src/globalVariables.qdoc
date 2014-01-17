@@ -62,7 +62,7 @@
     do is protect the global variables to prevent the bugs described
     above. How can we use XQuery and
     \l{http://public.kitware.com/GCC_XML/HTML/Index.html} {GCC-XML} to
-    find the variables that need protecting? 
+    find the variables that need protecting?
 
     \section3 A C++ application
 
@@ -72,7 +72,7 @@
 
     \section3 The XML description of the C++ application
 
-    Submitting this C++ source to  
+    Submitting this C++ source to
     \l{http://public.kitware.com/GCC_XML/HTML/Index.html} {GCC-XML}
     produces this XML description:
 
@@ -102,7 +102,7 @@
     The \c xmlpatterns command loads and parses \c globals.gccxml,
     runs the XQuery \c reportGlobals.xq, and generates this report:
 
-    \div {class="details"} 
+    \div {class="details"}
     Start report: 2008-12-16T13:43:49.65Z
     \enddiv
 
@@ -122,7 +122,7 @@
 
     \div {class="details"} End report: 2008-12-16T13:43:49.65Z \enddiv
 
-    \section1 XQuery Code Walk-Through  
+    \section1 XQuery Code Walk-Through
 
     The XQuery source is in
     \c{examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq}
@@ -175,12 +175,12 @@
     \quotefromfile xmlpatterns/xquery/globalVariables/globals.html
     \skipto <body>
     \printuntil </body>
-     
+
     The XQuery declares three more local functions that are called in
     turn by the \c{local:report()} function. \c{isComplexType()}
     returns true if the variable has a complex type. The variable can
     be mutable or const.
-    
+
     \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
     \skipto declare function local:isComplexType
     \printuntil };

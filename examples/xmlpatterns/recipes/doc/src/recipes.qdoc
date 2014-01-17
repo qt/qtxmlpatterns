@@ -31,7 +31,7 @@
   \ingroup xmlpattern_examples
 
   The Recipes example shows how to use Qt XML Patterns to query XML data
-  loaded from a file. 
+  loaded from a file.
 
   \tableofcontents
 
@@ -40,7 +40,7 @@
   In this case, the XML data represents a cookbook, \c{cookbook.xml},
   which contains \c{<cookbook>} as its document element, which in turn
   contains a sequence of \c{<recipe>} elements. This XML data is
-  searched using queries stored in XQuery files (\c{*.xq}). 
+  searched using queries stored in XQuery files (\c{*.xq}).
 
   \section2 The User Interface
 
@@ -97,7 +97,7 @@
   display its contents in the top group box's \l{QTextEdit} {text
   viewer} . Finally, it finds the XQuery files (\c{.xq}) and adds each
   one to the \l{QComboBox} {combo box} menu.
-  
+
   \snippet xmlpatterns/recipes/querymainwindow.cpp 0
 
   The work is done in the \l{displayQuery() slot} {displayQuery()}

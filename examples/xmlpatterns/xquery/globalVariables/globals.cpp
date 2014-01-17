@@ -43,7 +43,7 @@
  2. int mutablePrimitive2;
  3. const int constPrimitive1 = 4;
  4. const int constPrimitive2 = 3;
- 5. 
+ 5.
  6. class ComplexClass
  7. {
  8.  public:
@@ -56,7 +56,7 @@
 15. ComplexClass mutableComplex2;
 16. const ComplexClass constComplex1;
 17. const ComplexClass constComplex2;
-18. 
+18.
 19. int main()
 20. {
 22.     int localVariable;

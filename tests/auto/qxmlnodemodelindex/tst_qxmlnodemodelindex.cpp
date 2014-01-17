@@ -121,7 +121,7 @@ void tst_QXmlNodeModelIndex::copyConstructor() const
 
     /* Take a copy of a temporary. */
     {
-    	/* The extra paranthesis silences a warning on win32-msvc. */
+        /* The extra paranthesis silences a warning on win32-msvc. */
         const QXmlNodeModelIndex copy((QXmlNodeModelIndex()));
     }
 }

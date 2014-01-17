@@ -64,7 +64,7 @@ Item BooleanToAbstractFloatCaster<isDouble>::castFrom(const Item &from,
                                                            const QExplicitlySharedDataPointer<DynamicContext> &context) const
 {
     // RVCT doesn't like using template parameter in trinary operator when the trinary operator result is
-    // passed directly into another constructor. 
+    // passed directly into another constructor.
     bool tempDouble = isDouble;
     if(from.template as<AtomicValue>()->evaluateEBV(context))
         return tempDouble ? toItem(CommonValues::DoubleOne) : toItem(CommonValues::FloatOne);

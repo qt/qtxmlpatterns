@@ -1,5 +1,5 @@
-(: 
-    This XQuery loads a GCC-XML file and reports the locations of all 
+(:
+    This XQuery loads a GCC-XML file and reports the locations of all
     global variables in the original C++ source. To run the query,
     use the command line:
 
@@ -12,10 +12,10 @@
 declare variable $fileToOpen as xs:anyURI external;
 declare variable $inDoc as document-node() := doc($fileToOpen);
 
-(: 
+(:
    This function determines whether the typeId is a complex type,
    e.g. QString. We only check whether it's a class. To be strictly
-   correct, we should check whether the class has a non-synthesized 
+   correct, we should check whether the class has a non-synthesized
    constructor. We accept both mutable and const types.
 :)
 declare function local:isComplexType($typeID as xs:string) as xs:boolean
@@ -33,7 +33,7 @@ declare function local:isPrimitive($typeId as xs:string) as xs:boolean
     exists($inDoc/GCC_XML/FundamentalType[@id = $typeId])
 };
 
-(: 
+(:
    This function constructs a line for the report. The line contains
    a variable name, the source file, and the line number.
 :)
@@ -42,7 +42,7 @@ declare function local:location($block as element()) as xs:string
     concat($inDoc/GCC_XML/File[@id = $block/@file]/@name, " at line ", $block/@line)
 };
 
-(: 
+(:
    This function generates the report. Note that it is called once
    in the <body> element of the <html> output.
 
@@ -76,7 +76,7 @@ declare function local:report() as element()+
 };
 
 (:
-    This is where the <html> report is output. First 
+    This is where the <html> report is output. First
     there is some style stuff, then the <body> element,
     which contains the call to the \c{local:report()}
     declared above.
@@ -95,7 +95,7 @@ declare function local:report() as element()+
         .variableName
         {{
             font-family: courier;
-	    color: blue
+            color: blue
         }}
     </style>
 

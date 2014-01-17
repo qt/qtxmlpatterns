@@ -144,9 +144,9 @@ void MainWindow::loadDirectory(const QString &directory)
     treeInfo->setText(tr("Model of %1 output as XML.").arg(directory));
     fileTree->setText(QString::fromLatin1(output.constData()));
     evaluateResult();
-//! [6]    
+//! [6]
 }
-//! [6]    
+//! [6]
 //! [4]
 
 void MainWindow::on_actionAbout_triggered()

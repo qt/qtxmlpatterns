@@ -145,7 +145,7 @@ namespace QPatternist
         virtual Expression::Ptr compress(const StaticContext::Ptr &context)
         {
             // RVCT doesn't like using template parameter in trinary operator when the trinary operator result is
-            // passed directly into another constructor. 
+            // passed directly into another constructor.
             Q_ASSERT(Id == IDExistsFN || Id == IDEmptyFN);
 
             const Expression::Ptr me(FunctionCall::compress(context));
@@ -154,7 +154,7 @@ namespace QPatternist
                 return me;
 
             // RVCT doesn't like using template parameter in trinary operator when the trinary operator result is
-            // passed directly into another constructor. 
+            // passed directly into another constructor.
             Expression::ID tempId = Id;
             const Cardinality myCard((tempId == IDExistsFN) ? Cardinality::oneOrMore() : Cardinality::empty());
 

@@ -45,7 +45,7 @@ XMLWriter writer(&returnBuffer);
 writer.startDocument();
 
 writer.startDTD(QLatin1String("html"), QLatin1String("-//W3C//DTD XHTML 1.0 Strict//EN"),
-		QLatin1String("http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"));
+                QLatin1String("http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"));
 writer.endDTD();
 
 writer.startPrefixMapping(QString(), QLatin1String("http://www.w3.org/1999/xhtml"));

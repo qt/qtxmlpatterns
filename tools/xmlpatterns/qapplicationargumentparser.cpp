@@ -403,7 +403,7 @@ void QApplicationArgumentParserPrivate::displayHelp() const
         /* "  -name ". Indent a bit first, inspired by Qt's moc. */
         const QString &name = at.name();
         QString prolog(QLatin1String("  "));
-       
+
         /* We have a special case for the single dash. */
         if(name == QChar::fromLatin1('-'))
             prolog.append(name);
@@ -427,7 +427,7 @@ void QApplicationArgumentParserPrivate::displayHelp() const
             else
                 prolog.append(QLatin1Char('<') + typeName + QLatin1Char('>'));
             // TODO Don't we want to display the default value?
-            
+
             prolog.append(QLatin1Char(' '));
         }
 
@@ -503,7 +503,7 @@ QList<QApplicationArgument> QApplicationArgumentParserPrivate::builtinArguments(
                                        QLatin1String("Displays this help.")));
     result.append(QApplicationArgument(QLatin1String("version"),
                                        QLatin1String("Displays version information.")));
-    
+
     result.append(QApplicationArgument(QLatin1String("-"),
                                        QLatin1String("When appearing, any following options are not interpreted as switches.")));
     return result;
@@ -644,7 +644,7 @@ bool QApplicationArgumentParserPrivate::parseNamelessArguments(const QString &in
 }
 
 /*!
- Parses input() together with declaredArguments() and returns \c false if the caller 
+ Parses input() together with declaredArguments() and returns \c false if the caller
  should exit immediately, which is the case of which an error was encountered or
  help or the version was requested.
 

@@ -227,7 +227,7 @@ ItemType::Ptr AtomicValue::qtToXDMType(const QXmlItem &item)
         case QVariant::Time:
             return BuiltinTypes::xsDateTime;
         case QMetaType::Float:
-	    return BuiltinTypes::xsFloat;
+            return BuiltinTypes::xsFloat;
         case QVariant::Double:
             return BuiltinTypes::xsDouble;
         default:

@@ -144,7 +144,7 @@ QXmlNodeModelIndex FileTree::toNodeIndex(const QFileInfo &fileInfo) const
 /*!
   This private helper function is only called by nextFromSimpleAxis().
   It is called whenever nextFromSimpleAxis() is called with an axis
-  parameter of either \c{PreviousSibling} or \c{NextSibling}. 
+  parameter of either \c{PreviousSibling} or \c{NextSibling}.
  */
 //! [5]
 QXmlNodeModelIndex FileTree::nextSibling(const QXmlNodeModelIndex &nodeIndex,
@@ -213,7 +213,7 @@ FileTree::nextFromSimpleAxis(SimpleAxis axis, const QXmlNodeModelIndex &nodeInde
     switch (axis) {
         case Parent:
             return toNodeIndex(QFileInfo(fi.path()), Directory);
-            
+
         case FirstChild:
         {
             if (type == File) // A file has no children.
@@ -233,7 +233,7 @@ FileTree::nextFromSimpleAxis(SimpleAxis axis, const QXmlNodeModelIndex &nodeInde
                 return toNodeIndex(firstChild);
             }
         }
-        
+
         case PreviousSibling:
             return nextSibling(nodeIndex, fi, -1);
 

@@ -121,7 +121,7 @@ namespace QPatternist
         inline int captureCount() const;
 
         /**
-         * @short Parses pattern 
+         * @short Parses pattern
          */
         static QRegExp parsePattern(const QString &pattern,
                                     const ReportContext::Ptr &context,

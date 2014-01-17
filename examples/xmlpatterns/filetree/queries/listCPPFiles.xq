@@ -10,7 +10,7 @@ declare variable $where as xs:string := string($fileTree/@filePath);
     <ul> {
       for $file in $fileTree//file[@suffix = "cpp"]
       order by xs:integer($file/@size)
-      return 
+      return
         <li>
           {string($file/@fileName)}, size: {string($file/@size)}
         </li>

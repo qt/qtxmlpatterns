@@ -216,7 +216,7 @@ KXQTS
 * Rename TestSuite::testResult(); it's not exactly a getter
 * Grr, rename identifiers and files from *BaseLine* into *Baseline*.
 * Speed up --run-outofprocess by keeping patternistrunsuite running as long as possible.
-* Make text fields in test case view, selectable. Same with AST view. 
+* Make text fields in test case view, selectable. Same with AST view.
 
 - Code cleaning commands:
     * Find cases where stuff looks like "const Foo& var" instead of "const Foo &var":
