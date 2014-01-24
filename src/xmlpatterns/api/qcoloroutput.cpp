@@ -106,7 +106,7 @@ namespace QPatternist
          */
         inline bool isColoringPossible() const
         {
-#           if defined(Q_OS_WIN32) || defined(Q_OS_WINCE)
+#           if defined(Q_OS_WIN)
                 /* Windows doesn't at all support ANSI escape codes, unless
                  * the user install a "device driver". See the Wikipedia links in the
                  * class documentation for details. */
