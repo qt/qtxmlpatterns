@@ -256,7 +256,6 @@ const QString tst_QXmlQuery::m_xmlPatternsDir = QFINDTESTDATA("../xmlpatterns");
 void tst_QXmlQuery::initTestCase()
 {
     QVERIFY2(!m_xmlPatternsDir.isEmpty(), qPrintable(QString::fromLatin1("Cannot locate '../xmlpatterns' starting from %1").arg(QDir::currentPath())));
-    QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
 }
 
 void tst_QXmlQuery::checkBaseURI(const QUrl &baseURI, const QString &candidate)
@@ -1994,6 +1993,10 @@ void tst_QXmlQuery::setFocusQIODeviceTriggerWarnings() const
 
 void tst_QXmlQuery::fnDocNetworkAccessSuccess() const
 {
+    if (QTest::currentDataTag() == QByteArray("http scheme")
+            || QTest::currentDataTag() == QByteArray("ftp scheme"))
+        QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
+
 #if defined(Q_OS_WINCE) && !defined(_X86_)
     QStringList testsToSkip;
     testsToSkip << "http scheme" << "ftp scheme";
@@ -2065,6 +2068,11 @@ void tst_QXmlQuery::fnDocNetworkAccessSuccess_data() const
 
 void tst_QXmlQuery::fnDocNetworkAccessFailure() const
 {
+    if (QTest::currentDataTag() == QByteArray("http scheme, not well-formed")
+            || QTest::currentDataTag() == QByteArray("https scheme, not well-formed")
+            || QTest::currentDataTag() == QByteArray("ftp scheme, not well-formed"))
+        QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
+
     QFETCH(QUrl, uriToOpen);
 
     QVERIFY(uriToOpen.isValid());
@@ -2525,6 +2533,10 @@ void tst_QXmlQuery::setQueryQString() const
 
 void tst_QXmlQuery::setQueryQUrlSuccess() const
 {
+    if (QTest::currentDataTag() == QByteArray("A valid query via the ftp scheme")
+            || QTest::currentDataTag() == QByteArray("A valid query via the http scheme"))
+        QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
+
 #if defined(Q_OS_WINCE) && !defined(_X86_)
     QStringList testsToSkip;
     testsToSkip << "A valid query via the ftp scheme" << "A valid query via the http scheme";
@@ -2595,6 +2607,10 @@ void tst_QXmlQuery::setQueryQUrlFailSucceed() const
 
 void tst_QXmlQuery::setQueryQUrlFailure() const
 {
+    if (QTest::currentDataTag() == QByteArray("A query via http:// that is completely empty, but readable.")
+            || QTest::currentDataTag() == QByteArray("A query via ftp:// that is completely empty, but readable."))
+        QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
+
     QFETCH(QUrl, queryURI);
 
     MessageSilencer silencer;
