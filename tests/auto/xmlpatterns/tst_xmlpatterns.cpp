@@ -104,8 +104,6 @@ tst_XmlPatterns::tst_XmlPatterns() : m_generatedTests(0)
 
 void tst_XmlPatterns::initTestCase()
 {
-    QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
-
     QVERIFY(m_normalizeTestName.isValid());
 
     QProcess process;
@@ -126,6 +124,10 @@ void tst_XmlPatterns::initTestCase()
 
 void tst_XmlPatterns::xquerySupport()
 {
+    if (QTest::currentDataTag() == QByteArray("Load query via FTP")
+            || QTest::currentDataTag() == QByteArray("Load query via HTTP"))
+        QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
+
     if(m_dontRun)
         QSKIP("The command line utility is not in the path.");
 
