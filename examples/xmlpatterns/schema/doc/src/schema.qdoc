@@ -114,7 +114,7 @@
 
   After the \l{QXmlSchema} {QXmlSchema} is instanciated and the message handler set
   on it, the \l{QXmlSchema::load()} {load()} method is called with the schema data as argument.
-  If the schema is invalid or a parsing error has occured, \l{QXmlSchema::isValid()} {isValid()}
+  If the schema is invalid or a parsing error has occurred, \l{QXmlSchema::isValid()} {isValid()}
   returns \c{false} and the error is flagged in \c{errorOccurred}.
   If the loading was successful, a \l{QXmlSchemaValidator} {QXmlSchemaValidator} is
   instanciated and the schema passed in the constructor.

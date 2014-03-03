@@ -273,7 +273,7 @@ bool TestSuiteHandler::endElement(const QString &namespaceURI,
     else if(localName == QLatin1String("title"))
     {
         /* A bit dangerous, the only element with name title in the vocabulary
-         * is the the child of GroupInfo */
+         * is the child of GroupInfo */
         m_container->setTitle(m_ch.simplified());
     }
     else if(localName == QLatin1String("test-group"))
