@@ -60,7 +60,7 @@
 
 /* Design rationalis, comments:
  *
- * - The class is called XMLWriter to harvest familarity by being consistent with
+ * - The class is called XMLWriter to harvest familiarity by being consistent with
  *   Java's XMLWriter class. If XMLWriter is moved to Qt, the name QXmlWriter is perhaps suitable.
  * - The class does not handle indentation because the "do one thing well"-principle is
  *   in use. XMLWriter should be fast and not assume a certain idea of indentation. Indentation

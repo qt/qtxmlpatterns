@@ -44,7 +44,7 @@
 
   \image filetree_1-example.png
 
-  \section2 The User Inteface
+  \section2 The User Interface
 
   The example is shown below. First, we use \c{File->Open Directory}
   (not shown) to select the \c{/filetree} directory. Then we use the
