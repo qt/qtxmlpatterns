@@ -264,7 +264,7 @@ bool XsdStateMachine<TransitionType>::outputGraph(QIODevice *device, const QStri
             s << "  " << it4.key() << " -> " << states.at(i) << " [label=\"&#949;\"]\n";
     }
 
-    // draw node infos
+    // draw node info
     while (it3.hasNext()) {
         it3.next();
 
