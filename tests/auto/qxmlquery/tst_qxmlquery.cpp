@@ -2103,7 +2103,7 @@ void tst_QXmlQuery::fnDocNetworkAccessFailure_data() const
     QTest::newRow("data scheme, not-well-formed")
         << QUrl(QLatin1String("data:application/xml;base64,PGUvg==="));
 
-    QTest::newRow("file scheme, non-existant file")
+    QTest::newRow("file scheme, non-existent file")
         << QUrl(QLatin1String("file:///example.com/does/notExist.xml"));
 
     QTest::newRow("http scheme, file not found")
