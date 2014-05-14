@@ -218,7 +218,7 @@ IntegerComparator::compare(const Item &o1,
                            const Item &o2) const
 {
     const Numeric *const num1 = o1.as<Numeric>();
-    const Numeric *const num2 = o1.as<Numeric>();
+    const Numeric *const num2 = o2.as<Numeric>();
 
     /**
      * Consider:
