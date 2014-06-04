@@ -68,7 +68,6 @@ namespace QPatternist
             ForegroundShift = 10,
             BackgroundShift = 20,
             SpecialShift    = 20,
-// ### FIXME: this looks very suspicious. Make ForegroundShift = 0x10 etc?
             ForegroundMask  = 0x1f << ForegroundShift,
             BackgroundMask  = 0x7 << BackgroundShift
         };
