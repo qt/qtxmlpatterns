@@ -94,6 +94,17 @@ QXmlSchema::QXmlSchema(const QXmlSchema &other)
 }
 
 /*!
+  \since 5.4
+  Copies the resources of \a other into this instance, sharing
+  them to the extent possible.
+ */
+QXmlSchema &QXmlSchema::operator =(const QXmlSchema &other)
+{
+    d = other.d;
+    return *this;
+}
+
+/*!
   Destroys this QXmlSchema.
  */
 QXmlSchema::~QXmlSchema()

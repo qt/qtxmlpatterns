@@ -64,6 +64,7 @@ class Q_XMLPATTERNS_EXPORT QXmlSchema
     public:
         QXmlSchema();
         QXmlSchema(const QXmlSchema &other);
+        QXmlSchema &operator=(const QXmlSchema &other);
         ~QXmlSchema();
 
         bool load(const QUrl &source);
