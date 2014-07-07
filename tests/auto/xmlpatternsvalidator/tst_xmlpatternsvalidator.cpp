@@ -77,6 +77,7 @@ tst_XmlPatternsValidator::tst_XmlPatternsValidator()
 
 void tst_XmlPatternsValidator::initTestCase()
 {
+#ifndef QT_NO_PROCESS
     QProcess process;
     process.start(m_command);
 
@@ -90,6 +91,9 @@ void tst_XmlPatternsValidator::initTestCase()
             ).arg(m_command))
         );
     }
+#else
+    QSKIP("Skipping test due to not having process support");
+#endif // QT_NO_PROCESS
 }
 
 void tst_XmlPatternsValidator::xsdSupport()
@@ -101,6 +105,7 @@ void tst_XmlPatternsValidator::xsdSupport()
     QSKIP("WinCE: This test uses unsupported WinCE functionality");
 #endif
 
+#ifndef QT_NO_PROCESS
     QFETCH(int,         expectedExitCode);
     QFETCH(QStringList, arguments);
     QFETCH(QString,     cwd);
@@ -119,6 +124,9 @@ void tst_XmlPatternsValidator::xsdSupport()
         QTextStream(stderr) << "foo:" << process.readAllStandardError();
 
     QCOMPARE(process.exitCode(), expectedExitCode);
+#else
+    QSKIP("Skipping test due to not having process support");
+#endif // QT_NO_PROCESS
 }
 
 void tst_XmlPatternsValidator::xsdSupport_data() const

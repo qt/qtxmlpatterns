@@ -74,7 +74,9 @@ private Q_SLOTS:
     void xquerySupport_data() const;
     void xsltSupport();
     void xsltSupport_data() const;
+#ifndef QT_NO_PROCESS
     void stdoutFailure() const;
+#endif
     void cleanupTestCase() const;
 
 private:
@@ -106,6 +108,7 @@ void tst_XmlPatterns::initTestCase()
 {
     QVERIFY(m_normalizeTestName.isValid());
 
+#ifndef QT_NO_PROCESS
     QProcess process;
     process.start(m_command);
 
@@ -119,7 +122,9 @@ void tst_XmlPatterns::initTestCase()
             ).arg(m_command))
         );
     }
-
+#else
+    QSKIP("Skipping test due to not having process support");
+#endif // QT_NO_PROCESS
 }
 
 void tst_XmlPatterns::xquerySupport()
@@ -135,6 +140,7 @@ void tst_XmlPatterns::xquerySupport()
     QSKIP("WinCE: This test uses unsupported WinCE functionality");
 #endif
 
+#ifndef QT_NO_PROCESS
     QFETCH(int,         expectedExitCode);
     QFETCH(QByteArray,  expectedQueryOutput);
     QFETCH(QStringList, arguments);
@@ -219,6 +225,10 @@ void tst_XmlPatterns::xquerySupport()
 
         removeNonWritable(outFile);
     }
+
+#else
+    QSKIP("Skipping test due to not having process support");
+#endif // QT_NO_PROCESS
 }
 
 void tst_XmlPatterns::xquerySupport_data() const
@@ -801,6 +811,7 @@ void tst_XmlPatterns::removeNonWritable(QFile &outFile)
  Check that we gracefully handle writing out to stdout
  when the latter is not writable.
  */
+#ifndef QT_NO_PROCESS
 void tst_XmlPatterns::stdoutFailure() const
 {
     return; // TODO It's really hard to write testing code for this.
@@ -826,6 +837,7 @@ void tst_XmlPatterns::stdoutFailure() const
 
     removeNonWritable(outFile);
 }
+#endif
 
 void tst_XmlPatterns::cleanupTestCase() const
 {
