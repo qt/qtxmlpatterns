@@ -39,6 +39,17 @@
 **
 ****************************************************************************/
 
+//
+//  W A R N I N G
+//  -------------
+//
+// This file is not part of the Qt API.  It exists purely as an
+// implementation detail.  This header file may change from version to
+// version without notice, or even be removed.
+//
+// We mean it.
+//
+
 /*
  * NOTE: This file is included by qxsdstatemachine_p.h
  * if you need some includes, put them in qxsdstatemachine_p.h (outside of the namespace)
