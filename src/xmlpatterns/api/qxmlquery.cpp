@@ -123,7 +123,7 @@ QT_BEGIN_NAMESPACE
   running an XPath expression is the same as running an XQuery
   query. Pass the XPath expression to QXmlQuery using setQuery().
 
-  \section1 Running XSLT stylesheets
+  \section1 Running XSLT Stylesheets
 
   Running an XSLT stylesheet is like running an XQuery, except that
   when you construct your QXmlQuery, you must pass QXmlQuery::XSLT20

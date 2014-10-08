@@ -55,7 +55,7 @@
     Readers who are not familiar with the XQuery/XPath language can read
     \l {A Short Path to XQuery} for a brief introduction.
 
-    \section1 Advantages of using Qt XML Patterns and XQuery
+    \section1 Advantages of Using Qt XML Patterns and XQuery
 
     The XQuery/XPath language simplifies data searching and
     transformation tasks by eliminating the need for doing a lot of
@@ -107,7 +107,7 @@
 
     \endlist
 
-    \section1 Using the Qt XML Patterns module
+    \section1 Using the Qt XML Patterns Module
 
     There are two ways Qt XML Patterns can be used to evaluate queries.
     You can run the query engine in your Qt application using the
@@ -546,7 +546,7 @@
     See the QAbstractXmlNodeModel documentation for information about
     how to implement custom XML node models.
 
-    \section1 More on using Qt XML Patterns with non-XML Data
+    \section1 More on Using Qt XML Patterns with Non-XML Data
 
     Subclassing QAbstractXmlNodeModel to let the query engine access
     non-XML data by the same API it uses for XML is the feature that
