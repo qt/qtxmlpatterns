@@ -130,8 +130,15 @@ void MainWindow::schemaSelected(int index)
     }
     textChanged();
 
-    QFile schemaFile(QString(":/schema_%1.xsd").arg(index));
-    schemaFile.open(QIODevice::ReadOnly);
+    const QString fileName = QStringLiteral(":/schema_")
+        + QString::number(index) + QStringLiteral(".xsd");
+    QFile schemaFile(fileName);
+    if (!schemaFile.open(QIODevice::ReadOnly)) {
+        qWarning() << "Cannot open" << QDir::toNativeSeparators(fileName)
+            << ':' << schemaFile.errorString();
+        return;
+    }
+
     const QString schemaText(QString::fromUtf8(schemaFile.readAll()));
     schemaView->setPlainText(schemaText);
 
@@ -142,8 +149,19 @@ void MainWindow::schemaSelected(int index)
 //! [2]
 void MainWindow::instanceSelected(int index)
 {
-    QFile instanceFile(QString(":/instance_%1.xml").arg((2*schemaSelection->currentIndex()) + index));
-    instanceFile.open(QIODevice::ReadOnly);
+    if (index < 0) {
+        instanceEdit->setPlainText(QString());
+        return;
+    }
+    const QString fileName = QStringLiteral(":/instance_")
+        + QString::number(2 * schemaSelection->currentIndex() + index)
+        + QStringLiteral(".xml");
+    QFile instanceFile(fileName);
+    if (!instanceFile.open(QIODevice::ReadOnly)) {
+        qWarning() << "Cannot open" << QDir::toNativeSeparators(fileName)
+            << ':' << instanceFile.errorString();
+        return;
+    }
     const QString instanceText(QString::fromUtf8(instanceFile.readAll()));
     instanceEdit->setPlainText(instanceText);
 
