@@ -62,40 +62,6 @@ class QIODevice;
 namespace QPatternist
 {
     /**
-     * @short An helper class which enables QNetworkAccessManager
-     * to be used in a blocking manner.
-     *
-     * @see AccelTreeResourceLoader::load()
-     * @author Frans Englich <frans.englich@nokia.com>
-     */
-    class NetworkLoop : public QEventLoop
-    {
-        Q_OBJECT
-    public:
-        NetworkLoop() : m_hasReceivedError(false)
-        {
-        }
-
-    public Q_SLOTS:
-        void error(QNetworkReply::NetworkError code)
-        {
-            Q_UNUSED(code);
-            m_hasReceivedError = true;
-            exit(1);
-        }
-
-        void finished()
-        {
-            if(m_hasReceivedError)
-                exit(1);
-            else
-                exit(0);
-        }
-    private:
-        bool m_hasReceivedError;
-    };
-
-    /**
      * @short Handles requests for documents, and instantiates
      * them as AccelTree instances.
      *
