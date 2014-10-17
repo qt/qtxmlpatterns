@@ -63,7 +63,7 @@ QT_BEGIN_NAMESPACE
   This class is used to represent schemas that conform to the \l{XML Schema} 1.0
   specification.
 
-  \sa QXmlSchemaValidator, {xmlpatterns/schema}{XML Schema Validation Example}
+  \sa QXmlSchemaValidator, {schema}{XML Schema Validation Example}
 */
 
 /*!
