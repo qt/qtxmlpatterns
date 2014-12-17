@@ -130,6 +130,7 @@ void ColoringMessageHandler::handleMessage(QtMsgType type,
         case QtCriticalMsg:
         /* Fallthrough. */
         case QtDebugMsg:
+        default:
         {
             Q_ASSERT_X(false, Q_FUNC_INFO,
                        "message() is not supposed to receive QtCriticalMsg or QtDebugMsg.");
