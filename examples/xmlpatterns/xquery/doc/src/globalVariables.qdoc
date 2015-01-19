@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+** Copyright (C) 2014 Digia Plc and/or its subsidiary(-ies).
 ** Contact: http://www.qt-project.org/legal
 **
 ** This file is part of the documentation of the Qt Toolkit.
@@ -26,9 +26,12 @@
 ****************************************************************************/
 
 /*!
-    \example xmlpatterns/xquery
+    \example xquery
     \title C++ Source Code Analyzer Example
     \ingroup xmlpattern_examples
+
+    \brief Using XQuery and the \c xmlpatterns command line utility to
+    query C++ source code.
 
     This example uses XQuery and the \c xmlpatterns command line utility to
     query C++ source code.
@@ -68,7 +71,7 @@
 
     Consider the declarations in this hypothetical C++ application:
 
-    \snippet xmlpatterns/xquery/globalVariables/globals.cpp 0
+    \snippet xquery/globalVariables/globals.cpp 0
 
     \section3 The XML description of the C++ application
 
@@ -76,7 +79,7 @@
     \l{http://public.kitware.com/GCC_XML/HTML/Index.html} {GCC-XML}
     produces this XML description:
 
-    \quotefromfile xmlpatterns/xquery/globalVariables/globals.gccxml
+    \quotefromfile xquery/globalVariables/globals.gccxml
     \printuntil
 
     \section3 The XQuery for finding global variables
@@ -85,7 +88,7 @@
     description. Here is our XQuery source. We walk through it in
     \l{XQuery Code Walk-Through}.
 
-    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xquery/globalVariables/reportGlobals.xq
     \printuntil
 
     \section3 Running the XQuery
@@ -93,7 +96,7 @@
     To run the XQuery using the \c xmlpatterns command line utility,
     enter the following command:
 
-    \code
+    \badcode
     xmlpatterns reportGlobals.xq -param fileToOpen=globals.gccxml -output globals.html
     \endcode
 
@@ -128,7 +131,7 @@
     \c{examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq}
     It begins with two variable declarations that begin the XQuery:
 
-    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xquery/globalVariables/reportGlobals.xq
     \skipto declare variable
     \printto (:
 
@@ -149,7 +152,7 @@
     instructions for displaying the text, and then the \c{<body>}
     element.
 
-    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xquery/globalVariables/reportGlobals.xq
     \skipto <html xmlns
     \printuntil
 
@@ -158,7 +161,7 @@
     the two \c{return} clauses separated by the \e {comma operator}
     about halfway down:
 
-    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xquery/globalVariables/reportGlobals.xq
     \skipto declare function local:report()
     \printuntil };
 
@@ -172,7 +175,7 @@
     Here is the html generated for the \c{<body>} element. Compare
     it with the XQuery code above:
 
-    \quotefromfile xmlpatterns/xquery/globalVariables/globals.html
+    \quotefromfile xquery/globalVariables/globals.html
     \skipto <body>
     \printuntil </body>
 
@@ -181,21 +184,21 @@
     returns true if the variable has a complex type. The variable can
     be mutable or const.
 
-    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xquery/globalVariables/reportGlobals.xq
     \skipto declare function local:isComplexType
     \printuntil };
 
     \c{isPrimitive()} returns true if the variable has a primitive
     type. The variable must be mutable.
 
-    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xquery/globalVariables/reportGlobals.xq
     \skipto declare function local:isPrimitive
     \printuntil };
 
     \c{location()} returns a text constructed from the variable's file
     and line number attributes.
 
-    \quotefromfile xmlpatterns/xquery/globalVariables/reportGlobals.xq
+    \quotefromfile xquery/globalVariables/reportGlobals.xq
     \skipto declare function local:location
     \printuntil };
 
