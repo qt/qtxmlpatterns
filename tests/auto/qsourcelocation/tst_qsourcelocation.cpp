@@ -361,14 +361,14 @@ void tst_QSourceLocation::debugStream_data() const
     {
         QTest::newRow("Default constructed instance")
             << QSourceLocation()
-            << QString::fromLatin1("QSourceLocation(  QUrl( \"\" )  , line: -1 , column: -1 ) ");
+            << QString::fromLatin1("QSourceLocation( QUrl(\"\") , line: -1 , column: -1 ) ");
     }
 
     {
         QSourceLocation location(QUrl(QLatin1String("http://example.com/")), 4, 5);
         QTest::newRow("Properties set")
             << location
-            << QString::fromLatin1("QSourceLocation(  QUrl( \"http://example.com/\" )  , line: 4 , column: 5 ) ");
+            << QString::fromLatin1("QSourceLocation( QUrl(\"http://example.com/\") , line: 4 , column: 5 ) ");
     }
 }
 
