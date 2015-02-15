@@ -14,7 +14,7 @@ headerdirs += ..
 imagedirs += images
 sourcedirs += ..
 
-depends += qtcore qtxml qtwidgets qtdesigner qtdoc
+depends += qtcore qtxml qtwidgets qtdesigner qtdoc qmake qtwebkitexamples
 
 qhp.projects = QtXmlPatterns
 
