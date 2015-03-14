@@ -209,6 +209,8 @@ void Worker::threadFinished()
     else if(m_unexpectedPasses.isEmpty() && baselineCount == resultCount)
     {
         err << "Result was identical to the baseline, baseline was not updated.\n";
+        err.flush();
+        QTextStream(stderr) << out;
         m_eventLoop.exit(ExitCode::Success);
         return;
     }
