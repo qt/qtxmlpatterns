@@ -76,12 +76,6 @@ using namespace QPatternistSDK;
 typedef QPair<QString, QString> NSBinding;
 typedef QList<NSBinding> NSBindingList;
 
-#ifdef QT_NO_DEBUG
-#   define DEBUG_CODE(code)
-#else
-#   define DEBUG_CODE(code) code
-#endif
-
 class XMLWriter::Private
 {
 public:
@@ -290,8 +284,8 @@ public:
     QIODevice *dev;
     QStack<bool> hasContentStack;
     QString errorString;
-    DEBUG_CODE(QStack<QString> tags;)
-    DEBUG_CODE(QStack<NSBindingList> namespaceTracker;)
+    QStack<QString> tags;
+    QStack<NSBindingList> namespaceTracker;
 };
 
 /**
@@ -364,8 +358,8 @@ bool XMLWriter::startElement(const QString &qName,
     serialize('<');
     serialize(qName);
 
-    DEBUG_CODE(d->tags.push(qName));
-    DEBUG_CODE(d->namespaceTracker.push(d->namespaces));
+    d->tags.push(qName);
+    d->namespaceTracker.push(d->namespaces);
 
     /* Add namespace declarations. */
     const NSBindingList::const_iterator end(d->namespaces.constEnd());
@@ -421,7 +415,7 @@ bool XMLWriter::endElement(const QString &qName)
     Q_ASSERT_X(d->tags.pop() == qName, Q_FUNC_INFO,
                "The element tags are not balanced, the produced XML is invalid.");
 
-    DEBUG_CODE(d->namespaceTracker.pop());
+    d->namespaceTracker.pop();
 
     /* "this" element is content for our parent, so ensure hasElementContent is true. */
 
