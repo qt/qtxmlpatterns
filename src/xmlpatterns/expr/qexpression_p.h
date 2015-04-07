@@ -48,7 +48,7 @@
 #include <QSharedData>
 
 #include <private/qcppcastinghelper_p.h>
-#include <private/qdebug_p.h>
+#include <private/qxmldebug_p.h>
 #include <private/qdynamiccontext_p.h>
 #include <private/qexpressiondispatch_p.h>
 #include <private/qitem_p.h>

@@ -34,7 +34,7 @@
 #include <QXmlAttributes>
 #include <QtDebug>
 
-#include <private/qdebug_p.h>
+#include <private/qxmldebug_p.h>
 #include "Global.h"
 #include "XMLWriter.h"
 

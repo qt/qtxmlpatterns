@@ -40,7 +40,7 @@
 #include "Global.h"
 
 #include <private/qcommonsequencetypes_p.h>
-#include <private/qdebug_p.h>
+#include <private/qxmldebug_p.h>
 #include <private/qatomicstring_p.h>
 
 #include "ExternalSourceLoader.h"

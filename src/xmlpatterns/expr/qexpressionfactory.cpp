@@ -36,7 +36,7 @@
 
 #include "qcalltemplate_p.h"
 #include "qcommonsequencetypes_p.h"
-#include "qdebug_p.h"
+#include "qxmldebug_p.h"
 #include "qexpression_p.h"
 #include "qgenericstaticcontext_p.h"
 #include "qoperandsiterator_p.h"

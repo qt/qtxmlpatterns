@@ -40,7 +40,7 @@
 #include "qatomicstring_p.h"
 #include "qcommonvalues_p.h"
 #include "qcompressedwhitespace_p.h"
-#include "qdebug_p.h"
+#include "qxmldebug_p.h"
 #include "quntypedatomic_p.h"
 #include "qxpathhelper_p.h"
 

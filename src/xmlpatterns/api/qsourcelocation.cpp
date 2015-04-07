@@ -31,7 +31,7 @@
 **
 ****************************************************************************/
 
-#include "qdebug_p.h"
+#include "qxmldebug_p.h"
 
 #include "qsourcelocation.h"
 

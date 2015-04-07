@@ -40,7 +40,7 @@
 #include <QXmlAttributes>
 #include <QXmlSimpleReader>
 
-#include <private/qdebug_p.h>
+#include <private/qxmldebug_p.h>
 #include "XMLWriter.h"
 
 #include "TestBaseLine.h"
