@@ -1,7 +1,7 @@
 HEADERS += $$PWD/qautoptr_p.h                       \
            $$PWD/qcommonnamespaces_p.h              \
            $$PWD/qcppcastinghelper_p.h              \
-           $$PWD/qdebug_p.h                         \
+           $$PWD/qxmldebug_p.h                         \
            $$PWD/qgenericnamespaceresolver_p.h      \
            $$PWD/qpatternistlocale_p.h              \
            $$PWD/qnamepool_p.h                      \

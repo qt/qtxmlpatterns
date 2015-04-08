@@ -189,7 +189,7 @@
 #include <private/qcontextitem_p.h>
 #include <private/qcopyof_p.h>
 #include <private/qcurrentitemstore_p.h>
-#include <private/qdebug_p.h>
+#include <private/qxmldebug_p.h>
 #include <private/qdelegatingnamespaceresolver_p.h>
 #include <private/qdocumentconstructor_p.h>
 #include <private/qelementconstructor_p.h>
