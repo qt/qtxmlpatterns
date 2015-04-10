@@ -83,6 +83,18 @@ TestResult::List TestCase::execute(const ExecutionStage stage,
             result.append(createTestResult(TestResult::Fail, QLatin1String("Skipped this test, we crash on it.")));
             return result;
     }
+    else if (name() == QLatin1String("emptyorderdecl-13"))
+    {
+        TestResult::List result;
+        result.append(createTestResult(TestResult::Fail, QLatin1String("Skipped this test, we crash on it.")));
+        return result;
+    }
+    else if (name() == QLatin1String("emptyorderdecl-21"))
+    {
+        TestResult::List result;
+        result.append(createTestResult(TestResult::Fail, QLatin1String("Skipped this test, we crash on it.")));
+        return result;
+    }
 
     qDebug() << "Running test case: " << name();
 
