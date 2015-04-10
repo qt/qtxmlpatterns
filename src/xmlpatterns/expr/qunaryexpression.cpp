@@ -59,7 +59,10 @@ Item UnaryExpression::evaluateSingleton(const DynamicContext::Ptr &context) cons
     {
         const Item item(m_operand2->evaluateSingleton(context));
 
-        if(item)
+        if (item)
+            // If the item is an untypedAtomic (or atomicString), the cast to Numeric will
+            // return a garbage object and will most likely cause a crash.
+            // There is simply no way to static cast from an instance of AtomicString to a Number.
             return item.as<Numeric>()->toNegated();
         else
             return Item();
