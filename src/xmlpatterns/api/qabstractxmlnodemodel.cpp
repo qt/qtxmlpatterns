@@ -441,9 +441,6 @@ namespace QPatternist
     class MergeIterator
     {
     public:
-        inline MergeIterator()
-        {
-        }
 
         inline
         QXmlNodeModelIndexIteratorPointer
@@ -452,12 +449,9 @@ namespace QPatternist
         {
             return it;
         }
-
-    private:
-        Q_DISABLE_COPY(MergeIterator)
     };
 
-    static const MergeIterator mergeIterator;
+    static const MergeIterator mergeIterator = {};
 
     /**
      * One might wonder, why not use makeVectorIterator() directly on a QVector
