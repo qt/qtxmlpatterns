@@ -171,7 +171,7 @@ bool XsdSchemaHelper::isWildcardSubset(const XsdWildcard::Ptr &wildcard, const X
 
     // 3
     if ((constraint->variety() == XsdWildcard::NamespaceConstraint::Enumeration) && (otherConstraint->variety() == XsdWildcard::NamespaceConstraint::Not)) {
-        if (constraint->namespaces().intersect(otherConstraint->namespaces()).isEmpty())
+        if (!constraint->namespaces().intersects(otherConstraint->namespaces()))
             return true;
     }
 

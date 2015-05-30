@@ -1413,7 +1413,7 @@ bool isValidWildcardRestriction(const XsdWildcard::Ptr &wildcard, const XsdWildc
     }
     if (baseWildcard->namespaceConstraint()->variety() == XsdWildcard::NamespaceConstraint::Not &&
         wildcard->namespaceConstraint()->variety() == XsdWildcard::NamespaceConstraint::Enumeration) {
-        if (!baseWildcard->namespaceConstraint()->namespaces().intersect(wildcard->namespaceConstraint()->namespaces()).isEmpty())
+        if (baseWildcard->namespaceConstraint()->namespaces().intersects(wildcard->namespaceConstraint()->namespaces()))
             return false;
     }
     if (baseWildcard->namespaceConstraint()->variety() == XsdWildcard::NamespaceConstraint::Enumeration &&
