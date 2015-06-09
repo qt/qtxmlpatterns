@@ -51,74 +51,7 @@
 
 #include <private/qparsercontext_p.h>
 #include <private/qtokensource_p.h>
-
-/**
- * @file
- * @short Contains functions and classes used by the parser and tokenizer.
- */
-
-QT_BEGIN_NAMESPACE
-
-namespace QPatternist
-{
-    typedef QPair<QString, Expression::Ptr> AttributeHolder;
-    typedef QVector<AttributeHolder> AttributeHolderVector;
-
-    class OrderSpecTransfer
-    {
-    public:
-        typedef QList<OrderSpecTransfer> List;
-        inline OrderSpecTransfer()
-        {
-        }
-
-        inline OrderSpecTransfer(const Expression::Ptr &aExpr,
-                                 const OrderBy::OrderSpec aOrderSpec) : expression(aExpr),
-                                                                        orderSpec(aOrderSpec)
-        {
-            Q_ASSERT(expression);
-        }
-
-        Expression::Ptr     expression;
-        OrderBy::OrderSpec  orderSpec;
-    };
-
-    /**
-     * @short The value the parser, but not the tokenizers, uses for tokens and
-     * non-terminals.
-     *
-     * It is inefficient but ensures nothing leaks, by invoking C++
-     * destructors even in the cases the code throws exceptions. This might be
-     * able to be done in a more efficient way -- suggestions are welcome.
-     */
-    class TokenValue
-    {
-    public:
-        QString                         sval;
-
-        Expression::Ptr                 expr;
-        Expression::List                expressionList;
-
-        Cardinality                     cardinality;
-        ItemType::Ptr                   itemType;
-        SequenceType::Ptr               sequenceType;
-        FunctionArgument::List          functionArguments;
-        FunctionArgument::Ptr           functionArgument;
-        QVector<QXmlName>               qNameVector;
-        QXmlName                        qName;
-        /**
-         * Holds enum values.
-         */
-        EnumUnion                       enums;
-
-        AttributeHolder                 attributeHolder;
-        AttributeHolderVector           attributeHolders;
-        OrderSpecTransfer::List         orderSpecs;
-        OrderSpecTransfer               orderSpec;
-    };
-}
-
-QT_END_NAMESPACE
+#include <private/qtokenvalue_p.h>
 
 /**
  * Macro for the data type of semantic values; int by default.

@@ -193,8 +193,9 @@ namespace QPatternist
  */
 #define YYERROR_VERBOSE 1
 
-#undef YYLTYPE_IS_TRIVIAL
 #define YYLTYPE_IS_TRIVIAL 0
+#define YYINITDEPTH 1
+#define yyoverflow parseInfo->handleStackOverflow
 
 /* Suppresses `warning: "YYENABLE_NLS" is not defined`
  * @c YYENABLE_NLS enables Bison internationalization, and we don't
