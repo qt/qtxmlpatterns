@@ -63,22 +63,22 @@ Tokenizer::Token TokenRevealer::nextToken(YYLTYPE *const sourceLocator)
     /* Indent. */
     switch(type)
     {
-        case CURLY_LBRACE:
+        case T_CURLY_LBRACE:
         {
             m_result += QLatin1Char('\n') + m_indentationString + asString + QLatin1Char('\n');
             m_indentationString.append(QLatin1String("    "));
             m_result += m_indentationString;
             break;
         }
-        case CURLY_RBRACE:
+        case T_CURLY_RBRACE:
         {
             m_indentationString.chop(4);
             m_result += QLatin1Char('\n') + m_indentationString + asString;
             break;
         }
-        case SEMI_COLON:
+        case T_SEMI_COLON:
         /* Fallthrough. */
-        case COMMA:
+        case T_COMMA:
         {
             m_result += asString + QLatin1Char('\n') + m_indentationString;
             break;

@@ -17,3 +17,6 @@ SOURCES += $$PWD/qquerytransformparser.cpp  \
            $$PWD/qxquerytokenizer.cpp       \
            $$PWD/qxslttokenizer.cpp         \
            $$PWD/qxslttokenlookup.cpp
+
+OTHER_FILES += $$PWD/querytransformparser.ypp \
+               $$PWD/TokenLookup.gperf

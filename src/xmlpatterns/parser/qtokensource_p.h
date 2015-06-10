@@ -52,6 +52,7 @@
 #include <private/qitemtype_p.h>
 #include <private/qorderby_p.h>
 #include <private/qpath_p.h>
+#include <private/qparsercontext_p.h>
 #include <private/qquerytransformparser_p.h>
 #include <private/qvalidate_p.h>
 
@@ -121,7 +122,7 @@ namespace QPatternist
 
             bool hasError() const
             {
-                return type == ERROR;
+                return type == T_ERROR;
             }
 
             TokenType type;

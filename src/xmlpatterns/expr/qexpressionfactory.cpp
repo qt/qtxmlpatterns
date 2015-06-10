@@ -140,7 +140,7 @@ Expression::Ptr ExpressionFactory::createExpression(const Tokenizer::Ptr &tokeni
 
     effectiveTokenizer->setParserContext(info);
 
-    const int bisonRetval = XPathparse(info.data());
+    const int bisonRetval = QPatternist::XPathparse(info.data());
 
     Q_ASSERT_X(bisonRetval == 0, Q_FUNC_INFO,
                "We shouldn't be able to get an error, because we throw exceptions.");
