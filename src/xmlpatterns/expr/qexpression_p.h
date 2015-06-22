@@ -375,9 +375,14 @@ namespace QPatternist
             IDExistsFN,
 
             /**
-             * Identifies ExpressionSequence and LiteralSequence.
+             * Identifies ExpressionSequence.
              */
             IDExpressionSequence,
+
+            /**
+             * Identifies LiteralSequence.
+             */
+            IDLiteralSequence,
 
             /**
              * Identifies GeneralComparison.

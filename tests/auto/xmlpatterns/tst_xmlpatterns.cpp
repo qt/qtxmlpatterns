@@ -757,6 +757,13 @@ void tst_XmlPatterns::xquerySupport_data() const
         << QString()
         << QString();
 
+    QTest::newRow("QTBUG-35897: literal sequence")
+            << 0
+            << QByteArray("someString a b\n")
+            << QStringList((path + QStringLiteral("literalsequence.xq")))
+            << QString()
+            << QString();
+
     // TODO https?
     // TODO pass external variables that allows space around the equal sign.
     // TODO run fn:trace()
