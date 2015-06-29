@@ -6,6 +6,7 @@ HEADERS += $$PWD/qparsercontext_p.h             \
            $$PWD/qtokenizer_p.h                 \
            $$PWD/qtokenrevealer_p.h             \
            $$PWD/qtokensource_p.h               \
+           $$PWD/qtokenvalue_p.h                \
            $$PWD/qxquerytokenizer_p.h           \
            $$PWD/qxslttokenizer_p.h             \
            $$PWD/qxslttokenlookup_p.h
@@ -17,3 +18,7 @@ SOURCES += $$PWD/qquerytransformparser.cpp  \
            $$PWD/qxquerytokenizer.cpp       \
            $$PWD/qxslttokenizer.cpp         \
            $$PWD/qxslttokenlookup.cpp
+
+OTHER_FILES += $$PWD/querytransformparser.ypp \
+               $$PWD/TokenLookup.gperf
+DEFINES += YYLTYPE_IS_DECLARED=1

@@ -88,5 +88,29 @@ void ParserContext::finalizePushedVariable(const int amount,
     }
 }
 
+void ParserContext::handleStackOverflow(const char *, short **yyss, size_t,
+                                        TokenValue **yyvs, size_t,
+                                        YYLTYPE **yyls, size_t,
+                                        size_t *yystacksize)
+{
+    bool isFirstTime = parserStack_yyvs.isEmpty();
+    Q_ASSERT(*yystacksize < INT_MAX - 50);
+    int new_yystacksize = static_cast<int>(*yystacksize) + 50;
+    parserStack_yyss.resize(new_yystacksize);
+    parserStack_yyvs.resize(new_yystacksize);
+    parserStack_yyls.resize(new_yystacksize);
+    if (isFirstTime) {
+        for (int i = 0, ei = static_cast<int>(*yystacksize); i != ei; ++i) {
+            parserStack_yyss[i] = (*yyss)[i];
+            parserStack_yyvs[i] = (*yyvs)[i];
+            parserStack_yyls[i] = (*yyls)[i];
+        }
+    }
+    *yyss = parserStack_yyss.data();
+    *yyvs = parserStack_yyvs.data();
+    *yyls = parserStack_yyls.data();
+    *yystacksize = new_yystacksize;
+}
+
 QT_END_NAMESPACE
 

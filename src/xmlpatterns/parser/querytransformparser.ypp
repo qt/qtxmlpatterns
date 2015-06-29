@@ -193,8 +193,9 @@ namespace QPatternist
  */
 #define YYERROR_VERBOSE 1
 
-#undef YYLTYPE_IS_TRIVIAL
 #define YYLTYPE_IS_TRIVIAL 0
+#define YYINITDEPTH 1
+#define yyoverflow parseInfo->handleStackOverflow
 
 /* Suppresses `warning: "YYENABLE_NLS" is not defined`
  * @c YYENABLE_NLS enables Bison internationalization, and we don't
@@ -1115,8 +1116,8 @@ static Expression::Ptr createReturnOrderBy(const OrderSpecTransfer::List &orderS
 /* Create a header file and put declarations there. */
 %defines
 
-%parse-param    {ParserContext *const parseInfo}
-%lex-param      {ParserContext *const parseInfo}
+%parse-param    {QT_PREPEND_NAMESPACE(QPatternist)::ParserContext *const parseInfo}
+%lex-param      {QT_PREPEND_NAMESPACE(QPatternist)::ParserContext *const parseInfo}
 
 %expect 4
 /* Silences the following:
@@ -1147,202 +1148,202 @@ state 45
     $default  reduce using rule 203 (PathExpr)
 */
 
-%token <sval> STRING_LITERAL                "<string literal>"
+%token <sval> T_STRING_LITERAL                "<string literal>"
 
 /**
  * This token is only used in element content and signals content that
  * is not Boundary whitespace. Nevertheless, the token value can be all whitespace,
  * but it was specified using character references or CDATA sections by the user. */
-%token <sval> NON_BOUNDARY_WS               "<non-boundary text node>"
+%token <sval> T_NON_BOUNDARY_WS               "<non-boundary text node>"
 
 /* XPath 2.0 allows quotes and apostrophes to be escaped with "" and ''; this token is
    is used for XPath 2.0 literals such that we can flag syntax errors if running in
    1.0 mode. */
-%token <sval> XPATH2_STRING_LITERAL         "<string literal(XPath 2.0)>"
-%token <sval> QNAME                         "QName"
-%token <sval> NCNAME                        "NCName"
+%token <sval> T_XPATH2_STRING_LITERAL         "<string literal(XPath 2.0)>"
+%token <sval> T_QNAME                         "QName"
+%token <sval> T_NCNAME                        "NCName"
 
 /* A QName as a clark name. See QXmlName::toClarkName(). */
-%token <sval> CLARK_NAME                    "ClarkName"
+%token <sval> T_CLARK_NAME                    "ClarkName"
 
 /**
  * Is "ncname:*". The token value does not include the colon and the star.
  */
-%token <sval> ANY_LOCAL_NAME
+%token <sval> T_ANY_LOCAL_NAME
 
 /**
  * Is "*:ncname". The token value does not include the colon and the star.
  */
-%token <sval> ANY_PREFIX
+%token <sval> T_ANY_PREFIX
 
 /**
  * An XPath 1.0 number literal. It is a string value because
  * Numeric::fromLexical() does the tokenization.
  */
-%token <sval> NUMBER                        "<number literal>"
+%token <sval> T_NUMBER                        "<number literal>"
 
 /**
  * XPath 2.0 number literal. It includes the use of 'e'/'E'
  */
-%token <sval> XPATH2_NUMBER                 "<number literal(XPath 2.0)>"
+%token <sval> T_XPATH2_NUMBER                 "<number literal(XPath 2.0)>"
 
-%token ANCESTOR                             "ancestor"
-%token ANCESTOR_OR_SELF                     "ancestor-or-self"
-%token AND                                  "and"
-%token APOS                                 "'"
-%token APPLY_TEMPLATE                       "apply-template"
-%token AS                                   "as"
-%token ASCENDING                            "ascending"
-%token ASSIGN                               ":="
-%token AT                                   "at"
-%token AT_SIGN                              "@"
-%token ATTRIBUTE                            "attribute"
-%token AVT                                  /* Synthetic token. Signals an attribute value template. */
-%token BAR                                  "|"
-%token BASEURI                              "base-uri"
-%token BEGIN_END_TAG                        "</"
-%token BOUNDARY_SPACE                       "boundary-space"
-%token BY                                   "by"
-%token CALL_TEMPLATE                        "call-template"
-%token CASE                                 "case"
-%token CASTABLE                             "castable"
-%token CAST                                 "cast"
-%token CHILD                                "child"
-%token COLLATION                            "collation"
-%token COLONCOLON                           "::"
-%token COMMA                                ","
-%token COMMENT                              "comment"
-%token COMMENT_START                        "<!--"
-%token CONSTRUCTION                         "construction"
-%token COPY_NAMESPACES                      "copy-namespaces"
-%token CURLY_LBRACE                         "{"
-%token CURLY_RBRACE                         "}"
-%token DECLARE                              "declare"
-%token DEFAULT                              "default"
-%token DESCENDANT                           "descendant"
-%token DESCENDANT_OR_SELF                   "descendant-or-self"
-%token DESCENDING                           "descending"
-%token DIV                                  "div"
-%token DOCUMENT                             "document"
-%token DOCUMENT_NODE                        "document-node"
-%token DOLLAR                               "$"
-%token DOT                                  "."
-%token DOTDOT                               ".."
-%token ELEMENT                              "element"
-%token ELSE                                 "else"
-%token EMPTY                                "empty"
-%token EMPTY_SEQUENCE                       "empty-sequence"
-%token ENCODING                             "encoding"
-%token END_OF_FILE 0                        "end of file"
-%token END_SORT                             "end_sort"
-%token EQ                                   "eq"
-%token ERROR                                "unknown keyword" /* Used by the Tokenizer. We use the phrase "keyword" instead of "token" to be less pointy.  */
-%token EVERY                                "every"
-%token EXCEPT                               "except"
-%token EXTERNAL                             "external"
-%token FOLLOWING                            "following"
-%token FOLLOWING_SIBLING                    "following-sibling"
-%token FOLLOWS                              ">>"
-%token FOR_APPLY_TEMPLATE                   "for-apply-template" /* Synthetic token, used in XSL-T. */
-%token FOR                                  "for"
-%token FUNCTION                             "function"
-%token GE                                   "ge"
-%token G_EQ                                 "="
-%token G_GE                                 ">="
-%token G_GT                                 ">"
-%token G_LE                                 "<="
-%token G_LT                                 "<"
-%token G_NE                                 "!="
-%token GREATEST                             "greatest"
-%token GT                                   "gt"
-%token IDIV                                 "idiv"
-%token IF                                   "if"
-%token IMPORT                               "import"
-%token INHERIT                              "inherit"
-%token IN                                   "in"
-%token INSTANCE                             "instance"
-%token INTERSECT                            "intersect"
-%token IS                                   "is"
-%token ITEM                                 "item"
-%token LAX                                  "lax"
-%token LBRACKET                             "["
-%token LEAST                                "least"
-%token LE                                   "le"
-%token LET                                  "let"
-%token LPAREN                               "("
-%token LT                                   "lt"
-%token MAP                                  "map" /* Synthetic token, used in XSL-T. */
-%token MATCHES                              "matches"
-%token MINUS                                "-"
-%token MODE                                 "mode" /* Synthetic token, used in XSL-T. */
-%token MOD                                  "mod"
-%token MODULE                               "module"
-%token NAME                                 "name"
-%token NAMESPACE                            "namespace"
-%token NE                                   "ne"
-%token NODE                                 "node"
-%token NO_INHERIT                           "no-inherit"
-%token NO_PRESERVE                          "no-preserve"
-%token OF                                   "of"
-%token OPTION                               "option"
-%token ORDERED                              "ordered"
-%token ORDERING                             "ordering"
-%token ORDER                                "order"
-%token OR                                   "or"
-%token PARENT                               "parent"
-%token PI_START                             "<?"
-%token PLUS                                 "+"
-%token POSITION_SET                         /* Synthetic token. */
-%token PRAGMA_END                           "#)"
-%token PRAGMA_START                         "(#"
-%token PRECEDES                             "<<"
-%token PRECEDING                            "preceding"
-%token PRECEDING_SIBLING                    "preceding-sibling"
-%token PRESERVE                             "preserve"
-%token PRIORITY                             "priority"
-%token PROCESSING_INSTRUCTION               "processing-instruction"
-%token QUESTION                             "?"
-%token QUICK_TAG_END                        "/>"
-%token QUOTE                                "\""
-%token RBRACKET                             "]"
-%token RETURN                               "return"
-%token RPAREN                               ")"
-%token SATISFIES                            "satisfies"
-%token SCHEMA_ATTRIBUTE                     "schema-attribute"
-%token SCHEMA_ELEMENT                       "schema-element"
-%token SCHEMA                               "schema"
-%token SELF                                 "self"
-%token SEMI_COLON                           ";"
-%token SLASH                                "/"
-%token SLASHSLASH                           "//"
-%token SOME                                 "some"
-%token SORT                                 "sort" /* Synthetic token, used in XSL-T. */
-%token STABLE                               "stable"
-%token STAR                                 "*"
-%token STRICT                               "strict"
-%token STRIP                                "strip"
-%token SUCCESS                              /* Synthetic token, used by the Tokenizer. */
-%token <sval> COMMENT_CONTENT
-%token <sval> PI_CONTENT
-%token <sval> PI_TARGET
-%token <sval> XSLT_VERSION                  /* Synthetic token, used in XSL-T. */
-%token TEMPLATE                             "template"
-%token TEXT                                 "text"
-%token THEN                                 "then"
-%token TO                                   "to"
-%token TREAT                                "treat"
-%token TUNNEL                               "tunnel" /* Synthetic token, used in XSL-T. */
-%token TYPESWITCH                           "typeswitch"
-%token UNION                                "union"
-%token UNORDERED                            "unordered"
-%token VALIDATE                             "validate"
-%token VARIABLE                             "variable"
-%token VERSION                              "version"
-%token WHERE                                "where"
-%token XQUERY                               "xquery"
-%token INTERNAL                             "internal" /* Synthetic token, used in XSL-T. */
-%token INTERNAL_NAME                        "internal-name" /* Synthetic token, used in XSL-T. */
-%token CURRENT                              "current" /* Synthetic token, used in XSL-T. */
+%token T_ANCESTOR                             "ancestor"
+%token T_ANCESTOR_OR_SELF                     "ancestor-or-self"
+%token T_AND                                  "and"
+%token T_APOS                                 "'"
+%token T_APPLY_TEMPLATE                       "apply-template"
+%token T_AS                                   "as"
+%token T_ASCENDING                            "ascending"
+%token T_ASSIGN                               ":="
+%token T_AT                                   "at"
+%token T_AT_SIGN                              "@"
+%token T_ATTRIBUTE                            "attribute"
+%token T_AVT                                  /* Synthetic token. Signals an attribute value template. */
+%token T_BAR                                  "|"
+%token T_BASEURI                              "base-uri"
+%token T_BEGIN_END_TAG                        "</"
+%token T_BOUNDARY_SPACE                       "boundary-space"
+%token T_BY                                   "by"
+%token T_CALL_TEMPLATE                        "call-template"
+%token T_CASE                                 "case"
+%token T_CASTABLE                             "castable"
+%token T_CAST                                 "cast"
+%token T_CHILD                                "child"
+%token T_COLLATION                            "collation"
+%token T_COLONCOLON                           "::"
+%token T_COMMA                                ","
+%token T_COMMENT                              "comment"
+%token T_COMMENT_START                        "<!--"
+%token T_CONSTRUCTION                         "construction"
+%token T_COPY_NAMESPACES                      "copy-namespaces"
+%token T_CURLY_LBRACE                         "{"
+%token T_CURLY_RBRACE                         "}"
+%token T_DECLARE                              "declare"
+%token T_DEFAULT                              "default"
+%token T_DESCENDANT                           "descendant"
+%token T_DESCENDANT_OR_SELF                   "descendant-or-self"
+%token T_DESCENDING                           "descending"
+%token T_DIV                                  "div"
+%token T_DOCUMENT                             "document"
+%token T_DOCUMENT_NODE                        "document-node"
+%token T_DOLLAR                               "$"
+%token T_DOT                                  "."
+%token T_DOTDOT                               ".."
+%token T_ELEMENT                              "element"
+%token T_ELSE                                 "else"
+%token T_EMPTY                                "empty"
+%token T_EMPTY_SEQUENCE                       "empty-sequence"
+%token T_ENCODING                             "encoding"
+%token T_END_OF_FILE 0                        "end of file"
+%token T_END_SORT                             "end_sort"
+%token T_EQ                                   "eq"
+%token T_ERROR                                "unknown keyword" /* Used by the Tokenizer. We use the phrase "keyword" instead of "token" to be less pointy.  */
+%token T_EVERY                                "every"
+%token T_EXCEPT                               "except"
+%token T_EXTERNAL                             "external"
+%token T_FOLLOWING                            "following"
+%token T_FOLLOWING_SIBLING                    "following-sibling"
+%token T_FOLLOWS                              ">>"
+%token T_FOR_APPLY_TEMPLATE                   "for-apply-template" /* Synthetic token, used in XSL-T. */
+%token T_FOR                                  "for"
+%token T_FUNCTION                             "function"
+%token T_GE                                   "ge"
+%token T_G_EQ                                 "="
+%token T_G_GE                                 ">="
+%token T_G_GT                                 ">"
+%token T_G_LE                                 "<="
+%token T_G_LT                                 "<"
+%token T_G_NE                                 "!="
+%token T_GREATEST                             "greatest"
+%token T_GT                                   "gt"
+%token T_IDIV                                 "idiv"
+%token T_IF                                   "if"
+%token T_IMPORT                               "import"
+%token T_INHERIT                              "inherit"
+%token T_IN                                   "in"
+%token T_INSTANCE                             "instance"
+%token T_INTERSECT                            "intersect"
+%token T_IS                                   "is"
+%token T_ITEM                                 "item"
+%token T_LAX                                  "lax"
+%token T_LBRACKET                             "["
+%token T_LEAST                                "least"
+%token T_LE                                   "le"
+%token T_LET                                  "let"
+%token T_LPAREN                               "("
+%token T_LT                                   "lt"
+%token T_MAP                                  "map" /* Synthetic token, used in XSL-T. */
+%token T_MATCHES                              "matches"
+%token T_MINUS                                "-"
+%token T_MODE                                 "mode" /* Synthetic token, used in XSL-T. */
+%token T_MOD                                  "mod"
+%token T_MODULE                               "module"
+%token T_NAME                                 "name"
+%token T_NAMESPACE                            "namespace"
+%token T_NE                                   "ne"
+%token T_NODE                                 "node"
+%token T_NO_INHERIT                           "no-inherit"
+%token T_NO_PRESERVE                          "no-preserve"
+%token T_OF                                   "of"
+%token T_OPTION                               "option"
+%token T_ORDERED                              "ordered"
+%token T_ORDERING                             "ordering"
+%token T_ORDER                                "order"
+%token T_OR                                   "or"
+%token T_PARENT                               "parent"
+%token T_PI_START                             "<?"
+%token T_PLUS                                 "+"
+%token T_POSITION_SET                         /* Synthetic token. */
+%token T_PRAGMA_END                           "#)"
+%token T_PRAGMA_START                         "(#"
+%token T_PRECEDES                             "<<"
+%token T_PRECEDING                            "preceding"
+%token T_PRECEDING_SIBLING                    "preceding-sibling"
+%token T_PRESERVE                             "preserve"
+%token T_PRIORITY                             "priority"
+%token T_PROCESSING_INSTRUCTION               "processing-instruction"
+%token T_QUESTION                             "?"
+%token T_QUICK_TAG_END                        "/>"
+%token T_QUOTE                                "\""
+%token T_RBRACKET                             "]"
+%token T_RETURN                               "return"
+%token T_RPAREN                               ")"
+%token T_SATISFIES                            "satisfies"
+%token T_SCHEMA_ATTRIBUTE                     "schema-attribute"
+%token T_SCHEMA_ELEMENT                       "schema-element"
+%token T_SCHEMA                               "schema"
+%token T_SELF                                 "self"
+%token T_SEMI_COLON                           ";"
+%token T_SLASH                                "/"
+%token T_SLASHSLASH                           "//"
+%token T_SOME                                 "some"
+%token T_SORT                                 "sort" /* Synthetic token, used in XSL-T. */
+%token T_STABLE                               "stable"
+%token T_STAR                                 "*"
+%token T_STRICT                               "strict"
+%token T_STRIP                                "strip"
+%token T_SUCCESS                              /* Synthetic token, used by the Tokenizer. */
+%token <sval> T_COMMENT_CONTENT
+%token <sval> T_PI_CONTENT
+%token <sval> T_PI_TARGET
+%token <sval> T_XSLT_VERSION                  /* Synthetic token, used in XSL-T. */
+%token T_TEMPLATE                             "template"
+%token T_TEXT                                 "text"
+%token T_THEN                                 "then"
+%token T_TO                                   "to"
+%token T_TREAT                                "treat"
+%token T_TUNNEL                               "tunnel" /* Synthetic token, used in XSL-T. */
+%token T_TYPESWITCH                           "typeswitch"
+%token T_UNION                                "union"
+%token T_UNORDERED                            "unordered"
+%token T_VALIDATE                             "validate"
+%token T_VARIABLE                             "variable"
+%token T_VERSION                              "version"
+%token T_WHERE                                "where"
+%token T_XQUERY                               "xquery"
+%token T_INTERNAL                             "internal" /* Synthetic token, used in XSL-T. */
+%token T_INTERNAL_NAME                        "internal-name" /* Synthetic token, used in XSL-T. */
+%token T_CURRENT                              "current" /* Synthetic token, used in XSL-T. */
 
 /* Alphabetically. */
 %type <attributeHolder>             Attribute
@@ -1407,8 +1408,8 @@ state 45
 
 /* Operator Precendence
  * See: http://www.w3.org/TR/xpath20/#parse-note-occurrence-indicators */
-%left STAR DIV
-%left PLUS MINUS
+%left T_STAR T_DIV
+%left T_PLUS T_MINUS
 
 %%
 
@@ -1420,7 +1421,7 @@ Module: VersionDecl LibraryModule                                               
 | VersionDecl MainModule
 
 VersionDecl: /* empty */                                                            /* [2] */
-| XQUERY VERSION StringLiteral Encoding Separator
+| T_XQUERY T_VERSION StringLiteral Encoding Separator
     {
 
 /* Suppress more compiler warnings about unused defines. */
@@ -1452,7 +1453,7 @@ VersionDecl: /* empty */                                                        
     }
 
 Encoding: /* empty */                                                               /* [X] */
-| ENCODING StringLiteral
+| T_ENCODING StringLiteral
     {
         const QRegExp encNameRegExp(QLatin1String("[A-Za-z][A-Za-z0-9._\\-]*"));
 
@@ -1568,7 +1569,7 @@ MainModule: Prolog QueryBody                                                    
 
 LibraryModule: ModuleDecl Prolog                                                    /* [4] */
 
-ModuleDecl: MODULE NAMESPACE NCNAME G_EQ URILiteral Separator                       /* [5] */
+ModuleDecl: T_MODULE T_NAMESPACE T_NCNAME T_G_EQ URILiteral Separator                       /* [5] */
     {
         // TODO add to namespace context
         parseInfo->moduleNamespace = parseInfo->staticContext->namePool()->allocateNamespace($3);
@@ -1633,7 +1634,7 @@ Prolog: /* Empty. */                                                            
  * };
  *
  */
-TemplateDecl: DECLARE TEMPLATE TemplateName
+TemplateDecl: T_DECLARE T_TEMPLATE TemplateName
               OptionalTemplateParameters
               TypeDeclaration
               EnclosedOptionalExpr Separator                                        /* [X] */
@@ -1645,8 +1646,8 @@ TemplateDecl: DECLARE TEMPLATE TemplateName
         temp->templateParameters = parseInfo->templateParameters;
         parseInfo->templateParametersHandled();
     }
-| DECLARE TEMPLATE OptionalTemplateName
-  MATCHES LPAREN
+| T_DECLARE T_TEMPLATE OptionalTemplateName
+  T_MATCHES T_LPAREN
   {
     parseInfo->isParsingPattern = true;
   }
@@ -1654,7 +1655,7 @@ TemplateDecl: DECLARE TEMPLATE TemplateName
   {
     parseInfo->isParsingPattern = false;
   }
-  RPAREN
+  T_RPAREN
   OptionalModes
   OptionalPriority
   OptionalTemplateParameters
@@ -1718,7 +1719,7 @@ OptionalPriority: /* Empty. */                                                  
         $$ = std::numeric_limits<xsDouble>::quiet_NaN();
     }
 
-| PRIORITY StringLiteral
+| T_PRIORITY StringLiteral
     {
         const AtomicValue::Ptr val(Decimal::fromLexical($2));
         if(val->hasError())
@@ -1740,7 +1741,7 @@ OptionalTemplateName: /* Empty. */                                              
     }
 | TemplateName
 
-TemplateName: NAME ElementName
+TemplateName: T_NAME ElementName
     {
         $$ = $2;
     }
@@ -1768,9 +1769,9 @@ Setter: BoundarySpaceDecl                                                       
 Import: SchemaImport                                                                /* [8] */
 | ModuleImport
 
-Separator: SEMI_COLON                                                               /* [9] */
+Separator: T_SEMI_COLON                                                               /* [9] */
 
-NamespaceDecl: DECLARE NAMESPACE NCNAME G_EQ URILiteral IsInternal Separator        /* [10] */
+NamespaceDecl: T_DECLARE T_NAMESPACE T_NCNAME T_G_EQ URILiteral IsInternal Separator        /* [10] */
     {
         if(!$6)
             allowedIn(QXmlQuery::XQuery10, parseInfo, @$);
@@ -1816,7 +1817,7 @@ NamespaceDecl: DECLARE NAMESPACE NCNAME G_EQ URILiteral IsInternal Separator    
         }
     }
 
-BoundarySpaceDecl: DECLARE BOUNDARY_SPACE BoundarySpacePolicy Separator             /* [11] */
+BoundarySpaceDecl: T_DECLARE T_BOUNDARY_SPACE BoundarySpacePolicy Separator             /* [11] */
     {
         if(parseInfo->hasDeclaration(ParserContext::BoundarySpaceDecl))
         {
@@ -1830,12 +1831,12 @@ BoundarySpaceDecl: DECLARE BOUNDARY_SPACE BoundarySpacePolicy Separator         
         }
     }
 
-BoundarySpacePolicy: STRIP                                                          /* [X] */
+BoundarySpacePolicy: T_STRIP                                                          /* [X] */
     {
         $$ = StaticContext::BSPStrip;
     }
 
-| PRESERVE
+| T_PRESERVE
     {
         $$ = StaticContext::BSPPreserve;
     }
@@ -1843,7 +1844,7 @@ BoundarySpacePolicy: STRIP                                                      
 DefaultNamespaceDecl: DeclareDefaultElementNamespace                                /* [12] */
 | DeclareDefaultFunctionNamespace
 
-DeclareDefaultElementNamespace: DECLARE DEFAULT ELEMENT NAMESPACE
+DeclareDefaultElementNamespace: T_DECLARE T_DEFAULT T_ELEMENT T_NAMESPACE
                                 URILiteral Separator                                /* [X] */
     {
         if(parseInfo->hasDeclaration(ParserContext::DeclareDefaultElementNamespace))
@@ -1858,7 +1859,7 @@ DeclareDefaultElementNamespace: DECLARE DEFAULT ELEMENT NAMESPACE
         }
     }
 
-DeclareDefaultFunctionNamespace: DECLARE DEFAULT FUNCTION NAMESPACE
+DeclareDefaultFunctionNamespace: T_DECLARE T_DEFAULT T_FUNCTION T_NAMESPACE
                                  URILiteral Separator                               /* [X] */
     {
         if(parseInfo->hasDeclaration(ParserContext::DeclareDefaultFunctionNamespace))
@@ -1873,7 +1874,7 @@ DeclareDefaultFunctionNamespace: DECLARE DEFAULT FUNCTION NAMESPACE
         }
     }
 
-OptionDecl: DECLARE OPTION ElementName StringLiteral Separator                     /* [13] */
+OptionDecl: T_DECLARE T_OPTION ElementName StringLiteral Separator                     /* [13] */
     {
         if($3.prefix() == StandardPrefixes::empty)
         {
@@ -1883,7 +1884,7 @@ OptionDecl: DECLARE OPTION ElementName StringLiteral Separator                  
         }
     }
 
-OrderingModeDecl: DECLARE ORDERING OrderingMode Separator                           /* [14] */
+OrderingModeDecl: T_DECLARE T_ORDERING OrderingMode Separator                           /* [14] */
     {
         allowedIn(QXmlQuery::XQuery10, parseInfo, @$);
         if(parseInfo->hasDeclaration(ParserContext::OrderingModeDecl))
@@ -1898,16 +1899,16 @@ OrderingModeDecl: DECLARE ORDERING OrderingMode Separator                       
         }
     }
 
-OrderingMode: ORDERED
+OrderingMode: T_ORDERED
     {
         $$ = StaticContext::Ordered;
     }
-| UNORDERED
+| T_UNORDERED
     {
         $$ = StaticContext::Unordered;
     }
 
-EmptyOrderDecl: DECLARE DEFAULT ORDER OrderingEmptySequence Separator               /* [15] */
+EmptyOrderDecl: T_DECLARE T_DEFAULT T_ORDER OrderingEmptySequence Separator               /* [15] */
     {
         if(parseInfo->hasDeclaration(ParserContext::EmptyOrderDecl))
         {
@@ -1921,16 +1922,16 @@ EmptyOrderDecl: DECLARE DEFAULT ORDER OrderingEmptySequence Separator           
         }
     }
 
-OrderingEmptySequence: EMPTY LEAST                                                  /* [X] */
+OrderingEmptySequence: T_EMPTY T_LEAST                                                  /* [X] */
     {
         $$ = StaticContext::Least;
     }
-| EMPTY GREATEST
+| T_EMPTY T_GREATEST
     {
         $$ = StaticContext::Greatest;
     }
 
-CopyNamespacesDecl: DECLARE COPY_NAMESPACES PreserveMode COMMA
+CopyNamespacesDecl: T_DECLARE T_COPY_NAMESPACES PreserveMode T_COMMA
                     InheritMode Separator                                           /* [16] */
     {
         if(parseInfo->hasDeclaration(ParserContext::CopyNamespacesDecl))
@@ -1944,27 +1945,27 @@ CopyNamespacesDecl: DECLARE COPY_NAMESPACES PreserveMode COMMA
         }
     }
 
-PreserveMode: PRESERVE                                                              /* [17] */
+PreserveMode: T_PRESERVE                                                              /* [17] */
     {
         parseInfo->preserveNamespacesMode = true;
     }
 
-| NO_PRESERVE
+| T_NO_PRESERVE
     {
         parseInfo->preserveNamespacesMode = false;
     }
 
-InheritMode: INHERIT                                                                /* [18] */
+InheritMode: T_INHERIT                                                                /* [18] */
     {
         parseInfo->inheritNamespacesMode = true;
     }
 
-| NO_INHERIT
+| T_NO_INHERIT
     {
         parseInfo->inheritNamespacesMode = false;
     }
 
-DefaultCollationDecl: DECLARE DEFAULT COLLATION StringLiteral Separator             /* [19] */
+DefaultCollationDecl: T_DECLARE T_DEFAULT T_COLLATION StringLiteral Separator             /* [19] */
     {
         if(parseInfo->hasDeclaration(ParserContext::DefaultCollationDecl))
         {
@@ -1980,7 +1981,7 @@ DefaultCollationDecl: DECLARE DEFAULT COLLATION StringLiteral Separator         
         }
     }
 
-BaseURIDecl: DECLARE BASEURI IsInternal URILiteral Separator                        /* [20] */
+BaseURIDecl: T_DECLARE T_BASEURI IsInternal URILiteral Separator                        /* [20] */
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XSLT20), parseInfo, @$, $3);
         if(parseInfo->hasDeclaration(ParserContext::BaseURIDecl))
@@ -2003,7 +2004,7 @@ BaseURIDecl: DECLARE BASEURI IsInternal URILiteral Separator                    
         }
     }
 
-SchemaImport: IMPORT SCHEMA SchemaPrefix URILiteral FileLocations Separator         /* [21] */
+SchemaImport: T_IMPORT T_SCHEMA SchemaPrefix URILiteral FileLocations Separator         /* [21] */
     {
         parseInfo->staticContext->error(QtXmlPatterns::tr("The Schema Import feature is not supported, "
                                            "and therefore %1 declarations cannot occur.")
@@ -2012,10 +2013,10 @@ SchemaImport: IMPORT SCHEMA SchemaPrefix URILiteral FileLocations Separator     
     }
 
 SchemaPrefix: /* empty */                                                           /* [22] */
-| DEFAULT ELEMENT NAMESPACE
-| NAMESPACE NCNAME G_EQ
+| T_DEFAULT T_ELEMENT T_NAMESPACE
+| T_NAMESPACE T_NCNAME T_G_EQ
 
-ModuleImport: IMPORT MODULE ModuleNamespaceDecl URILiteral FileLocations Separator  /* [23] */
+ModuleImport: T_IMPORT T_MODULE ModuleNamespaceDecl URILiteral FileLocations Separator  /* [23] */
     {
         if($4.isEmpty())
         {
@@ -2033,15 +2034,15 @@ ModuleImport: IMPORT MODULE ModuleNamespaceDecl URILiteral FileLocations Separat
     }
 
 ModuleNamespaceDecl: /* empty */                                                    /* [X] */
-| NAMESPACE NCNAME G_EQ
+| T_NAMESPACE T_NCNAME T_G_EQ
 
 FileLocations: /* empty */                                                          /* [X] */
-| AT FileLocation
+| T_AT FileLocation
 
 FileLocation: URILiteral                                                            /* [X] */
-| FileLocation COMMA URILiteral
+| FileLocation T_COMMA URILiteral
 
-VarDecl: DECLARE VARIABLE IsInternal DOLLAR VarName TypeDeclaration
+VarDecl: T_DECLARE T_VARIABLE IsInternal T_DOLLAR VarName TypeDeclaration
          VariableValue OptionalDefaultValue Separator                               /* [24] */
     {
         allowedIn(QXmlQuery::XQuery10, parseInfo, @$, $3);
@@ -2096,11 +2097,11 @@ VarDecl: DECLARE VARIABLE IsInternal DOLLAR VarName TypeDeclaration
         }
     }
 
-VariableValue: EXTERNAL                                                             /* [X] */
+VariableValue: T_EXTERNAL                                                             /* [X] */
     {
         $$.reset();
     }
-| ASSIGN ExprSingle
+| T_ASSIGN ExprSingle
     {
         $$ = $2;
     }
@@ -2109,12 +2110,12 @@ OptionalDefaultValue: /* Empty. */                                              
     {
         $$.reset();
     }
-| ASSIGN ExprSingle
+| T_ASSIGN ExprSingle
     {
         $$ = $2;
     }
 
-ConstructionDecl: DECLARE CONSTRUCTION ConstructionMode Separator                   /* [25] */
+ConstructionDecl: T_DECLARE T_CONSTRUCTION ConstructionMode Separator                   /* [25] */
     {
         if(parseInfo->hasDeclaration(ParserContext::ConstructionDecl))
         {
@@ -2128,16 +2129,16 @@ ConstructionDecl: DECLARE CONSTRUCTION ConstructionMode Separator               
         }
     }
 
-ConstructionMode: STRIP                                                             /* [X] */
+ConstructionMode: T_STRIP                                                             /* [X] */
     {
         $$ = StaticContext::CMStrip;
     }
-| PRESERVE
+| T_PRESERVE
     {
         $$ = StaticContext::CMPreserve;
     }
 
-FunctionDecl: DECLARE FUNCTION IsInternal FunctionName LPAREN ParamList RPAREN
+FunctionDecl: T_DECLARE T_FUNCTION IsInternal FunctionName T_LPAREN ParamList T_RPAREN
               {
                 $<enums.slot>$ = parseInfo->currentExpressionSlot() - $6.count();
               }
@@ -2255,7 +2256,7 @@ ParamList: /* empty */                                                          
         l.append($1);
         $$ = l;
     }
-| ParamList COMMA Param
+| ParamList T_COMMA Param
     {
         FunctionArgument::List::const_iterator it($1.constBegin());
         const FunctionArgument::List::const_iterator end($1.constEnd());
@@ -2276,19 +2277,19 @@ ParamList: /* empty */                                                          
         $$ = $1;
     }
 
-Param: DOLLAR VarName TypeDeclaration                                               /* [28] */
+Param: T_DOLLAR VarName TypeDeclaration                                               /* [28] */
     {
         pushVariable($2, $3, Expression::Ptr(), VariableDeclaration::FunctionArgument, @$, parseInfo);
         $$ = FunctionArgument::Ptr(new FunctionArgument($2, $3));
     }
 
-FunctionBody: EXTERNAL                                                              /* [X] */
+FunctionBody: T_EXTERNAL                                                              /* [X] */
     {
         $$.reset();
     }
 | EnclosedExpr
 
-EnclosedExpr: CURLY_LBRACE Expr CURLY_RBRACE                                        /* [29] */
+EnclosedExpr: T_CURLY_LBRACE Expr T_CURLY_RBRACE                                        /* [29] */
     {
         $$ = $2;
     }
@@ -2304,13 +2305,13 @@ QueryBody: Expr                                                                 
  * (XSLT) Version 2.0, 5.5.2 Syntax of Patterns</a>
  */
 Pattern: PathPattern                                                                /* [XSLT20-1] */
-| Pattern BAR PathPattern
+| Pattern T_BAR PathPattern
     {
         $$ = create(new CombineNodes($1, CombineNodes::Union, $3), @$, parseInfo);
     }
 
 PathPattern: RelativePathPattern                                                    /* [XSLT20-2] */
-| SLASH
+| T_SLASH
     {
         /* We write this into a node test. The spec says, 5.5.3 The Meaning of a Pattern:
          * "Similarly, / matches a document node, and only a document node,
@@ -2319,7 +2320,7 @@ PathPattern: RelativePathPattern                                                
          * document node." */
         $$ = create(new AxisStep(QXmlNodeModelIndex::AxisSelf, BuiltinTypes::document), @$, parseInfo);
     }
-| SLASH RelativePathPattern
+| T_SLASH RelativePathPattern
     {
         /* /axis::node-test
          *       =>
@@ -2389,7 +2390,7 @@ PathPattern: RelativePathPattern                                                
             $$ = $2;
         }
     }
-| SLASHSLASH RelativePathPattern
+| T_SLASHSLASH RelativePathPattern
     {
         /* //axis::node-test
          *        =>
@@ -2401,11 +2402,11 @@ PathPattern: RelativePathPattern                                                
                                              parseInfo->staticContext, fromYYLTYPE(@1, parseInfo)), @1, parseInfo);
     }
 | IdKeyPattern
-| IdKeyPattern SLASH RelativePathPattern
+| IdKeyPattern T_SLASH RelativePathPattern
     {
         createIdPatternPath($1, $3, QXmlNodeModelIndex::AxisParent, @2, parseInfo);
     }
-| IdKeyPattern SLASHSLASH RelativePathPattern
+| IdKeyPattern T_SLASHSLASH RelativePathPattern
     {
         createIdPatternPath($1, $3, QXmlNodeModelIndex::AxisAncestor, @2, parseInfo);
     }
@@ -2480,11 +2481,11 @@ IdKeyPattern: FunctionCallExpr
     }
 
 RelativePathPattern: PatternStep                                                    /* [XSLT20-3] */
-| RelativePathPattern SLASH PatternStep
+| RelativePathPattern T_SLASH PatternStep
     {
         $$ = createPatternPath($1, $3, QXmlNodeModelIndex::AxisParent, @2, parseInfo);
     }
-| RelativePathPattern SLASHSLASH PatternStep
+| RelativePathPattern T_SLASHSLASH PatternStep
     {
         $$ = createPatternPath($1, $3, QXmlNodeModelIndex::AxisAncestor, @2, parseInfo);
     }
@@ -2539,14 +2540,14 @@ Expr: ExprSingle                                                                
         $$ = create(new ExpressionSequence($1), @$, parseInfo);
     }
 
-ExpressionSequence: ExprSingle COMMA ExprSingle                                     /* [X] */
+ExpressionSequence: ExprSingle T_COMMA ExprSingle                                     /* [X] */
     {
         Expression::List l;
         l.append($1);
         l.append($3);
         $$ = l;
     }
-| ExpressionSequence COMMA ExprSingle
+| ExpressionSequence T_COMMA ExprSingle
     {
         $1.append($3);
         $$ = $1;
@@ -2557,7 +2558,7 @@ ExprSingle: OrExpr                                                              
 | QuantifiedExpr
 | TypeswitchExpr
 | IfExpr
-| AVT LPAREN AttrValueContent RPAREN
+| T_AVT T_LPAREN AttrValueContent T_RPAREN
     {
         $$ = createDirAttributeValue($3, parseInfo, @$);
     }
@@ -2568,7 +2569,7 @@ OptionalModes: /* Empty. */                                                     
         result.append(QXmlName(StandardNamespaces::InternalXSLT, StandardLocalNames::Default));
         $$ = result;
     }
-| MODE Modes
+| T_MODE Modes
     {
         $$ = $2;
     }
@@ -2577,7 +2578,7 @@ OptionalMode: /* Empty. */                                                      
     {
             $$ = QXmlName(StandardNamespaces::InternalXSLT, StandardLocalNames::Default);
     }
-| MODE Mode
+| T_MODE Mode
     {
         $$ = $2;
     }
@@ -2588,7 +2589,7 @@ Modes: Mode
         result.append($1);
         $$ = result;
     }
-| Modes COMMA Mode
+| Modes T_COMMA Mode
     {
         $1.append($3);
         $$ = $1;
@@ -2598,7 +2599,7 @@ Mode: QName                                                                     
     {
         $$ = $1;
     }
-| NCNAME
+| T_NCNAME
     {
         if($1 == QLatin1String("#current"))
             $$ = QXmlName(StandardNamespaces::InternalXSLT, StandardLocalNames::current);
@@ -2626,8 +2627,8 @@ Mode: QName                                                                     
 FLWORExpr: ForClause                                                                /* [33] */
 | LetClause
 
-ForClause: FOR DOLLAR VarName TypeDeclaration
-           PositionalVar IN ExprSingle
+ForClause: T_FOR T_DOLLAR VarName TypeDeclaration
+           PositionalVar T_IN ExprSingle
            {
                /* We're pushing the range variable here, not the positional. */
                $<expr>$ = pushVariable($3, quantificationType($4), $7, VariableDeclaration::RangeVariable, @$, parseInfo);
@@ -2671,8 +2672,8 @@ ForClause: FOR DOLLAR VarName TypeDeclaration
             parseInfo->finalizePushedVariable();
     }
 
-ForTail: COMMA DOLLAR VarName TypeDeclaration
-         PositionalVar IN ExprSingle
+ForTail: T_COMMA T_DOLLAR VarName TypeDeclaration
+         PositionalVar T_IN ExprSingle
          {
              pushVariable($3, quantificationType($4), $7, VariableDeclaration::RangeVariable, @$, parseInfo);
          }
@@ -2701,14 +2702,14 @@ PositionalVar: /* empty */                                                      
         $$ = -1;
     }
 
-| AT DOLLAR VarName
+| T_AT T_DOLLAR VarName
     {
         pushVariable($3, CommonSequenceTypes::ExactlyOneInteger, Expression::Ptr(),
                      VariableDeclaration::PositionalVariable, @$, parseInfo);
         $$ = parseInfo->currentPositionSlot();
     }
 
-LetClause: LET IsInternal DOLLAR VarName TypeDeclaration ASSIGN ExprSingle
+LetClause: T_LET IsInternal T_DOLLAR VarName TypeDeclaration T_ASSIGN ExprSingle
            {
                 $<expr>$ = pushVariable($4, quantificationType($5), $7, VariableDeclaration::ExpressionVariable, @$, parseInfo);
            }
@@ -2721,7 +2722,7 @@ LetClause: LET IsInternal DOLLAR VarName TypeDeclaration ASSIGN ExprSingle
         parseInfo->finalizePushedVariable();
     }
 
-LetTail: COMMA DOLLAR VarName TypeDeclaration ASSIGN ExprSingle
+LetTail: T_COMMA T_DOLLAR VarName TypeDeclaration T_ASSIGN ExprSingle
          { $<expr>$ = pushVariable($3, quantificationType($4), $6, VariableDeclaration::ExpressionVariable, @$, parseInfo);}
          LetTail                                                                    /* [X] */
     {
@@ -2734,7 +2735,7 @@ LetTail: COMMA DOLLAR VarName TypeDeclaration ASSIGN ExprSingle
 | ForClause
 | LetClause
 
-WhereClause: OrderByClause RETURN ExprSingle                                        /* [37] */
+WhereClause: OrderByClause T_RETURN ExprSingle                                        /* [37] */
     {
         if($1.isEmpty())
             $$ = $3;
@@ -2742,7 +2743,7 @@ WhereClause: OrderByClause RETURN ExprSingle                                    
             $$ = createReturnOrderBy($1, $3, parseInfo->orderStability.pop(), @$, parseInfo);
     }
 
-| WHERE ExprSingle OrderByClause RETURN ExprSingle
+| T_WHERE ExprSingle OrderByClause T_RETURN ExprSingle
     {
         if($3.isEmpty())
             $$ = create(new IfThenClause($2, $5, create(new EmptySequence, @$, parseInfo)), @$, parseInfo);
@@ -2763,7 +2764,7 @@ MandatoryOrderByClause: OrderByInputOrder OrderSpecList
         $$ = $2;
     }
 
-OrderSpecList: OrderSpecList COMMA OrderSpec                                        /* [39] */
+OrderSpecList: OrderSpecList T_COMMA OrderSpec                                        /* [39] */
     {
         OrderSpecTransfer::List list;
         list += $1;
@@ -2803,12 +2804,12 @@ DirectionModifier: /* Empty. */                                                 
         $$ = OrderBy::OrderSpec::Ascending;
     }
 
-| ASCENDING
+| T_ASCENDING
     {
         $$ = OrderBy::OrderSpec::Ascending;
     }
 
-| DESCENDING
+| T_DESCENDING
     {
         $$ = OrderBy::OrderSpec::Descending;
     }
@@ -2820,24 +2821,24 @@ EmptynessModifier: /* Empty. */                                                 
 | OrderingEmptySequence
 
 CollationModifier: /* Empty. */                                                     /* [X] */
-| COLLATION URILiteral
+| T_COLLATION URILiteral
     {
         if(parseInfo->isXSLT())
             resolveAndCheckCollation<ReportContext::XTDE1035>($2, parseInfo, @$);
         else
             resolveAndCheckCollation<ReportContext::XQST0076>($2, parseInfo, @$);
     }
-| INTERNAL COLLATION ExprSingle
+| T_INTERNAL T_COLLATION ExprSingle
     {
         /* We do nothing. We don't use collations, and we have this non-terminal
          * in order to accept expressions. */
     }
 
-OrderByInputOrder: STABLE ORDER BY                                                  /* [X] */
+OrderByInputOrder: T_STABLE T_ORDER T_BY                                                  /* [X] */
     {
         parseInfo->orderStability.push(OrderBy::StableOrder);
     }
-| ORDER BY
+| T_ORDER T_BY
     {
         parseInfo->orderStability.push(OrderBy::UnstableOrder);
     }
@@ -2845,7 +2846,7 @@ OrderByInputOrder: STABLE ORDER BY                                              
 QuantifiedExpr: SomeQuantificationExpr                                              /* [42] */
 | EveryQuantificationExpr
 
-SomeQuantificationExpr: SOME DOLLAR VarName TypeDeclaration IN ExprSingle
+SomeQuantificationExpr: T_SOME T_DOLLAR VarName TypeDeclaration T_IN ExprSingle
                         {
                             pushVariable($3, quantificationType($4), $6,
                                          VariableDeclaration::RangeVariable, @$, parseInfo);
@@ -2859,7 +2860,7 @@ SomeQuantificationExpr: SOME DOLLAR VarName TypeDeclaration IN ExprSingle
         parseInfo->finalizePushedVariable();
     }
 
-SomeQuantificationTail: COMMA DOLLAR VarName TypeDeclaration IN ExprSingle
+SomeQuantificationTail: T_COMMA T_DOLLAR VarName TypeDeclaration T_IN ExprSingle
                         {
                             $<expr>$ = pushVariable($3, quantificationType($4), $6,
                                                     VariableDeclaration::RangeVariable, @$, parseInfo);
@@ -2874,7 +2875,7 @@ SomeQuantificationTail: COMMA DOLLAR VarName TypeDeclaration IN ExprSingle
 
 | SatisfiesClause
 
-EveryQuantificationExpr: EVERY DOLLAR VarName TypeDeclaration IN ExprSingle
+EveryQuantificationExpr: T_EVERY T_DOLLAR VarName TypeDeclaration T_IN ExprSingle
                          {
                             pushVariable($3, quantificationType($4), $6,
                                          VariableDeclaration::RangeVariable, @$, parseInfo);
@@ -2888,7 +2889,7 @@ EveryQuantificationExpr: EVERY DOLLAR VarName TypeDeclaration IN ExprSingle
         parseInfo->finalizePushedVariable();
     }
 
-EveryQuantificationTail: COMMA DOLLAR VarName TypeDeclaration IN ExprSingle
+EveryQuantificationTail: T_COMMA T_DOLLAR VarName TypeDeclaration T_IN ExprSingle
                          {
                             $<expr>$ = pushVariable($3, quantificationType($4), $6,
                                                     VariableDeclaration::RangeVariable, @$, parseInfo);
@@ -2903,7 +2904,7 @@ EveryQuantificationTail: COMMA DOLLAR VarName TypeDeclaration IN ExprSingle
 
 | SatisfiesClause
 
-SatisfiesClause: SATISFIES ExprSingle                                               /* [X] */
+SatisfiesClause: T_SATISFIES ExprSingle                                               /* [X] */
     {
         $$ = $2;
     }
@@ -2930,7 +2931,7 @@ SatisfiesClause: SATISFIES ExprSingle                                           
  * @endcode
  */
 
-TypeswitchExpr: TYPESWITCH LPAREN Expr RPAREN
+TypeswitchExpr: T_TYPESWITCH T_LPAREN Expr T_RPAREN
                 {
                     parseInfo->typeswitchSource.push($3);
                 }
@@ -2941,7 +2942,7 @@ TypeswitchExpr: TYPESWITCH LPAREN Expr RPAREN
         $$ = $6;
     }
 
-CaseClause: CASE CaseVariable SequenceType                                          /* [44] */
+CaseClause: T_CASE CaseVariable SequenceType                                          /* [44] */
     {
         if(!$2.isNull())
         {
@@ -2949,7 +2950,7 @@ CaseClause: CASE CaseVariable SequenceType                                      
                          VariableDeclaration::ExpressionVariable, @$, parseInfo, false);
         }
     }
-    RETURN ExprSingle
+    T_RETURN ExprSingle
     {
         /* The variable shouldn't be in-scope for other case branches. */
         if(!$2.isNull())
@@ -2969,16 +2970,16 @@ CaseVariable: /* Empty. */                                                      
         $$ = QXmlName();
     }
 
-| DOLLAR ElementName AS
+| T_DOLLAR ElementName T_AS
     {
         $$ = $2;
     }
 
-CaseDefault: DEFAULT RETURN ExprSingle                                              /* [X] */
+CaseDefault: T_DEFAULT T_RETURN ExprSingle                                              /* [X] */
     {
         $$ = $3;
     }
-| DEFAULT DOLLAR ElementName
+| T_DEFAULT T_DOLLAR ElementName
     {
         if(!$3.isNull())
         {
@@ -2987,28 +2988,28 @@ CaseDefault: DEFAULT RETURN ExprSingle                                          
                          VariableDeclaration::ExpressionVariable, @$, parseInfo, false);
         }
     }
-  RETURN ExprSingle
+  T_RETURN ExprSingle
     {
         if(!$3.isNull())
             parseInfo->finalizePushedVariable();
         $$ = $6;
     }
 
-IfExpr: IF LPAREN Expr RPAREN THEN ExprSingle ELSE ExprSingle                       /* [45] */
+IfExpr: T_IF T_LPAREN Expr T_RPAREN T_THEN ExprSingle T_ELSE ExprSingle                       /* [45] */
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = create(new IfThenClause($3, $6, $8), @$, parseInfo);
     }
 
 OrExpr: AndExpr                                                                     /* [46] */
-| OrExpr OR AndExpr
+| OrExpr T_OR AndExpr
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = create(new OrExpression($1, $3), @$, parseInfo);
     }
 
 AndExpr: ComparisonExpr                                                             /* [47] */
-| AndExpr AND ComparisonExpr
+| AndExpr T_AND ComparisonExpr
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = create(new AndExpression($1, $3), @$, parseInfo);
@@ -3020,7 +3021,7 @@ ComparisonExpr: RangeExpr                                                       
 | NodeComp
 
 RangeExpr: AdditiveExpr                                                             /* [49] */
-| AdditiveExpr TO AdditiveExpr
+| AdditiveExpr T_TO AdditiveExpr
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = create(new RangeExpression($1, $3), @$, parseInfo);
@@ -3033,8 +3034,8 @@ AdditiveExpr: MultiplicativeExpr                                                
         $$ = create(new ArithmeticExpression($1, $2, $3), @$, parseInfo);
     }
 
-AdditiveOperator: PLUS  {$$ = AtomicMathematician::Add;}                            /* [X] */
-| MINUS                 {$$ = AtomicMathematician::Substract;}
+AdditiveOperator: T_PLUS  {$$ = AtomicMathematician::Add;}                            /* [X] */
+| T_MINUS                 {$$ = AtomicMathematician::Substract;}
 
 MultiplicativeExpr: UnionExpr                                                       /* [51] */
 | MultiplicativeExpr MultiplyOperator UnionExpr
@@ -3043,10 +3044,10 @@ MultiplicativeExpr: UnionExpr                                                   
         $$ = create(new ArithmeticExpression($1, $2, $3), @$, parseInfo);
     }
 
-MultiplyOperator: STAR  {$$ = AtomicMathematician::Multiply;}                       /* [X] */
-| DIV                   {$$ = AtomicMathematician::Div;}
-| IDIV                  {$$ = AtomicMathematician::IDiv;}
-| MOD                   {$$ = AtomicMathematician::Mod;}
+MultiplyOperator: T_STAR  {$$ = AtomicMathematician::Multiply;}                       /* [X] */
+| T_DIV                   {$$ = AtomicMathematician::Div;}
+| T_IDIV                  {$$ = AtomicMathematician::IDiv;}
+| T_MOD                   {$$ = AtomicMathematician::Mod;}
 
 UnionExpr: IntersectExceptExpr                                                      /* [52] */
 | UnionExpr UnionOperator IntersectExceptExpr
@@ -3066,20 +3067,20 @@ IntersectExceptExpr: InstanceOfExpr                                             
         $$ = create(new CombineNodes($1, $2, $3), @$, parseInfo);
     }
 
-UnionOperator: UNION                                                                /* [X] */
-| BAR
+UnionOperator: T_UNION                                                                /* [X] */
+| T_BAR
 
-IntersectOperator: INTERSECT                                                        /* [X] */
+IntersectOperator: T_INTERSECT                                                        /* [X] */
     {
         $$ = CombineNodes::Intersect;
     }
-| EXCEPT
+| T_EXCEPT
     {
         $$ = CombineNodes::Except;
     }
 
 InstanceOfExpr: TreatExpr                                                           /* [54] */
-| TreatExpr INSTANCE OF SequenceType
+| TreatExpr T_INSTANCE T_OF SequenceType
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = create(new InstanceOf($1,
@@ -3087,21 +3088,21 @@ InstanceOfExpr: TreatExpr                                                       
     }
 
 TreatExpr: CastableExpr                                                             /* [55] */
-| CastableExpr TREAT AS SequenceType
+| CastableExpr T_TREAT T_AS SequenceType
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = create(new TreatAs($1, $4), @$, parseInfo);
     }
 
 CastableExpr: CastExpr                                                              /* [56] */
-| CastExpr CASTABLE AS SingleType
+| CastExpr T_CASTABLE T_AS SingleType
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = create(new CastableAs($1, $4), @$, parseInfo);
     }
 
 CastExpr: UnaryExpr                                                                 /* [57] */
-| UnaryExpr CAST AS SingleType
+| UnaryExpr T_CAST T_AS SingleType
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = create(new CastAs($1, $4), @$, parseInfo);
@@ -3114,11 +3115,11 @@ UnaryExpr: ValueExpr                                                            
         $$ = create(new UnaryExpression($1, $2, parseInfo->staticContext), @$, parseInfo);
     }
 
-UnaryOperator: PLUS                                                                 /* [X] */
+UnaryOperator: T_PLUS                                                                 /* [X] */
     {
         $$ = AtomicMathematician::Add;
     }
-| MINUS
+| T_MINUS
     {
         $$ = AtomicMathematician::Substract;
     }
@@ -3133,33 +3134,33 @@ GeneralComp: RangeExpr GeneralComparisonOperator RangeExpr                      
         $$ = create(new GeneralComparison($1, $2, $3, parseInfo->isBackwardsCompat.top()), @$, parseInfo);
     }
 
-GeneralComparisonOperator: G_EQ {$$ = AtomicComparator::OperatorEqual;}             /* [X] */
-| G_NE                          {$$ = AtomicComparator::OperatorNotEqual;}
-| G_GE                          {$$ = AtomicComparator::OperatorGreaterOrEqual;}
-| G_GT                          {$$ = AtomicComparator::OperatorGreaterThan;}
-| G_LE                          {$$ = AtomicComparator::OperatorLessOrEqual;}
-| G_LT                          {$$ = AtomicComparator::OperatorLessThan;}
+GeneralComparisonOperator: T_G_EQ {$$ = AtomicComparator::OperatorEqual;}             /* [X] */
+| T_G_NE                          {$$ = AtomicComparator::OperatorNotEqual;}
+| T_G_GE                          {$$ = AtomicComparator::OperatorGreaterOrEqual;}
+| T_G_GT                          {$$ = AtomicComparator::OperatorGreaterThan;}
+| T_G_LE                          {$$ = AtomicComparator::OperatorLessOrEqual;}
+| T_G_LT                          {$$ = AtomicComparator::OperatorLessThan;}
 
 ValueComp: RangeExpr ValueComparisonOperator RangeExpr                              /* [61] */
     {
         $$ = create(new ValueComparison($1, $2, $3), @$, parseInfo);
     }
 
-ValueComparisonOperator: EQ {$$ = AtomicComparator::OperatorEqual;}
-| NE                        {$$ = AtomicComparator::OperatorNotEqual;}
-| GE                        {$$ = AtomicComparator::OperatorGreaterOrEqual;}
-| GT                        {$$ = AtomicComparator::OperatorGreaterThan;}
-| LE                        {$$ = AtomicComparator::OperatorLessOrEqual;}
-| LT                        {$$ = AtomicComparator::OperatorLessThan;}
+ValueComparisonOperator: T_EQ {$$ = AtomicComparator::OperatorEqual;}
+| T_NE                        {$$ = AtomicComparator::OperatorNotEqual;}
+| T_GE                        {$$ = AtomicComparator::OperatorGreaterOrEqual;}
+| T_GT                        {$$ = AtomicComparator::OperatorGreaterThan;}
+| T_LE                        {$$ = AtomicComparator::OperatorLessOrEqual;}
+| T_LT                        {$$ = AtomicComparator::OperatorLessThan;}
 
 NodeComp: RangeExpr NodeOperator RangeExpr                                          /* [62] */
     {
         $$ = create(new NodeComparison($1, $2, $3), @$, parseInfo);
     }
 
-NodeOperator: IS    {$$ = QXmlNodeModelIndex::Is;}                                  /* [X] */
-| PRECEDES          {$$ = QXmlNodeModelIndex::Precedes;}
-| FOLLOWS           {$$ = QXmlNodeModelIndex::Follows;}
+NodeOperator: T_IS    {$$ = QXmlNodeModelIndex::Is;}                                  /* [X] */
+| T_PRECEDES          {$$ = QXmlNodeModelIndex::Precedes;}
+| T_FOLLOWS           {$$ = QXmlNodeModelIndex::Follows;}
 
 ValidateExpr: ValidationMode EnclosedExpr                                           /* [63] */
     {
@@ -3175,9 +3176,9 @@ ValidateExpr: ValidationMode EnclosedExpr                                       
 
 /* "A validate expression may optionally specify a validation mode. The
     default validation mode is strict." */
-ValidationMode: VALIDATE    {$$ = Validate::Strict;}                                /* [64] */
-| VALIDATE STRICT           {$$ = Validate::Strict;}
-| VALIDATE LAX              {$$ = Validate::Lax;}
+ValidationMode: T_VALIDATE    {$$ = Validate::Strict;}                                /* [64] */
+| T_VALIDATE T_STRICT           {$$ = Validate::Strict;}
+| T_VALIDATE T_LAX              {$$ = Validate::Lax;}
 
 ExtensionExpr: Pragmas EnclosedOptionalExpr                                         /* [65] */
     {
@@ -3196,11 +3197,11 @@ ExtensionExpr: Pragmas EnclosedOptionalExpr                                     
         }
     }
 
-EnclosedOptionalExpr: CURLY_LBRACE /* empty */ CURLY_RBRACE                         /* [X] */
+EnclosedOptionalExpr: T_CURLY_LBRACE /* empty */ T_CURLY_RBRACE                         /* [X] */
     {
         $$.reset();
     }
-| CURLY_LBRACE Expr CURLY_RBRACE
+| T_CURLY_LBRACE Expr T_CURLY_RBRACE
     {
         $$ = $2;
     }
@@ -3208,7 +3209,7 @@ EnclosedOptionalExpr: CURLY_LBRACE /* empty */ CURLY_RBRACE                     
 Pragmas: Pragmas Pragma                                                             /* [X] */
 | Pragma
 
-Pragma: PRAGMA_START PragmaName PragmaContents PRAGMA_END                           /* [66] */
+Pragma: T_PRAGMA_START PragmaName PragmaContents T_PRAGMA_END                           /* [66] */
     {
         allowedIn(QXmlQuery::XQuery10, parseInfo, @$);
     }
@@ -3216,17 +3217,17 @@ Pragma: PRAGMA_START PragmaName PragmaContents PRAGMA_END                       
 PragmaContents: /* empty */                                                         /* [67] */
 | StringLiteral
 
-PathExpr: SLASH RelativePathExpr                                                    /* [68] */
+PathExpr: T_SLASH RelativePathExpr                                                    /* [68] */
     {
         /* This is "/step". That is, fn:root(self::node()) treat as document-node()/RelativePathExpr. */
         $$ = create(new Path(createRootExpression(parseInfo, @$), $2), @$, parseInfo);
     }
 
-| SLASHSLASH RelativePathExpr
+| T_SLASHSLASH RelativePathExpr
     {
         $$ = createSlashSlashPath(createRootExpression(parseInfo, @$), $2, @$, parseInfo);
     }
-| SLASH
+| T_SLASH
     {
         /* This is "/". That is, fn:root(self::node()) treat as document-node(). */
         $$ = createRootExpression(parseInfo, @$);
@@ -3240,7 +3241,7 @@ RelativePathExpr: StepExpr                                                      
     {
         $$ = create(new Path($1, $3, $2), @$, parseInfo);
     }
-| RelativePathExpr MapOrSlash SORT MandatoryOrderByClause RETURN StepExpr END_SORT
+| RelativePathExpr MapOrSlash T_SORT MandatoryOrderByClause T_RETURN StepExpr T_END_SORT
     {
         const Expression::Ptr orderBy(createReturnOrderBy($4, $6, parseInfo->orderStability.pop(), @$, parseInfo));
 
@@ -3249,7 +3250,7 @@ RelativePathExpr: StepExpr                                                      
 
         $$ = create(new OrderBy(rob->stability(), rob->orderSpecs(), path, rob), @$, parseInfo);
     }
-| RelativePathExpr SLASHSLASH StepExpr
+| RelativePathExpr T_SLASHSLASH StepExpr
     {
         $$ = createSlashSlashPath($1, $3, @$, parseInfo);
     }
@@ -3259,11 +3260,11 @@ StepExpr: FilteredAxisStep                                                      
         $$ = NodeSortExpression::wrapAround($1, parseInfo->staticContext);
     }
 | FilterExpr
-| CURRENT EnclosedExpr
+| T_CURRENT EnclosedExpr
     {
         $$ = create(new CurrentItemStore($2), @$, parseInfo);
     }
-| XSLT_VERSION
+| T_XSLT_VERSION
     {
         const xsDouble version = $1.toDouble();
 
@@ -3278,14 +3279,14 @@ StepExpr: FilteredAxisStep                                                      
         else
             $$ = $3;
     }
-| BASEURI StringLiteral CURLY_LBRACE Expr CURLY_RBRACE                              /* [X] */
+| T_BASEURI StringLiteral T_CURLY_LBRACE Expr T_CURLY_RBRACE                              /* [X] */
 {
     allowedIn(QXmlQuery::XSLT20, parseInfo, @$);
     Q_ASSERT(!$2.isEmpty());
     $$ = create(new StaticBaseURIStore($2, $4), @$, parseInfo);
 }
 
-| DECLARE NAMESPACE NCNAME G_EQ STRING_LITERAL CURLY_LBRACE                         /* [X] */
+| T_DECLARE T_NAMESPACE T_NCNAME T_G_EQ T_STRING_LITERAL T_CURLY_LBRACE                         /* [X] */
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XSLT20), parseInfo, @$);
         parseInfo->resolvers.push(parseInfo->staticContext->namespaceBindings());
@@ -3296,12 +3297,12 @@ StepExpr: FilteredAxisStep                                                      
         parseInfo->staticContext->setNamespaceBindings(resolver);
     }
     Expr
-    CURLY_RBRACE
+    T_CURLY_RBRACE
     {
         parseInfo->staticContext->setNamespaceBindings(parseInfo->resolvers.pop());
         $$ = $8;
     }
-| CALL_TEMPLATE ElementName LPAREN TemplateWithParameters RPAREN
+| T_CALL_TEMPLATE ElementName T_LPAREN TemplateWithParameters T_RPAREN
     {
         $$ = create(new CallTemplate($2, parseInfo->templateWithParams), @$, parseInfo);
         parseInfo->templateWithParametersHandled();
@@ -3323,18 +3324,18 @@ TemplateParameters: /* Empty. */                                                
 | TemplateParameter
     {
     }
-| TemplateParameters COMMA TemplateParameter
+| TemplateParameters T_COMMA TemplateParameter
     {
     }
 
 OptionalTemplateParameters: /* Empty. */                                            /* [X] */
     {
     }
-| LPAREN TemplateParameters RPAREN
+| T_LPAREN TemplateParameters T_RPAREN
     {
     }
 
-TemplateParameter: IsTunnel DOLLAR VarName TypeDeclaration OptionalAssign
+TemplateParameter: IsTunnel T_DOLLAR VarName TypeDeclaration OptionalAssign
     {
         /* Note, this grammar rule is invoked for @c xsl:param @em and @c
          * xsl:with-param. */
@@ -3403,7 +3404,7 @@ IsTunnel: /* Empty. */
     {
         $$ = false;
     }
-| TUNNEL
+| T_TUNNEL
     {
         $$ = true;
     }
@@ -3412,7 +3413,7 @@ OptionalAssign: /* Empty. */                                                    
     {
         $$ = Expression::Ptr();
     }
-| ASSIGN ExprSingle
+| T_ASSIGN ExprSingle
     {
         $$ = $2;
     }
@@ -3421,21 +3422,21 @@ OptionalAssign: /* Empty. */                                                    
  * Controls whethers a path expression should sort its result. Used for
  * implementing XSL-T's for-each.
  */
-MapOrSlash: SLASH                                                                   /* [X] */
+MapOrSlash: T_SLASH                                                                   /* [X] */
     {
         $$ = Path::RegularPath;
     }
-| MAP
+| T_MAP
     {
         $$ = Path::XSLTForEach;
     }
-| FOR_APPLY_TEMPLATE
+| T_FOR_APPLY_TEMPLATE
     {
         $$ = Path::ForApplyTemplate;
     }
 
 FilteredAxisStep: AxisStep                                                          /* [X] */
-| FilteredAxisStep LBRACKET Expr RBRACKET
+| FilteredAxisStep T_LBRACKET Expr T_RBRACKET
     {
         $$ = create(GenericPredicate::create($1, $3, parseInfo->staticContext, fromYYLTYPE(@$, parseInfo)), @$, parseInfo);
     }
@@ -3478,7 +3479,7 @@ ForwardStep: Axis
 NodeTestInAxisStep: NodeTest
 | AnyAttributeTest
 
-Axis: AxisToken COLONCOLON                                                          /* [73] */
+Axis: AxisToken T_COLONCOLON                                                          /* [73] */
     {
         if($1 == QXmlNodeModelIndex::AxisNamespace)
         {
@@ -3522,20 +3523,20 @@ Axis: AxisToken COLONCOLON                                                      
         }
     }
 
-AxisToken: ANCESTOR_OR_SELF {$$ = QXmlNodeModelIndex::AxisAncestorOrSelf  ;}
-| ANCESTOR                  {$$ = QXmlNodeModelIndex::AxisAncestor        ;}
-| ATTRIBUTE                 {$$ = QXmlNodeModelIndex::AxisAttribute       ;}
-| CHILD                     {$$ = QXmlNodeModelIndex::AxisChild           ;}
-| DESCENDANT_OR_SELF        {$$ = QXmlNodeModelIndex::AxisDescendantOrSelf;}
-| DESCENDANT                {$$ = QXmlNodeModelIndex::AxisDescendant      ;}
-| FOLLOWING                 {$$ = QXmlNodeModelIndex::AxisFollowing       ;}
-| PRECEDING                 {$$ = QXmlNodeModelIndex::AxisPreceding       ;}
-| FOLLOWING_SIBLING         {$$ = QXmlNodeModelIndex::AxisFollowingSibling;}
-| PRECEDING_SIBLING         {$$ = QXmlNodeModelIndex::AxisPrecedingSibling;}
-| PARENT                    {$$ = QXmlNodeModelIndex::AxisParent          ;}
-| SELF                      {$$ = QXmlNodeModelIndex::AxisSelf            ;}
+AxisToken: T_ANCESTOR_OR_SELF {$$ = QXmlNodeModelIndex::AxisAncestorOrSelf  ;}
+| T_ANCESTOR                  {$$ = QXmlNodeModelIndex::AxisAncestor        ;}
+| T_ATTRIBUTE                 {$$ = QXmlNodeModelIndex::AxisAttribute       ;}
+| T_CHILD                     {$$ = QXmlNodeModelIndex::AxisChild           ;}
+| T_DESCENDANT_OR_SELF        {$$ = QXmlNodeModelIndex::AxisDescendantOrSelf;}
+| T_DESCENDANT                {$$ = QXmlNodeModelIndex::AxisDescendant      ;}
+| T_FOLLOWING                 {$$ = QXmlNodeModelIndex::AxisFollowing       ;}
+| T_PRECEDING                 {$$ = QXmlNodeModelIndex::AxisPreceding       ;}
+| T_FOLLOWING_SIBLING         {$$ = QXmlNodeModelIndex::AxisFollowingSibling;}
+| T_PRECEDING_SIBLING         {$$ = QXmlNodeModelIndex::AxisPrecedingSibling;}
+| T_PARENT                    {$$ = QXmlNodeModelIndex::AxisParent          ;}
+| T_SELF                      {$$ = QXmlNodeModelIndex::AxisSelf            ;}
 
-AbbrevForwardStep: AT_SIGN
+AbbrevForwardStep: T_AT_SIGN
                    {
                         parseInfo->nodeTestSource = BuiltinTypes::attribute;
                    }
@@ -3564,7 +3565,7 @@ AbbrevForwardStep: AT_SIGN
 
 ReverseStep: AbbrevReverseStep                                                      /* [75] */
 
-AbbrevReverseStep: DOTDOT                                                           /* [77] */
+AbbrevReverseStep: T_DOTDOT                                                           /* [77] */
     {
         $$ = create(new AxisStep(QXmlNodeModelIndex::AxisParent, BuiltinTypes::node), @$, parseInfo);
     }
@@ -3581,11 +3582,11 @@ NameTest: ElementName                                                           
     }
 | WildCard
 
-WildCard: STAR                                                                      /* [80] */
+WildCard: T_STAR                                                                      /* [80] */
     {
         $$ = parseInfo->nodeTestSource;
     }
-| ANY_LOCAL_NAME
+| T_ANY_LOCAL_NAME
     {
         const NamePool::Ptr np(parseInfo->staticContext->namePool());
         const ReflectYYLTYPE ryy(@$, parseInfo);
@@ -3594,7 +3595,7 @@ WildCard: STAR                                                                  
 
         $$ = NamespaceNameTest::create(parseInfo->nodeTestSource, ns);
     }
-| ANY_PREFIX
+| T_ANY_PREFIX
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         const QXmlName::LocalNameCode c = parseInfo->staticContext->namePool()->allocateLocalName($1);
@@ -3602,7 +3603,7 @@ WildCard: STAR                                                                  
     }
 
 FilterExpr: PrimaryExpr                                                             /* [81] */
-| FilterExpr LBRACKET Expr RBRACKET
+| FilterExpr T_LBRACKET Expr T_RBRACKET
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = create(GenericPredicate::create($1, $3, parseInfo->staticContext, fromYYLTYPE(@4, parseInfo)), @$, parseInfo);
@@ -3615,7 +3616,7 @@ PrimaryExpr: Literal                                                            
 | FunctionCallExpr
 | OrderingExpr
 | Constructor
-| APPLY_TEMPLATE OptionalMode LPAREN TemplateWithParameters RPAREN
+| T_APPLY_TEMPLATE OptionalMode T_LPAREN TemplateWithParameters T_RPAREN
     {
         $$ = create(new ApplyTemplate(parseInfo->modeFor($2),
                                       parseInfo->templateWithParams,
@@ -3631,24 +3632,24 @@ Literal: NumericLiteral                                                         
         $$ = create(new Literal(AtomicString::fromValue($1)), @$, parseInfo);
     }
 
-NumericLiteral: XPATH2_NUMBER                                                       /* [86] */
+NumericLiteral: T_XPATH2_NUMBER                                                       /* [86] */
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = createNumericLiteral<Double>($1, @$, parseInfo);
     }
-| NUMBER
+| T_NUMBER
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = createNumericLiteral<Numeric>($1, @$, parseInfo);
     }
 
-VarRef: DOLLAR VarName                                                              /* [87] */
+VarRef: T_DOLLAR VarName                                                              /* [87] */
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = resolveVariable($2, @$, parseInfo, false);
     }
 
-VarName: NCNAME                                                                     /* [88] */
+VarName: T_NCNAME                                                                     /* [88] */
     {
         /* See: http://www.w3.org/TR/xpath20/#id-variables */
         $$ = parseInfo->staticContext->namePool()->allocateQName(QString(), $1);
@@ -3658,18 +3659,18 @@ VarName: NCNAME                                                                 
         $$ = $1;
     }
 
-ParenthesizedExpr: LPAREN Expr RPAREN                                               /* [89] */
+ParenthesizedExpr: T_LPAREN Expr T_RPAREN                                               /* [89] */
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = $2;
     }
-| LPAREN RPAREN
+| T_LPAREN T_RPAREN
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         $$ = create(new EmptySequence, @$, parseInfo);
     }
 
-ContextItemExpr: DOT                                                                /* [90] */
+ContextItemExpr: T_DOT                                                                /* [90] */
     {
         $$ = create(new ContextItem(), @$, parseInfo);
     }
@@ -3679,7 +3680,7 @@ OrderingExpr: OrderingMode EnclosedExpr                                         
         $$ = $2;
     }
 
-FunctionCallExpr: FunctionName LPAREN FunctionArguments RPAREN                      /* [93] */
+FunctionCallExpr: FunctionName T_LPAREN FunctionArguments T_RPAREN                      /* [93] */
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
         if(XPathHelper::isReservedNamespace($1.namespaceURI()) || $1.namespaceURI() == StandardNamespaces::InternalXSLT)
@@ -3765,7 +3766,7 @@ DirectConstructor: DirElemConstructor                                           
  *
  * @see XQueryTokenizer::attributeAsRaw()
  */
-DirElemConstructor: G_LT
+DirElemConstructor: T_G_LT
                     LexicalName
                     {
                         $<enums.tokenizerPosition>$ = parseInfo->tokenizer->commenceScanOnly();
@@ -3919,7 +3920,7 @@ DirElemConstructor: G_LT
 
                         parseInfo->tokenizer->resumeTokenizationFrom($<enums.tokenizerPosition>3);
                     }
-                    POSITION_SET
+                    T_POSITION_SET
                     DirAttributeList
                     DirElemConstructorTail                         /* [96] */
     {
@@ -4017,11 +4018,11 @@ DirElemConstructor: G_LT
         --parseInfo->elementConstructorDepth;
     }
 
-DirElemConstructorTail: QUICK_TAG_END
+DirElemConstructorTail: T_QUICK_TAG_END
     {
         $$ = create(new EmptySequence(), @$, parseInfo);
     }
-| G_GT DirElemContent BEGIN_END_TAG ElementName G_GT
+| T_G_GT DirElemContent T_BEGIN_END_TAG ElementName T_G_GT
     {
         if(!$4.isLexicallyEqual(parseInfo->tagStack.top()))
         {
@@ -4050,17 +4051,17 @@ DirAttributeList: /* empty */                                                   
         $$ = $1;
     }
 
-Attribute: LexicalName G_EQ DirAttributeValue                                       /* [X] */
+Attribute: LexicalName T_G_EQ DirAttributeValue                                       /* [X] */
     {
         $$ = qMakePair($1, $3);
     }
 
-DirAttributeValue: QUOTE AttrValueContent QUOTE                                     /* [98] */
+DirAttributeValue: T_QUOTE AttrValueContent T_QUOTE                                     /* [98] */
     {
         $$ = createDirAttributeValue($2, parseInfo, @$);
     }
 
-| APOS AttrValueContent APOS
+| T_APOS AttrValueContent T_APOS
     {
         $$ = createDirAttributeValue($2, parseInfo, @$);
     }
@@ -4110,7 +4111,7 @@ DirElemContent: /* empty */                                                     
             parseInfo->isPreviousEnclosedExpr = false;
         }
     }
-| DirElemContent NON_BOUNDARY_WS
+| DirElemContent T_NON_BOUNDARY_WS
     {
         $1.append(create(new TextNodeConstructor(create(new Literal(AtomicString::fromValue($2)), @$, parseInfo)), @$, parseInfo));
         $$ = $1;
@@ -4133,12 +4134,12 @@ DirElemContent: /* empty */                                                     
         $$ = $1;
     }
 
-DirCommentConstructor: COMMENT_START COMMENT_CONTENT                                /* [103] */
+DirCommentConstructor: T_COMMENT_START T_COMMENT_CONTENT                                /* [103] */
     {
         $$ = create(new CommentConstructor(create(new Literal(AtomicString::fromValue($2)), @$, parseInfo)), @$, parseInfo);
     }
 
-DirPIConstructor: PI_START PI_TARGET PI_CONTENT                                     /* [105] */
+DirPIConstructor: T_PI_START T_PI_TARGET T_PI_CONTENT                                     /* [105] */
     {
         const ReflectYYLTYPE ryy(@$, parseInfo);
         NCNameConstructor::validateTargetName<StaticContext::Ptr,
@@ -4159,14 +4160,14 @@ ComputedConstructor: CompDocConstructor                                         
 | CompPIConstructor
 | CompNamespaceConstructor
 
-CompDocConstructor: DOCUMENT IsInternal EnclosedExpr                                /* [110] */
+CompDocConstructor: T_DOCUMENT IsInternal EnclosedExpr                                /* [110] */
     {
         allowedIn(QXmlQuery::XQuery10, parseInfo, @$, $2);
 
         $$ = create(new DocumentConstructor($3), @$, parseInfo);
     }
 
-CompElemConstructor: ELEMENT IsInternal CompElementName
+CompElemConstructor: T_ELEMENT IsInternal CompElementName
                      {
                         /* This value is incremented before the action below is executed. */
                         ++parseInfo->elementConstructorDepth;
@@ -4209,12 +4210,12 @@ IsInternal: /* Empty. */                                                        
     {
         $$ = false;
     }
-| INTERNAL
+| T_INTERNAL
     {
         $$ = true;
     }
 
-CompAttrConstructor: ATTRIBUTE
+CompAttrConstructor: T_ATTRIBUTE
                      IsInternal
                      CompAttributeName
                      EnclosedOptionalExpr                                           /* [113] */
@@ -4229,19 +4230,19 @@ CompAttrConstructor: ATTRIBUTE
             $$ = create(new AttributeConstructor(name, create(new EmptySequence(), @$, parseInfo)), @$, parseInfo);
     }
 
-CompTextConstructor: TEXT IsInternal EnclosedExpr                                 /* [114] */
+CompTextConstructor: T_TEXT IsInternal EnclosedExpr                                 /* [114] */
     {
         $$ = create(new TextNodeConstructor(createSimpleContent($3, @$, parseInfo)), @$, parseInfo);
     }
 
-CompCommentConstructor: COMMENT IsInternal EnclosedExpr                           /* [115] */
+CompCommentConstructor: T_COMMENT IsInternal EnclosedExpr                           /* [115] */
     {
         allowedIn(QXmlQuery::XQuery10, parseInfo, @$, $2);
 
         $$ = create(new CommentConstructor(createSimpleContent($3, @$, parseInfo)), @$, parseInfo);
     }
 
-CompPIConstructor: PROCESSING_INSTRUCTION CompPIName EnclosedOptionalExpr           /* [116] */
+CompPIConstructor: T_PROCESSING_INSTRUCTION CompPIName EnclosedOptionalExpr           /* [116] */
     {
         allowedIn(QXmlQuery::XQuery10, parseInfo, @$, $2);
 
@@ -4286,7 +4287,7 @@ CompNameExpr: EnclosedExpr
 /*
  * We always create an NCNameConstructor here. If will be rewritten away if not needed.
  */
-CompPIName: NCNAME
+CompPIName: T_NCNAME
     {
         $$ = create(new NCNameConstructor(create(new Literal(AtomicString::fromValue($1)), @$, parseInfo)), @$, parseInfo);
     }
@@ -4299,7 +4300,7 @@ CompPIName: NCNAME
  * This expression is used for implementing XSL-T 2.0's xsl:namespace
  * instruction.
  */
-CompNamespaceConstructor: NAMESPACE EnclosedExpr EnclosedExpr                       /* [X] */
+CompNamespaceConstructor: T_NAMESPACE EnclosedExpr EnclosedExpr                       /* [X] */
 {
     $$ = create(new ComputedNamespaceConstructor($2, $3), @$, parseInfo);
 }
@@ -4308,7 +4309,7 @@ SingleType: AtomicType                                                          
     {
         $$ = makeGenericSequenceType($1, Cardinality::exactlyOne());
     }
-| AtomicType QUESTION
+| AtomicType T_QUESTION
     {
         $$ = makeGenericSequenceType($1, Cardinality::zeroOrOne());
     }
@@ -4317,7 +4318,7 @@ TypeDeclaration: /* empty */                                                    
     {
         $$ = CommonSequenceTypes::ZeroOrMoreItems;
     }
-| AS SequenceType
+| T_AS SequenceType
     {
         $$ = $2;
     }
@@ -4327,20 +4328,20 @@ SequenceType: ItemType OccurrenceIndicator                                      
         $$ = makeGenericSequenceType($1, $2);
     }
 
-| EMPTY_SEQUENCE EmptyParanteses
+| T_EMPTY_SEQUENCE EmptyParanteses
     {
         $$ = CommonSequenceTypes::Empty;
     }
 
 OccurrenceIndicator: /* empty */    {$$ = Cardinality::exactlyOne();}               /* [120] */
-| PLUS                              {$$ = Cardinality::oneOrMore();}
-| STAR                              {$$ = Cardinality::zeroOrMore();}
-| QUESTION                          {$$ = Cardinality::zeroOrOne();}
+| T_PLUS                              {$$ = Cardinality::oneOrMore();}
+| T_STAR                              {$$ = Cardinality::zeroOrMore();}
+| T_QUESTION                          {$$ = Cardinality::zeroOrOne();}
 
 ItemType: AtomicType                                                                /* [121] */
 | KindTest
 | AnyAttributeTest
-| ITEM EmptyParanteses
+| T_ITEM EmptyParanteses
     {
         $$ = BuiltinTypes::item;
     }
@@ -4389,17 +4390,17 @@ KindTest: DocumentTest                                                          
 | TextTest
 | AnyKindTest
 
-AnyKindTest: NODE EmptyParanteses                                               /* [124] */
+AnyKindTest: T_NODE EmptyParanteses                                               /* [124] */
     {
         $$ = BuiltinTypes::node;
     }
 
-DocumentTest: DOCUMENT_NODE EmptyParanteses                                     /* [125] */
+DocumentTest: T_DOCUMENT_NODE EmptyParanteses                                     /* [125] */
     {
         $$ = BuiltinTypes::document;
     }
 
-| DOCUMENT_NODE LPAREN AnyElementTest RPAREN
+| T_DOCUMENT_NODE T_LPAREN AnyElementTest T_RPAREN
     {
         // TODO support for document element testing
         $$ = BuiltinTypes::document;
@@ -4408,27 +4409,27 @@ DocumentTest: DOCUMENT_NODE EmptyParanteses                                     
 AnyElementTest: ElementTest                                                     /* [X] */
 | SchemaElementTest
 
-TextTest: TEXT EmptyParanteses                                                  /* [126] */
+TextTest: T_TEXT EmptyParanteses                                                  /* [126] */
     {
         $$ = BuiltinTypes::text;
     }
 
-CommentTest: COMMENT EmptyParanteses                                            /* [127] */
+CommentTest: T_COMMENT EmptyParanteses                                            /* [127] */
     {
         $$ = BuiltinTypes::comment;
     }
 
-PITest: PROCESSING_INSTRUCTION EmptyParanteses                                  /* [128] */
+PITest: T_PROCESSING_INSTRUCTION EmptyParanteses                                  /* [128] */
     {
         $$ = BuiltinTypes::pi;
     }
 
-| PROCESSING_INSTRUCTION LPAREN NCNAME RPAREN
+| T_PROCESSING_INSTRUCTION T_LPAREN T_NCNAME T_RPAREN
     {
         $$ = LocalNameTest::create(BuiltinTypes::pi, parseInfo->staticContext->namePool()->allocateLocalName($3));
     }
 
-| PROCESSING_INSTRUCTION LPAREN StringLiteral RPAREN
+| T_PROCESSING_INSTRUCTION T_LPAREN StringLiteral T_RPAREN
     {
         if(QXmlUtils::isNCName($3))
         {
@@ -4447,21 +4448,21 @@ PITest: PROCESSING_INSTRUCTION EmptyParanteses                                  
 AnyAttributeTest: AttributeTest
 | SchemaAttributeTest
 
-AttributeTest: ATTRIBUTE EmptyParanteses                                            /* [129] */
+AttributeTest: T_ATTRIBUTE EmptyParanteses                                            /* [129] */
     {
         $$ = BuiltinTypes::attribute;
     }
 
-| ATTRIBUTE LPAREN STAR RPAREN
+| T_ATTRIBUTE T_LPAREN T_STAR T_RPAREN
     {
         $$ = BuiltinTypes::attribute;
     }
 
-| ATTRIBUTE LPAREN AttributeName RPAREN
+| T_ATTRIBUTE T_LPAREN AttributeName T_RPAREN
     {
         $$ = QNameTest::create(BuiltinTypes::attribute, $3);
     }
-| ATTRIBUTE LPAREN AttributeName COMMA TypeName RPAREN
+| T_ATTRIBUTE T_LPAREN AttributeName T_COMMA TypeName T_RPAREN
     {
         const SchemaType::Ptr t(parseInfo->staticContext->schemaDefinitions()->createSchemaType($5));
 
@@ -4473,7 +4474,7 @@ AttributeTest: ATTRIBUTE EmptyParanteses                                        
                                             ReportContext::XPST0008, fromYYLTYPE(@$, parseInfo));
         }
     }
-| ATTRIBUTE LPAREN STAR COMMA TypeName RPAREN
+| T_ATTRIBUTE T_LPAREN T_STAR T_COMMA TypeName T_RPAREN
     {
         const SchemaType::Ptr t(parseInfo->staticContext->schemaDefinitions()->createSchemaType($5));
 
@@ -4486,7 +4487,7 @@ AttributeTest: ATTRIBUTE EmptyParanteses                                        
         }
     }
 
-SchemaAttributeTest: SCHEMA_ATTRIBUTE LPAREN ElementName RPAREN                     /* [131] */
+SchemaAttributeTest: T_SCHEMA_ATTRIBUTE T_LPAREN ElementName T_RPAREN                     /* [131] */
     {
         parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is not in the in-scope attribute "
                                            "declarations. Note that the schema import "
@@ -4496,22 +4497,22 @@ SchemaAttributeTest: SCHEMA_ATTRIBUTE LPAREN ElementName RPAREN                 
         $$.reset();
     }
 
-ElementTest: ELEMENT EmptyParanteses                                                /* [133] */
+ElementTest: T_ELEMENT EmptyParanteses                                                /* [133] */
     {
         $$ = BuiltinTypes::element;
     }
 
-| ELEMENT LPAREN STAR RPAREN
+| T_ELEMENT T_LPAREN T_STAR T_RPAREN
     {
         $$ = BuiltinTypes::element;
     }
 
-| ELEMENT LPAREN ElementName RPAREN
+| T_ELEMENT T_LPAREN ElementName T_RPAREN
     {
         $$ = QNameTest::create(BuiltinTypes::element, $3);
     }
 
-| ELEMENT LPAREN ElementName COMMA TypeName OptionalQuestionMark RPAREN
+| T_ELEMENT T_LPAREN ElementName T_COMMA TypeName OptionalQuestionMark T_RPAREN
     {
         const SchemaType::Ptr t(parseInfo->staticContext->schemaDefinitions()->createSchemaType($5));
 
@@ -4525,7 +4526,7 @@ ElementTest: ELEMENT EmptyParanteses                                            
         }
     }
 
-| ELEMENT LPAREN STAR COMMA TypeName OptionalQuestionMark RPAREN
+| T_ELEMENT T_LPAREN T_STAR T_COMMA TypeName OptionalQuestionMark T_RPAREN
     {
         const SchemaType::Ptr t(parseInfo->staticContext->schemaDefinitions()->createSchemaType($5));
 
@@ -4540,9 +4541,9 @@ ElementTest: ELEMENT EmptyParanteses                                            
     }
 
 OptionalQuestionMark: /* Empty. */
-| QUESTION
+| T_QUESTION
 
-SchemaElementTest: SCHEMA_ELEMENT LPAREN ElementName RPAREN                         /* [135] */
+SchemaElementTest: T_SCHEMA_ELEMENT T_LPAREN ElementName T_RPAREN                         /* [135] */
     {
         parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is not in the in-scope attribute "
                                            "declarations. Note that the schema import "
@@ -4552,9 +4553,9 @@ SchemaElementTest: SCHEMA_ELEMENT LPAREN ElementName RPAREN                     
         $$.reset();
     }
 
-EmptyParanteses: LPAREN RPAREN                                                      /* [X] */
+EmptyParanteses: T_LPAREN T_RPAREN                                                      /* [X] */
 
-AttributeName: NCNAME                                                               /* [137] */
+AttributeName: T_NCNAME                                                               /* [137] */
     {
         $$ = parseInfo->staticContext->namePool()->allocateQName(StandardNamespaces::empty, $1);
     }
@@ -4566,7 +4567,7 @@ AttributeName: NCNAME                                                           
  * depending on where the QName occurs. These two rules, invoked in the appropriate
  * contexts, performs this distinction.
  */
-ElementName: NCNAME                                                                 /* [138] */
+ElementName: T_NCNAME                                                                 /* [138] */
     {
         if(parseInfo->nodeTestSource == BuiltinTypes::element)
             $$ = parseInfo->staticContext->namePool()->allocateQName(parseInfo->staticContext->namespaceBindings()->lookupNamespaceURI(StandardPrefixes::empty), $1);
@@ -4580,19 +4581,19 @@ TypeName: ElementName                                                           
 FunctionName: NCName                                                                /* [X] */
 | QName
 
-NCName: NCNAME
+NCName: T_NCNAME
     {
         $$ = parseInfo->staticContext->namePool()->allocateQName(parseInfo->staticContext->defaultFunctionNamespace(), $1);
     }
-| INTERNAL_NAME NCNAME
+| T_INTERNAL_NAME T_NCNAME
     {
         $$ = parseInfo->staticContext->namePool()->allocateQName(StandardNamespaces::InternalXSLT, $2);
     }
 
-LexicalName: NCNAME
-| QNAME
+LexicalName: T_NCNAME
+| T_QNAME
 
-PragmaName: NCNAME                                                                  /* [X] */
+PragmaName: T_NCNAME                                                                  /* [X] */
     {
         parseInfo->staticContext->error(QtXmlPatterns::tr("The name of an extension expression must be in "
                                                           "a namespace."),
@@ -4602,16 +4603,16 @@ PragmaName: NCNAME                                                              
 
 URILiteral: StringLiteral                                                           /* [140] */
 
-StringLiteral: STRING_LITERAL                                                       /* [144] */
+StringLiteral: T_STRING_LITERAL                                                       /* [144] */
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
     }
-| XPATH2_STRING_LITERAL
+| T_XPATH2_STRING_LITERAL
     {
         allowedIn(QueryLanguages(QXmlQuery::XQuery10 | QXmlQuery::XPath20), parseInfo, @$);
     }
 
-QName: QNAME                                                      /* [154] */
+QName: T_QNAME                                                      /* [154] */
     {
 
         const ReflectYYLTYPE ryy(@$, parseInfo);
@@ -4623,7 +4624,7 @@ QName: QNAME                                                      /* [154] */
                                                   parseInfo->staticContext->namespaceBindings(), &ryy);
 
     }
-| CLARK_NAME
+| T_CLARK_NAME
     {
         $$ = parseInfo->staticContext->namePool()->fromClarkName($1);
     }
@@ -4634,15 +4635,15 @@ QString Tokenizer::tokenToString(const Token &token)
 {
     switch(token.type)
     {
-        case NCNAME:
+        case T_NCNAME:
         /* Fallthrough. */
-        case QNAME:
+        case T_QNAME:
         /* Fallthrough. */
-        case NUMBER:
+        case T_NUMBER:
         /* Fallthrough. */
-        case XPATH2_NUMBER:
+        case T_XPATH2_NUMBER:
             return token.value;
-        case STRING_LITERAL:
+        case T_STRING_LITERAL:
             return QLatin1Char('"') + token.value + QLatin1Char('"');
         default:
         {

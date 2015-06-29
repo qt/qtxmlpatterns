@@ -44,16 +44,12 @@
 #ifndef Patternist_TokenSource_H
 #define Patternist_TokenSource_H
 
-#include <private/qatomiccomparator_p.h>
-#include <private/qatomicmathematician_p.h>
-#include <private/qcombinenodes_p.h>
 #include <private/qfunctionargument_p.h>
 #include <private/qitem_p.h>
 #include <private/qitemtype_p.h>
-#include <private/qorderby_p.h>
-#include <private/qpath_p.h>
+#include <private/qtokenvalue_p.h>
+#include <private/qparsercontext_p.h>
 #include <private/qquerytransformparser_p.h>
-#include <private/qvalidate_p.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -61,30 +57,6 @@ template<typename T> class QQueue;
 
 namespace QPatternist
 {
-    /**
-     * @short A union of all the enums the parser uses.
-     */
-    union EnumUnion
-    {
-        AtomicComparator::Operator              valueOperator;
-        AtomicMathematician::Operator           mathOperator;
-        CombineNodes::Operator                  combinedNodeOp;
-        QXmlNodeModelIndex::Axis                axis;
-        QXmlNodeModelIndex::DocumentOrder       nodeOperator;
-        StaticContext::BoundarySpacePolicy      boundarySpacePolicy;
-        StaticContext::ConstructionMode         constructionMode;
-        StaticContext::OrderingEmptySequence    orderingEmptySequence;
-        StaticContext::OrderingMode             orderingMode;
-        OrderBy::OrderSpec::Direction           sortDirection;
-        Validate::Mode                          validationMode;
-        VariableSlotID                          slot;
-        int                                     tokenizerPosition;
-        qint16                                  zeroer;
-        bool                                    Bool;
-        xsDouble                                Double;
-        Path::Kind                              pathKind;
-    };
-
     /**
      * @short Base class for components that needs to return tokens.
      *
@@ -121,7 +93,7 @@ namespace QPatternist
 
             bool hasError() const
             {
-                return type == ERROR;
+                return type == T_ERROR;
             }
 
             TokenType type;
