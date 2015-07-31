@@ -83,12 +83,12 @@ private Q_SLOTS:
     void runTestSuite() const;
     void checkTestSuiteResult() const;
 
-private:
+protected:
     /**
      * An absolute path to the catalog.
      */
     QString         m_catalogPath;
-    const QString   m_existingBaseline;
+    QString   m_existingBaseline;
     const QString   m_candidateBaseline;
     const bool      m_abortRun;
     const SuiteType m_suiteType;

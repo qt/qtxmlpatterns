@@ -55,6 +55,7 @@ protected:
 
 tst_XmlPatternsDiagnosticsTS::tst_XmlPatternsDiagnosticsTS() : tst_SuiteTest(tst_SuiteTest::XQuerySuite, true)
 {
+    m_existingBaseline = QFINDTESTDATA("Baseline.xml");
 }
 
 void tst_XmlPatternsDiagnosticsTS::catalogPath(QString &write) const
