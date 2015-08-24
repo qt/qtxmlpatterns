@@ -16,6 +16,5 @@ INCLUDEPATH += $$(QTDIR)/include/QtXmlPatterns/private      \
 
 QT += xml testlib
 TARGET = tst_xmlpatternsxqts
-DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
 requires(contains(QT_CONFIG,private_tests))
 

@@ -352,7 +352,7 @@ void tst_QXmlItem::withinQVariant() const
 {
     QXmlItem val;
     const QVariant variant(qVariantFromValue(val));
-    QXmlItem val2(qVariantValue<QXmlItem>(variant));
+    QXmlItem val2(qvariant_cast<QXmlItem>(variant));
 }
 
 QTEST_MAIN(tst_QXmlItem)

@@ -1257,12 +1257,12 @@ void tst_QXmlQuery::basicXQueryToQtTypeCheck() const
              * just artifacts created somewhere. */
             if(produced.type() == QVariant::Double)
                 QVERIFY(qFuzzyCompare(produced.toDouble(), expected.toDouble()));
-            else if(qVariantCanConvert<QXmlName>(produced))
+            else if (produced.canConvert<QXmlName>())
             {
                 /* QVariant::operator==() does identity comparison, it doesn't delegate to operator==() of
                  * the contained type, unless it's hardcoded into QVariant. */
-                const QXmlName n1 = qVariantValue<QXmlName>(produced);
-                const QXmlName n2 = qVariantValue<QXmlName>(expected);
+                const QXmlName n1 = qvariant_cast<QXmlName>(produced);
+                const QXmlName n2 = qvariant_cast<QXmlName>(expected);
                 QCOMPARE(n1, n2);
             }
             else

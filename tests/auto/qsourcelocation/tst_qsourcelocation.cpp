@@ -336,7 +336,7 @@ void tst_QSourceLocation::withinQVariant() const
 {
     QSourceLocation val;
     const QVariant variant(qVariantFromValue(val));
-    QSourceLocation val2(qVariantValue<QSourceLocation>(variant));
+    QSourceLocation val2(qvariant_cast<QSourceLocation>(variant));
 }
 
 void tst_QSourceLocation::debugStream() const

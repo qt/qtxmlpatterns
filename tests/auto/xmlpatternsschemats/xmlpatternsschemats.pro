@@ -22,6 +22,5 @@ INCLUDEPATH += \
     ../xmlpatternsxqts \
     ../xmlpatternssdk
 
-DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
 requires(contains(QT_CONFIG,private_tests))
 
