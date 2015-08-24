@@ -23,4 +23,3 @@ wince*: {
     DEFINES += SOURCETREE=\\\"$$absolute_path(../../..)/\\\"
 }
 include (../xmlpatterns.pri)
-DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0

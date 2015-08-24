@@ -5,4 +5,3 @@ SOURCES += tst_qapplicationargumentparser.cpp                           \
            ../../../tools/xmlpatterns/qapplicationargumentparser.cpp
 QT = core testlib
 INCLUDEPATH += ../../../tools/xmlpatterns/
-DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0

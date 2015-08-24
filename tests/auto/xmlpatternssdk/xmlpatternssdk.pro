@@ -81,4 +81,3 @@ SOURCES = ASTItem.cpp                   \
           XSDTestSuiteHandler.cpp       \
           XSDTSTestCase.cpp             \
           XSLTTestSuiteHandler.cpp
-DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
