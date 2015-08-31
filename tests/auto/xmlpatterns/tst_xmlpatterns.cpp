@@ -66,9 +66,7 @@ private Q_SLOTS:
     void xquerySupport_data() const;
     void xsltSupport();
     void xsltSupport_data() const;
-#ifndef QT_NO_PROCESS
     void stdoutFailure() const;
-#endif
     void cleanupTestCase() const;
 
 private:
@@ -803,9 +801,11 @@ void tst_XmlPatterns::removeNonWritable(QFile &outFile)
  Check that we gracefully handle writing out to stdout
  when the latter is not writable.
  */
-#ifndef QT_NO_PROCESS
 void tst_XmlPatterns::stdoutFailure() const
 {
+#ifdef QT_NO_PROCESS
+    QSKIP("No QProcess available");
+#else
     return; // TODO It's really hard to write testing code for this.
 
     const QString outName(QLatin1String("stdoutFailure.out"));
@@ -828,8 +828,8 @@ void tst_XmlPatterns::stdoutFailure() const
     QCOMPARE(process.exitCode(), 1);
 
     removeNonWritable(outFile);
+#endif // QT_NO_PROCESS
 }
-#endif
 
 void tst_XmlPatterns::cleanupTestCase() const
 {
