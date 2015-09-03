@@ -44,6 +44,7 @@
 #include "qorderby_p.h"
 
 #include <algorithm>
+#include <functional>
 
 QT_BEGIN_NAMESPACE
 
@@ -72,11 +73,17 @@ void OrderBy::OrderSpec::prepare(const Expression::Ptr &source,
  * @short Functor used by Qt's qSort() and qStableSort(). Used for FLWOR's
  * <tt>order by</tt> expression.
  *
- * This must be in the global namespace, since it is specializing qLess(), which
- * is in the global namespace. Hence it can't be in QPatternist.
+ * This must be in the std namespace, since it is specializing std::less(), which
+ * is in the std namespace. Hence it can't be in QPatternist.
  */
+
+QT_END_NAMESPACE
+
+QT_USE_NAMESPACE
+
+namespace std {
 template<>
-class qLess<Item::List>
+struct less<Item::List>
 {
 private:
 
@@ -87,9 +94,9 @@ private:
     }
 
 public:
-    inline qLess(const OrderBy::OrderSpec::Vector &orderspecs,
-                 const DynamicContext::Ptr &context) : m_orderSpecs(orderspecs)
-                                                     , m_context(context)
+    inline less(const OrderBy::OrderSpec::Vector &orderspecs,
+                const DynamicContext::Ptr &context) : m_orderSpecs(orderspecs)
+                                                    , m_context(context)
     {
         Q_ASSERT(!m_orderSpecs.isEmpty());
         Q_ASSERT(context);
@@ -158,6 +165,9 @@ private:
     const OrderBy::OrderSpec::Vector & m_orderSpecs;
     const DynamicContext::Ptr & m_context;
 };
+} // namespace std
+
+QT_BEGIN_NAMESPACE
 
 Item::Iterator::Ptr OrderBy::mapToSequence(const Item &i,
                                            const DynamicContext::Ptr &) const
@@ -169,7 +179,7 @@ Item::Iterator::Ptr OrderBy::evaluateSequence(const DynamicContext::Ptr &context
 {
     Item::List tuples(m_operand->evaluateSequence(context)->toList());
 
-    const qLess<Item::List> sorter(m_orderSpecs, context);
+    const std::less<Item::List> sorter(m_orderSpecs, context);
 
     Q_ASSERT(m_stability == StableOrder || m_stability == UnstableOrder);
 
