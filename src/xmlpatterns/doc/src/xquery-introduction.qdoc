@@ -31,7 +31,7 @@
 
 \pagekeywords XPath XQuery
 \startpage XQuery
-\target XQuery-introduction
+\keyword XQuery-introduction
 
 XQuery is a language for querying XML data or non-XML data that can be
 modeled as XML. XQuery is specified by the \l{http://www.w3.org}{W3C}.
