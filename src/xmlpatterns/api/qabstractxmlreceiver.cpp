@@ -340,7 +340,7 @@ allow null QUrls.
   This callback is called when a namespace binding is in scope of an
   element. A namespace is defined by a URI. In the \l {QXmlName}
   \a name, the value of \l {QXmlName::namespaceUri()} is that URI. The
-  value of \l {QXmlName::prefix()} is the prefix that the URI is bound
+  value of \l {QXmlName::prefix}() is the prefix that the URI is bound
   to. The local name is insignificant and can be an arbitrary value.
  */
 

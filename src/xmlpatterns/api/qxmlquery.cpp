@@ -1100,7 +1100,7 @@ void QXmlQuery::setInitialTemplateName(const QXmlName &name)
   \overload
 
   Sets the name of the initial template to \a localName, which must be
-  a valid \l{QXmlName::localName()} {local name}. The initial template
+  a valid \l{QXmlName::localName}{local name}. The initial template
   is the one the processor calls first, instead of attempting to match
   a template to the context node (if any). If an initial template is
   not set, the standard order of template invocation will be used.
@@ -1109,7 +1109,7 @@ void QXmlQuery::setInitialTemplateName(const QXmlName &name)
   stylesheets. The name becomes part of the compiled stylesheet.
   Therefore, this function must be called before calling setQuery().
 
-  If \a localName is not a valid \l{QXmlName::localName()} {local
+  If \a localName is not a valid \l{QXmlName::localName} {local
   name}, the effect is undefined. If the stylesheet has no template
   named \a localName, the processor will use the standard order of
   template invocation.
