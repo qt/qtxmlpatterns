@@ -231,7 +231,7 @@ private:
         /**
          * One excluded, since we skip static-base-uri.xq.
          */
-        ExpectedQueryCount = 29
+        ExpectedQueryCount = 30
     };
 
     static void checkBaseURI(const QUrl &baseURI, const QString &candidate);

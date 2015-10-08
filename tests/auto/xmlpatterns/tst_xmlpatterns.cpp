@@ -66,9 +66,7 @@ private Q_SLOTS:
     void xquerySupport_data() const;
     void xsltSupport();
     void xsltSupport_data() const;
-#ifndef QT_NO_PROCESS
     void stdoutFailure() const;
-#endif
     void cleanupTestCase() const;
 
 private:
@@ -769,6 +767,13 @@ void tst_XmlPatterns::xquerySupport_data() const
         << QString()
         << QString();
 
+    QTest::newRow("QTBUG-35897: literal sequence")
+            << 0
+            << QByteArray("someString a b\n")
+            << QStringList((path + QStringLiteral("literalsequence.xq")))
+            << QString()
+            << QString();
+
     // TODO https?
     // TODO pass external variables that allows space around the equal sign.
     // TODO run fn:trace()
@@ -815,10 +820,10 @@ void tst_XmlPatterns::removeNonWritable(QFile &outFile)
  Check that we gracefully handle writing out to stdout
  when the latter is not writable.
  */
-#ifndef QT_NO_PROCESS
 void tst_XmlPatterns::stdoutFailure() const
 {
     return; // TODO It's really hard to write testing code for this.
+#ifndef QT_NO_PROCESS
 
     const QString outName(QLatin1String("stdoutFailure.out"));
     createNonWritable(outName);
@@ -840,8 +845,10 @@ void tst_XmlPatterns::stdoutFailure() const
     QCOMPARE(process.exitCode(), 1);
 
     removeNonWritable(outFile);
+#else
+    QSKIP("Skipping test due to not having process support");
+#endif // QT_NO_PROCESS
 }
-#endif
 
 void tst_XmlPatterns::cleanupTestCase() const
 {

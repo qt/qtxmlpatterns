@@ -34,6 +34,8 @@
 #include "qcardinalityverifier_p.h"
 #include "qcommonsequencetypes_p.h"
 #include "qemptysequence_p.h"
+#include "qabstractxmlforwarditerator_p.h"
+#include "qliteral_p.h"
 #include "qsequencemappingiterator_p.h"
 
 #include "qexpressionsequence_p.h"
@@ -106,6 +108,13 @@ Expression::Ptr ExpressionSequence::compress(const StaticContext::Ptr &context)
 
             for(; seqIt != seqEnd; ++seqIt)
                 result.append(*seqIt);
+        } else if (Id == IDLiteralSequence) {
+            /* Rewrite "(1, (2, 3), 4)" into "(1, 2, 3, 4)" */
+            // Note: LiteralSequence does not use the dynamic context, so we pass in a nullptr.
+            Item::Iterator::Ptr seqIt = (*it)->evaluateSequence(DynamicContext::Ptr(Q_NULLPTR));
+
+            while (!seqIt->next().isNull())
+                result.append(Literal::Ptr(new Literal(seqIt->current())));
         }
         else
             result.append(*it);
