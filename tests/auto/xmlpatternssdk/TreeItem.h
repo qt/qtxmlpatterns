@@ -84,6 +84,9 @@ namespace QPatternistSDK
 
         virtual QVariant data(const Qt::ItemDataRole role, int column) const = 0;
 
+        static QPair<int,int> executeRange;
+        static int executions;
+
     Q_SIGNALS:
         /**
          * Emitted whenever this item changed. This is used for keeping

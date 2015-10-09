@@ -71,6 +71,13 @@ static bool lessThan(const char *a, const char *b)
 TestResult::List TestCase::execute(const ExecutionStage stage,
                                    TestSuite *)
 {
+    ++TestCase::executions;
+
+    if ((TestCase::executions < TestCase::executeRange.first) || (TestCase::executions > TestCase::executeRange.second)) {
+        qDebug("Skipping test case #%6d", TestCase::executions);
+        return TestResult::List();
+    }
+
     const QByteArray nm = name().toAscii();
 
     if(name() == QLatin1String("Constr-cont-document-3"))
@@ -124,7 +131,7 @@ TestResult::List TestCase::execute(const ExecutionStage stage,
     }
 
 
-    qDebug() << "Running test case: " << nm;
+    qDebug("Running test case #%6d: %s", TestCase::executions, nm.constData());
     return execute(stage);
 
     Q_ASSERT(false);
