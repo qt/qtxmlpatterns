@@ -173,17 +173,7 @@ QString AbstractFloat<isDouble>::stringValue() const
          */
         int sign;
         int decimalPoint;
-        char *result = 0;
-        static_cast<void>(qdtoa(m_value, -1, 0, &decimalPoint, &sign, 0, &result));
-
-        /* If the copy constructor is used instead of QString::operator=(),
-         * it doesn't compile. I have no idea why. */
-        const QString qret(QString::fromLatin1(result));
-
-        /* We use free() instead of delete here, because qlocale.cpp use malloc(). Spotted
-         * by valgrind. */
-        free(result);
-
+        const QString qret = qdtoa(m_value, &decimalPoint, &sign);
         QString valueAsString;
 
         if(sign)

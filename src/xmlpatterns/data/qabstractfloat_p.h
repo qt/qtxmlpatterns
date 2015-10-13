@@ -53,6 +53,7 @@
 #include <private/qschemanumeric_p.h>
 #include <private/qvalidationerror_p.h>
 #include <private/qbuiltintypes_p.h>
+#include <private/qlocale_tools_p.h>
 
 QT_BEGIN_NAMESPACE
 

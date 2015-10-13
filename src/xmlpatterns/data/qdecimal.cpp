@@ -33,6 +33,8 @@
 
 #include <math.h>
 
+#include <private/qlocale_tools_p.h>
+
 #include "qabstractfloat_p.h"
 #include "qatomictype_p.h"
 #include "qbuiltintypes_p.h"
@@ -105,13 +107,7 @@ QString Decimal::toString(const xsDecimal value)
     {
         int sign;
         int decimalPoint;
-        char *result = 0;
-        static_cast<void>(qdtoa(value, 0, 0, &decimalPoint, &sign, 0, &result));
-        /* If the copy constructor is used instead of QString::operator=(),
-         * it doesn't compile. I have no idea why. */
-        const QString qret(QString::fromLatin1(result));
-        free(result);
-
+        const QString qret = qdtoa(value, &decimalPoint, &sign);
         QString valueAsString;
 
         if(sign)
