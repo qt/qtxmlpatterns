@@ -4,7 +4,7 @@ project = QtXmlPatterns
 description = Qt XML Patterns Reference Documentation
 version = $QT_VERSION
 
-examplesinstallpath = xmlpatterns
+examplesinstallpath = qtxmlpatterns/xmlpatterns
 
 exampledirs += ../../../examples/xmlpatterns \
                ../ \
