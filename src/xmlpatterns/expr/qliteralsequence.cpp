@@ -73,7 +73,7 @@ ExpressionVisitorResult::Ptr LiteralSequence::accept(const ExpressionVisitor::Pt
 
 Expression::ID LiteralSequence::id() const
 {
-    return IDExpressionSequence;
+    return IDLiteralSequence;
 }
 
 Expression::Properties LiteralSequence::properties() const

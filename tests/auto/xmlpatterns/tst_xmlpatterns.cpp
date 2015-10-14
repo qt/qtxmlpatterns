@@ -117,6 +117,17 @@ void tst_XmlPatterns::initTestCase()
 #endif // QT_NO_PROCESS
 }
 
+#ifndef QT_NO_PROCESS
+static QByteArray msgProcessError(const char *what, const QProcess &process)
+{
+    QString result = QLatin1String(what) + QLatin1Char(' ')
+        + QDir::toNativeSeparators(process.program())
+        + QLatin1Char(' ') + process.arguments().join(QLatin1Char(' '))
+        + QLatin1String(": ") + process.errorString();
+    return result.toLocal8Bit();
+}
+#endif // !QT_NO_PROCESS
+
 void tst_XmlPatterns::xquerySupport()
 {
     if (QTest::currentDataTag() == QByteArray("Load query via FTP")
@@ -143,9 +154,10 @@ void tst_XmlPatterns::xquerySupport()
         process.setWorkingDirectory(inputFile(cwd));
 
     process.start(m_command, arguments);
+    QVERIFY2(process.waitForStarted(), msgProcessError("Failed to start", process).constData());
 
+    QVERIFY2(process.waitForFinished(), msgProcessError("Timeout running", process).constData());
     QCOMPARE(process.exitStatus(), QProcess::NormalExit);
-    QVERIFY(process.waitForFinished());
 
     if(process.exitCode() != expectedExitCode)
         QTextStream(stderr) << "stderr:" << process.readAllStandardError();
@@ -755,6 +767,13 @@ void tst_XmlPatterns::xquerySupport_data() const
         << QString()
         << QString();
 
+    QTest::newRow("QTBUG-35897: literal sequence")
+            << 0
+            << QByteArray("someString a b\n")
+            << QStringList((path + QStringLiteral("literalsequence.xq")))
+            << QString()
+            << QString();
+
     // TODO https?
     // TODO pass external variables that allows space around the equal sign.
     // TODO run fn:trace()
@@ -804,7 +823,7 @@ void tst_XmlPatterns::removeNonWritable(QFile &outFile)
 void tst_XmlPatterns::stdoutFailure() const
 {
 #ifdef QT_NO_PROCESS
-    QSKIP("No QProcess available");
+    QSKIP("Skipping test due to not having process support");
 #else
     return; // TODO It's really hard to write testing code for this.
 
