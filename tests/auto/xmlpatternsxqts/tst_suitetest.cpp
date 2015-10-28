@@ -35,6 +35,8 @@
 #include <QtTest/QtTest>
 
 #include <QProcess>
+#include <cstdlib>
+
 #include "TestSuite.h"
 #include "TestSuiteResult.h"
 #include "XMLWriter.h"
@@ -70,6 +72,13 @@ void tst_SuiteTest::runTestSuite() const
     if(m_abortRun)
         QSKIP("The test suite is not available, no tests are run.");
 
+    QByteArray range = qgetenv("XMLPATTERNSXQTS_TESTRANGE");
+    char *endptr;
+    TreeItem::executeRange.first = strtol(range.constData(), &endptr, 10);
+    long e = 0;
+    if (endptr - range.constData() < range.size())
+        e = strtol(endptr + 1, &endptr, 10);
+    TreeItem::executeRange.second = (e == 0 ? INT_MAX : e);
     QString errMsg;
     const QFileInfo fi(m_catalogPath);
     const QUrl catalogPath(QUrl::fromLocalFile(fi.absoluteFilePath()));
