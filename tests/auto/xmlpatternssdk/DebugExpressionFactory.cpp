@@ -179,35 +179,25 @@ void DebugExpressionFactory::processTemplateRule(const Expression::Ptr &body,
                                                  const QXmlName &mode,
                                                  const TemplateCompilationStage stage)
 {
-    const char * title;
+    QString title = QLatin1String("T-Rule ");
 
-    switch(stage)
-    {
-        case TemplateInitial:
-        {
-            title = "Initial Build";
-            break;
-        }
-        case TemplateTypeCheck:
-        {
-            title = "Type Check";
-            break;
-        }
-        case TemplateCompress:
-        {
-            title = "Compression";
-            break;
-        }
+    switch (stage) {
+    case TemplateInitial:
+        title += QLatin1String("Initial Build");
+        break;
+    case TemplateTypeCheck:
+        title += QLatin1String("Type Check");
+        break;
+    case TemplateCompress:
+        title += QLatin1String("Compression");
+        break;
     }
+    title += QLatin1String(" mode: ")
+        + Global::namePool()->displayName(mode)
+        + QLatin1String(" priority: ")
+        + QString::number(pattern->priority());
 
-    const QString modeName(Global::namePool()->displayName(mode));
-    Q_ASSERT(title);
-    ASTItem *const newChild = new ASTItem(m_ast, QLatin1String("T-Rule ")
-                                                 + QLatin1String(title)
-                                                 + QLatin1String(" mode: ")
-                                                 + modeName
-                                                 + QLatin1String(" priority: ")
-                                                 + QString::number(pattern->priority()));
+    ASTItem *const newChild = new ASTItem(m_ast, title);
     m_ast->appendChild(newChild);
 
     newChild->appendChild(buildASTTree(pattern->matchPattern(), newChild, QPatternist::SequenceType::Ptr()));
@@ -218,31 +208,23 @@ void DebugExpressionFactory::processNamedTemplate(const QXmlName &name,
                                                   const Expression::Ptr &body,
                                                   const TemplateCompilationStage stage)
 {
-    const char * title;
+    QString title;
 
-    switch(stage)
-    {
-        case TemplateInitial:
-        {
-            title = "Named Template Initial Build";
-            break;
-        }
-        case TemplateTypeCheck:
-        {
-            title = "Named Template Type Check";
-            break;
-        }
-        case TemplateCompress:
-        {
-            title = "Named Template Compression";
-            break;
-        }
+    switch (stage) {
+    case TemplateInitial:
+        title += QLatin1String("Named Template Initial Build");
+        break;
+    case TemplateTypeCheck:
+        title += QLatin1String("Named Template Type Check");
+        break;
+    case TemplateCompress:
+        title += QLatin1String("Named Template Compression");
+        break;
     }
 
-    Q_ASSERT(title);
-    ASTItem *const newChild = new ASTItem(m_ast, QLatin1String(title)
-                                                 + QLatin1String(": ")
-                                                 + Global::namePool()->displayName(name));
+    title += QLatin1String(": ") + Global::namePool()->displayName(name);
+
+    ASTItem *const newChild = new ASTItem(m_ast, title);
 
     m_ast->appendChild(newChild);
     newChild->appendChild(buildASTTree(body, newChild, QPatternist::SequenceType::Ptr()));
