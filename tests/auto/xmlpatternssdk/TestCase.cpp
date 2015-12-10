@@ -38,6 +38,7 @@
 #include <QXmlResultItems>
 #include <QXmlSerializer>
 #include <private/qxmlquery_p.h>
+#include <algorithm>
 
 #include "DebugExpressionFactory.h"
 #include "ExternalSourceLoader.h"
@@ -62,9 +63,23 @@ TestCase::~TestCase()
     delete m_result;
 }
 
+static bool lessThan(const char *a, const char *b)
+{
+    return qstrcmp(a, b) < 0;
+}
+
 TestResult::List TestCase::execute(const ExecutionStage stage,
                                    TestSuite *)
 {
+    ++TestCase::executions;
+
+    if ((TestCase::executions < TestCase::executeRange.first) || (TestCase::executions > TestCase::executeRange.second)) {
+        qDebug("Skipping test case #%6d", TestCase::executions);
+        return TestResult::List();
+    }
+
+    const QByteArray nm = name().toLatin1();
+
     if(name() == QLatin1String("Constr-cont-document-3"))
     {
             TestResult::List result;
@@ -95,9 +110,28 @@ TestResult::List TestCase::execute(const ExecutionStage stage,
         result.append(createTestResult(TestResult::Fail, QLatin1String("Skipped this test, we crash on it.")));
         return result;
     }
+    else {
+        // Should be sorted in the order that std::binary_search expects
+        static const char *crashes[] = {"Constr-attr-content-4",
+                                        "K2-DirectConElem-12",
+                                        "K2-DirectConElem-50",
+                                        "K2-DirectConElemAttr-10",
+                                        "K2-DirectConElemAttr-18",
+                                        "K2-DirectConElemAttr-19",
+                                        "K2-DirectConElemAttr-20",
+                                        "K2-DirectConElemAttr-21"
+                                        };
 
-    qDebug() << "Running test case: " << name();
+        const bool skip = std::binary_search(&crashes[0], &crashes[sizeof(crashes)/sizeof(crashes[0])], nm.constData(), lessThan);
+        if (skip) {
+            TestResult::List result;
+            result.append(createTestResult(TestResult::Fail, QLatin1String("Skipped this test, we crash on it.")));
+            return result;
+        }
+    }
 
+
+    qDebug("Running test case #%6d: %s", TestCase::executions, nm.constData());
     return execute(stage);
 
     Q_ASSERT(false);

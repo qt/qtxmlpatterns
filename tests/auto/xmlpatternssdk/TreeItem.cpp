@@ -51,4 +51,8 @@ int TreeItem::row() const
         return -1;
 }
 
+QPair<int, int> TreeItem::executeRange = qMakePair<int,int>(0,INT_MAX);
+int TreeItem::executions = 0;
+
+
 // vim: et:ts=4:sw=4:sts=4
