@@ -78,7 +78,7 @@ TestResult::List TestCase::execute(const ExecutionStage stage,
         return TestResult::List();
     }
 
-    const QByteArray nm = name().toAscii();
+    const QByteArray nm = name().toLatin1();
 
     if(name() == QLatin1String("Constr-cont-document-3"))
     {
