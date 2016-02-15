@@ -37,22 +37,13 @@
 **
 ****************************************************************************/
 
-#include <QMutex>
-
 #include "private/qobject_p.h"
 #include "qabstractmessagehandler.h"
 
 QT_BEGIN_NAMESPACE
 
-class QAbstractMessageHandlerPrivate : public QObjectPrivate
-{
-public:
-    QMutex mutex;
-};
-
 /*!
   \class QAbstractMessageHandler
-  \threadsafe
   \since 4.4
   \ingroup xml-tools
   \inmodule QtXmlPatterns
@@ -71,8 +62,6 @@ public:
   instance of your subclass to any classes that must generate
   messages. The messages are sent to the message handler via the
   message() function, which forwards them to your handleMessge().
-  The effect is to serialize the handling of all messages, which
-  means your QAbstractMessageHandler subclass is thread safe.
 
   A single instance of QAbstractMessageHandler can be called on to
   handle messages from multiple sources. Hence, the content of a
@@ -87,7 +76,7 @@ public:
   Constructs a QAbstractMessageHandler. The \a parent is passed
   to the QObject base class constructor.
  */
-QAbstractMessageHandler::QAbstractMessageHandler(QObject *parent) : QObject(*new QAbstractMessageHandlerPrivate(), parent)
+QAbstractMessageHandler::QAbstractMessageHandler(QObject *parent) : QObject(parent)
 {
 }
 
@@ -127,8 +116,6 @@ void QAbstractMessageHandler::message(QtMsgType type,
                                       const QUrl &identifier,
                                       const QSourceLocation &sourceLocation)
 {
-    Q_D(QAbstractMessageHandler);
-    QMutexLocker(&d->mutex);
     handleMessage(type, description, identifier, sourceLocation);
 }
 
@@ -141,6 +128,9 @@ void QAbstractMessageHandler::message(QtMsgType type,
   This function must be implemented by the sub-class. message() will
   call this function, passing in its parameters, \a type,
   \a description, \a identifier and \a sourceLocation unmodified.
+
+  This function can potentially be called from multiple threads. It's the reimplementation's
+  responsibility to ensure thread safety.
  */
 
 QT_END_NAMESPACE

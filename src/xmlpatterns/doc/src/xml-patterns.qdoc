@@ -538,7 +538,7 @@
 
         \li The set of D-Bus interfaces available in a system
 
-        \li A QObject hierarchy, as seen in the \l{QObject XML Model Example}.
+        \li A QObject hierarchy.
 
     \endlist
 

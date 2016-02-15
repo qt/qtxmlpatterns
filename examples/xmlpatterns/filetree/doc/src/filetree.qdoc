@@ -118,15 +118,13 @@
   file system. At this point it is instructive to note that although
   the node model class for this example (\c{FileTree}) actually builds
   and contains the custom node model, building the custom node model
-  isn't always required. The node model class for the \l{QObject XML
-  Model Example} {QObject node model example} does not build its node
-  model but instead uses an already existing QObject tree as its node
-  model and just implements the callback interface for that already
-  existing data structure. In this file system example, however,
-  although we have an already existing data structure, i.e. the file
-  system, that data structure is not in memory and is not in a form we
-  can use. So we must build an analog of the file system in memory
-  from instances of QFileInfo, and we use that analog as the custom
+  isn't always required. For example, it is possible to use an already
+  existing QObject tree as a node model and just implement the callback
+  interface for that already existing data structure.  In this file system
+  example, however, although we have an already existing data structure,
+  i.e. the file system, that data structure is not in memory and is not
+  in a form we can use. So we must build an analog of the file system in
+  memory from instances of QFileInfo, and we use that analog as the custom
   node model.
 
   The two sets of flags, \c{m_filterAllowAll} and \c{m_sortFlags},
