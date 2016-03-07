@@ -7,8 +7,6 @@ win32-msvc*|win32-icc:QMAKE_LFLAGS += /BASE:0x61000000
 
 QMAKE_DOCS = $$PWD/doc/qtxmlpatterns.qdocconf
 
-load(qt_module)
-
 include($$PWD/common.pri)
 include($$PWD/acceltree/acceltree.pri)
 include($$PWD/api/api.pri)
@@ -37,3 +35,5 @@ wince* {
         QMAKE_CXXFLAGS_RELEASE ~= s/-O1/-Os -Oy -Ob2/
     }
 }
+
+load(qt_module)
