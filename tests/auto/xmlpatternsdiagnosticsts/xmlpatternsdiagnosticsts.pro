@@ -19,11 +19,5 @@ INCLUDEPATH += $$(QTSRCDIR)/tests/auto/xmlpatternssdk  \
                ../xmlpatternsxqts                      \
                ../xmlpatternssdk
 
-wince* {
-   catalog.files = TestSuite Baseline.xml
-   catalog.path = .
-   DEPLOYMENT += catalog
-}
-
 requires(contains(QT_CONFIG,private_tests))
 

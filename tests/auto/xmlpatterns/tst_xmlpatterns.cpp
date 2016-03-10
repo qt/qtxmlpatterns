@@ -132,10 +132,6 @@ void tst_XmlPatterns::xquerySupport()
     if(m_dontRun)
         QSKIP("The command line utility is not in the path.");
 
-#ifdef Q_OS_WINCE
-    QSKIP("WinCE: This test uses unsupported WinCE functionality");
-#endif
-
 #ifndef QT_NO_PROCESS
     QFETCH(int,         expectedExitCode);
     QFETCH(QByteArray,  expectedQueryOutput);
@@ -230,10 +226,6 @@ void tst_XmlPatterns::xquerySupport()
 
 void tst_XmlPatterns::xquerySupport_data() const
 {
-#if defined(Q_OS_WINCE)
-    return;
-#endif
-
     QString path = QFINDTESTDATA("queries/");
 
     /* Check one file for existence, to avoid possible false positives. */
@@ -871,10 +863,6 @@ void tst_XmlPatterns::xsltSupport_data() const
 {
     if(m_dontRun)
         QSKIP("The command line utility is not in the path.");
-
-#ifdef Q_OS_WINCE
-    QSKIP("WinCE: This test uses unsupported WinCE functionality");
-#endif
 
     QString spath = QFINDTESTDATA("stylesheets/");
     QString qpath = QFINDTESTDATA("queries/");

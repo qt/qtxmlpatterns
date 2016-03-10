@@ -14,13 +14,3 @@ QT += network testlib
 TESTDATA = data/* pushBaselines/* input.xml
 
 include (../xmlpatterns.pri)
-
-wince*: {
-   addFiles.files = pushBaselines input.xml
-   addFiles.path    = .
-
-   patternistFiles.files = ../xmlpatterns/queries
-   patternistFiles.path    = ../xmlpatterns
-
-   DEPLOYMENT += addFiles patternistFiles
-}

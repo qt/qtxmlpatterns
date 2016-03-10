@@ -88,10 +88,6 @@ void tst_XmlPatternsValidator::xsdSupport()
     if(m_dontRun)
         QSKIP("The command line utility is not in the path.");
 
-#ifdef Q_OS_WINCE
-    QSKIP("WinCE: This test uses unsupported WinCE functionality");
-#endif
-
 #ifndef QT_NO_PROCESS
     QFETCH(int,         expectedExitCode);
     QFETCH(QStringList, arguments);
@@ -118,10 +114,6 @@ void tst_XmlPatternsValidator::xsdSupport()
 
 void tst_XmlPatternsValidator::xsdSupport_data() const
 {
-#ifdef Q_OS_WINCE
-    return;
-#endif
-
     QString path = QFINDTESTDATA("files/");
 
     /* Check one file for existence, to avoid a flood of failures. */

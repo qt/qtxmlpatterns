@@ -43,7 +43,7 @@ TestFundament::TestFundament()
 
 QString TestFundament::offset()
 {
-#if defined(Q_OS_WIN) && !defined(Q_OS_WINCE)
+#if defined(Q_OS_WIN)
     /* On Windows, the executable is placed in a release/ or debug/ folder. */
     return QLatin1String("../");
 #elif defined(Q_OS_MAC)

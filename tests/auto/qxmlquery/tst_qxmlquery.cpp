@@ -1984,13 +1984,6 @@ void tst_QXmlQuery::fnDocNetworkAccessSuccess() const
             || QTest::currentDataTag() == QByteArray("ftp scheme"))
         QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
 
-#if defined(Q_OS_WINCE) && !defined(_X86_)
-    QStringList testsToSkip;
-    testsToSkip << "http scheme" << "ftp scheme";
-    if (testsToSkip.contains(QTest::currentDataTag()))
-        QSKIP("Network tests are currently unsupported on Windows CE.");
-#endif
-
     QFETCH(QUrl, uriToOpen);
     QFETCH(QByteArray, expectedOutput);
 
@@ -2523,13 +2516,6 @@ void tst_QXmlQuery::setQueryQUrlSuccess() const
     if (QTest::currentDataTag() == QByteArray("A valid query via the ftp scheme")
             || QTest::currentDataTag() == QByteArray("A valid query via the http scheme"))
         QVERIFY(QtNetworkSettings::verifyTestNetworkSettings());
-
-#if defined(Q_OS_WINCE) && !defined(_X86_)
-    QStringList testsToSkip;
-    testsToSkip << "A valid query via the ftp scheme" << "A valid query via the http scheme";
-    if (testsToSkip.contains(QTest::currentDataTag()))
-        QSKIP("Network tests are currently unsupported on Windows CE.");
-#endif
 
     QFETCH(QUrl, queryURI);
     QFETCH(QByteArray, expectedOutput);

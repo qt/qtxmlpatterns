@@ -1,14 +1,6 @@
 QT += core-private xmlpatterns xmlpatterns-private
-
-wince*: {
-    patternsdk.files = $$QT.xmlpatterns.libs/QtXmlPatternsSDK*.dll
-    patternsdk.path = .
-    basedata.files = xmlpaternsxqts/Baseline.xml
-    basedata.path = .
-    DEPLOYMENT += patternsdk
-    QT += network
-}
 QT -= gui
+
 QMAKE_RPATHLINKDIR *= $$QT.gui.libs
 
 XMLPATTERNS_SDK = QtXmlPatternsSDK

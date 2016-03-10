@@ -68,19 +68,12 @@ private:
 
 void tst_PatternistExamples::initTestCase()
 {
-#ifndef Q_OS_WINCE
     m_dirs.append(QDir(QLatin1String(SOURCETREE "src/xmlpatterns/doc/snippets/patternist/")));
     m_dirs.append(QDir(QLatin1String(SOURCETREE "examples/xmlpatterns/xquery/globalVariables/")));
     m_dirs.append(QDir(QLatin1String(SOURCETREE "examples/xmlpatterns/filetree/")));
     m_dirs.append(QDir(QLatin1String(SOURCETREE "examples/xmlpatterns/recipes/")));
     m_dirs.append(QDir(QLatin1String(SOURCETREE "examples/xmlpatterns/recipes/files/")));
-#else
-    m_dirs.append(QDir(QFINDTESTDATA("patternist/")));
-    m_dirs.append(QDir(QFINDTESTDATA("globalVariables/")));
-    m_dirs.append(QDir(QFINDTESTDATA("filetree/")));
-    m_dirs.append(QDir(QFINDTESTDATA("recipes/")));
-    m_dirs.append(QDir(QFINDTESTDATA("recipes/files/")));
-#endif
+
     for(int i = 0; i < m_dirs.size(); ++i)
         QVERIFY(m_dirs.at(i).exists());
 }
