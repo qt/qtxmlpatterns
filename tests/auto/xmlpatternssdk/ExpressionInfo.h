@@ -50,10 +50,16 @@ namespace QPatternistSDK
      * @author Frans Englich <frans.englich@nokia.com>
      */
     class Q_PATTERNISTSDK_EXPORT ExpressionInfo : public QPatternist::ExpressionVisitorResult
-                                                , public QPair<QString, QString>
     {
     public:
         ExpressionInfo(const QString &name, const QString &details);
+
+        QString name() const { return m_name; }
+        QString details() const { return m_details; }
+
+    private:
+        QString m_name;
+        QString m_details;
     };
 }
 

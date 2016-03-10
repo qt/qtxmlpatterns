@@ -70,8 +70,8 @@ ASTItem *DebugExpressionFactory::buildASTTree(const QPatternist::Expression::Ptr
     const QPatternist::ExpressionVisitorResult::Ptr exprInfo(expr->accept(namer));
     Q_ASSERT(exprInfo);
     const ExpressionInfo *const constExprInfo = static_cast<const ExpressionInfo *>(exprInfo.data());
-    const QString name(constExprInfo->first);
-    const QString details(constExprInfo->second);
+    const QString name(constExprInfo->name());
+    const QString details(constExprInfo->details());
     const QString rType(reqType ? reqType->displayName(Global::namePool()) : QLatin1String("Not specified"));
 
     /* ---------- Handle its staticType() -------- */

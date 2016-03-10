@@ -33,7 +33,9 @@
 using namespace QPatternistSDK;
 
 ExpressionInfo::ExpressionInfo(const QString &name,
-                               const QString &details) : QPair<QString, QString>(name, details)
+                               const QString &details)
+    : m_name(name)
+    , m_details(details)
 {
 }
 
