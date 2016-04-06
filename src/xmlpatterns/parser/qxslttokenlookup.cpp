@@ -42,23 +42,23 @@ using namespace QPatternist;
 XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
-                    
-                            if(data[1] == 115)
+
+                            if (data[1].unicode() == 115)
                         
 
                 return As;
             
                     }
 
-                else if (data[0] == 105)
+                else if (data[0].unicode()  == 105)
 
 
                     {
-                    if (data[1] == 100)
+                    if (data[1].unicode() == 100)
 
 
                     {
@@ -68,7 +68,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 102)
+                else if (data[1].unicode() == 102)
 
 
                     {
@@ -88,7 +88,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier3(const QChar *data)
 
         {
-            if (data[0] == 107)
+            if (data[0].unicode() == 107)
 
 
                     {
@@ -104,7 +104,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 117)
+                else if (data[0].unicode() == 117)
 
 
                     {
@@ -127,7 +127,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier4(const QChar *data)
 
         {
-            if (data[0] == 99)
+            if (data[0].unicode() == 99)
 
 
                     {
@@ -143,7 +143,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 104)
+                else if (data[0].unicode() == 104)
 
 
                     {
@@ -159,7 +159,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 108)
+                else if (data[0].unicode() == 108)
 
 
                     {
@@ -175,7 +175,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
@@ -191,7 +191,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 110)
+                else if (data[0].unicode() == 110)
 
 
                     {
@@ -207,7 +207,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
@@ -223,32 +223,32 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 116)
+                else if (data[0].unicode() == 116)
 
 
                     {
-                    if (data[1] == 101)
+                    if (data[1].unicode() == 101)
 
 
                     {
-                    if (data[2] == 115)
+                    if (data[2].unicode() == 115)
 
 
                     {
                     
-                            if(data[3] == 116)
+                            if (data[3].unicode() == 116)
                         
 
                 return Test;
             
                     }
 
-                else if (data[2] == 120)
+                else if (data[2].unicode() == 120)
 
 
                     {
                     
-                            if(data[3] == 116)
+                            if (data[3].unicode() == 116)
                         
 
                 return Text;
@@ -258,7 +258,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[1] == 121)
+                else if (data[1].unicode() == 121)
 
 
                     {
@@ -277,7 +277,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 119)
+                else if (data[0].unicode() == 119)
 
 
                     {
@@ -300,7 +300,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier5(const QChar *data)
 
         {
-            if (data[0] == 102)
+            if (data[0].unicode() == 102)
 
 
                     {
@@ -316,7 +316,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
@@ -332,7 +332,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 111)
+                else if (data[0].unicode() == 111)
 
 
                     {
@@ -348,7 +348,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 112)
+                else if (data[0].unicode() == 112)
 
 
                     {
@@ -364,7 +364,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 114)
+                else if (data[0].unicode() == 114)
 
 
                     {
@@ -387,7 +387,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier6(const QChar *data)
 
         {
-            if (data[0] == 99)
+            if (data[0].unicode() == 99)
 
 
                     {
@@ -403,7 +403,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 102)
+                else if (data[0].unicode() == 102)
 
 
                     {
@@ -419,11 +419,11 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 105)
+                else if (data[0].unicode() == 105)
 
 
                     {
-                    if (data[1] == 109)
+                    if (data[1].unicode() == 109)
 
 
                     {
@@ -439,7 +439,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 110)
+                else if (data[1].unicode() == 110)
 
 
                     {
@@ -458,7 +458,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
@@ -474,7 +474,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 111)
+                else if (data[0].unicode() == 111)
 
 
                     {
@@ -490,11 +490,11 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
-                    if (data[1] == 101)
+                    if (data[1].unicode() == 101)
 
 
                     {
@@ -510,7 +510,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 116)
+                else if (data[1].unicode() == 116)
 
 
                     {
@@ -529,7 +529,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 116)
+                else if (data[0].unicode() == 116)
 
 
                     {
@@ -552,15 +552,15 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier7(const QChar *data)
 
         {
-            if (data[0] == 99)
+            if (data[0].unicode() == 99)
 
 
                     {
-                    if (data[1] == 111)
+                    if (data[1].unicode() == 111)
 
 
                     {
-                    if (data[2] == 109)
+                    if (data[2].unicode() == 109)
 
 
                     {
@@ -576,7 +576,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[2] == 112)
+                else if (data[2].unicode() == 112)
 
 
                     {
@@ -598,7 +598,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 101)
+                else if (data[0].unicode() == 101)
 
 
                     {
@@ -614,7 +614,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 105)
+                else if (data[0].unicode() == 105)
 
 
                     {
@@ -630,7 +630,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
@@ -646,7 +646,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 118)
+                else if (data[0].unicode() == 118)
 
 
                     {
@@ -669,7 +669,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier8(const QChar *data)
 
         {
-            if (data[0] == 100)
+            if (data[0].unicode() == 100)
 
 
                     {
@@ -685,11 +685,11 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 101)
+                else if (data[0].unicode() == 101)
 
 
                     {
-                    if (data[1] == 108)
+                    if (data[1].unicode() == 108)
 
 
                     {
@@ -705,7 +705,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 110)
+                else if (data[1].unicode() == 110)
 
 
                     {
@@ -724,11 +724,11 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 102)
+                else if (data[0].unicode() == 102)
 
 
                     {
-                    if (data[1] == 111)
+                    if (data[1].unicode() == 111)
 
 
                     {
@@ -744,7 +744,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 117)
+                else if (data[1].unicode() == 117)
 
 
                     {
@@ -763,7 +763,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 111)
+                else if (data[0].unicode() == 111)
 
 
                     {
@@ -779,7 +779,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 112)
+                else if (data[0].unicode() == 112)
 
 
                     {
@@ -795,7 +795,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 114)
+                else if (data[0].unicode() == 114)
 
 
                     {
@@ -811,7 +811,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
@@ -827,7 +827,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 116)
+                else if (data[0].unicode() == 116)
 
 
                     {
@@ -843,7 +843,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 117)
+                else if (data[0].unicode() == 117)
 
 
                     {
@@ -859,15 +859,15 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 118)
+                else if (data[0].unicode() == 118)
 
 
                     {
-                    if (data[1] == 97)
+                    if (data[1].unicode() == 97)
 
 
                     {
-                    if (data[2] == 108)
+                    if (data[2].unicode() == 108)
 
 
                     {
@@ -883,7 +883,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[2] == 114)
+                else if (data[2].unicode() == 114)
 
 
                     {
@@ -912,7 +912,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier9(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
@@ -928,7 +928,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 99)
+                else if (data[0].unicode() == 99)
 
 
                     {
@@ -944,7 +944,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 100)
+                else if (data[0].unicode() == 100)
 
 
                     {
@@ -960,7 +960,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 110)
+                else if (data[0].unicode() == 110)
 
 
                     {
@@ -976,7 +976,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 111)
+                else if (data[0].unicode() == 111)
 
 
                     {
@@ -992,7 +992,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
@@ -1008,11 +1008,11 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 116)
+                else if (data[0].unicode() == 116)
 
 
                     {
-                    if (data[1] == 101)
+                    if (data[1].unicode() == 101)
 
 
                     {
@@ -1028,7 +1028,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 114)
+                else if (data[1].unicode() == 114)
 
 
                     {
@@ -1054,7 +1054,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier10(const QChar *data)
 
         {
-            if (data[0] == 99)
+            if (data[0].unicode() == 99)
 
 
                     {
@@ -1070,7 +1070,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
@@ -1086,15 +1086,15 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
-                    if (data[1] == 116)
+                    if (data[1].unicode() == 116)
 
 
                     {
-                    if (data[2] == 97)
+                    if (data[2].unicode() == 97)
 
 
                     {
@@ -1110,7 +1110,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[2] == 121)
+                else if (data[2].unicode() == 121)
 
 
                     {
@@ -1132,7 +1132,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 118)
+                else if (data[0].unicode() == 118)
 
 
                     {
@@ -1148,7 +1148,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 119)
+                else if (data[0].unicode() == 119)
 
 
                     {
@@ -1203,7 +1203,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier13(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
@@ -1219,7 +1219,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 99)
+                else if (data[0].unicode() == 99)
 
 
                     {
@@ -1235,7 +1235,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 105)
+                else if (data[0].unicode() == 105)
 
 
                     {
@@ -1258,7 +1258,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier14(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
@@ -1274,39 +1274,39 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 100)
+                else if (data[0].unicode() == 100)
 
 
                     {
-                    if (data[1] == 111)
+                    if (data[1].unicode() == 111)
 
 
                     {
-                    if (data[2] == 99)
+                    if (data[2].unicode() == 99)
 
 
                     {
-                    if (data[3] == 116)
+                    if (data[3].unicode() == 116)
 
 
                     {
-                    if (data[4] == 121)
+                    if (data[4].unicode() == 121)
 
 
                     {
-                    if (data[5] == 112)
+                    if (data[5].unicode() == 112)
 
 
                     {
-                    if (data[6] == 101)
+                    if (data[6].unicode() == 101)
 
 
                     {
-                    if (data[7] == 45)
+                    if (data[7].unicode() == 45)
 
 
                     {
-                    if (data[8] == 112)
+                    if (data[8].unicode() == 112)
 
 
                     {
@@ -1322,7 +1322,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[8] == 115)
+                else if (data[8].unicode() == 115)
 
 
                     {
@@ -1362,7 +1362,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 111)
+                else if (data[0].unicode() == 111)
 
 
                     {
@@ -1378,7 +1378,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 112)
+                else if (data[0].unicode() == 112)
 
 
                     {
@@ -1401,7 +1401,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier15(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
@@ -1417,7 +1417,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 98)
+                else if (data[0].unicode() == 98)
 
 
                     {
@@ -1433,7 +1433,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 99)
+                else if (data[0].unicode() == 99)
 
 
                     {
@@ -1449,7 +1449,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 114)
+                else if (data[0].unicode() == 114)
 
 
                     {
@@ -1465,7 +1465,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
@@ -1504,7 +1504,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier18(const QChar *data)
 
         {
-            if (data[0] == 100)
+            if (data[0].unicode() == 100)
 
 
                     {
@@ -1520,7 +1520,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 105)
+                else if (data[0].unicode() == 105)
 
 
                     {
@@ -1536,7 +1536,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
@@ -1552,7 +1552,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 110)
+                else if (data[0].unicode() == 110)
 
 
                     {
@@ -1568,11 +1568,11 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 117)
+                else if (data[0].unicode() == 117)
 
 
                     {
-                    if (data[1] == 110)
+                    if (data[1].unicode() == 110)
 
 
                     {
@@ -1588,19 +1588,19 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 115)
+                else if (data[1].unicode() == 115)
 
 
                     {
-                    if (data[2] == 101)
+                    if (data[2].unicode() == 101)
 
 
                     {
-                    if (data[3] == 45)
+                    if (data[3].unicode() == 45)
 
 
                     {
-                    if (data[4] == 97)
+                    if (data[4].unicode() == 97)
 
 
                     {
@@ -1616,7 +1616,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[4] == 99)
+                else if (data[4].unicode() == 99)
 
 
                     {
@@ -1651,7 +1651,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier20(const QChar *data)
 
         {
-            if (data[0] == 105)
+            if (data[0].unicode() == 105)
 
 
                     {
@@ -1667,7 +1667,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 111)
+                else if (data[0].unicode() == 111)
 
 
                     {
@@ -1706,7 +1706,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier22(const QChar *data)
 
         {
-            if (data[0] == 99)
+            if (data[0].unicode() == 99)
 
 
                     {
@@ -1722,7 +1722,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 105)
+                else if (data[0].unicode() == 105)
 
 
                     {
@@ -1738,7 +1738,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 110)
+                else if (data[0].unicode() == 110)
 
 
                     {
@@ -1754,7 +1754,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 112)
+                else if (data[0].unicode() == 112)
 
 
                     {
@@ -1777,7 +1777,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
     XSLTTokenLookup::NodeName XSLTTokenLookup::classifier23(const QChar *data)
 
         {
-            if (data[0] == 101)
+            if (data[0].unicode() == 101)
 
 
                     {
@@ -1793,7 +1793,7 @@ XSLTTokenLookup::NodeName XSLTTokenLookup::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 120)
+                else if (data[0].unicode() == 120)
 
 
                     {
