@@ -109,7 +109,7 @@ XsdAlternative::Ptr XsdElement::TypeTable::defaultTypeDefinition() const
 
 
 XsdElement::XsdElement()
-    : m_isAbstract(false)
+    : m_isAbstract(false), m_isNillable(false)
 {
 }
 
