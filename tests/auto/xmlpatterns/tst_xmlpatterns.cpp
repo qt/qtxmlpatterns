@@ -144,6 +144,10 @@ void tst_XmlPatterns::xquerySupport()
     if(!cwd.isEmpty())
         process.setWorkingDirectory(inputFile(cwd));
 
+    QProcessEnvironment env(process.processEnvironment());
+    env.insert("QT_LOGGING_RULES", "qt.network.ssl=false");
+    process.setProcessEnvironment(env);
+
     process.start(m_command, arguments);
     QVERIFY2(process.waitForStarted(), msgProcessError("Failed to start", process).constData());
 
