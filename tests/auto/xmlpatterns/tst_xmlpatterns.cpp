@@ -1036,6 +1036,7 @@ QString tst_XmlPatterns::filterStderr(const QString &in)
         // warning messages about old-style plugins
         << QRegExp(QLatin1String("Old plugin format found in lib [^\n]+\n"))
         << QRegExp(QLatin1String("Qt plugin loader: Compatibility plugin [^\n]+\n"))
+        << QRegExp(QLatin1String("Unimplemented code.\n"))
     ;
 
     QString out = in;
