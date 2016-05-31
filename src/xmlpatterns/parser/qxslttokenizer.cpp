@@ -1964,7 +1964,6 @@ bool XSLTTokenizer::insideSequenceConstructor(TokenSource::Queue *const to,
                         default:
                             unexpectedContent();
                     }
-                    continue;
                 }
                 else
                 {
@@ -2001,11 +2000,9 @@ bool XSLTTokenizer::insideSequenceConstructor(TokenSource::Queue *const to,
                     pushState(InsideSequenceConstructor);
                     insideSequenceConstructor(to);
                     Q_ASSERT(tokenType() == QXmlStreamReader::EndElement || hasError());
-                    continue;
                 }
 
-                unexpectedContent();
-                break;
+                continue;
             }
             case QXmlStreamReader::EndElement:
             {
