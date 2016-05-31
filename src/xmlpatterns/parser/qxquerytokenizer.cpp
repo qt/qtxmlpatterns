@@ -1691,19 +1691,15 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                     const QChar next(m_data.at(m_pos + 1));
                     if (!next.isSpace() && next != QLatin1Char('/') && next != QLatin1Char('>'))
                         return Token(T_ERROR); // i18n Space must separate attributes
-                    else if (result.isEmpty())
+
+                    if (result.isEmpty())
                     {
                         return tokenAndChangeState(state() == AposAttributeContent ? T_APOS : T_QUOTE,
                                                    StartTag, 1);
                     }
-                    else
-                    {
-                        /* Don't consume the sep, but leave it so we next time return a token for it. */
-                        return Token(T_STRING_LITERAL, result);
-                    }
 
-                    ++m_pos;
-                    continue;
+                    /* Don't consume the sep, but leave it so we next time return a token for it. */
+                    return Token(T_STRING_LITERAL, result);
                 }
                 else if (curr == QLatin1Char('{'))
                 {
