@@ -195,7 +195,7 @@ void MaintainingReader<TokenLookupClass, LookupKey>::validateElement(const Looku
                                                  formatKeyword(name()),
                                                  allowed.first());
                     }
-                    else if(totalCount == 1)
+                    else if(totalCount == 2)
                     {
                         /* Note, allowed has already had formatKeyword() applied. */
                         translationString = QtXmlPatterns::tr("Attribute %1 cannot appear on the element %2. Allowed is %3, %4, and the standard attributes.")
