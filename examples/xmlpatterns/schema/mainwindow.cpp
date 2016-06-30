@@ -75,13 +75,11 @@ protected:
         Q_UNUSED(type);
         Q_UNUSED(identifier);
 
-        m_messageType = type;
         m_description = description;
         m_sourceLocation = sourceLocation;
     }
 
 private:
-    QtMsgType m_messageType;
     QString m_description;
     QSourceLocation m_sourceLocation;
 };
