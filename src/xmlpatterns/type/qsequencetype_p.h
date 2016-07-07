@@ -69,7 +69,7 @@ namespace QPatternist
      * @see <a href="http://www.w3.org/TR/xpath20/#id-sequencetype-syntax">XML
      * Path Language (XPath) 2.0, 2.5.3 SequenceType Syntax</a>
      */
-    class SequenceType : public virtual QSharedData
+    class Q_AUTOTEST_EXPORT SequenceType : public virtual QSharedData
     {
     public:
         inline SequenceType()

@@ -64,8 +64,8 @@ namespace QPatternist
      * @author Frans Englich <frans.englich@nokia.com>
      * @ingroup Patternist_expressions
      */
-    class GeneralComparison : public PairContainer,
-                              public ComparisonPlatform<GeneralComparison,
+    class Q_AUTOTEST_EXPORT GeneralComparison
+      : public PairContainer, public ComparisonPlatform<GeneralComparison,
                                                         true /* We want to report errors. */,
                                                         AtomicComparator::AsGeneralComparison>
     {
@@ -74,6 +74,7 @@ namespace QPatternist
                           const AtomicComparator::Operator op,
                           const Expression::Ptr &op2,
                           const bool isBackwardsCompat = false);
+        ~GeneralComparison();
 
         virtual bool evaluateEBV(const DynamicContext::Ptr &) const;
         virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,

@@ -105,8 +105,7 @@ namespace QPatternist
      * @ingroup Patternist_xdm
      * @author Frans Englich <frans.englich@nokia.com>
      */
-    class AtomicValue : public QSharedData
-                      , public CppCastingHelper<AtomicValue>
+    class Q_AUTOTEST_EXPORT AtomicValue : public QSharedData, public CppCastingHelper<AtomicValue>
     {
     public:
         virtual ~AtomicValue();

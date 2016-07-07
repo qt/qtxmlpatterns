@@ -64,13 +64,14 @@ namespace QPatternist
      * @author Frans Englich <frans.englich@nokia.com>
      * @ingroup Patternist_expressions
      */
-    class ValueComparison : public PairContainer,
-                            public ComparisonPlatform<ValueComparison, true>
+    class Q_AUTOTEST_EXPORT ValueComparison
+      : public PairContainer, public ComparisonPlatform<ValueComparison, true>
     {
     public:
         ValueComparison(const Expression::Ptr &op1,
                         const AtomicComparator::Operator op,
                         const Expression::Ptr &op2);
+        ~ValueComparison();
 
         virtual Item evaluateSingleton(const DynamicContext::Ptr &) const;
 

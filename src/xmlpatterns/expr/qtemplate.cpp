@@ -40,6 +40,11 @@ QT_BEGIN_NAMESPACE
 
 using namespace QPatternist;
 
+/*! \internal */
+Template::~Template()
+{
+}
+
 const SourceLocationReflection* Template::actualReflection() const
 {
     return this;

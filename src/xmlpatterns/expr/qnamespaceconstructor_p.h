@@ -57,10 +57,11 @@ namespace QPatternist
      * @author Frans Englich <frans.englich@nokia.com>
      * @ingroup Patternist_expressions
      */
-    class NamespaceConstructor : public EmptyContainer
+    class Q_AUTOTEST_EXPORT NamespaceConstructor : public EmptyContainer
     {
     public:
         NamespaceConstructor(const QXmlName nb);
+        ~NamespaceConstructor();
 
         virtual void evaluateToSequenceReceiver(const DynamicContext::Ptr &context) const;
 

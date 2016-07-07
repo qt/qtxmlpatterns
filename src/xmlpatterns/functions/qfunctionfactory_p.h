@@ -68,7 +68,7 @@ namespace QPatternist
      * Language (XPath) 2.0, Definition: Function signatures</a>
      * @author Frans Englich <frans.englich@nokia.com>
      */
-    class FunctionFactory : public QSharedData
+    class Q_AUTOTEST_EXPORT FunctionFactory : public QSharedData
     {
     public:
 

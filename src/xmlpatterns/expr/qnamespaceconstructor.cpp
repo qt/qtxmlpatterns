@@ -44,6 +44,11 @@ NamespaceConstructor::NamespaceConstructor(const QXmlName nb) : m_binding(nb)
     Q_ASSERT(!m_binding.isNull());
 }
 
+/*! \internal */
+NamespaceConstructor::~NamespaceConstructor()
+{
+}
+
 void NamespaceConstructor::evaluateToSequenceReceiver(const DynamicContext::Ptr &context) const
 {
     context->outputReceiver()->namespaceBinding(m_binding);

@@ -51,6 +51,11 @@ ValueComparison::ValueComparison(const Expression::Ptr &op1,
 {
 }
 
+/*! \internal */
+ValueComparison::~ValueComparison()
+{
+}
+
 Item ValueComparison::evaluateSingleton(const DynamicContext::Ptr &context) const
 {
     const Item it1(m_operand1->evaluateSingleton(context));

@@ -69,7 +69,7 @@ namespace QPatternist
      * @ingroup Patternist_types
      * @author Frans Englich <frans.englich@nokia.com>
      */
-    class ItemType : public virtual QSharedData
+    class Q_AUTOTEST_EXPORT ItemType : public virtual QSharedData
     {
     public:
         /**

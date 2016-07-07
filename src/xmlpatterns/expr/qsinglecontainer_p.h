@@ -56,9 +56,11 @@ namespace QPatternist
      * @author Frans Englich <frans.englich@nokia.com>
      * @ingroup Patternist_expressions
      */
-    class SingleContainer : public Expression
+    class Q_AUTOTEST_EXPORT SingleContainer : public Expression
     {
     public:
+        ~SingleContainer();
+
         virtual Expression::List operands() const;
 
         virtual void setOperands(const Expression::List &operands);

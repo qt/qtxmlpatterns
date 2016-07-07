@@ -58,7 +58,7 @@ namespace QPatternist
      * @author Frans Englich <frans.englich@nokia.com>
      * @ingroup Patternist_expressions
      */
-    class VariableReference : public EmptyContainer
+    class Q_AUTOTEST_EXPORT VariableReference : public EmptyContainer
     {
     public:
         typedef QExplicitlySharedDataPointer<VariableReference> Ptr;
@@ -70,6 +70,7 @@ namespace QPatternist
          * @param slot must be a valid slot. That is, zero or larger.
          */
         VariableReference(const VariableSlotID slot);
+        ~VariableReference();
 
         /**
          * @returns the slot that this reference communicates through.

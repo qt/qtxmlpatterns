@@ -45,6 +45,11 @@ SingleContainer::SingleContainer(const Expression::Ptr &operand) : m_operand(ope
     Q_ASSERT(operand);
 }
 
+/*! \internal */
+SingleContainer::~SingleContainer()
+{
+}
+
 Expression::List SingleContainer::operands() const
 {
     Expression::List list;

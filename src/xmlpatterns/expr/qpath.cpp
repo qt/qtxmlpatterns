@@ -55,6 +55,11 @@ Path::Path(const Expression::Ptr &operand1,
 {
 }
 
+/*! \internal */
+Path::~Path()
+{
+}
+
 Item::Iterator::Ptr Path::mapToSequence(const Item &item,
                                         const DynamicContext::Ptr &context) const
 {

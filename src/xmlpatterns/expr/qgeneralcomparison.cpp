@@ -56,6 +56,11 @@ GeneralComparison::GeneralComparison(const Expression::Ptr &op1,
 {
 }
 
+/*! \internal */
+GeneralComparison::~GeneralComparison()
+{
+}
+
 bool GeneralComparison::generalCompare(const Item &op1,
                                        const Item &op2,
                                        const DynamicContext::Ptr &context) const
