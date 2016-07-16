@@ -49,14 +49,16 @@
 
 template <typename TransitionType>
 XsdStateMachine<TransitionType>::XsdStateMachine()
-    : m_counter(50)
+    : m_counter(50),
+      m_lastTransition()
 {
 }
 
 template <typename TransitionType>
 XsdStateMachine<TransitionType>::XsdStateMachine(const NamePool::Ptr &namePool)
-    : m_namePool(namePool)
-    , m_counter(50)
+    : m_namePool(namePool),
+      m_counter(50),
+      m_lastTransition()
 {
 }
 

@@ -247,6 +247,7 @@ XsdSchemaParser::XsdSchemaParser(const XsdSchemaContext::Ptr &context, const Xsd
     , m_parserContext(parserContext)
     , m_namePool(m_parserContext->namePool())
     , m_namespaceSupport(m_namePool)
+    , m_defaultOpenContentAppliesToEmpty(false)
 {
     m_schema = m_parserContext->schema();
     m_schemaResolver = m_parserContext->resolver();
