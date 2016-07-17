@@ -122,7 +122,7 @@ public:
         return m_variableLoader;
     }
 
-    inline QPatternist::GenericStaticContext::Ptr staticContext()
+    inline QPatternist::StaticContext::Ptr staticContext()
     {
         if(m_staticContext && m_expr)
             return m_staticContext;
