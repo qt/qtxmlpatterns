@@ -108,7 +108,7 @@ const AtomicValue::Ptr                CommonValues::InfFloat
 
 const DayTimeDuration::Ptr      CommonValues::DayTimeDurationZero
                                     (DayTimeDuration::fromSeconds(0));
-const DayTimeDuration::Ptr      CommonValues::YearMonthDurationZero
+const YearMonthDuration::Ptr    CommonValues::YearMonthDurationZero
                                     (YearMonthDuration::fromComponents(true, 0, 0));
 
 

@@ -198,7 +198,7 @@ namespace QPatternist
         /**
          * The @c xs:yearMonthDuration value P0M
          */
-        static const DayTimeDuration::Ptr YearMonthDurationZero;
+        static const YearMonthDuration::Ptr YearMonthDurationZero;
 
     private:
         /**
