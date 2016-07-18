@@ -98,7 +98,7 @@ public:
         {
             const QPatternist::AccelTreeResourceLoader::Ptr nev(new QPatternist::AccelTreeResourceLoader(namePool.d,
                                                                                                          m_networkAccessDelegator));
-            m_resourceLoader = QPatternist::ResourceLoader::Ptr(new QPatternist::ResourceDelegator(m_resourceLoader->deviceURIs(),
+            m_resourceLoader = QPatternist::DeviceResourceLoader::Ptr(new QPatternist::ResourceDelegator(m_resourceLoader->deviceURIs(),
                                                                                                    m_resourceLoader,
                                                                                                    nev));
         }
