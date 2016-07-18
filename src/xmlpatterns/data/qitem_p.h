@@ -205,7 +205,7 @@ namespace QPatternist
 
         inline Item(const Item &other) : node(other.node)
         {
-            Q_ASSERT_X(sizeof(QXmlNodeModelIndex) >= sizeof(AtomicValue), Q_FUNC_INFO,
+            Q_STATIC_ASSERT_X(sizeof(QXmlNodeModelIndex) >= sizeof(AtomicValue),
                        "Since we're only copying the node member, it must be the largest.");
             if(isAtomicValue())
                 atomicValue->ref.ref();
