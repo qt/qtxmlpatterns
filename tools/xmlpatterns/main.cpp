@@ -213,7 +213,7 @@ static inline QUrl finalizeURI(const QApplicationArgumentParser &parser,
     {
         const QString stringURI(parser.value(arg).toString());
 
-        if(parser.has(isURI))
+        if (parser.has(isURI) || QDir::isRelativePath(stringURI))
             userURI = QUrl(stringURI);
         else
             userURI = QUrl::fromLocalFile(stringURI);
