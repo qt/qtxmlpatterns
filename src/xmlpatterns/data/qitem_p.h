@@ -111,8 +111,7 @@ namespace QPatternist
      * @ingroup Patternist_xdm
      * @author Frans Englich <frans.englich@nokia.com>
      */
-    class AtomicValue : public QSharedData
-                      , public CppCastingHelper<AtomicValue>
+    class Q_AUTOTEST_EXPORT AtomicValue : public QSharedData, public CppCastingHelper<AtomicValue>
     {
     public:
         virtual ~AtomicValue();
@@ -212,7 +211,7 @@ namespace QPatternist
 
         inline Item(const Item &other) : node(other.node)
         {
-            Q_ASSERT_X(sizeof(QXmlNodeModelIndex) >= sizeof(AtomicValue), Q_FUNC_INFO,
+            Q_STATIC_ASSERT_X(sizeof(QXmlNodeModelIndex) >= sizeof(AtomicValue),
                        "Since we're only copying the node member, it must be the largest.");
             if(isAtomicValue())
                 atomicValue->ref.ref();

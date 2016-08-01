@@ -65,7 +65,7 @@ namespace QPatternist
      * @author Frans Englich <frans.englich@nokia.com>
      * @ingroup Patternist_expressions
      */
-    class Path : public PairContainer
+    class Q_AUTOTEST_EXPORT Path : public PairContainer
     {
     public:
         enum Kind
@@ -94,6 +94,7 @@ namespace QPatternist
         Path(const Expression::Ptr &operand1,
              const Expression::Ptr &operand2,
              const Kind kind = RegularPath);
+        ~Path();
 
         virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
         virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;

@@ -78,8 +78,7 @@ namespace QPatternist
      * @ingroup Patternist_expressions
      * @since 4.5
      */
-    class Template : public QSharedData
-                   , public SourceLocationReflection
+    class Q_AUTOTEST_EXPORT Template : public QSharedData, public SourceLocationReflection
 
     {
     public:
@@ -91,6 +90,7 @@ namespace QPatternist
                                                           , m_reqType(reqType)
         {
         }
+        ~Template();
 
         Expression::Ptr body;
 

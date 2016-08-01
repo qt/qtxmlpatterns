@@ -104,7 +104,7 @@ public:
         {
             const QPatternist::AccelTreeResourceLoader::Ptr nev(new QPatternist::AccelTreeResourceLoader(namePool.d,
                                                                                                          m_networkAccessDelegator));
-            m_resourceLoader = QPatternist::ResourceLoader::Ptr(new QPatternist::ResourceDelegator(m_resourceLoader->deviceURIs(),
+            m_resourceLoader = QPatternist::DeviceResourceLoader::Ptr(new QPatternist::ResourceDelegator(m_resourceLoader->deviceURIs(),
                                                                                                    m_resourceLoader,
                                                                                                    nev));
         }
@@ -128,7 +128,7 @@ public:
         return m_variableLoader;
     }
 
-    inline QPatternist::GenericStaticContext::Ptr staticContext()
+    inline QPatternist::StaticContext::Ptr staticContext()
     {
         if(m_staticContext && m_expr)
             return m_staticContext;
