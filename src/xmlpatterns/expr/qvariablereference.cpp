@@ -48,6 +48,11 @@ VariableReference::VariableReference(const VariableSlotID slotP) : m_varSlot(slo
     Q_ASSERT(m_varSlot > -1);
 }
 
+/*! \internal */
+VariableReference::~VariableReference()
+{
+}
+
 Expression::Properties VariableReference::properties() const
 {
     return DisableElimination;
