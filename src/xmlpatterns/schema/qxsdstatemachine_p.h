@@ -261,9 +261,7 @@ namespace QPatternist
             {
                 QSet<StateId> result;
 
-                QSetIterator<StateId> it(states);
-                while (it.hasNext()) { // iterate over all given states
-                    const StateId state = it.next();
+                for (const StateId state : states) {
 
                     // get the transition table for the current state
                     const QHash<TransitionType, QVector<StateId> > transitions = m_transitions.value(state);

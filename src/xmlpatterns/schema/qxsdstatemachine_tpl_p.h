@@ -320,11 +320,9 @@ typename XsdStateMachine<TransitionType>::StateId XsdStateMachine<TransitionType
     // state, in that case our new DFA state will be a
     // Start or End state as well
     StateType type = InternalState;
-    QSetIterator<StateId> it(nfaState);
     bool hasStartState = false;
     bool hasEndState = false;
-    while (it.hasNext()) {
-        const StateId state = it.next();
+    for (const StateId state : qAsConst(nfaState)) {
         if (m_states.value(state) == EndState) {
             hasEndState = true;
         } else if (m_states.value(state) == StartState) {
@@ -390,12 +388,8 @@ XsdStateMachine<TransitionType> XsdStateMachine<TransitionType>::toDFA() const
         // the 'states' set
         QList<TransitionType> input;
 
-        {
-            QSetIterator<StateId> it(states);
-            while (it.hasNext()) {
-                input << m_transitions.value(it.next()).keys();
-            }
-        }
+        for (const StateId state : states)
+            input << m_transitions.value(state).keys();
 
         // get the state in DFA that corresponds to the 'states' set in the NFA
         const StateId dfaBegin = dfaStateForNfaState(states, table, dfa);
