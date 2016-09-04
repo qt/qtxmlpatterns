@@ -263,7 +263,6 @@ namespace QPatternist
             void createAndPushStateMachine(const XsdParticle::Ptr &particle);
 
             typedef QHash<QUrl, QStringList> MergedSchemas;
-            typedef QHashIterator<QUrl, QStringList> MergedSchemasIterator;
 
             XsdValidatedXmlNodeModel::Ptr               m_model;
             MergedSchemas                               m_mergedSchemas;
