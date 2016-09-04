@@ -973,17 +973,9 @@ bool XsdValidatingInstanceReader::validateUniqueIdentityConstraint(const XsdElem
     // 4.1
     const XsdSchemaSourceLocationReflection reflection(sourceLocation());
 
-    QSetIterator<TargetNode> it(qualifiedNodeSet);
-    while (it.hasNext()) {
-        const TargetNode node = it.next();
-        QSetIterator<TargetNode> innerIt(qualifiedNodeSet);
-        while (innerIt.hasNext()) {
-            const TargetNode innerNode = innerIt.next();
-
-            if (node == innerNode) // do not compare with ourself
-                continue;
-
-            if (node.fieldsAreEqual(innerNode, m_namePool, m_context, &reflection)) {
+    for (auto it = qualifiedNodeSet.cbegin(), end = qualifiedNodeSet.cend(); it != end; ++it) {
+        for (auto jt = qualifiedNodeSet.cbegin(); jt != it; ++jt) {
+            if (it->fieldsAreEqual(*jt, m_namePool, m_context, &reflection)) {
                 error(QtXmlPatterns::tr("Non-unique value found for constraint %1.").arg(formatKeyword(constraint->displayName(m_namePool))));
                 return false;
             }
