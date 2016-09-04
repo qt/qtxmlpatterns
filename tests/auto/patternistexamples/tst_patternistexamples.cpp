@@ -142,7 +142,7 @@ void tst_PatternistExamples::checkQueries_data() const
 
     QCOMPARE(queryExamples.count(), int(XQueryFileCount));
 
-    foreach(QString q, queryExamples)
+    for (const QString &q : queryExamples)
         QTest::newRow(q.toLocal8Bit().constData()) << q;
 }
 
@@ -183,7 +183,7 @@ void tst_PatternistExamples::checkXMLFiles_data() const
 
     QCOMPARE(xmlFiles.count(), int(XMLFileCount));
 
-    foreach(QString q, xmlFiles)
+    for (const QString &q : xmlFiles)
         QTest::newRow(q.toLocal8Bit().constData()) << q;
 }
 

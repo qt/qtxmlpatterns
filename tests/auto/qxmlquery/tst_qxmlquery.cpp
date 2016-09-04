@@ -977,8 +977,8 @@ void tst_QXmlQuery::evaluateToReceiver_data() const
 {
     QTest::addColumn<QString>("inputQuery");
 
-    foreach (QString const& query, queries())
-    {
+    const auto queries_ = queries();
+    for (QString const& query : queries_) {
         /* This outputs a URI specific to the environment, so we can't use it for this
          * particular test. */
         if (query != QLatin1String("staticBaseURI.xq"))
