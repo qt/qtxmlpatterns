@@ -732,14 +732,11 @@ bool XsdValidatingInstanceReader::validateElementComplexType(const XsdElement::P
         const QSet<QXmlName> attributes(attributeNames());
 
         // 3
-        QHashIterator<QXmlName, XsdAttributeUse::Ptr> usesIt(attributeUseHash);
-        while (usesIt.hasNext()) {
-            usesIt.next();
-
-            if (usesIt.value()->isRequired()) {
-                if (!attributes.contains(usesIt.key())) {
+        for (auto it = attributeUseHash.cbegin(), end = attributeUseHash.cend(); it != end; ++it) {
+            if (it.value()->isRequired()) {
+                if (!attributes.contains(it.key())) {
                     error(QtXmlPatterns::tr("Element %1 is missing required attribute %2.").arg(formatKeyword(declaration->displayName(m_namePool)))
-                                                                                          .arg(formatKeyword(m_namePool->displayName(usesIt.key()))));
+                                                                                          .arg(formatKeyword(m_namePool->displayName(it.key()))));
                     return false;
                 }
             }

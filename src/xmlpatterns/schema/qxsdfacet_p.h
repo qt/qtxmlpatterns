@@ -112,7 +112,6 @@ namespace QPatternist
                 Assertion        = 1 << 12,  ///< Match an assertion (<a href="http://www.w3.org/TR/xmlschema-2/#rf-assertion">Assertion Definition</a>)
             };
             typedef QHash<XsdFacet::Type, XsdFacet::Ptr> Hash;
-            typedef QHashIterator<XsdFacet::Type, XsdFacet::Ptr> HashIterator;
 
             /**
              * Creates a new facet object of type None.

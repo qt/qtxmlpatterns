@@ -392,25 +392,17 @@ bool XsdParticleChecker::isUPAConform(const XsdParticle::Ptr &particle, const Na
 
     // the basic idea of that algorithm is to iterate over all states of that machine and check that no two edges
     // that match on the same term leave a state, so for a given term it should always be obvious which edge to take
-    QHashIterator<XsdStateMachine<XsdTerm::Ptr>::StateId, XsdStateMachine<XsdTerm::Ptr>::StateType> stateIt(states);
-    while (stateIt.hasNext()) { // iterate over all states
-        stateIt.next();
-
+    for (auto stateIt = states.cbegin(), end = states.cend(); stateIt != end; ++stateIt) {
         // fetch all transitions the current state allows
         const QHash<XsdTerm::Ptr, QVector<XsdStateMachine<XsdTerm::Ptr>::StateId> > currentTransitions = transitions.value(stateIt.key());
-        QHashIterator<XsdTerm::Ptr, QVector<XsdStateMachine<XsdTerm::Ptr>::StateId> > transitionIt(currentTransitions);
-        while (transitionIt.hasNext()) { // iterate over all transitions
-            transitionIt.next();
-
+        for (auto transitionIt = currentTransitions.cbegin(), end = currentTransitions.cend(); transitionIt != end; ++transitionIt) {
             if (transitionIt.value().size() > 1) {
                 // we have one state with two edges leaving it, that means
                 // the XsdTerm::Ptr exists twice, that is an error
                 return false;
             }
 
-            QHashIterator<XsdTerm::Ptr, QVector<XsdStateMachine<XsdTerm::Ptr>::StateId> > innerTransitionIt(currentTransitions);
-            while (innerTransitionIt.hasNext()) { // iterate over all transitions again, as we have to compare all transitions with all
-                innerTransitionIt.next();
+            for (auto innerTransitionIt = currentTransitions.cbegin(), end = currentTransitions.cend(); innerTransitionIt != end; ++innerTransitionIt) {
 
                 if (transitionIt.key() == innerTransitionIt.key()) // do no compare with ourself
                     continue;
@@ -516,17 +508,13 @@ bool XsdParticleChecker::subsumes(const XsdParticle::Ptr &particle, const XsdPar
         const QPair<XsdStateMachine<XsdTerm::Ptr>::StateId, XsdStateMachine<XsdTerm::Ptr>::StateId> set = workSet.takeFirst();
 
         const QHash<XsdTerm::Ptr, QVector<XsdStateMachine<XsdTerm::Ptr>::StateId> > derivedTrans = derivedTransitions.value(set.second);
-        QHashIterator<XsdTerm::Ptr, QVector<XsdStateMachine<XsdTerm::Ptr>::StateId> > derivedIt(derivedTrans);
 
         const QHash<XsdTerm::Ptr, QVector<XsdStateMachine<XsdTerm::Ptr>::StateId> > baseTrans = baseTransitions.value(set.first);
 
-        while (derivedIt.hasNext()) {
-            derivedIt.next();
+        for (auto derivedIt = derivedTrans.cbegin(), end = derivedTrans.cend(); derivedIt != end; ++derivedIt) {
 
             bool found = false;
-            QHashIterator<XsdTerm::Ptr, QVector<XsdStateMachine<XsdTerm::Ptr>::StateId> > baseIt(baseTrans);
-            while (baseIt.hasNext()) {
-                baseIt.next();
+            for (auto baseIt = baseTrans.cbegin(), end = baseTrans.cend(); baseIt != end; ++baseIt) {
                 if (derivedTermValid(baseIt.key(), derivedIt.key(), particlesHash, context, errorMsg)) {
                     const QPair<XsdStateMachine<XsdTerm::Ptr>::StateId, XsdStateMachine<XsdTerm::Ptr>::StateId> endSet =
                              qMakePair<XsdStateMachine<XsdTerm::Ptr>::StateId, XsdStateMachine<XsdTerm::Ptr>::StateId>(baseIt.value().first(), derivedIt.value().first());
@@ -546,10 +534,7 @@ bool XsdParticleChecker::subsumes(const XsdParticle::Ptr &particle, const XsdPar
     }
 
     // 5)
-    QHashIterator<XsdStateMachine<XsdTerm::Ptr>::StateId, XsdStateMachine<XsdTerm::Ptr>::StateType> it(derivedStates);
-    while (it.hasNext()) {
-        it.next();
-
+    for (auto it = derivedStates.cbegin(), end = derivedStates.cend(); it != end; ++it) {
         if (it.value() == XsdStateMachine<XsdTerm::Ptr>::EndState || it.value() == XsdStateMachine<XsdTerm::Ptr>::StartEndState) {
             for (int i = 0; i < processedSet.count(); ++i) {
                 if (processedSet.at(i).second == it.key() &&

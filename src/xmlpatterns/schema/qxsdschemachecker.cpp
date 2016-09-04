@@ -436,11 +436,9 @@ void XsdSchemaChecker::checkSimpleTypeConstraints()
 
                     // 2.2.1.2
                     const XsdFacet::Hash facets = simpleType->facets();
-                    XsdFacet::HashIterator it(facets);
 
                     bool invalidFacetFound = false;
-                    while (it.hasNext()) {
-                        it.next();
+                    for (auto it = facets.cbegin(), end = facets.cend(); it != end; ++it) {
                         if (it.key() != XsdFacet::WhiteSpace) {
                             invalidFacetFound = true;
                             break;
@@ -476,12 +474,10 @@ void XsdSchemaChecker::checkSimpleTypeConstraints()
 
                 // 2.2.2.4
                 const XsdFacet::Hash facets = simpleType->facets();
-                XsdFacet::HashIterator it(facets);
 
                 bool invalidFacetFound = false;
                 XsdFacet::Type invalidFacetType = XsdFacet::None;
-                while (it.hasNext()) {
-                    it.next();
+                for (auto it = facets.cbegin(), end = facets.cend(); it != end; ++it) {
                     const XsdFacet::Type facetType = it.key();
                     if (facetType != XsdFacet::Length &&
                         facetType != XsdFacet::MinimumLength &&
@@ -573,12 +569,10 @@ void XsdSchemaChecker::checkSimpleTypeConstraints()
 
                 // 3.1.2.4
                 const XsdFacet::Hash facets = simpleType->facets();
-                XsdFacet::HashIterator it(facets);
 
                 bool invalidFacetFound = false;
                 XsdFacet::Type invalidFacetType = XsdFacet::None;
-                while (it.hasNext()) {
-                    it.next();
+                for (auto it = facets.cbegin(), end = facets.cend(); it != end; ++it) {
                     const XsdFacet::Type facetType = it.key();
                     if (facetType != XsdFacet::Pattern &&
                         facetType != XsdFacet::Enumeration) {
@@ -1573,9 +1567,7 @@ void XsdSchemaChecker::checkConstrainingFacets(const XsdFacet::Hash &facets, con
     if (!baseType->isDefinedBySchema()) {
         const XsdSchemaSourceLocationReflection reflection(sourceLocation(simpleType));
 
-        XsdFacet::HashIterator it(facets);
-        while (it.hasNext()) {
-            it.next();
+        for (auto it = facets.cbegin(), end = facets.cend(); it != end; ++it) {
             const XsdFacet::Ptr facet = it.value();
             if (facet->type() == XsdFacet::MaximumInclusive ||
                 facet->type() == XsdFacet::MaximumExclusive ||

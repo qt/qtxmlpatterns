@@ -146,11 +146,8 @@ QList<QXmlName> NamespaceSupport::namespaceBindings() const
 {
     QList<QXmlName> bindings;
 
-    QHashIterator<QXmlName::PrefixCode, QXmlName::NamespaceCode> it(m_ns);
-    while (it.hasNext()) {
-        it.next();
+    for (auto it = m_ns.cbegin(), end = m_ns.cend(); it != end; ++it)
         bindings.append(QXmlName(it.value(), StandardLocalNames::empty, it.key()));
-    }
 
     return bindings;
 }
