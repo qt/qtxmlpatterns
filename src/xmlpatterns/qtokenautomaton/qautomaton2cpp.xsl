@@ -228,7 +228,7 @@
                 <xsl:if test="$remainingLength ne 0">
                     <xsl:choose>
                         <xsl:when test="$remainingLength eq 1">
-                            if(data[<xsl:sequence select="$depth - 1"/>] == <xsl:sequence select="$toMatch"/>)
+                            if (data[<xsl:sequence select="$depth - 1"/>].unicode() == <xsl:sequence select="$toMatch"/>)
                         </xsl:when>
                         <xsl:when test="$remainingLength &gt; 1">
                             static const unsigned short string[] =
@@ -250,7 +250,7 @@
 
                     <xsl:text>if (data[</xsl:text>
                     <xsl:sequence select="string($depth - 1)"/>
-                    <xsl:text>] == </xsl:text>
+                    <xsl:text>].unicode() == </xsl:text>
                     <xsl:sequence select="string-to-codepoints(.)"/>
                     <xsl:text>)&#xA;</xsl:text>
 
