@@ -74,9 +74,7 @@ typename XsdStateMachine<TransitionType>::StateId XsdStateMachine<TransitionType
 #ifndef QT_NO_DEBUG
     // make sure we don't have two start states
     if (type == StartState) {
-        QHashIterator<StateId, StateType> it(m_states);
-        while (it.hasNext()) {
-            it.next();
+        for (auto it = m_states.cbegin(), end = m_states.cend(); it != end; ++it) {
             Q_ASSERT(it.value() != StartState && it.value() != StartEndState);
         }
     }
@@ -113,9 +111,7 @@ template <typename TransitionType>
 void XsdStateMachine<TransitionType>::reset()
 {
     // reset the machine to the start state
-    QHashIterator<StateId, StateType> it(m_states);
-    while (it.hasNext()) {
-        it.next();
+    for (auto it = m_states.cbegin(), end = m_states.cend(); it != end; ++it) {
         if (it.value() == StartState || it.value() == StartEndState) {
             m_currentState = it.key();
             return;
@@ -179,9 +175,7 @@ bool XsdStateMachine<TransitionType>::proceed(InputType input)
 
     // fetch the transition entry for the current state
     const QHash<TransitionType, QVector<StateId> > &entry = m_transitions[m_currentState];
-    QHashIterator<TransitionType, QVector<StateId> > it(entry);
-    while (it.hasNext()) {
-        it.next();
+    for (auto it = entry.cbegin(), end = entry.cend(); it != end; ++it) {
         if (inputEqualsTransition(input, it.key())) {
             m_currentState = it.value().first();
             m_lastTransition = it.key();
@@ -218,9 +212,7 @@ TransitionType XsdStateMachine<TransitionType>::lastTransition() const
 template <typename TransitionType>
 typename XsdStateMachine<TransitionType>::StateId XsdStateMachine<TransitionType>::startState() const
 {
-    QHashIterator<StateId, StateType> it(m_states);
-    while (it.hasNext()) {
-        it.next();
+    for (auto it = m_states.cbegin(), end = m_states.cend(); it != end; ++it) {
         if (it.value() == StartState || it.value() == StartEndState)
             return it.key();
     }
@@ -248,49 +240,39 @@ bool XsdStateMachine<TransitionType>::outputGraph(QIODevice *device, const QStri
     QByteArray graph;
     QTextStream s(&graph);
 
-    QHashIterator<StateId, QHash<TransitionType, QVector<StateId> > > it(m_transitions);
-    QHashIterator<StateId, StateType> it3(m_states);
-
     s << "digraph " << graphName << " {\n";
     s << "  mindist = 2.0\n";
 
     // draw edges
-    while (it.hasNext()) {
-        it.next();
+    for (auto it = m_transitions.cbegin(), end = m_transitions.cend(); it != end; ++it) {
 
-        QHashIterator<TransitionType, QVector<StateId> > it2(it.value());
-        while (it2.hasNext()) {
-            it2.next();
+        for (auto it2 = it.value().cbegin(), end = it.value().cend(); it2 != end; ++it2) {
             for (int i = 0; i < it2.value().count(); ++i)
                 s << "  " << it.key() << " -> " << it2.value().at(i) << " [label=\"" << transitionTypeToString(it2.key()) << "\"]\n";
         }
     }
 
-    QHashIterator<StateId, QVector<StateId> > it4(m_epsilonTransitions);
-    while (it4.hasNext()) {
-        it4.next();
-
-        const QVector<StateId> states = it4.value();
+    for (auto it = m_epsilonTransitions.cbegin(), end = m_epsilonTransitions.cend(); it != end; ++it) {
+        const QVector<StateId> states = it.value();
         for (int i = 0; i < states.count(); ++i)
-            s << "  " << it4.key() << " -> " << states.at(i) << " [label=\"&#949;\"]\n";
+            s << "  " << it.key() << " -> " << states.at(i) << " [label=\"&#949;\"]\n";
     }
 
     // draw node info
-    while (it3.hasNext()) {
-        it3.next();
+    for (auto it = m_states.cbegin(), end = m_states.cend(); it != end; ++it) {
 
         QString style;
-        if (it3.value() == StartState) {
+        if (it.value() == StartState) {
             style = QLatin1String("shape=circle, style=filled, color=blue");
-        } else if (it3.value() == StartEndState) {
+        } else if (it.value() == StartEndState) {
             style = QLatin1String("shape=doublecircle, style=filled, color=blue");
-        } else if (it3.value() == InternalState) {
+        } else if (it.value() == InternalState) {
             style = QLatin1String("shape=circle, style=filled, color=red");
-        } else if (it3.value() == EndState) {
+        } else if (it.value() == EndState) {
             style = QLatin1String("shape=doublecircle, style=filled, color=green");
         }
 
-        s << "  " << it3.key() << " [" << style << "]\n";
+        s << "  " << it.key() << " [" << style << "]\n";
     }
 
     s << "}\n";
@@ -320,11 +302,9 @@ typename XsdStateMachine<TransitionType>::StateId XsdStateMachine<TransitionType
     // state, in that case our new DFA state will be a
     // Start or End state as well
     StateType type = InternalState;
-    QSetIterator<StateId> it(nfaState);
     bool hasStartState = false;
     bool hasEndState = false;
-    while (it.hasNext()) {
-        const StateId state = it.next();
+    for (const StateId state : qAsConst(nfaState)) {
         if (m_states.value(state) == EndState) {
             hasEndState = true;
         } else if (m_states.value(state) == StartState) {
@@ -359,11 +339,9 @@ XsdStateMachine<TransitionType> XsdStateMachine<TransitionType>::toDFA() const
 
     // search the start state as the algorithm starts with it...
     StateId startState = -1;
-    QHashIterator<StateId, StateType> stateTypeIt(m_states);
-    while (stateTypeIt.hasNext()) {
-        stateTypeIt.next();
-        if (stateTypeIt.value() == StartState) {
-            startState = stateTypeIt.key();
+    for (auto it = m_states.cbegin(), end = m_states.cend(); it != end; ++it) {
+        if (it.value() == StartState) {
+            startState = it.key();
             break;
         }
     }
@@ -390,12 +368,8 @@ XsdStateMachine<TransitionType> XsdStateMachine<TransitionType>::toDFA() const
         // the 'states' set
         QList<TransitionType> input;
 
-        {
-            QSetIterator<StateId> it(states);
-            while (it.hasNext()) {
-                input << m_transitions.value(it.next()).keys();
-            }
-        }
+        for (const StateId state : states)
+            input << m_transitions.value(state).keys();
 
         // get the state in DFA that corresponds to the 'states' set in the NFA
         const StateId dfaBegin = dfaStateForNfaState(states, table, dfa);

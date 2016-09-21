@@ -122,11 +122,7 @@ void AccelTree::printStats(const NamePool::Ptr &np) const
     pDebug() << "+---------------+-------+-------+---------------+-------+--------------+";
     pDebug() << "Namespaces(" << namespaces.count() << "):";
 
-    QHashIterator<PreNumber, QVector<QXmlName> > it(namespaces);
-    while(it.hasNext())
-    {
-        it.next();
-
+    for (auto it = namespaces.cbegin(), end = namespaces.cend(); it != end; ++it) {
         pDebug() << "PreNumber: " << QString::number(it.key());
         for(int i = 0; i < it.value().count(); ++i)
             pDebug() << "\t\t" << np->stringForPrefix(it.value().at(i).prefix()) << " = " << np->stringForNamespace(it.value().at(i).namespaceURI());

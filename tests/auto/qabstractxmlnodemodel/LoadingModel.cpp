@@ -169,7 +169,7 @@ QXmlNodeModelIndex LoadingModel::nextFromSimpleAxis(QAbstractXmlNodeModel::Simpl
 QVector<QXmlNodeModelIndex> LoadingModel::attributes(const QXmlNodeModelIndex &ni) const
 {
     QVector<QXmlNodeModelIndex> retval;
-    foreach(const Node *n, toInternal(ni)->attributes)
+    for (const Node *n : toInternal(ni)->attributes)
         retval.append(createIndex(n));
 
     return retval;

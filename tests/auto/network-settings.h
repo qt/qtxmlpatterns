@@ -65,21 +65,22 @@ public:
 
     static bool compareReplyIMAP(QByteArray const& actual)
     {
-        QList<QByteArray> expected;
+        const QByteArray expected[] = {
 
-        // Mandriva; old test server
-        expected << QByteArray( "* OK [CAPABILITY IMAP4 IMAP4rev1 LITERAL+ ID STARTTLS LOGINDISABLED] " )
+            // Mandriva; old test server
+            QByteArray( "* OK [CAPABILITY IMAP4 IMAP4rev1 LITERAL+ ID STARTTLS LOGINDISABLED] " )
             .append(QtNetworkSettings::serverName().toLatin1())
-            .append(" Cyrus IMAP4 v2.3.11-Mandriva-RPM-2.3.11-6mdv2008.1 server ready\r\n");
+            .append(" Cyrus IMAP4 v2.3.11-Mandriva-RPM-2.3.11-6mdv2008.1 server ready\r\n"),
 
-        // Ubuntu 10.04; new test server
-        expected << QByteArray( "* OK " )
+            // Ubuntu 10.04; new test server
+            QByteArray( "* OK " )
             .append(QtNetworkSettings::serverLocalName().toLatin1())
-            .append(" Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready\r\n");
+            .append(" Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready\r\n"),
 
-        // Feel free to add more as needed
+            // Feel free to add more as needed
+        };
 
-        Q_FOREACH (QByteArray const& ba, expected) {
+        for (const QByteArray &ba : expected) {
             if (ba == actual) {
                 return true;
             }
@@ -90,21 +91,22 @@ public:
 
     static bool compareReplyIMAPSSL(QByteArray const& actual)
     {
-        QList<QByteArray> expected;
+        const QByteArray expected[] = {
 
-        // Mandriva; old test server
-        expected << QByteArray( "* OK [CAPABILITY IMAP4 IMAP4rev1 LITERAL+ ID AUTH=PLAIN SASL-IR] " )
+            // Mandriva; old test server
+            QByteArray( "* OK [CAPABILITY IMAP4 IMAP4rev1 LITERAL+ ID AUTH=PLAIN SASL-IR] " )
             .append(QtNetworkSettings::serverName().toLatin1())
-            .append(" Cyrus IMAP4 v2.3.11-Mandriva-RPM-2.3.11-6mdv2008.1 server ready\r\n");
+            .append(" Cyrus IMAP4 v2.3.11-Mandriva-RPM-2.3.11-6mdv2008.1 server ready\r\n"),
 
-        // Ubuntu 10.04; new test server
-        expected << QByteArray( "* OK " )
+            // Ubuntu 10.04; new test server
+            QByteArray( "* OK " )
             .append(QtNetworkSettings::serverLocalName().toLatin1())
-            .append(" Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready\r\n");
+            .append(" Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready\r\n"),
 
-        // Feel free to add more as needed
+            // Feel free to add more as needed
+        };
 
-        Q_FOREACH (QByteArray const& ba, expected) {
+        for (const QByteArray &ba : expected) {
             if (ba == actual) {
                 return true;
             }
@@ -115,14 +117,16 @@ public:
 
     static bool compareReplyFtp(QByteArray const& actual)
     {
-        QList<QByteArray> expected;
+        const QByteArray expected[] = {
 
-        // A few different vsFTPd versions.
-        // Feel free to add more as needed
-        expected << QByteArray( "220 (vsFTPd 2.0.5)\r\n221 Goodbye.\r\n" );
-        expected << QByteArray( "220 (vsFTPd 2.2.2)\r\n221 Goodbye.\r\n" );
+            // A few different vsFTPd versions.
+            // Feel free to add more as needed
+            QByteArray( "220 (vsFTPd 2.0.5)\r\n221 Goodbye.\r\n" ),
+            QByteArray( "220 (vsFTPd 2.2.2)\r\n221 Goodbye.\r\n" ),
 
-        Q_FOREACH (QByteArray const& ba, expected) {
+        };
+
+        for (const QByteArray &ba : expected) {
             if (ba == actual) {
                 return true;
             }

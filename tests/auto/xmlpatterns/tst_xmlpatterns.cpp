@@ -1028,7 +1028,7 @@ void tst_XmlPatterns::xsltSupport_data() const
 */
 QString tst_XmlPatterns::filterStderr(const QString &in)
 {
-    static QList<QRegExp> irrelevant = QList<QRegExp>()
+    static const QList<QRegExp> irrelevant = QList<QRegExp>()
 
         // specific filenames
         << QRegExp(QLatin1String("file:\\/\\/.*(\\.xq|\\.gccxml|\\.xml|\\.xsl|-)(,|:)"))
@@ -1040,9 +1040,8 @@ QString tst_XmlPatterns::filterStderr(const QString &in)
     ;
 
     QString out = in;
-    foreach (const QRegExp& rx, irrelevant) {
+    for (const QRegExp& rx : irrelevant)
         out = out.remove(rx);
-    }
 
     return out;
 }

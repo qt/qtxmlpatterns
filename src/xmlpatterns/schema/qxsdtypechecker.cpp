@@ -206,12 +206,8 @@ XsdFacet::Hash XsdTypeChecker::mergedFacetsForType(const SchemaType::Ptr &type, 
     const XsdFacet::Hash facets = context->facetsForType(type);
 
     XsdFacet::Hash result = baseFacets;
-    XsdFacet::HashIterator it(facets);
-    while (it.hasNext()) {
-        it.next();
-
+    for (auto it = facets.cbegin(), end = facets.cend(); it != end; ++it)
         result.insert(it.key(), it.value());
-    }
 
     return result;
 }

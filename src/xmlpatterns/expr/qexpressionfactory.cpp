@@ -279,11 +279,7 @@ Expression::Ptr ExpressionFactory::createExpression(const Tokenizer::Ptr &tokeni
         {
             pDebug() << "Have " << info->namedTemplates.count() << "named templates";
 
-            QMutableHashIterator<QXmlName, Template::Ptr> it(info->namedTemplates);
-
-            while(it.hasNext())
-            {
-                it.next();
+            for (auto it = info->namedTemplates.cbegin(), end = info->namedTemplates.cend(); it != end; ++it) {
                 processNamedTemplate(it.key(), it.value()->body, TemplateInitial);
 
                 it.value()->body = it.value()->body->typeCheck(context, CommonSequenceTypes::ZeroOrMoreItems);
@@ -298,7 +294,6 @@ Expression::Ptr ExpressionFactory::createExpression(const Tokenizer::Ptr &tokeni
 
         /* Type check and compress template rules. */
         {
-            QHashIterator<QXmlName, TemplateMode::Ptr> it(info->templateRules);
 
             /* Since a pattern can exist of AxisStep, its typeCheck() stage
              * requires a focus. In the case that we're invoked with a name but
@@ -313,9 +308,7 @@ Expression::Ptr ExpressionFactory::createExpression(const Tokenizer::Ptr &tokeni
                 patternContext = StaticContext::Ptr(new StaticFocusContext(BuiltinTypes::node, context));
 
             /* For each template pattern. */
-            while(it.hasNext())
-            {
-                it.next();
+            for (auto it = info->templateRules.cbegin(), end = info->templateRules.cend(); it != end; ++it) {
                 const TemplateMode::Ptr &mode = it.value();
                 const int len = mode->templatePatterns.count();
                 TemplatePattern::ID currentTemplateID = -1;
@@ -387,12 +380,7 @@ Expression::Ptr ExpressionFactory::createExpression(const Tokenizer::Ptr &tokeni
 
             Q_ASSERT_X(modeAll, Q_FUNC_INFO,
                        "We should at least have the builtin templates.");
-            QHashIterator<QXmlName, TemplateMode::Ptr> it(info->templateRules);
-
-            while(it.hasNext())
-            {
-                it.next();
-
+            for (auto it = info->templateRules.cbegin(), end = info->templateRules.cend(); it != end; ++it) {
                 /* Don't add mode #all to mode #all. */
                 if(it.key()  == nameModeAll)
                     continue;

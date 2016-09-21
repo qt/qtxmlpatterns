@@ -62,28 +62,28 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier3(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
-                    if (data[1] == 108)
+                    if (data[1].unicode() == 108)
 
 
                     {
                     
-                            if(data[2] == 108)
+                            if (data[2].unicode() == 108)
                         
 
                 return All;
             
                     }
 
-                else if (data[1] == 110)
+                else if (data[1].unicode() == 110)
 
 
                     {
                     
-                            if(data[2] == 121)
+                            if (data[2].unicode() == 121)
                         
 
                 return Any;
@@ -93,7 +93,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 107)
+                else if (data[0].unicode() == 107)
 
 
                     {
@@ -109,7 +109,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 114)
+                else if (data[0].unicode() == 114)
 
 
                     {
@@ -125,7 +125,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 117)
+                else if (data[0].unicode() == 117)
 
 
                     {
@@ -148,7 +148,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier4(const QChar *data)
 
         {
-            if (data[0] == 98)
+            if (data[0].unicode() == 98)
 
 
                     {
@@ -164,7 +164,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 102)
+                else if (data[0].unicode() == 102)
 
 
                     {
@@ -180,7 +180,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 108)
+                else if (data[0].unicode() == 108)
 
 
                     {
@@ -196,7 +196,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
@@ -212,7 +212,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 110)
+                else if (data[0].unicode() == 110)
 
 
                     {
@@ -228,11 +228,11 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 116)
+                else if (data[0].unicode() == 116)
 
 
                     {
-                    if (data[1] == 101)
+                    if (data[1].unicode() == 101)
 
 
                     {
@@ -248,7 +248,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 121)
+                else if (data[1].unicode() == 121)
 
 
                     {
@@ -274,7 +274,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier5(const QChar *data)
 
         {
-            if (data[0] == 98)
+            if (data[0].unicode() == 98)
 
 
                     {
@@ -290,15 +290,15 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 102)
+                else if (data[0].unicode() == 102)
 
 
                     {
-                    if (data[1] == 105)
+                    if (data[1].unicode() == 105)
 
 
                     {
-                    if (data[2] == 101)
+                    if (data[2].unicode() == 101)
 
 
                     {
@@ -314,7 +314,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[2] == 110)
+                else if (data[2].unicode() == 110)
 
 
                     {
@@ -330,7 +330,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[2] == 120)
+                else if (data[2].unicode() == 120)
 
 
                     {
@@ -352,7 +352,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 103)
+                else if (data[0].unicode() == 103)
 
 
                     {
@@ -368,7 +368,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
@@ -384,7 +384,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 114)
+                else if (data[0].unicode() == 114)
 
 
                     {
@@ -400,7 +400,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 117)
+                else if (data[0].unicode() == 117)
 
 
                     {
@@ -416,7 +416,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 118)
+                else if (data[0].unicode() == 118)
 
 
                     {
@@ -432,7 +432,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 120)
+                else if (data[0].unicode() == 120)
 
 
                     {
@@ -455,7 +455,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier6(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
@@ -471,7 +471,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 99)
+                else if (data[0].unicode() == 99)
 
 
                     {
@@ -487,7 +487,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 105)
+                else if (data[0].unicode() == 105)
 
 
                     {
@@ -503,7 +503,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 107)
+                else if (data[0].unicode() == 107)
 
 
                     {
@@ -519,7 +519,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 108)
+                else if (data[0].unicode() == 108)
 
 
                     {
@@ -535,7 +535,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 112)
+                else if (data[0].unicode() == 112)
 
 
                     {
@@ -551,11 +551,11 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
-                    if (data[1] == 99)
+                    if (data[1].unicode() == 99)
 
 
                     {
@@ -571,7 +571,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 111)
+                else if (data[1].unicode() == 111)
 
 
                     {
@@ -587,7 +587,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 121)
+                else if (data[1].unicode() == 121)
 
 
                     {
@@ -606,7 +606,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 117)
+                else if (data[0].unicode() == 117)
 
 
                     {
@@ -629,7 +629,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier7(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
@@ -645,7 +645,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 100)
+                else if (data[0].unicode() == 100)
 
 
                     {
@@ -661,7 +661,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 101)
+                else if (data[0].unicode() == 101)
 
 
                     {
@@ -677,7 +677,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 105)
+                else if (data[0].unicode() == 105)
 
 
                     {
@@ -693,7 +693,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 112)
+                else if (data[0].unicode() == 112)
 
 
                     {
@@ -709,7 +709,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 114)
+                else if (data[0].unicode() == 114)
 
 
                     {
@@ -725,7 +725,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 118)
+                else if (data[0].unicode() == 118)
 
 
                     {
@@ -748,7 +748,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier8(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
@@ -764,7 +764,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 99)
+                else if (data[0].unicode() == 99)
 
 
                     {
@@ -780,7 +780,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 105)
+                else if (data[0].unicode() == 105)
 
 
                     {
@@ -796,11 +796,11 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 110)
+                else if (data[0].unicode() == 110)
 
 
                     {
-                    if (data[1] == 105)
+                    if (data[1].unicode() == 105)
 
 
                     {
@@ -816,15 +816,15 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 111)
+                else if (data[1].unicode() == 111)
 
 
                     {
-                    if (data[2] == 116)
+                    if (data[2].unicode() == 116)
 
 
                     {
-                    if (data[3] == 97)
+                    if (data[3].unicode() == 97)
 
 
                     {
@@ -840,7 +840,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[3] == 81)
+                else if (data[3].unicode() == 81)
 
 
                     {
@@ -865,7 +865,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 111)
+                else if (data[0].unicode() == 111)
 
 
                     {
@@ -881,7 +881,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 112)
+                else if (data[0].unicode() == 112)
 
 
                     {
@@ -897,7 +897,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 114)
+                else if (data[0].unicode() == 114)
 
 
                     {
@@ -913,15 +913,15 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
-                    if (data[1] == 101)
+                    if (data[1].unicode() == 101)
 
 
                     {
-                    if (data[2] == 108)
+                    if (data[2].unicode() == 108)
 
 
                     {
@@ -937,7 +937,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[2] == 113)
+                else if (data[2].unicode() == 113)
 
 
                     {
@@ -959,7 +959,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 120)
+                else if (data[0].unicode() == 120)
 
 
                     {
@@ -982,11 +982,11 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier9(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
-                    if (data[1] == 115)
+                    if (data[1].unicode() == 115)
 
 
                     {
@@ -1002,7 +1002,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 116)
+                else if (data[1].unicode() == 116)
 
 
                     {
@@ -1021,7 +1021,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 101)
+                else if (data[0].unicode() == 101)
 
 
                     {
@@ -1037,19 +1037,19 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
-                    if (data[1] == 97)
+                    if (data[1].unicode() == 97)
 
 
                     {
-                    if (data[2] == 120)
+                    if (data[2].unicode() == 120)
 
 
                     {
-                    if (data[3] == 76)
+                    if (data[3].unicode() == 76)
 
 
                     {
@@ -1065,7 +1065,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[3] == 79)
+                else if (data[3].unicode() == 79)
 
 
                     {
@@ -1087,15 +1087,15 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[1] == 105)
+                else if (data[1].unicode() == 105)
 
 
                     {
-                    if (data[2] == 110)
+                    if (data[2].unicode() == 110)
 
 
                     {
-                    if (data[3] == 76)
+                    if (data[3].unicode() == 76)
 
 
                     {
@@ -1111,7 +1111,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[3] == 79)
+                else if (data[3].unicode() == 79)
 
 
                     {
@@ -1136,7 +1136,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 110)
+                else if (data[0].unicode() == 110)
 
 
                     {
@@ -1159,7 +1159,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier10(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
@@ -1175,7 +1175,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
@@ -1191,7 +1191,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 119)
+                else if (data[0].unicode() == 119)
 
 
                     {
@@ -1214,7 +1214,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier11(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
@@ -1230,7 +1230,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 99)
+                else if (data[0].unicode() == 99)
 
 
                     {
@@ -1246,7 +1246,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 101)
+                else if (data[0].unicode() == 101)
 
 
                     {
@@ -1262,7 +1262,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
@@ -1278,7 +1278,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 111)
+                else if (data[0].unicode() == 111)
 
 
                     {
@@ -1294,7 +1294,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 114)
+                else if (data[0].unicode() == 114)
 
 
                     {
@@ -1310,7 +1310,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 116)
+                else if (data[0].unicode() == 116)
 
 
                     {
@@ -1333,7 +1333,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier12(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
@@ -1349,7 +1349,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 98)
+                else if (data[0].unicode() == 98)
 
 
                     {
@@ -1365,7 +1365,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 102)
+                else if (data[0].unicode() == 102)
 
 
                     {
@@ -1381,19 +1381,19 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 109)
+                else if (data[0].unicode() == 109)
 
 
                     {
-                    if (data[1] == 97)
+                    if (data[1].unicode() == 97)
 
 
                     {
-                    if (data[2] == 120)
+                    if (data[2].unicode() == 120)
 
 
                     {
-                    if (data[3] == 69)
+                    if (data[3].unicode() == 69)
 
 
                     {
@@ -1409,7 +1409,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[3] == 73)
+                else if (data[3].unicode() == 73)
 
 
                     {
@@ -1431,15 +1431,15 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[1] == 105)
+                else if (data[1].unicode() == 105)
 
 
                     {
-                    if (data[2] == 110)
+                    if (data[2].unicode() == 110)
 
 
                     {
-                    if (data[3] == 69)
+                    if (data[3].unicode() == 69)
 
 
                     {
@@ -1455,7 +1455,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[3] == 73)
+                else if (data[3].unicode() == 73)
 
 
                     {
@@ -1480,7 +1480,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 110)
+                else if (data[0].unicode() == 110)
 
 
                     {
@@ -1503,7 +1503,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier13(const QChar *data)
 
         {
-            if (data[0] == 100)
+            if (data[0].unicode() == 100)
 
 
                     {
@@ -1519,7 +1519,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
@@ -1542,11 +1542,11 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier14(const QChar *data)
 
         {
-            if (data[0] == 97)
+            if (data[0].unicode() == 97)
 
 
                     {
-                    if (data[1] == 112)
+                    if (data[1].unicode() == 112)
 
 
                     {
@@ -1562,7 +1562,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[1] == 116)
+                else if (data[1].unicode() == 116)
 
 
                     {
@@ -1581,7 +1581,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
                 
                     }
 
-                else if (data[0] == 99)
+                else if (data[0].unicode() == 99)
 
 
                     {
@@ -1597,7 +1597,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 102)
+                else if (data[0].unicode() == 102)
 
 
                     {
@@ -1613,7 +1613,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
@@ -1636,7 +1636,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier15(const QChar *data)
 
         {
-            if (data[0] == 112)
+            if (data[0].unicode() == 112)
 
 
                     {
@@ -1652,7 +1652,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 116)
+                else if (data[0].unicode() == 116)
 
 
                     {
@@ -1675,7 +1675,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier17(const QChar *data)
 
         {
-            if (data[0] == 100)
+            if (data[0].unicode() == 100)
 
 
                     {
@@ -1691,7 +1691,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 115)
+                else if (data[0].unicode() == 115)
 
 
                     {
@@ -1714,7 +1714,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
     XsdSchemaToken::NodeName XsdSchemaToken::classifier18(const QChar *data)
 
         {
-            if (data[0] == 100)
+            if (data[0].unicode() == 100)
 
 
                     {
@@ -1730,7 +1730,7 @@ XsdSchemaToken::NodeName XsdSchemaToken::classifier2(const QChar *data)
             
                     }
 
-                else if (data[0] == 101)
+                else if (data[0].unicode() == 101)
 
 
                     {
