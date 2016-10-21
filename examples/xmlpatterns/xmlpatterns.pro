@@ -1,10 +1,10 @@
 TEMPLATE = subdirs
+QT_FOR_CONFIG += xmlpatterns-private
 SUBDIRS += xquery
 qtHaveModule(widgets) {
     SUBDIRS += recipes
 
-    load(qfeatures)
-    !contains(QT_DISABLED_FEATURES, xmlschema): SUBDIRS += filetree schema
+    qtConfig(xml-schema): SUBDIRS += filetree schema
 }
 
 EXAMPLE_FILES = \

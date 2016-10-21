@@ -1,0 +1,24 @@
+{
+    "module": "xmlpatterns",
+    "depends": [
+        "core-private",
+        "network"
+    ],
+
+    "features": {
+        "xml-schema": {
+            "label": "XML schema support",
+            "purpose": "Support for XML schema validation",
+            "output": [ "privateFeature" ]
+        }
+    },
+
+    "summary": [
+        {
+            "section": "QtXmlPatterns",
+            "entries": [
+                "xml-schema"
+            ]
+        }
+    ]
+}

@@ -50,8 +50,7 @@ SOURCES += $$PWD/qvariableloader.cpp \
     $$PWD/qcoloringmessagehandler.cpp \
     $$PWD/qcoloroutput.cpp
 
-load(qfeatures)
-!contains(QT_DISABLED_FEATURES, xmlschema) {
+qtConfig(xml-schema) {
     HEADERS += $$PWD/qxmlschema.h \
         $$PWD/qxmlschema_p.h \
         $$PWD/qxmlschemavalidator.h \
