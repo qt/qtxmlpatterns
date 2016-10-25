@@ -1,9 +1,5 @@
 {
     "module": "xmlpatterns",
-    "depends": [
-        "core-private",
-        "network"
-    ],
 
     "features": {
         "xml-schema": {
