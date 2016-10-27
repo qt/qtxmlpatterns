@@ -61,7 +61,7 @@ namespace QPatternist
     class TemplateParameterReference : public EmptyContainer
     {
     public:
-        TemplateParameterReference(const VariableDeclaration::Ptr &varDecl);
+        TemplateParameterReference(const VariableDeclaration *varDecl);
 
         virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
         virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
@@ -72,10 +72,10 @@ namespace QPatternist
         virtual Properties properties() const;
 
         inline const Expression::Ptr &sourceExpression() const;
-        inline const VariableDeclaration::Ptr &variableDeclaration() const;
+        inline const VariableDeclaration *variableDeclaration() const;
 
     private:
-        const VariableDeclaration::Ptr m_varDecl;
+        const VariableDeclaration *m_varDecl;
     };
 
     inline const Expression::Ptr &TemplateParameterReference::sourceExpression() const
@@ -83,7 +83,7 @@ namespace QPatternist
         return m_varDecl->expression();
     }
 
-    inline const VariableDeclaration::Ptr &TemplateParameterReference::variableDeclaration() const
+    inline const VariableDeclaration *TemplateParameterReference::variableDeclaration() const
     {
         return m_varDecl;
     }

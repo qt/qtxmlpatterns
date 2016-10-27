@@ -39,8 +39,8 @@ QT_BEGIN_NAMESPACE
 using namespace QPatternist;
 
 ExpressionVariableReference::ExpressionVariableReference(const VariableSlotID slotP,
-                                                         const VariableDeclaration::Ptr &varDecl) : VariableReference(slotP)
-                                                                                                  , m_varDecl(varDecl)
+                                                         const VariableDeclaration *varDecl) : VariableReference(slotP)
+                                                                                             , m_varDecl(varDecl)
 {
 }
 
