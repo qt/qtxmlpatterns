@@ -45,7 +45,7 @@ QT_BEGIN_NAMESPACE
 
 using namespace QPatternist;
 
-TemplateParameterReference::TemplateParameterReference(const VariableDeclaration::Ptr &varDecl) : m_varDecl(varDecl)
+TemplateParameterReference::TemplateParameterReference(const VariableDeclaration *varDecl) : m_varDecl(varDecl)
 {
 }
 
