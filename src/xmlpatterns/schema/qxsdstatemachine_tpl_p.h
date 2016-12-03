@@ -111,7 +111,9 @@ template <typename TransitionType>
 void XsdStateMachine<TransitionType>::reset()
 {
     // reset the machine to the start state
-    for (auto it = m_states.cbegin(), end = m_states.cend(); it != end; ++it) {
+    auto it = m_states.cbegin();
+    auto end = m_states.cend();
+    for ( ; it != end; ++it) {
         if (it.value() == StartState || it.value() == StartEndState) {
             m_currentState = it.key();
             return;
@@ -175,7 +177,9 @@ bool XsdStateMachine<TransitionType>::proceed(InputType input)
 
     // fetch the transition entry for the current state
     const QHash<TransitionType, QVector<StateId> > &entry = m_transitions[m_currentState];
-    for (auto it = entry.cbegin(), end = entry.cend(); it != end; ++it) {
+    auto it = entry.cbegin();
+    auto end = entry.cend();
+    for ( ; it != end; ++it) {
         if (inputEqualsTransition(input, it.key())) {
             m_currentState = it.value().first();
             m_lastTransition = it.key();
@@ -212,7 +216,9 @@ TransitionType XsdStateMachine<TransitionType>::lastTransition() const
 template <typename TransitionType>
 typename XsdStateMachine<TransitionType>::StateId XsdStateMachine<TransitionType>::startState() const
 {
-    for (auto it = m_states.cbegin(), end = m_states.cend(); it != end; ++it) {
+    auto it = m_states.cbegin();
+    auto end = m_states.cend();
+    for ( ; it != end; ++it) {
         if (it.value() == StartState || it.value() == StartEndState)
             return it.key();
     }
@@ -339,7 +345,9 @@ XsdStateMachine<TransitionType> XsdStateMachine<TransitionType>::toDFA() const
 
     // search the start state as the algorithm starts with it...
     StateId startState = -1;
-    for (auto it = m_states.cbegin(), end = m_states.cend(); it != end; ++it) {
+    auto it = m_states.cbegin();
+    auto end = m_states.cend();
+    for ( ; it != end; ++it) {
         if (it.value() == StartState) {
             startState = it.key();
             break;
