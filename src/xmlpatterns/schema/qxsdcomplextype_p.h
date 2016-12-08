@@ -242,7 +242,7 @@ namespace QPatternist
              *
              * @param namePool The name pool where the type name is stored in.
              */
-            virtual QString displayName(const NamePool::Ptr &namePool) const;
+            QString displayName(const NamePool::Ptr &namePool) const override;
 
             /**
              * Sets the base type of the complex type.
@@ -254,7 +254,7 @@ namespace QPatternist
             /**
              * Returns the base type of the complex type.
              */
-            virtual SchemaType::Ptr wxsSuperType() const;
+            SchemaType::Ptr wxsSuperType() const override;
 
             /**
              * Sets the context @p component of the complex type.
@@ -282,7 +282,7 @@ namespace QPatternist
             /**
              * Returns the derivation method of the complex type.
              */
-            virtual DerivationMethod derivationMethod() const;
+            DerivationMethod derivationMethod() const override;
 
             /**
              * Sets whether the complex type is @p abstract.
@@ -294,7 +294,7 @@ namespace QPatternist
             /**
              * Returns whether the complex type is abstract.
              */
-            virtual bool isAbstract() const;
+            bool isAbstract() const override;
 
             /**
              * Sets the list of all attribute @p uses of the complex type.
@@ -328,7 +328,7 @@ namespace QPatternist
             /**
              * Always returns SchemaType::ComplexType
              */
-            virtual TypeCategory category() const;
+            TypeCategory category() const override;
 
             /**
              * Sets the content @p type of the complex type.
@@ -378,7 +378,7 @@ namespace QPatternist
             /**
              * Always returns @c true.
              */
-            virtual bool isDefinedBySchema() const;
+            bool isDefinedBySchema() const override;
 
         private:
             SchemaType::Ptr           m_superType;

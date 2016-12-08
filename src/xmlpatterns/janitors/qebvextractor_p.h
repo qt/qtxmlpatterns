@@ -72,17 +72,17 @@ namespace QPatternist
     {
     public:
         EBVExtractor(const Expression::Ptr &operand);
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
-        virtual SequenceType::List expectedOperandTypes() const;
-        virtual const SourceLocationReflection *actualReflection() const;
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
+        SequenceType::List expectedOperandTypes() const override;
+        const SourceLocationReflection *actualReflection() const override;
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
         /**
          * @short Returns always @c xs:boolean.
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
         template<typename TSubClass, typename ThisType>
         static Expression::Ptr typeCheck(const StaticContext::Ptr &context,

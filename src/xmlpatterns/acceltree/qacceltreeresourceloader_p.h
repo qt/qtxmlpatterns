@@ -92,20 +92,20 @@ namespace QPatternist
         AccelTreeResourceLoader(const NamePool::Ptr &np,
                                 const NetworkAccessDelegator::Ptr &networkDelegator, AccelTreeBuilder<true>::Features = AccelTreeBuilder<true>::NoneFeature);
 
-        virtual Item openDocument(const QUrl &uri,
-                                  const ReportContext::Ptr &context);
+        Item openDocument(const QUrl &uri,
+                          const ReportContext::Ptr &context) override;
         virtual Item openDocument(QIODevice *source, const QUrl &documentUri,
                                   const ReportContext::Ptr &context);
-        virtual SequenceType::Ptr announceDocument(const QUrl &uri, const Usage usageHint);
-        virtual bool isDocumentAvailable(const QUrl &uri);
+        SequenceType::Ptr announceDocument(const QUrl &uri, const Usage usageHint) override;
+        bool isDocumentAvailable(const QUrl &uri) override;
 
-        virtual bool isUnparsedTextAvailable(const QUrl &uri,
-                                             const QString &encoding);
+        bool isUnparsedTextAvailable(const QUrl &uri,
+                                     const QString &encoding) override;
 
-        virtual Item openUnparsedText(const QUrl &uri,
-                                      const QString &encoding,
-                                      const ReportContext::Ptr &context,
-                                      const SourceLocationReflection *const where);
+        Item openUnparsedText(const QUrl &uri,
+                              const QString &encoding,
+                              const ReportContext::Ptr &context,
+                              const SourceLocationReflection *const where) override;
 
         /**
          * @short Helper function that do NetworkAccessDelegator::get(), but
@@ -135,9 +135,9 @@ namespace QPatternist
          * @short Returns the URIs this AccelTreeResourceLoader has loaded
          * which are for devices through variable bindings.
          */
-        virtual QSet<QUrl> deviceURIs() const;
+        QSet<QUrl> deviceURIs() const override;
 
-        virtual void clear(const QUrl &uri);
+        void clear(const QUrl &uri) override;
 
     private:
         static bool streamToReceiver(QIODevice *const dev,

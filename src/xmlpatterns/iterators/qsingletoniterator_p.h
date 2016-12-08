@@ -87,7 +87,7 @@ namespace QPatternist
             Q_ASSERT(!qIsForwardIteratorEnd(item));
         }
 
-        virtual T next()
+        T next() override
         {
             switch(m_position)
             {
@@ -109,7 +109,7 @@ namespace QPatternist
             }
         }
 
-        virtual T current() const
+        T current() const override
         {
             if(m_position == 1)
                 return m_item;
@@ -117,7 +117,7 @@ namespace QPatternist
                 return T();
         }
 
-        virtual xsInteger position() const
+        xsInteger position() const override
         {
             return m_position;
         }
@@ -125,7 +125,7 @@ namespace QPatternist
         /**
          * @returns a copy of this instance, rewinded to the beginning.
          */
-        virtual typename QAbstractXmlForwardIterator<T>::Ptr toReversed()
+        typename QAbstractXmlForwardIterator<T>::Ptr toReversed() override
         {
             return typename QAbstractXmlForwardIterator<T>::Ptr(new SingletonIterator<T>(m_item));
         }
@@ -133,12 +133,12 @@ namespace QPatternist
         /**
          * @returns always 1
          */
-        virtual xsInteger count()
+        xsInteger count() override
         {
             return 1;
         }
 
-        virtual typename QAbstractXmlForwardIterator<T>::Ptr copy() const
+        typename QAbstractXmlForwardIterator<T>::Ptr copy() const override
         {
             return typename QAbstractXmlForwardIterator<T>::Ptr(new SingletonIterator(m_item));
         }

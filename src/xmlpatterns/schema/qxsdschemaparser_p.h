@@ -164,12 +164,12 @@ namespace QPatternist
             /**
              * Returns the document URI of the schema to parse.
              */
-            QUrl documentURI() const;
+            QUrl documentURI() const override;
 
             /**
              * Reimplemented from MaintainingReader, always returns @c false.
              */
-            bool isAnyAttributeAllowed() const;
+            bool isAnyAttributeAllowed() const override;
 
         private:
             /**

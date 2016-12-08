@@ -71,9 +71,9 @@ namespace QPatternist
     public:
         NodeNamespaceResolver(const Item &item);
 
-        virtual void addBinding(const QXmlName nb);
-        virtual QXmlName::NamespaceCode lookupNamespaceURI(const QXmlName::PrefixCode prefix) const;
-        virtual Bindings bindings() const;
+        void addBinding(const QXmlName nb) override;
+        QXmlName::NamespaceCode lookupNamespaceURI(const QXmlName::PrefixCode prefix) const override;
+        Bindings bindings() const override;
 
     private:
         const QXmlNodeModelIndex m_node;

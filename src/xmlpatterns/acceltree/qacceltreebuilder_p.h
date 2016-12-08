@@ -103,34 +103,34 @@ namespace QPatternist
                          const NamePool::Ptr &np,
                          ReportContext *const context,
                          Features features = NoneFeature);
-        virtual void startDocument();
-        virtual void endDocument();
-        virtual void startElement(const QXmlName &name);
+        void startDocument() override;
+        void endDocument() override;
+        void startElement(const QXmlName &name) override;
         void startElement(const QXmlName &name, qint64 line, qint64 column);
-        virtual void endElement();
-        virtual void attribute(const QXmlName &name, const QStringRef &value);
-        virtual void characters(const QStringRef &ch);
-        virtual void whitespaceOnly(const QStringRef &ch);
-        virtual void processingInstruction(const QXmlName &target,
-                                           const QString &data);
-        virtual void namespaceBinding(const QXmlName &nb);
-        virtual void comment(const QString &content);
-        virtual void item(const Item &it);
+        void endElement() override;
+        void attribute(const QXmlName &name, const QStringRef &value) override;
+        void characters(const QStringRef &ch) override;
+        void whitespaceOnly(const QStringRef &ch) override;
+        void processingInstruction(const QXmlName &target,
+                                   const QString &data) override;
+        void namespaceBinding(const QXmlName &nb) override;
+        void comment(const QString &content) override;
+        void item(const Item &it) override;
 
-        virtual QAbstractXmlNodeModel::Ptr builtDocument();
-        virtual NodeBuilder::Ptr create(const QUrl &baseURI) const;
-        virtual void startOfSequence();
-        virtual void endOfSequence();
+        QAbstractXmlNodeModel::Ptr builtDocument() override;
+        NodeBuilder::Ptr create(const QUrl &baseURI) const override;
+        void startOfSequence() override;
+        void endOfSequence() override;
 
         inline AccelTree::Ptr builtDocument() const
         {
             return m_document;
         }
 
-        virtual void atomicValue(const QVariant &value);
+        void atomicValue(const QVariant &value) override;
 
-        virtual const SourceLocationReflection *actualReflection() const;
-        virtual QSourceLocation sourceLocation() const;
+        const SourceLocationReflection *actualReflection() const override;
+        QSourceLocation sourceLocation() const override;
 
     private:
         inline void startStructure();

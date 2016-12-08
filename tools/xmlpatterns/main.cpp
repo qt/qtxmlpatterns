@@ -109,8 +109,8 @@ public:
 #endif
 
 protected:
-    virtual QVariant convertToValue(const QApplicationArgument &arg,
-                                    const QString &input) const
+    QVariant convertToValue(const QApplicationArgument &arg,
+                            const QString &input) const override
     {
         if(arg.name() == QLatin1String("param"))
         {
@@ -161,7 +161,7 @@ protected:
             return QApplicationArgumentParser::convertToValue(arg, input);
     }
 
-    virtual QString typeToName(const QApplicationArgument &argument) const
+    QString typeToName(const QApplicationArgument &argument) const override
     {
         if(argument.name() == QLatin1String("param"))
             return QLatin1String("name=value");
@@ -171,7 +171,7 @@ protected:
             return QApplicationArgumentParser::typeToName(argument);
     }
 
-    virtual QVariant defaultValue(const QApplicationArgument &argument) const
+    QVariant defaultValue(const QApplicationArgument &argument) const override
     {
         if(argument.name() == QLatin1String("output"))
         {

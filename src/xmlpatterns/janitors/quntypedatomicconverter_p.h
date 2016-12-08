@@ -81,19 +81,19 @@ namespace QPatternist
                                const ItemType::Ptr &reqType,
                                const ReportContext::ErrorCode code = ReportContext::FORG0001);
 
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &) const;
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &) const override;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &) const override;
 
-        virtual SequenceType::Ptr staticType() const;
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::Ptr staticType() const override;
+        SequenceType::List expectedOperandTypes() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
         /**
          * Overridden to call CastingPlatform::typeCheck()
          */
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
         inline Item mapToItem(const Item &item,
                               const DynamicContext::Ptr &context) const;
@@ -103,7 +103,7 @@ namespace QPatternist
             return m_reqType;
         }
 
-        virtual const SourceLocationReflection *actualReflection() const;
+        const SourceLocationReflection *actualReflection() const override;
 
     private:
         typedef QExplicitlySharedDataPointer<const UntypedAtomicConverter> ConstPtr;

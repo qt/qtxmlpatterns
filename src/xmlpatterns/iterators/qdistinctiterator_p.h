@@ -96,11 +96,11 @@ namespace QPatternist
                          const Expression::ConstPtr &expression,
                          const DynamicContext::Ptr &context);
 
-        virtual Item next();
-        virtual Item current() const;
-        virtual xsInteger position() const;
-        virtual Item::Iterator::Ptr copy() const;
-        virtual const SourceLocationReflection *actualReflection() const;
+        Item next() override;
+        Item current() const override;
+        xsInteger position() const override;
+        Item::Iterator::Ptr copy() const override;
+        const SourceLocationReflection *actualReflection() const override;
 
         inline AtomicComparator::Operator operatorID() const
         {

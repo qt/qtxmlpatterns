@@ -156,7 +156,7 @@ namespace QPatternist
             /**
              * Returns always @c true, used to avoid dynamic casts.
              */
-            virtual bool isWildcard() const;
+            bool isWildcard() const override;
 
             /**
              * Sets the namespace @p constraint of the wildcard.

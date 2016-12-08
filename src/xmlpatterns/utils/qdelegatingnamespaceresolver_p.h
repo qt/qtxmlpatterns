@@ -74,10 +74,10 @@ namespace QPatternist
         DelegatingNamespaceResolver(const NamespaceResolver::Ptr &ns,
                                     const Bindings &overrides);
 
-        virtual void addBinding(const QXmlName nb);
+        void addBinding(const QXmlName nb) override;
 
-        virtual QXmlName::NamespaceCode lookupNamespaceURI(const QXmlName::PrefixCode prefix) const;
-        virtual Bindings bindings() const;
+        QXmlName::NamespaceCode lookupNamespaceURI(const QXmlName::PrefixCode prefix) const override;
+        Bindings bindings() const override;
 
     private:
         const NamespaceResolver::Ptr    m_nsResolver;

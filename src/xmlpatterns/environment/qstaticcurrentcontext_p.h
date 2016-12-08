@@ -72,7 +72,7 @@ namespace QPatternist
         /**
          * @returns the type passed in the constructor.
          */
-        virtual ItemType::Ptr currentItemType() const;
+        ItemType::Ptr currentItemType() const override;
 
     private:
         const ItemType::Ptr         m_currentItemType;

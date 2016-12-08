@@ -76,9 +76,9 @@ namespace QPatternist
     public:
         DeduplicateIterator(const Item::List &source);
 
-        virtual Item next();
-        virtual Item::Iterator::Ptr copy() const;
-        virtual xsInteger count();
+        Item next() override;
+        Item::Iterator::Ptr copy() const override;
+        xsInteger count() override;
 
     private:
         /**

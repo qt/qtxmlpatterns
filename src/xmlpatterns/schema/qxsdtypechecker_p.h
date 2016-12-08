@@ -73,8 +73,8 @@ namespace QPatternist
         public:
             XsdSchemaSourceLocationReflection(const QSourceLocation &location);
 
-            virtual const SourceLocationReflection *actualReflection() const;
-            virtual QSourceLocation sourceLocation() const;
+            const SourceLocationReflection *actualReflection() const override;
+            QSourceLocation sourceLocation() const override;
 
         private:
             const QSourceLocation m_sourceLocation;

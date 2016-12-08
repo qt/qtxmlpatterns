@@ -83,7 +83,7 @@ namespace QPatternist
              *
              * @param namePool The name pool the type name is stored in.
              */
-            virtual QString displayName(const NamePool::Ptr &namePool) const;
+            QString displayName(const NamePool::Ptr &namePool) const override;
 
             /**
              * Sets the base @p type of the simple type.
@@ -96,7 +96,7 @@ namespace QPatternist
              * Returns the base type of the simple type or an empty pointer if no base type is
              * set.
              */
-            virtual SchemaType::Ptr wxsSuperType() const;
+            SchemaType::Ptr wxsSuperType() const override;
 
             /**
              * Sets the context @p component of the simple type.
@@ -177,7 +177,7 @@ namespace QPatternist
             /**
              * Returns the category (variety) of the simple type.
              */
-            virtual TypeCategory category() const;
+            TypeCategory category() const override;
 
             /**
              * Sets the derivation @p method of the simple type.
@@ -189,12 +189,12 @@ namespace QPatternist
             /**
              * Returns the derivation method of the simple type.
              */
-            virtual DerivationMethod derivationMethod() const;
+            DerivationMethod derivationMethod() const override;
 
             /**
              * Always returns @c true.
              */
-            virtual bool isDefinedBySchema() const;
+            bool isDefinedBySchema() const override;
 
         private:
             SchemaType::Ptr           m_superType;

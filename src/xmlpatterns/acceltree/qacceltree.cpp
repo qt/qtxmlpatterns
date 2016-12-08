@@ -64,7 +64,7 @@ namespace QPatternist {
             {
             }
 
-            virtual QSourceLocation sourceLocation(const QXmlNodeModelIndex &index) const
+            QSourceLocation sourceLocation(const QXmlNodeModelIndex &index) const override
             {
                 return m_accelTree->sourceLocation(index);
             }

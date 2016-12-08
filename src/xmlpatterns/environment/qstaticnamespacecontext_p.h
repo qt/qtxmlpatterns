@@ -71,7 +71,7 @@ namespace QPatternist
         /**
          * @returns the resolver passed in the constructor.
          */
-        virtual NamespaceResolver::Ptr namespaceBindings() const;
+        NamespaceResolver::Ptr namespaceBindings() const override;
 
     private:
         const NamespaceResolver::Ptr m_namespaceBindings;

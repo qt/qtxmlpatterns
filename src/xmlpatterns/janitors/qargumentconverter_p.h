@@ -78,13 +78,13 @@ namespace QPatternist
         ArgumentConverter(const Expression::Ptr &operand,
                           const ItemType::Ptr &reqType);
 
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &) const;
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &) const;
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &) const override;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &) const override;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
         inline Item::Iterator::Ptr mapToSequence(const Item &item,
                                                  const DynamicContext::Ptr &context) const;
-        virtual SequenceType::List expectedOperandTypes() const;
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::List expectedOperandTypes() const override;
+        SequenceType::Ptr staticType() const override;
 
     private:
         typedef QExplicitlySharedDataPointer<const ArgumentConverter> ConstPtr;

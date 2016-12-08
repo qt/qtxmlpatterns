@@ -236,7 +236,7 @@ namespace QPatternist
             /**
              * Always returns @c true, used to avoid dynamic casts.
              */
-            virtual bool isElement() const;
+            bool isElement() const override;
 
             /**
              * Sets the @p type of the element.

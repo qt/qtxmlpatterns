@@ -111,7 +111,7 @@ namespace QPatternist
          * @returns the next item in the sequence, or
          * @c null if the end have been reached.
          */
-        virtual TResult next()
+        TResult next() override
         {
             while (true)
             {
@@ -138,17 +138,17 @@ namespace QPatternist
             }
         }
 
-        virtual TResult current() const
+        TResult current() const override
         {
             return m_current;
         }
 
-        virtual xsInteger position() const
+        xsInteger position() const override
         {
             return m_position;
         }
 
-        virtual typename QAbstractXmlForwardIterator<TResult>::Ptr copy() const
+        typename QAbstractXmlForwardIterator<TResult>::Ptr copy() const override
         {
             return typename QAbstractXmlForwardIterator<TResult>::Ptr
                 (new ItemMappingIterator<TResult, TSource, TMapper, Context>(m_mapper, m_it->copy(), m_context));

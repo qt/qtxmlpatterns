@@ -158,7 +158,7 @@ namespace QPatternist
             /**
              * Always returns true, used to avoid dynamic casts.
              */
-            virtual bool isAttributeUse() const;
+            bool isAttributeUse() const override;
 
             /**
              * Sets the use @p type of the attribute use.

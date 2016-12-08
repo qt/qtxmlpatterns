@@ -96,7 +96,7 @@ namespace QPatternist
             /**
              * Returns always @c true, used to avoid dynamic casts.
              */
-            virtual bool isModelGroup() const;
+            bool isModelGroup() const override;
 
             /**
              * Sets the @p compositor of the model group.

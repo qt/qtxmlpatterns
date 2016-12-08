@@ -75,7 +75,7 @@ namespace QPatternist
         CurrentItemContext(const Item &item,
                            const DynamicContext::Ptr &prevContext);
 
-        virtual Item currentItem() const;
+        Item currentItem() const override;
 
     private:
         const Item m_currentItem;

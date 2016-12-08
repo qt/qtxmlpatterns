@@ -106,14 +106,14 @@ namespace QPatternist
                         const QUrl &location,
                         const State startingState = Default);
 
-        virtual Token nextToken(XPATHLTYPE *const sourceLocator);
-        virtual int commenceScanOnly();
-        virtual void resumeTokenizationFrom(const int position);
+        Token nextToken(XPATHLTYPE *const sourceLocator) override;
+        int commenceScanOnly() override;
+        void resumeTokenizationFrom(const int position) override;
 
         /**
          * Does nothing.
          */
-        virtual void setParserContext(const ParserContext::Ptr &parseInfo);
+        void setParserContext(const ParserContext::Ptr &parseInfo) override;
 
     private:
 
