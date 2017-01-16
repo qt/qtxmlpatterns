@@ -54,11 +54,12 @@ static const AtomicComparator::Operators AllCompOperators(AtomicComparator::Oper
 #define addVisitor(owner, type, comp, validOps)                                 \
 AtomicTypeVisitorResult::Ptr                                                    \
 owner##ComparatorLocator::visit(const type *,                                   \
-                                const qint16 op,                                \
+                                const qint16 opIn,                              \
                                 const SourceLocationReflection *const) const    \
 {                                                                               \
     /* Note the extra paranteses around validOps. */                            \
-    if(((validOps) & AtomicComparator::Operator(op)) == op)                     \
+    const AtomicComparator::Operator op = AtomicComparator::Operator(opIn);     \
+    if (((validOps) & op) == op)                                                \
         return AtomicTypeVisitorResult::Ptr(new comp());                        \
     else                                                                        \
         return AtomicTypeVisitorResult::Ptr();                                  \
@@ -67,12 +68,13 @@ owner##ComparatorLocator::visit(const type *,                                   
 #define visitorForDouble(owner, type)                                                                                           \
 AtomicTypeVisitorResult::Ptr                                                                                                    \
 owner##ComparatorLocator::visit(const type *,                                                                                   \
-                                const qint16 op,                                                                                \
+                                const qint16 opIn,                                                                              \
                                 const SourceLocationReflection *const) const                                                    \
 {                                                                                                                               \
+    const AtomicComparator::Operator op = AtomicComparator::Operator(opIn);                                                     \
     if(((AtomicComparator::OperatorNotEqual        |                                                                            \
          AtomicComparator::OperatorGreaterOrEqual  |                                                                            \
-         AtomicComparator::OperatorLessOrEqual) & AtomicComparator::Operator(op)) == op)                                        \
+         AtomicComparator::OperatorLessOrEqual) & op) == op)                                                                    \
         return AtomicTypeVisitorResult::Ptr(new AbstractFloatComparator());                                                     \
     else if(op == AtomicComparator::OperatorLessThanNaNLeast)                                                                   \
         return AtomicTypeVisitorResult::Ptr(new AbstractFloatSortComparator<AtomicComparator::OperatorLessThanNaNLeast>());     \

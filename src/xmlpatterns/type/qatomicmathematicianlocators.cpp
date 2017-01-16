@@ -47,12 +47,13 @@ using namespace QPatternist;
 
 #define implMathVisit(ownerClass, visitor, mather, validOps)                            \
 AtomicTypeVisitorResult::Ptr                                                            \
-ownerClass##MathematicianLocator::visit(const visitor *, const qint16 op,               \
+ownerClass##MathematicianLocator::visit(const visitor *, const qint16 opIn,             \
                                         const SourceLocationReflection *const r) const  \
 {                                                                                       \
     Q_UNUSED(r)                                                                         \
     /* Note the extra paranteses around validOps. */                                    \
-    if(((validOps) & AtomicMathematician::Operator(op)) == op)                                                         \
+    const AtomicComparator::Operator op = AtomicComparator::Operator(opIn);             \
+    if (((validOps) & op) == op)                                                        \
         return AtomicTypeVisitorResult::Ptr(new mather());                              \
     else                                                                                \
         return AtomicTypeVisitorResult::Ptr();                                          \
@@ -60,11 +61,12 @@ ownerClass##MathematicianLocator::visit(const visitor *, const qint16 op,       
 
 #define implReportingMathVisit(ownerClass, visitor, mather, validOps)                   \
 AtomicTypeVisitorResult::Ptr                                                            \
-ownerClass##MathematicianLocator::visit(const visitor *, const qint16 op,               \
+ownerClass##MathematicianLocator::visit(const visitor *, const qint16 opIn,             \
                                         const SourceLocationReflection *const r) const  \
 {                                                                                       \
+     const AtomicComparator::Operator op = AtomicComparator::Operator(opIn);            \
     /* Note the extra paranteses around validOps. */                                    \
-    if(((validOps) & AtomicMathematician::Operator(op)) == op)                                                         \
+    if (((validOps) & op) == op)                                                        \
         return AtomicTypeVisitorResult::Ptr(new mather(r));                             \
     else                                                                                \
         return AtomicTypeVisitorResult::Ptr();                                          \
@@ -72,11 +74,12 @@ ownerClass##MathematicianLocator::visit(const visitor *, const qint16 op,       
 
 #define implRevReportingMathVisit(ownerClass, visitor, mather, validOps)                \
 AtomicTypeVisitorResult::Ptr                                                            \
-ownerClass##MathematicianLocator::visit(const visitor *, const qint16 op,               \
+ownerClass##MathematicianLocator::visit(const visitor *, const qint16 opIn,             \
                                         const SourceLocationReflection *const r) const  \
 {                                                                                       \
+    const AtomicComparator::Operator op = AtomicComparator::Operator(opIn);             \
     /* Note the extra paranteses around validOps. */                                    \
-    if(((validOps) & AtomicMathematician::Operator(op)) == op)                                                         \
+    if (((validOps) & op) == op)                                                        \
         return AtomicTypeVisitorResult::Ptr(new OperandSwitcherMathematician(           \
                                             AtomicMathematician::Ptr(new mather(r))));  \
     else                                                                                \
