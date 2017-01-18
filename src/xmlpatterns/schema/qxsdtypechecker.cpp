@@ -37,6 +37,8 @@
 **
 ****************************************************************************/
 
+#include <QtMath>
+
 #include "qxsdtypechecker_p.h"
 
 #include "qabstractdatetime_p.h"
@@ -150,13 +152,12 @@ static int fractionDigitsForDecimal(const QString &lexicalValue)
 {
     // we use the lexical value here, as the conversion to double might strip
     // away decimal positions
-
-    QString trimmedValue(lexicalValue.trimmed());
-    const int pos = trimmedValue.indexOf(QLatin1Char('.'));
-    if (pos == -1) // no '.' -> 0 fraction digits
+    bool ok = false;
+    double dbl = lexicalValue.toDouble(&ok);
+    if (!ok)
         return 0;
-    else
-        return (trimmedValue.length() - pos - 1);
+    dbl = dbl - qFloor(dbl);
+    return QString::number(dbl).length() - 2;
 }
 
 XsdTypeChecker::XsdTypeChecker(const XsdSchemaContext::Ptr &context, const QVector<QXmlName> &namespaceBindings, const QSourceLocation &location)
