@@ -19,8 +19,7 @@ include($$PWD/janitors/janitors.pri)
 include($$PWD/parser/parser.pri)
 include($$PWD/projection/projection.pri)
 
-load(qfeatures)
-!contains(QT_DISABLED_FEATURES, xmlschema) {
+qtConfig(xml-schema) {
     include($$PWD/schema/schema.pri)
 }
 include($$PWD/type/type.pri)

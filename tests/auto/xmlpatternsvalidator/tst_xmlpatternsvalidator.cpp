@@ -227,6 +227,11 @@ void tst_XmlPatternsValidator::xsdSupport_data() const
         << (QStringList() << path + QLatin1String("substitution-group-invalid.xml")
                           << path + QLatin1String("substitution-group.xsd"))
         << QString();
+    QTest::newRow("QTBUG-58245 fraction digits shouldn't take trailing 0 into account")
+            << 0
+            << (QStringList() << path + QLatin1String("fractiondigits.xml")
+                              << path + QLatin1String("fractiondigits.xsd"))
+            << QString();
 }
 
 QTEST_MAIN(tst_XmlPatternsValidator)

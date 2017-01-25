@@ -56,8 +56,16 @@ Using it is approached as follows:
    --schema qtokenautomaton.xsd yourFile.xml`
 
 3. Produce the C++ files by invoking the stylesheet with an XSL-T 2.0
-   processor[1]. For instance, with the implementation Saxon, this would be:
-   `java net.sf.saxon.Transform -xsl:qautomaton2cpp.xsl yourFile.xml`
+   processor[1], for example Saxon.
+
+   If the Java SDK is installed, it can be invoked by:
+   java net.sf.saxon.Transform -xsl:qautomaton2cpp.xsl yourFile.xml
+
+   Debian provides a command line utility saxonb-xslt for this:
+   sudo apt-get install libsaxonb-java
+   saxonb-xslt -ext:on -xsl:qautomaton2cpp.xsl -s:yourFile.xml
+
+   The script regenerate.sh is provided to do this.
 
 4. Include the produced C++ files with your build system.
 
