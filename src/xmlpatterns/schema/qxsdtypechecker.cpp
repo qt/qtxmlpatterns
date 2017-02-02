@@ -150,14 +150,14 @@ static int totalDigitsForDecimal(const QString &lexicalValue)
 
 static int fractionDigitsForDecimal(const QString &lexicalValue)
 {
-    // we use the lexical value here, as the conversion to double might strip
-    // away decimal positions
-    bool ok = false;
-    double dbl = lexicalValue.toDouble(&ok);
-    if (!ok)
+    const int pos = lexicalValue.indexOf(QLatin1Char('.'));
+    if (pos == -1)
         return 0;
-    dbl = dbl - qFloor(dbl);
-    return QString::number(dbl).length() - 2;
+    const QStringRef fraction = QStringRef(&lexicalValue).mid(pos).trimmed();
+    int i = fraction.length() - 1; // fraction[0] is '.' so fraction is not empty
+    while (fraction.at(i) == QLatin1Char('0'))
+        --i;
+    return i; // The significant fraction-digits are fraction[1 through i].
 }
 
 XsdTypeChecker::XsdTypeChecker(const XsdSchemaContext::Ptr &context, const QVector<QXmlName> &namespaceBindings, const QSourceLocation &location)
