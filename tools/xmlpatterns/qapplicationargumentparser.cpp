@@ -34,6 +34,7 @@
 #include <QStringList>
 #include <QTextStream>
 #include <QUrl>
+#include <QRegExp>
 
 #include "qapplicationargument_p.h"
 

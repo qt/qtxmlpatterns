@@ -41,6 +41,7 @@
 #ifndef XMLSYNTAXHIGHLIGHTER_H
 #define XMLSYNTAXHIGHLIGHTER_H
 
+#include <QtCore/QRegExp>
 #include <QtGui/QSyntaxHighlighter>
 
 class XmlSyntaxHighlighter : public QSyntaxHighlighter
