@@ -1,8 +1,8 @@
-#/bin/sh -x
+#!/bin/sh -x
 
 #############################################################################
 ##
-## Copyright (C) 2016 The Qt Company Ltd.
+## Copyright (C) 2017 The Qt Company Ltd.
 ## Contact: http://www.qt.io/licensing/
 ##
 ## This file is part of the build tools of the Qt Toolkit.
@@ -33,6 +33,6 @@
 ##
 #############################################################################
 
-cd $(dirname "$0")/..
+cd `dirname "$0"`/..
 saxonb-xslt -ext:on -xsl:qtokenautomaton/qautomaton2cpp.xsl -s:schema/tokens.xml -o:schema/qxsdschematoken.cpp
 saxonb-xslt -ext:on -xsl:qtokenautomaton/qautomaton2cpp.xsl -s:parser/qxslttokenlookup.xml -o:parser/qxslttokenlookup.cpp
