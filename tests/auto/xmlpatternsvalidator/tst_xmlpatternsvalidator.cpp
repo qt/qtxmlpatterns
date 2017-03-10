@@ -227,9 +227,24 @@ void tst_XmlPatternsValidator::xsdSupport_data() const
         << (QStringList() << path + QLatin1String("substitution-group-invalid.xml")
                           << path + QLatin1String("substitution-group.xsd"))
         << QString();
-    QTest::newRow("QTBUG-58245 fraction digits shouldn't take trailing 0 into account")
+    QTest::newRow("QTBUG-58245 fraction digits should ignore trailing 0")
             << 0
             << (QStringList() << path + QLatin1String("fractiondigits.xml")
+                              << path + QLatin1String("fractiondigits.xsd"))
+            << QString();
+    QTest::newRow("QTBUG-58245 fraction digits should ignore trailing 0 with no dots")
+            << 0
+            << (QStringList() << path + QLatin1String("fractiondigits-nodot.xml")
+                              << path + QLatin1String("fractiondigits.xsd"))
+            << QString();
+    QTest::newRow("QTBUG-58245 fraction digits should ignore trailing 0 with no number before dot")
+            << 0
+            << (QStringList() << path + QLatin1String("fractiondigits-nonumber.xml")
+                              << path + QLatin1String("fractiondigits.xsd"))
+            << QString();
+    QTest::newRow("QTBUG-58245 fraction digits should ignore trailing 0 invalid")
+            << 1
+            << (QStringList() << path + QLatin1String("fractiondigits-invalid.xml")
                               << path + QLatin1String("fractiondigits.xsd"))
             << QString();
 }
