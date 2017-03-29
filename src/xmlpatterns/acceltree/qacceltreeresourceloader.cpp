@@ -238,7 +238,6 @@ bool AccelTreeResourceLoader::streamToReceiver(QIODevice *const dev,
                 continue;
             }
             case QXmlStreamReader::EntityReference:
-            /* Fallthrough. */
             case QXmlStreamReader::DTD:
             {
                 /* We just ignore any DTD and entity references. */

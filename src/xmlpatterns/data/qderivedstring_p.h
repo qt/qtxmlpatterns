@@ -285,11 +285,8 @@ namespace QPatternist
                         return error(np, simplified);
                 }
                 case TypeID:
-                /* Fallthrough. */
                 case TypeIDREF:
-                /* Fallthrough. */
                 case TypeENTITY:
-                /* Fallthrough. */
                 case TypeNCName:
                 {
                     /* We treat xs:ID, xs:ENTITY, xs:IDREF and xs:NCName in the exact same

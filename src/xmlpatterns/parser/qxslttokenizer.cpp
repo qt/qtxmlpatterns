@@ -562,7 +562,6 @@ QString XSLTTokenizer::readElementText()
                 continue;
             }
             case QXmlStreamReader::Comment:
-            /* Fallthrough. */
             case QXmlStreamReader::ProcessingInstruction:
                 continue;
             case QXmlStreamReader::EndElement:
@@ -718,11 +717,8 @@ void XSLTTokenizer::handleStandardAttributes(const bool isXSLTElement)
         switch(toToken(att.name()))
         {
             case Type:
-            /* Fallthrough. */
             case Validation:
-            /* Fallthrough. */
             case UseAttributeSets:
-            /* Fallthrough. */
             case Version:
                 /* These are handled by other function such as
                  * handleValidationAttributes() and handleXSLTVersion(). */
@@ -1236,7 +1232,6 @@ void XSLTTokenizer::insideChoose(TokenSource::Queue *const to)
                 break;
             }
             case QXmlStreamReader::Comment:
-            /* Fallthrough. */
             case QXmlStreamReader::ProcessingInstruction:
                 continue;
             case QXmlStreamReader::Characters:
@@ -1245,10 +1240,9 @@ void XSLTTokenizer::insideChoose(TokenSource::Queue *const to)
                  * 4.2 Stripping Whitespace from the Stylesheet. */
                 if(isWhitespace())
                     continue;
-                /* Fallthrough. */
+                Q_FALLTHROUGH();
             }
             default:
-                /* Fallthrough. */
                 unexpectedContent();
                 break;
         }
@@ -2071,7 +2065,6 @@ bool XSLTTokenizer::insideSequenceConstructor(TokenSource::Queue *const to,
                 return hasWrittenExpression;
             }
             case QXmlStreamReader::ProcessingInstruction:
-            /* Fallthrough. */
             case QXmlStreamReader::Comment:
                 /* We do nothing, we just ignore them. */
                 continue;
@@ -2162,7 +2155,6 @@ void XSLTTokenizer::queueWithParams(const XSLTTokenLookup::NodeName parentName,
                     continue;
             }
             case QXmlStreamReader::ProcessingInstruction:
-            /* Fallthrough. */
             case QXmlStreamReader::Comment:
                 continue;
             case QXmlStreamReader::Characters:
@@ -2241,7 +2233,7 @@ void XSLTTokenizer::queueParams(const XSLTTokenLookup::NodeName parentName,
             {
                 if(whitespaceToSkip())
                     continue;
-                /* Fallthrough. */
+                Q_FALLTHROUGH();
             }
             case QXmlStreamReader::EndElement:
                 return;
@@ -2327,13 +2319,12 @@ void XSLTTokenizer::insideAttributeSet()
             case QXmlStreamReader::EndElement:
                 return;
             case QXmlStreamReader::ProcessingInstruction:
-            /* Fallthrough. */
             case QXmlStreamReader::Comment:
                 continue;
             case QXmlStreamReader::Characters:
                 if(whitespaceToSkip())
                     continue;
-                /* Fallthrough. */
+                Q_FALLTHROUGH();
             default:
                 unexpectedContent();
         }
@@ -2384,7 +2375,6 @@ void XSLTTokenizer::insideStylesheetModule()
                             break;
                         }
                         case StripSpace:
-                        /* Fallthrough. */
                         case PreserveSpace:
                         {
                             // TODO @elements
@@ -2532,9 +2522,7 @@ void XSLTTokenizer::queueSorting(const bool oneSortRequired,
                     switch(currentElementName())
                     {
                         case PerformSort:
-                        /* Fallthrough. */
                         case ForEach:
-                        /* Fallthrough. */
                         case ApplyTemplates:
                             return;
                         default:
@@ -2645,7 +2633,6 @@ void XSLTTokenizer::queueSorting(const bool oneSortRequired,
                 break;
             }
             case QXmlStreamReader::ProcessingInstruction:
-            /* Fallthrough. */
             case QXmlStreamReader::Comment:
                 continue;
             default:

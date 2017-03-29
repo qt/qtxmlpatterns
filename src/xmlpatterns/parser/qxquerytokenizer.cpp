@@ -105,7 +105,7 @@ int XQueryTokenizer::peekForColonColon() const
             {
                 if (peekAhead((pos - m_pos) + 1) == ':')
                     return pos - m_pos;
-                /* Fallthrough. */
+                Q_FALLTHROUGH();
             }
             default:
                 return -1;
@@ -167,7 +167,7 @@ QString XQueryTokenizer::normalizeEOL(const QString &input,
                 if (i + 1 < len && input.at(i + 1) == QLatin1Char('\n'))
                     ++i;
 
-                /* Else, fallthrough. */
+                Q_FALLTHROUGH();
             }
             case '\n':
             {
@@ -223,7 +223,6 @@ Tokenizer::TokenType XQueryTokenizer::consumeComment()
                 break;
             }
             case '\n':
-            /* Fallthrough. */
             case '\r':
             {
                 /* We want to count \r\n as a single line break. */
@@ -766,7 +765,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
     switch(state())
     {
         case XMLSpaceDecl:
-        /* Fallthrough. */
         case NamespaceKeyword:
         {
             switch(peekCurrent())
@@ -774,7 +772,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                 case ',':
                     return tokenAndAdvance(T_COMMA);
                 case '"':
-                /* Fallthrough. */
                 case '\'':
                 {
                     setState(NamespaceDecl);
@@ -793,7 +790,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                 switch(keyword->token)
                 {
                     case T_INHERIT:
-                    /* Fallthrough. */
                     case T_NO_INHERIT:
                     {
                         setState(Default);
@@ -805,9 +801,7 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                         break;
                     }
                     case T_ORDERED:
-                    /* Fallthrough. */
                     case T_UNORDERED:
-                    /* Fallthrough. */
                     case T_STRIP:
                     {
                         setState(Default);
@@ -839,7 +833,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                 case ';':
                     return tokenAndChangeState(T_SEMI_COLON, Default);
                 case '\'':
-                /* Fallthrough. */
                 case '\"':
                     return tokenizeStringLiteral();
             }
@@ -867,15 +860,14 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                 setState(AfterAxisSeparator);
                 return Token(T_COLONCOLON);
             }
-            /* Fallthrough. */
+            Q_FALLTHROUGH();
         }
         case AfterAxisSeparator:
-        /* Fallthrough. */
         case Default:
            /* State Operator and state Default have a lot of tokens in common except
             * for minor differences. So we treat them the same way, and sprinkles logic
             * here and there to handle the small differences. */
-        /* Fallthrough. */
+            Q_FALLTHROUGH();
         case Operator:
         {
             switch(peekCurrent())
@@ -930,7 +922,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                         return tokenAndChangeState(T_DOT, Operator);
                 }
                 case '\'':
-                /* Fallthrough. */
                 case '"':
                 {
                     setState(Operator);
@@ -1293,7 +1284,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                     switch(keyword2->token)
                     {
                         case T_VARIABLE:
-                        /* Fallthrough. */
                         case T_FUNCTION:
                         {
                             m_tokenStack.push(Token(keyword2->token));
@@ -1307,7 +1297,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                             return Token(keyword->token);
                         }
                         case T_COPY_NAMESPACES:
-                        /* Fallthrough. */
                         case T_ORDERING:
                         {
                             m_tokenStack.push(Token(keyword2->token));
@@ -1322,7 +1311,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                             return Token(keyword->token);
                         }
                         case T_NAMESPACE:
-                        /* Fallthrough. */
                         case T_BASEURI:
                         {
                             m_tokenStack.push(Token(keyword2->token));
@@ -1402,7 +1390,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                     switch(keyword2->token)
                     {
                         case T_SCHEMA:
-                        /* Fallthrough. */
                         case T_MODULE:
                         {
                             setState(NamespaceKeyword);
@@ -1509,7 +1496,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                 case '?':
                     return tokenAndAdvance(T_QUESTION);
                 case '\'':
-                /* Fallthrough. */
                 case '"':
                     return tokenizeStringLiteral();
             }
@@ -1547,7 +1533,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                     return tokenAndAdvance(T_RPAREN);
                 }
                 case '\'':
-                /* Fallthrough. */
                 case '"':
                     return tokenizeStringLiteral();
                 default:
@@ -1578,7 +1563,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
             switch(peekCurrent())
             {
                 case '\'':
-                /* Fallthrough. */
                 case '"':
                     return tokenizeStringLiteral();
                 case ';':
@@ -1648,7 +1632,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
             Q_ASSERT(false);
         }
         case AposAttributeContent:
-        /* Fallthrough. */
         case QuotAttributeContent:
         {
             const QChar sep(state() == AposAttributeContent ? QLatin1Char('\'') : QLatin1Char('"'));
@@ -1770,7 +1753,6 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                             Q_FALLTHROUGH();
                         }
                         case 0xA:
-                        /* Fallthrough. */
                         case 0x9:
                         {
                             result.append(QLatin1Char(' '));
@@ -1921,7 +1903,7 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                         /* We want to translate \r\n into \n. */
                         if (peekAhead(-1) == '\r')
                             break;
-                        /* else, fallthrough. */
+                        Q_FALLTHROUGH();
                     }
                     case '\r':
                     {
@@ -2192,9 +2174,7 @@ Tokenizer::Token XQueryTokenizer::nextToken(YYLTYPE *const sourceLocator)
         switch(retval.type)
         {
             case T_MODULE:
-            /* Fallthrough.*/
             case T_SCHEMA:
-            /* Fallthrough.*/
             case T_COPY_NAMESPACES:
             {
                 setState(NamespaceKeyword);
@@ -2206,7 +2186,6 @@ Tokenizer::Token XQueryTokenizer::nextToken(YYLTYPE *const sourceLocator)
                 break;
             }
             case T_AS:
-            /* Fallthrough. */
             case T_OF:
             {
                 setState(ItemType);

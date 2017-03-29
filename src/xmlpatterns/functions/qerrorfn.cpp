@@ -61,10 +61,11 @@ Item ErrorFN::evaluateSingleton(const DynamicContext::Ptr &context) const
             return Item();
         }
         case 3:
-        /* Fallthrough, we don't use the 'error object' param. */
+            /* Fallthrough, we don't use the 'error object' param. */
+            Q_FALLTHROUGH();
         case 2:
             msg = m_operands.at(1)->evaluateSingleton(context).stringValue();
-        /* Fall through. */
+            Q_FALLTHROUGH();
         case 1:
         {
             const QNameValue::Ptr qName(m_operands.first()->evaluateSingleton(context).as<QNameValue>());

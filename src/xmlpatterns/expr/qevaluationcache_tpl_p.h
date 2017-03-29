@@ -141,7 +141,7 @@ Item::Iterator::Ptr EvaluationCache<IsForGlobal>::evaluateSequence(const Dynamic
             cell.inUse = true;
             cell.sourceIterator = m_operand->evaluateSequence(IsForGlobal ? topFocusContext(context) : context);
             cell.cacheState = ItemSequenceCacheCell::PartiallyPopulated;
-            /* Fallthrough. */
+            Q_FALLTHROUGH();
         }
         case ItemSequenceCacheCell::PartiallyPopulated:
         {
