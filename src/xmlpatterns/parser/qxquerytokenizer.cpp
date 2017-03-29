@@ -303,6 +303,7 @@ Tokenizer::TokenType XQueryTokenizer::consumeWhitespace()
                     else
                         return comment;
                 }
+                Q_FALLTHROUGH();
             }
             default:
                 return T_SUCCESS;
@@ -816,6 +817,7 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                     {
                         if (state() != NamespaceKeyword)
                             setState(Default);
+                        break;
                     }
                     default:
                         break;
@@ -998,6 +1000,7 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                                 return tokenAndChangeState(T_COMMENT_START, XMLComment);
                             }
                             /* Fallthrough. It's a syntax error, and this is a good way to report it. */
+                            Q_FALLTHROUGH();
                         }
                         default:
                         {
@@ -1764,6 +1767,7 @@ Tokenizer::Token XQueryTokenizer::nextToken()
                                 ++m_pos;
                                 break;
                             }
+                            Q_FALLTHROUGH();
                         }
                         case 0xA:
                         /* Fallthrough. */
