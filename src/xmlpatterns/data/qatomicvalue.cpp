@@ -135,7 +135,8 @@ Item AtomicValue::toXDM(const QVariant &value)
     switch(value.userType())
     {
         case QVariant::Char:
-        /* Fallthrough. A single codepoint is a string in XQuery. */
+            /* A single codepoint is a string in XQuery. */
+            Q_FALLTHROUGH();
         case QVariant::String:
             return AtomicString::fromValue(value.toString());
         case QVariant::Url:
@@ -149,9 +150,7 @@ Item AtomicValue::toXDM(const QVariant &value)
         case QVariant::ByteArray:
             return HexBinary::fromValue(value.toByteArray());
         case QVariant::Int:
-        /* Fallthrough. */
         case QVariant::LongLong:
-        /* Fallthrough. */
         case QVariant::UInt:
             return Integer::fromValue(value.toLongLong());
         case QVariant::ULongLong:
@@ -203,9 +202,7 @@ ItemType::Ptr AtomicValue::qtToXDMType(const QXmlItem &item)
     switch(int(v.type()))
     {
         case QVariant::Char:
-        /* Fallthrough. */
         case QVariant::String:
-        /* Fallthrough. */
         case QVariant::Url:
             return BuiltinTypes::xsString;
         case QVariant::Bool:
@@ -213,7 +210,6 @@ ItemType::Ptr AtomicValue::qtToXDMType(const QXmlItem &item)
         case QVariant::ByteArray:
             return BuiltinTypes::xsBase64Binary;
         case QVariant::Int:
-        /* Fallthrough. */
         case QVariant::LongLong:
             return BuiltinTypes::xsInteger;
         case QVariant::ULongLong:
@@ -221,7 +217,6 @@ ItemType::Ptr AtomicValue::qtToXDMType(const QXmlItem &item)
         case QVariant::Date:
             return BuiltinTypes::xsDate;
         case QVariant::DateTime:
-        /* Fallthrough. */
         case QVariant::Time:
             return BuiltinTypes::xsDateTime;
         case QMetaType::Float:

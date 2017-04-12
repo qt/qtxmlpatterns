@@ -134,7 +134,6 @@ void ColoringMessageHandler::handleMessage(QtMsgType type,
             break;
         }
         case QtCriticalMsg:
-        /* Fallthrough. */
         case QtDebugMsg:
         case QtInfoMsg:
         {
@@ -178,9 +177,7 @@ QString ColoringMessageHandler::colorifyDescription(const QString &in) const
                 currentColor = RunningText;
                 continue;
             }
-            /* Fallthrough, */
             case QXmlStreamReader::StartDocument:
-            /* Fallthrough, */
             case QXmlStreamReader::EndDocument:
                 continue;
             default:

@@ -79,9 +79,7 @@ QString AtomicComparator::displayName(const AtomicComparator::Operator op,
             case OperatorLessOrEqual:
                 return QLatin1String(">=");
             case OperatorLessThanNaNLeast:
-            /* Fallthrough. */
             case OperatorLessThanNaNGreatest:
-            /* Fallthrough. */
             case OperatorLessThan:
                 return QLatin1String(">");
             case OperatorNotEqual:
@@ -100,9 +98,7 @@ QString AtomicComparator::displayName(const AtomicComparator::Operator op,
         case OperatorLessOrEqual:
             return QLatin1String("le");
         case OperatorLessThanNaNLeast:
-        /* Fallthrough. */
         case OperatorLessThanNaNGreatest:
-        /* Fallthrough. */
         case OperatorLessThan:
             return QLatin1String("lt");
         case OperatorNotEqual:

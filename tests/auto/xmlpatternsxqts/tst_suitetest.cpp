@@ -29,7 +29,6 @@
 
 #include <QtTest/QtTest>
 
-#include <QProcess>
 #include <cstdlib>
 
 #include "TestSuite.h"

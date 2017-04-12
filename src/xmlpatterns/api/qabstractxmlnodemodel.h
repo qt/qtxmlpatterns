@@ -187,6 +187,8 @@ public:
         return m_storage.model;
     }
 
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_GCC("-Wmaybe-uninitialized")
     inline qint64 additionalData() const
     {
         return m_storage.additionalData;
@@ -196,6 +198,7 @@ public:
     {
         return !m_storage.model;
     }
+QT_WARNING_POP
 
     /* The members below are internal, not part of the public API, and
      * unsupported. Using them leads to undefined behavior. */

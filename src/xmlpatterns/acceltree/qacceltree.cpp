@@ -176,11 +176,8 @@ QUrl AccelTree::baseUri(const QXmlNodeModelIndex &ni) const
                 return par.baseUri();
         }
         case QXmlNodeModelIndex::ProcessingInstruction:
-        /* Fallthrough. */
         case QXmlNodeModelIndex::Comment:
-        /* Fallthrough. */
         case QXmlNodeModelIndex::Attribute:
-        /* Fallthrough. */
         case QXmlNodeModelIndex::Text:
         {
             const QXmlNodeModelIndex par(ni.iterate(QXmlNodeModelIndex::AxisParent)->next());
@@ -256,22 +253,17 @@ QXmlNodeModelIndex::Iterator::Ptr AccelTree::iterate(const QXmlNodeModelIndex &n
                 switch(kind(preNumber))
                 {
                     case QXmlNodeModelIndex::Comment:
-                    /* Fallthrough. */
                     case QXmlNodeModelIndex::ProcessingInstruction:
-                    /* Fallthrough. */
                     case QXmlNodeModelIndex::Element:
-                    /* Fallthrough. */
                     case QXmlNodeModelIndex::Text:
                         return makeSingletonIterator(ni);
                     case QXmlNodeModelIndex::Attribute:
-                    /* Fallthrough. */
                     case QXmlNodeModelIndex::Document:
-                    /* Fallthrough. */
                     case QXmlNodeModelIndex::Namespace:
                         /* Do nothing. */;
                 }
             }
-            /* Else, fallthrough to AxisChild. */
+            Q_FALLTHROUGH();
         }
         case QXmlNodeModelIndex::AxisChild:
         {
@@ -316,7 +308,7 @@ QXmlNodeModelIndex::Iterator::Ptr AccelTree::iterate(const QXmlNodeModelIndex &n
         {
             if(!hasParent(preNumber) && kind(preNumber) == QXmlNodeModelIndex::Attribute)
                 return makeSingletonIterator(ni);
-            /* Else, falthrough to AxisAttribute. */
+            Q_FALLTHROUGH();
         }
         case QXmlNodeModelIndex::AxisAttribute:
         {
@@ -522,12 +514,11 @@ QString AccelTree::stringValue(const QXmlNodeModelIndex &ni) const
         {
             if(isCompressed(preNumber))
                 return CompressedWhitespace::decompress(data.value(preNumber));
-            /* Else, fallthrough. It's not compressed so use it as it is. */
+            /* It's not compressed so use it as it is. */
+            Q_FALLTHROUGH();
         }
         case QXmlNodeModelIndex::Attribute:
-        /* Fallthrough */
         case QXmlNodeModelIndex::ProcessingInstruction:
-        /* Fallthrough */
         case QXmlNodeModelIndex::Comment:
             return data.value(preNumber);
         case QXmlNodeModelIndex::Document:
@@ -591,16 +582,12 @@ Item::Iterator::Ptr AccelTree::sequencedTypedValue(const QXmlNodeModelIndex &n) 
     switch(kind(preNumber))
     {
         case QXmlNodeModelIndex::Element:
-        /* Fallthrough. */
         case QXmlNodeModelIndex::Document:
-        /* Fallthrough. */
         case QXmlNodeModelIndex::Attribute:
             return makeSingletonIterator(Item(UntypedAtomic::fromValue(stringValue(n))));
 
         case QXmlNodeModelIndex::Text:
-        /* Fallthrough. */
         case QXmlNodeModelIndex::ProcessingInstruction:
-        /* Fallthrough. */
         case QXmlNodeModelIndex::Comment:
             return makeSingletonIterator(Item(AtomicString::fromValue(stringValue(n))));
         default:

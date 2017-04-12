@@ -83,7 +83,6 @@ Tokenizer::Token TokenRevealer::nextToken(YYLTYPE *const sourceLocator)
             break;
         }
         case T_SEMI_COLON:
-        /* Fallthrough. */
         case T_COMMA:
         {
             m_result += asString + QLatin1Char('\n') + m_indentationString;
