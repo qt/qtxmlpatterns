@@ -118,7 +118,6 @@ compare(const Item &oand1,
             return !comp->equals(oand1, oand2);
         case AtomicComparator::OperatorLessThanNaNLeast:
         case AtomicComparator::OperatorLessThanNaNGreatest:
-        /* Fallthrough. */
         case AtomicComparator::OperatorLessThan:
             return comp->compare(oand1, op, oand2) == AtomicComparator::LessThan;
         case AtomicComparator::OperatorGreaterThan:

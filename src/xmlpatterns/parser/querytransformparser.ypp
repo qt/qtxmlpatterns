@@ -906,7 +906,6 @@ static Expression::Ptr pushVariable(const QXmlName name,
     switch(type)
     {
         case VariableDeclaration::FunctionArgument:
-        /* Fallthrough. */
         case VariableDeclaration::ExpressionVariable:
         {
             slot = parseInfo->allocateExpressionSlot();
@@ -4648,11 +4647,8 @@ QString Tokenizer::tokenToString(const Token &token)
     switch(token.type)
     {
         case T_NCNAME:
-        /* Fallthrough. */
         case T_QNAME:
-        /* Fallthrough. */
         case T_NUMBER:
-        /* Fallthrough. */
         case T_XPATH2_NUMBER:
             return token.value;
         case T_STRING_LITERAL:

@@ -85,11 +85,8 @@ QString SystemPropertyFN::retrieveProperty(const QXmlName name)
         case StandardLocalNames::product_version:
             return QLatin1String("0.1");
         case StandardLocalNames::is_schema_aware:
-        /* Fallthrough. */
         case StandardLocalNames::supports_backwards_compatibility:
-        /* Fallthrough. */
         case StandardLocalNames::supports_serialization:
-        /* Fallthrough. */
             return QLatin1String("no");
         default:
             return QString();
