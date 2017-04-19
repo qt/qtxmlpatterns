@@ -92,6 +92,7 @@ public:
     QString toClarkName(const QXmlNamePool &query) const;
     bool operator==(const QXmlName &other) const;
     bool operator!=(const QXmlName &other) const;
+    QXmlName(const QXmlName &other);
     QXmlName &operator=(const QXmlName &other);
     bool isNull() const;
     static bool isNCName(const QString &candidate);

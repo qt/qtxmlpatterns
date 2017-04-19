@@ -402,13 +402,17 @@ QString QXmlName::toClarkName(const QXmlNamePool &namePool) const
 }
 
 /*!
+    Constructs a copy of \a other.
+
+    \sa operator=()
+    \since 5.9
+*/
+QXmlName::QXmlName(const QXmlName &) = default; // ### Qt 6: remove
+
+/*!
   Assigns \a other to \e this and returns \e this.
  */
-QXmlName &QXmlName::operator=(const QXmlName &other)
-{
-    m_qNameCode = other.m_qNameCode;
-    return *this;
-}
+QXmlName &QXmlName::operator=(const QXmlName &) = default; // ### Qt 6: remove
 
 /*!
  Returns true if \a candidate is an \c NCName. An \c NCName
