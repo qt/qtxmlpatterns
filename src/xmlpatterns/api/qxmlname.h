@@ -86,6 +86,7 @@ public:
     QString toClarkName(const QXmlNamePool &query) const;
     bool operator==(const QXmlName &other) const;
     bool operator!=(const QXmlName &other) const;
+    Q_ALWAYS_INLINE QXmlName(const QXmlName &other) : m_qNameCode(other.m_qNameCode) {} // ### Qt 6: remove
     QXmlName &operator=(const QXmlName &other);
     bool isNull() const;
     static bool isNCName(const QString &candidate);

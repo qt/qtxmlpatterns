@@ -398,7 +398,7 @@ QString QXmlName::toClarkName(const QXmlNamePool &namePool) const
 /*!
   Assigns \a other to \e this and returns \e this.
  */
-QXmlName &QXmlName::operator=(const QXmlName &other)
+QXmlName &QXmlName::operator=(const QXmlName &other) // ### Qt 6: remove
 {
     m_qNameCode = other.m_qNameCode;
     return *this;
