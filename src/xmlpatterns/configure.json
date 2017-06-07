@@ -4,8 +4,9 @@
     "features": {
         "xml-schema": {
             "label": "XML schema support",
-            "purpose": "Support for XML schema validation",
-            "output": [ "privateFeature" ]
+            "purpose": "Provides XML schema validation.",
+            "section": "QtXmlPatterns",
+            "output": [ "publicFeature" ]
         }
     },
 

@@ -144,7 +144,7 @@ void tst_XmlPatterns::xquerySupport()
     if(!cwd.isEmpty())
         process.setWorkingDirectory(inputFile(cwd));
 
-    QProcessEnvironment env(process.processEnvironment());
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
     env.insert("QT_LOGGING_RULES", "qt.network.ssl=false");
     process.setProcessEnvironment(env);
 
