@@ -33,6 +33,10 @@
 #include "../qxmlquery/TestFundament.h"
 #include "../network-settings.h"
 
+#ifdef Q_OS_WIN
+#  include <qt_windows.h>
+#endif
+
 /*!
  \class tst_XmlPatterns
  \internal
@@ -1042,6 +1046,12 @@ QString tst_XmlPatterns::filterStderr(const QString &in)
     QString out = in;
     for (const QRegExp& rx : irrelevant)
         out = out.remove(rx);
+
+#ifdef Q_OS_WIN
+    // replace some Win32 error messages by standard Unix ones
+    out.replace(qt_error_string(ERROR_FILE_NOT_FOUND), "No such file or directory");
+    out.replace(qt_error_string(ERROR_PATH_NOT_FOUND), "No such file or directory");
+#endif
 
     return out;
 }
