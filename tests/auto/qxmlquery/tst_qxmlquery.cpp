@@ -1391,13 +1391,12 @@ void tst_QXmlQuery::relativeBaseURI() const
     QVERIFY(!appPath.isRelative());
 
     QFileInfo dir(appPath.toLocalFile());
-    dir.setFile(QString());
 
     /* We can't use QUrl::isParentOf() because it doesn't do what we want it to */
-    if(!loaded.toLocalFile().startsWith(dir.absoluteFilePath()))
-        QTextStream(stderr) << "dir.absoluteFilePath():" << dir.absoluteFilePath() << "loaded.toLocalFile():" << loaded.toLocalFile();
+    if (!loaded.toLocalFile().startsWith(dir.absolutePath()))
+        QTextStream(stderr) << "dir.absolutePath():" << dir.absolutePath() << "loaded.toLocalFile():" << loaded.toLocalFile();
 
-    checkBaseURI(loaded, dir.absoluteFilePath());
+    checkBaseURI(loaded, dir.absolutePath());
 }
 
 void tst_QXmlQuery::emptyBaseURI() const
