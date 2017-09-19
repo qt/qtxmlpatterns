@@ -62,7 +62,7 @@ public slots:
     void displayQuery(int index);
 
 private:
-    QComboBox* ui_defaultQueries;
+    QComboBox *ui_defaultQueries = nullptr;
 
     void evaluate(const QString &str);
     void loadInputFile();

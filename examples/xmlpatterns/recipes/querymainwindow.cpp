@@ -38,15 +38,15 @@
 **
 ****************************************************************************/
 
-#include <QMessageBox>
-#include <QFileDialog>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QFileDialog>
 #include <QtXmlPatterns>
 
 #include "querymainwindow.h"
 #include "xmlsyntaxhighlighter.h"
 
 //! [0]
-QueryMainWindow::QueryMainWindow() : ui_defaultQueries(0)
+QueryMainWindow::QueryMainWindow()
 {
     setupUi(this);
 
@@ -55,14 +55,15 @@ QueryMainWindow::QueryMainWindow() : ui_defaultQueries(0)
 
     ui_defaultQueries = findChild<QComboBox*>("defaultQueries");
     QMetaObject::connectSlotsByName(this);
-    connect(ui_defaultQueries, SIGNAL(currentIndexChanged(int)), SLOT(displayQuery(int)));
+
+    connect(ui_defaultQueries, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &QueryMainWindow::displayQuery);
 
     loadInputFile();
     const QStringList queries(QDir(":/files/", "*.xq").entryList());
-    int len = queries.count();
-    for(int i = 0; i < len; ++i)
-        ui_defaultQueries->addItem(queries.at(i));
-    if (len > 0)
+    for (const auto &query : queries)
+        ui_defaultQueries->addItem(query);
+    if (queries.count() > 0)
         displayQuery(0);
 }
 //! [0]
