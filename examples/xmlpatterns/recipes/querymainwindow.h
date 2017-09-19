@@ -43,11 +43,7 @@
 
 #include <QMainWindow>
 
-#if defined(Q_WS_MAEMO_5) || defined(Q_WS_SIMULATOR)
-    #include "ui_querywidget_mobiles.h"
-#else
-    #include "ui_querywidget.h"
-#endif
+#include "ui_querywidget.h"
 
 QT_BEGIN_NAMESPACE
 class QComboBox;
