@@ -92,8 +92,9 @@ FunctionSignature::Hash FunctionFactoryCollection::functionSignatures() const
 
     for(const_iterator it(constBegin()); it != e; ++it)
     {
-        const FunctionSignature::Hash::const_iterator e2((*it)->functionSignatures().constEnd());
-        FunctionSignature::Hash::const_iterator sit((*it)->functionSignatures().constBegin());
+        const auto &signatures = (*it)->functionSignatures();
+        const FunctionSignature::Hash::const_iterator e2(signatures.constEnd());
+        FunctionSignature::Hash::const_iterator sit(signatures.constBegin());
 
         for(; sit != e2; ++sit)
             result.insert(sit.key(), sit.value());

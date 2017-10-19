@@ -46,6 +46,9 @@
 
 #include "qexpressionsequence_p.h"
 
+#include <algorithm>
+#include <iterator>
+
 QT_BEGIN_NAMESPACE
 
 using namespace QPatternist;
@@ -109,11 +112,8 @@ Expression::Ptr ExpressionSequence::compress(const StaticContext::Ptr &context)
         else if(Id == IDExpressionSequence)
         {
             /* Rewrite "(1, (2, 3), 4)" into "(1, 2, 3, 4)" */
-            Expression::List::const_iterator seqIt((*it)->operands().constBegin());
-            const Expression::List::const_iterator seqEnd((*it)->operands().constEnd());
-
-            for(; seqIt != seqEnd; ++seqIt)
-                result.append(*seqIt);
+            const auto &operands = (*it)->operands();
+            std::copy(operands.cbegin(), operands.cend(), std::back_inserter(result));
         } else if (Id == IDLiteralSequence) {
             /* Rewrite "(1, (2, 3), 4)" into "(1, 2, 3, 4)" */
             // Note: LiteralSequence does not use the dynamic context, so we pass in a nullptr.

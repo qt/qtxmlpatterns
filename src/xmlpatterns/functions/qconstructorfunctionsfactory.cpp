@@ -58,8 +58,9 @@ ConstructorFunctionsFactory::ConstructorFunctionsFactory(const NamePool::Ptr &np
 {
     Q_ASSERT(m_typeFactory);
     Q_ASSERT(np);
-    SchemaType::Hash::const_iterator it(m_typeFactory->types().constBegin());
-    const SchemaType::Hash::const_iterator end(m_typeFactory->types().constEnd());
+    const auto &schemaHash = m_typeFactory->types();
+    SchemaType::Hash::const_iterator it(schemaHash.constBegin());
+    const SchemaType::Hash::const_iterator end(schemaHash.constEnd());
 
     FunctionArgument::List args;
     const QXmlName argName(StandardNamespaces::empty, StandardLocalNames::sourceValue);
