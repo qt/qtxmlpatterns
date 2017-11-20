@@ -11,6 +11,7 @@ HEADERS = main.h                            \
           qapplicationargument.cpp          \
           qapplicationargumentparser.cpp
 
+QMAKE_TARGET_DESCRIPTION = "Qt XQuery Evaluator"
 load(qt_tool)
 
 # with c++11 / __STRICT_ANSI__ mingw.org stdio.h doesn't declare e.g. _fileno

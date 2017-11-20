@@ -1,12 +1,22 @@
 /****************************************************************************
 **
-** Copyright (C) 2015 The Qt Company Ltd.
-** Contact: http://www.qt.io/licensing/
+** Copyright (C) 2017 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
 **
 ** This file is part of the examples of the Qt Toolkit.
 **
 ** $QT_BEGIN_LICENSE:BSD$
-** You may use this file under the terms of the BSD license as follows:
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** BSD License Usage
+** Alternatively, you may use this file under the terms of the BSD license
+** as follows:
 **
 ** "Redistribution and use in source and binary forms, with or without
 ** modification, are permitted provided that the following conditions are
@@ -38,15 +48,15 @@
 **
 ****************************************************************************/
 
-#include <QMessageBox>
-#include <QFileDialog>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QFileDialog>
 #include <QtXmlPatterns>
 
 #include "querymainwindow.h"
 #include "xmlsyntaxhighlighter.h"
 
 //! [0]
-QueryMainWindow::QueryMainWindow() : ui_defaultQueries(0)
+QueryMainWindow::QueryMainWindow()
 {
     setupUi(this);
 
@@ -55,14 +65,15 @@ QueryMainWindow::QueryMainWindow() : ui_defaultQueries(0)
 
     ui_defaultQueries = findChild<QComboBox*>("defaultQueries");
     QMetaObject::connectSlotsByName(this);
-    connect(ui_defaultQueries, SIGNAL(currentIndexChanged(int)), SLOT(displayQuery(int)));
+
+    connect(ui_defaultQueries, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &QueryMainWindow::displayQuery);
 
     loadInputFile();
     const QStringList queries(QDir(":/files/", "*.xq").entryList());
-    int len = queries.count();
-    for(int i = 0; i < len; ++i)
-        ui_defaultQueries->addItem(queries.at(i));
-    if (len > 0)
+    for (const auto &query : queries)
+        ui_defaultQueries->addItem(query);
+    if (queries.count() > 0)
         displayQuery(0);
 }
 //! [0]
