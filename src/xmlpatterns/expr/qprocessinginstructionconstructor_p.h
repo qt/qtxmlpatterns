@@ -71,20 +71,20 @@ namespace QPatternist
         ProcessingInstructionConstructor(const Expression::Ptr &operand1,
                            const Expression::Ptr &operand2);
 
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
-        virtual void evaluateToSequenceReceiver(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
+        void evaluateToSequenceReceiver(const DynamicContext::Ptr &context) const override;
 
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
         /**
          * Both arguments must of type @c xs:string. It is assumes that the first argument's
          * lexical space is @c xs:NCName.
          */
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::List expectedOperandTypes() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
-        virtual Properties properties() const;
+        Properties properties() const override;
     private:
         inline QXmlName evaluateTardata(const DynamicContext::Ptr &context) const;
         /**

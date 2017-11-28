@@ -69,7 +69,7 @@ namespace QPatternist
         typedef QExplicitlySharedDataPointer<PositionalVariableReference> Ptr;
         PositionalVariableReference(const VariableSlotID slot);
 
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
         /**
          * Returns always @c true, since a positional variable is always one or more, and the
@@ -77,15 +77,15 @@ namespace QPatternist
          *
          * @returns always @c true
          */
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
 
         /**
          * @returns always CommonSequenceTypes::ExactlyOneInteger
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
-        virtual Properties properties() const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
+        Properties properties() const override;
     };
 }
 

@@ -82,21 +82,21 @@ namespace QPatternist
                           const bool isBackwardsCompat = false);
         ~GeneralComparison();
 
-        virtual bool evaluateEBV(const DynamicContext::Ptr &) const;
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        bool evaluateEBV(const DynamicContext::Ptr &) const override;
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
-        virtual SequenceType::List expectedOperandTypes() const;
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::List expectedOperandTypes() const override;
+        SequenceType::Ptr staticType() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
         /**
          * @returns always IDGeneralComparison
          */
-        virtual ID id() const;
+        ID id() const override;
 
-        virtual QList<QExplicitlySharedDataPointer<OptimizationPass> > optimizationPasses() const;
+        QList<QExplicitlySharedDataPointer<OptimizationPass> > optimizationPasses() const override;
 
         /**
          * @returns the operator that this GeneralComparison is using.
@@ -109,7 +109,7 @@ namespace QPatternist
         /**
          * Overridden to optimize case-insensitive compares.
          */
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context);
+        Expression::Ptr compress(const StaticContext::Ptr &context) override;
 
     private:
         static inline void updateType(ItemType::Ptr &type,

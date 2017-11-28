@@ -96,35 +96,35 @@ namespace QPatternist
              const Kind kind = RegularPath);
         ~Path();
 
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
-        virtual void evaluateToSequenceReceiver(const DynamicContext::Ptr &context) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
+        void evaluateToSequenceReceiver(const DynamicContext::Ptr &context) const override;
         inline Item::Iterator::Ptr mapToSequence(const Item &item,
                                                  const DynamicContext::Ptr &context) const;
 
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::List expectedOperandTypes() const override;
 
         /**
          * @returns the static type of the last step where the cardinality is multiplied with
          * the cardinality of the first step's cardinality.
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
-        virtual Properties properties() const;
+        Properties properties() const override;
 
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context);
+        Expression::Ptr compress(const StaticContext::Ptr &context) override;
 
         /**
          * @returns the item type of the last step's static type.
          */
-        virtual ItemType::Ptr newFocusType() const;
+        ItemType::Ptr newFocusType() const override;
 
-        virtual ID id() const;
+        ID id() const override;
 
         inline void setLast();
 

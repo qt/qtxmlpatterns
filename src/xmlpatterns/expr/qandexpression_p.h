@@ -73,17 +73,17 @@ namespace QPatternist
         AndExpression(const Expression::Ptr &operand1,
                       const Expression::Ptr &operand2);
 
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
 
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::List expectedOperandTypes() const override;
 
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context);
+        Expression::Ptr compress(const StaticContext::Ptr &context) override;
         /**
          * @returns always CommonSequenceTypes::ExactlyOneBoolean
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
     };
 }
 

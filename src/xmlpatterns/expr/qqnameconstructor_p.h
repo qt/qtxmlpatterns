@@ -75,13 +75,13 @@ namespace QPatternist
         QNameConstructor(const Expression::Ptr &source,
                          const NamespaceResolver::Ptr &nsResolver);
 
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &) const override;
 
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::List expectedOperandTypes() const override;
 
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
         /**
          * Expands @p lexicalQName, which is a lexical representation of a QName such as "x:body", into
@@ -121,7 +121,7 @@ namespace QPatternist
                                                           const StaticContext::Ptr &context,
                                                           const SourceLocationReflection *const r);
 
-        virtual const SourceLocationReflection *actualReflection() const;
+        const SourceLocationReflection *actualReflection() const override;
 
     private:
         const NamespaceResolver::Ptr m_nsResolver;

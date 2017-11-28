@@ -96,7 +96,7 @@ namespace QPatternist
                         const Expression::Ptr &operand,
                         const StaticContext::Ptr &context);
 
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
     private:
         Q_DISABLE_COPY(UnaryExpression)

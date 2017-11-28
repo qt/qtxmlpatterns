@@ -92,22 +92,22 @@ namespace QPatternist
         /**
          * @returns always an empty iterator, an instance of EmptyIterator.
          */
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &) const override;
 
         /**
          * @returns always @c null.
          */
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &) const override;
 
         /**
          * Does nothing.
          */
-        virtual void evaluateToSequenceReceiver(const DynamicContext::Ptr &) const;
+        void evaluateToSequenceReceiver(const DynamicContext::Ptr &) const override;
 
         /**
          * @returns always @c false.
          */
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
 
         /**
          * @returns always CommonSequenceTypes::Empty
@@ -117,11 +117,11 @@ namespace QPatternist
         /**
          * @returns always CommonSequenceTypes::Empty
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
-        virtual ID id() const;
-        virtual Properties properties() const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
+        ID id() const override;
+        Properties properties() const override;
     };
 }
 

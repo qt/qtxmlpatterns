@@ -96,8 +96,8 @@ namespace QPatternist
                 return CommonValues::emptyIterator;
         }
 
-        virtual SequenceType::List expectedOperandTypes() const;
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        SequenceType::List expectedOperandTypes() const override;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
     };
 }
 

@@ -78,9 +78,9 @@ namespace QPatternist
                              const Expression::Ptr &inClause,
                              const Expression::Ptr &testExpression);
 
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
-        virtual SequenceType::Ptr staticType() const;
-        virtual SequenceType::List expectedOperandTypes() const;
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
+        SequenceType::Ptr staticType() const override;
+        SequenceType::List expectedOperandTypes() const override;
 
         Operator operatorID() const;
 
@@ -92,7 +92,7 @@ namespace QPatternist
          */
         static QString displayName(const Operator quantifier);
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
         inline Item mapToItem(const Item &item, const DynamicContext::Ptr &context) const;
 

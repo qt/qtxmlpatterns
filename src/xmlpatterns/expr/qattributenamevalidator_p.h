@@ -73,18 +73,18 @@ namespace QPatternist
     public:
         AttributeNameValidator(const Expression::Ptr &source);
 
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &) const override;
 
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::List expectedOperandTypes() const override;
 
         /**
          * @returns the static type of its operand. This is returned as opposed
          * CommonSequenceTypes::ExactlyOneQName, since the operand might return a subtype
          * of @c xs:QName.
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
     };
 }
 

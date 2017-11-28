@@ -72,12 +72,12 @@ namespace QPatternist
         InstanceOf(const Expression::Ptr &operand,
                    const SequenceType::Ptr &targetType);
 
-        virtual bool evaluateEBV(const DynamicContext::Ptr &) const;
+        bool evaluateEBV(const DynamicContext::Ptr &) const override;
 
-        virtual SequenceType::List expectedOperandTypes() const;
-        virtual SequenceType::Ptr staticType() const;
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context);
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        SequenceType::List expectedOperandTypes() const override;
+        SequenceType::Ptr staticType() const override;
+        Expression::Ptr compress(const StaticContext::Ptr &context) override;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
         /**
          * @returns the SequenceType that this <tt>instance of</tt> Expression

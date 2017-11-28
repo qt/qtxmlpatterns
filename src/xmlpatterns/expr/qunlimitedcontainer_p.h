@@ -73,14 +73,14 @@ namespace QPatternist
          */
         UnlimitedContainer(const Expression::List &operands = Expression::List());
 
-        virtual void setOperands(const Expression::List &list);
+        void setOperands(const Expression::List &list) override;
 
-        virtual Expression::List operands() const;
+        Expression::List operands() const override;
 
         /**
          * @note This function cannot be called before setOperands is called.
          */
-        virtual bool compressOperands(const StaticContext::Ptr &);
+        bool compressOperands(const StaticContext::Ptr &) override;
 
         /**
          * Tells how operandsUnionType() should compute the cardinality of

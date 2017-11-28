@@ -75,16 +75,16 @@ namespace QPatternist
 
         NCNameConstructor(const Expression::Ptr &source);
 
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &) const override;
 
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::List expectedOperandTypes() const override;
 
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
         /**
          *  Validates @p lexicalNCName as a processing instruction's target

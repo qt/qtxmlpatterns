@@ -70,10 +70,10 @@ namespace QPatternist
         OrExpression(const Expression::Ptr &operand1,
                      const Expression::Ptr &operand2);
 
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
 
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context);
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        Expression::Ptr compress(const StaticContext::Ptr &context) override;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
     };
 }
 

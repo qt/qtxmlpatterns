@@ -70,12 +70,12 @@ namespace QPatternist
         ComputedNamespaceConstructor(const Expression::Ptr &prefix,
                                      const Expression::Ptr &namespaceURI);
 
-        virtual void evaluateToSequenceReceiver(const DynamicContext::Ptr &context) const;
+        void evaluateToSequenceReceiver(const DynamicContext::Ptr &context) const override;
 
         /**
          * @returns a list containing one CommonSequenceTypes::ExactlyOneString instance.
          */
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::List expectedOperandTypes() const override;
 
         /**
          * The static type is exactly one attribute node. It's unclear what
@@ -84,10 +84,10 @@ namespace QPatternist
          * conceptually correct, since a namespace node isn't an attribute
          * node.
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
-        virtual Expression::Properties properties() const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
+        Expression::Properties properties() const override;
     };
 }
 

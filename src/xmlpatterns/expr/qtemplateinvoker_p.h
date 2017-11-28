@@ -76,7 +76,7 @@ namespace QPatternist
     class TemplateInvoker : public CallSite
     {
     public:
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context);
+        Expression::Ptr compress(const StaticContext::Ptr &context) override;
 
         inline const WithParam::Hash &withParams() const;
         WithParam::Hash m_withParams;
@@ -90,7 +90,7 @@ namespace QPatternist
          * @see <a href="http://www.w3.org/TR/xslt20/#with-param">XSL
          * Transformations (XSLT) Version 2.0, 10.1.1 Passing Parameters to Templates</a>
          */
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::List expectedOperandTypes() const override;
     protected:
         /**
          * @p withParams may be empty.

@@ -73,7 +73,7 @@ namespace QPatternist
         CastableAs(const Expression::Ptr &operand,
                              const SequenceType::Ptr &targetType);
 
-        virtual bool evaluateEBV(const DynamicContext::Ptr &) const;
+        bool evaluateEBV(const DynamicContext::Ptr &) const override;
 
         /**
          * Overridden to const fold to @c true when the target type
@@ -81,14 +81,14 @@ namespace QPatternist
          * the type identical to the target type, <tt>xs:string</tt>,
          * and <tt>xs:untypedAtomic</tt>.
          */
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context);
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr compress(const StaticContext::Ptr &context) override;
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
-        virtual SequenceType::List expectedOperandTypes() const;
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::List expectedOperandTypes() const override;
+        SequenceType::Ptr staticType() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
         inline ItemType::Ptr targetType() const
         {

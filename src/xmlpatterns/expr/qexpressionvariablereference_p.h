@@ -75,15 +75,15 @@ namespace QPatternist
         ExpressionVariableReference(const VariableSlotID slot,
                                     const VariableDeclaration *varDecl);
 
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
 
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
-        virtual SequenceType::Ptr staticType() const;
-        virtual ID id() const;
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
+        SequenceType::Ptr staticType() const override;
+        ID id() const override;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
         inline const Expression::Ptr &sourceExpression() const;
         inline const VariableDeclaration *variableDeclaration() const;

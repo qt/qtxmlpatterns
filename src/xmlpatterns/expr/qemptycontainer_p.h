@@ -68,24 +68,24 @@ namespace QPatternist
         /**
          * @returns always an empty list.
          */
-        virtual Expression::List operands() const;
+        Expression::List operands() const override;
 
         /**
          * Does nothing, since sub-classes has no operands. Calling
          * it makes hence no sense, and it also results in an assert crash.
          */
-        virtual void setOperands(const Expression::List &);
+        void setOperands(const Expression::List &) override;
 
     protected:
         /**
          * @returns always @c true
          */
-        virtual bool compressOperands(const StaticContext::Ptr &context);
+        bool compressOperands(const StaticContext::Ptr &context) override;
 
         /**
          * @returns always an empty list since it has no operands.
          */
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::List expectedOperandTypes() const override;
 
     };
 }

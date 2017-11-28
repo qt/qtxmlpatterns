@@ -78,14 +78,14 @@ namespace QPatternist
                              const AtomicMathematician::Operator op,
                              const Expression::Ptr &operand2);
 
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
-        virtual SequenceType::Ptr staticType() const;
-        virtual SequenceType::List expectedOperandTypes() const;
+        SequenceType::Ptr staticType() const override;
+        SequenceType::List expectedOperandTypes() const override;
         AtomicMathematician::Operator operatorID() const;
 
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
         static Item flexiblyCalculate(const Item &op1,
                                       const AtomicMathematician::Operator op,
@@ -105,7 +105,7 @@ namespace QPatternist
                            const SourceLocationReflection *const reflection,
                            const ReportContext::ErrorCode code = ReportContext::XPTY0004,
                            const bool isCompat = false);
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
     protected:
 

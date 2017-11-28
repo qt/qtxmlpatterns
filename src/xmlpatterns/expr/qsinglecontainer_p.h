@@ -67,10 +67,10 @@ namespace QPatternist
     public:
         ~SingleContainer();
 
-        virtual Expression::List operands() const;
+        Expression::List operands() const override;
 
-        virtual void setOperands(const Expression::List &operands);
-        virtual bool compressOperands(const StaticContext::Ptr &);
+        void setOperands(const Expression::List &operands) override;
+        bool compressOperands(const StaticContext::Ptr &) override;
 
     protected:
         SingleContainer(const Expression::Ptr &operand);

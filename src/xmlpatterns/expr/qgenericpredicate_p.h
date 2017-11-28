@@ -92,28 +92,28 @@ namespace QPatternist
          * its QAbstractXmlForwardIterator::next() calls, and since the Focus references the same QAbstractXmlForwardIterator,
          * the focus is automatically moved.
          */
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
 
         /**
          * Doesn't return the first item from calling evaluateSequence(), but does the mapping
          * manually. This avoid allocating an ItemMappingIterator.
          */
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
         inline Item mapToItem(const Item &subject,
                                    const DynamicContext::Ptr &) const;
 
-        virtual SequenceType::List expectedOperandTypes() const;
-        virtual SequenceType::Ptr staticType() const;
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
-        virtual ID id() const;
+        SequenceType::List expectedOperandTypes() const override;
+        SequenceType::Ptr staticType() const override;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
+        ID id() const override;
 
         /**
          * @returns always CreatesFocusForLast.
          */
-        virtual Properties properties() const;
+        Properties properties() const override;
 
-        virtual QString description() const;
+        QString description() const override;
 
     protected:
 
@@ -130,7 +130,7 @@ namespace QPatternist
         /**
          * @returns the ItemType of the first operand's staticType().
          */
-        virtual ItemType::Ptr newFocusType() const;
+        ItemType::Ptr newFocusType() const override;
 
     private:
         typedef QExplicitlySharedDataPointer<const GenericPredicate> ConstPtr;

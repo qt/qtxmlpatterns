@@ -68,7 +68,7 @@ namespace QPatternist
     {
     public:
         ByIDIdentifier(const Expression::ID id);
-        virtual bool matches(const Expression::Ptr &expr) const;
+        bool matches(const Expression::Ptr &expr) const override;
     private:
         const Expression::ID m_id;
     };
@@ -100,7 +100,7 @@ namespace QPatternist
          * the SequenceType passed in the BySequenceTypeIdentifier()
          * constructor, otherwise @c false.
          */
-        virtual bool matches(const Expression::Ptr &expr) const;
+        bool matches(const Expression::Ptr &expr) const override;
 
     private:
         const SequenceType::Ptr m_seqType;
@@ -135,7 +135,7 @@ namespace QPatternist
          * @returns @c true, if @p expr is a ValueComparison with the operator
          * passed in ComparisonIdentifier().
          */
-        virtual bool matches(const Expression::Ptr &expr) const;
+        bool matches(const Expression::Ptr &expr) const override;
 
     private:
         const QVector<Expression::ID> m_hosts;
@@ -156,7 +156,7 @@ namespace QPatternist
     {
     public:
         IntegerIdentifier(const xsInteger num);
-        virtual bool matches(const Expression::Ptr &expr) const;
+        bool matches(const Expression::Ptr &expr) const override;
 
     private:
         const xsInteger m_num;
@@ -175,7 +175,7 @@ namespace QPatternist
     {
     public:
         BooleanIdentifier(const bool value);
-        virtual bool matches(const Expression::Ptr &expr) const;
+        bool matches(const Expression::Ptr &expr) const override;
 
     private:
         const bool m_value;
@@ -198,9 +198,9 @@ namespace QPatternist
          * of the type that @p id identifies.
          */
         ByIDCreator(const Expression::ID id);
-        virtual Expression::Ptr create(const Expression::List &operands,
-                                       const StaticContext::Ptr &context,
-                                       const SourceLocationReflection *const r) const;
+        Expression::Ptr create(const Expression::List &operands,
+                               const StaticContext::Ptr &context,
+                               const SourceLocationReflection *const r) const override;
 
         /**
          * Creates an expression by id @p id with the arguments @p operands.

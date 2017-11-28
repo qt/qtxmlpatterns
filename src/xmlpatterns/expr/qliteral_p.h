@@ -77,19 +77,19 @@ namespace QPatternist
          */
         Literal(const Item &item);
 
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
-        void evaluateToSequenceReceiver(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
+        void evaluateToSequenceReceiver(const DynamicContext::Ptr &context) const override;
 
-        virtual SequenceType::Ptr staticType() const;
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
-        virtual ID id() const;
-        virtual QString description() const;
+        SequenceType::Ptr staticType() const override;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
+        ID id() const override;
+        QString description() const override;
 
         /**
          * @returns Expression::DisableElimination and Expression::IsEvaluated
          */
-        virtual Properties properties() const;
+        Properties properties() const override;
 
         /**
          * Declaring the return value of this function a const reference, leads

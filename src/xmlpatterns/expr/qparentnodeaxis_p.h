@@ -71,24 +71,24 @@ namespace QPatternist
     class ParentNodeAxis : public EmptyContainer
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
         /**
          * @returns always DisableElimination
          */
-        virtual Expression::Properties properties() const;
+        Expression::Properties properties() const override;
 
-        virtual ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const;
+        ExpressionVisitorResult::Ptr accept(const ExpressionVisitor::Ptr &visitor) const override;
 
         /**
          * @returns always CommonSequenceTypes::ExactlyOneNode;
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
         /**
          * @returns always BuiltinTypes::node;
          */
-        virtual ItemType::Ptr expectedContextItemType() const;
+        ItemType::Ptr expectedContextItemType() const override;
     };
 }
 
