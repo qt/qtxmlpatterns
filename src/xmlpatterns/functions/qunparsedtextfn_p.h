@@ -68,7 +68,7 @@ namespace QPatternist
     class UnparsedTextFN : public StaticBaseUriContainer
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 }
 

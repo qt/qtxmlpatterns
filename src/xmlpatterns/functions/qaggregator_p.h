@@ -79,7 +79,7 @@ namespace QPatternist
          * @returns a static type where the ItemType is the same as this FunctionCall's first
          * argument, and the Cardinality is as return from Cardinality::toWithoutMany().
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
     };
 }
 

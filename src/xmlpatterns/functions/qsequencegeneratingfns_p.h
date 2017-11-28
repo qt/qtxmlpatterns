@@ -79,13 +79,13 @@ namespace QPatternist
         IdFN();
         typedef QPair<DynamicContext::Ptr, const QAbstractXmlNodeModel *> IDContext;
 
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
 
         inline Item mapToItem(const QString &id,
                               const IDContext &context) const;
 
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
     private:
         typedef QExplicitlySharedDataPointer<const IdFN> ConstPtr;
@@ -101,7 +101,7 @@ namespace QPatternist
     class IdrefFN : public ContextNodeChecker
     {
     public:
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -113,7 +113,7 @@ namespace QPatternist
     class DocFN : public StaticBaseUriContainer
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
         /**
          * The implementation of this function is placed in a different compilation unit,
@@ -124,9 +124,9 @@ namespace QPatternist
          * href="http://onesearch.sun.com/search/onesearch/index.jsp?qt=6532605&site=sunsolve&otf=ss&col=support-sunsolve&otf=sunsolve&site=ss&col=search-sunsolve">Sun,
          * multiply-defined label for template instance, bug 6532605</a>
          */
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
-        virtual SequenceType::Ptr staticType() const;
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
+        SequenceType::Ptr staticType() const override;
 
     private:
         SequenceType::Ptr m_type;
@@ -141,7 +141,7 @@ namespace QPatternist
     class DocAvailableFN : public StaticBaseUriContainer
     {
     public:
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -153,7 +153,7 @@ namespace QPatternist
     class CollectionFN : public FunctionCall
     {
     public:
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
     };
 }
 

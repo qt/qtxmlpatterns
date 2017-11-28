@@ -75,10 +75,10 @@ namespace QPatternist
          * createFunctionCall(), once it have been determined the function actually
          * exists and have the correct arity.
          */
-        virtual Expression::Ptr retrieveExpression(const QXmlName name,
-                                                   const Expression::List &args,
-                                                   const FunctionSignature::Ptr &sign) const;
-        virtual FunctionSignature::Ptr retrieveFunctionSignature(const NamePool::Ptr &np, const QXmlName name);
+        Expression::Ptr retrieveExpression(const QXmlName name,
+                                           const Expression::List &args,
+                                           const FunctionSignature::Ptr &sign) const override;
+        FunctionSignature::Ptr retrieveFunctionSignature(const NamePool::Ptr &np, const QXmlName name) override;
     };
 }
 

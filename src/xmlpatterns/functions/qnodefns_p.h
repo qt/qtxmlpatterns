@@ -75,7 +75,7 @@ namespace QPatternist
     class NameFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -87,7 +87,7 @@ namespace QPatternist
     class LocalNameFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -99,7 +99,7 @@ namespace QPatternist
     class NamespaceURIFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -114,15 +114,15 @@ namespace QPatternist
                      public CastingPlatform<NumberFN, false>
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
         /**
          * Overridden in order to call CastingPlatform::prepareCasting(). It also
          * implements the optimization of rewriting to its operand if its
          * type is xs:double(since the <tt>fn:number()</tt> call is in that case superflorous).
          */
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
         /**
          * @returns always BuiltinTypes::xsDouble.
@@ -142,7 +142,7 @@ namespace QPatternist
     class LangFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
     private:
         static inline bool isLangMatch(const QString &candidate, const QString &toMatch);
@@ -157,11 +157,11 @@ namespace QPatternist
     class RootFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
         /**
          * Infers its cardinality from the argument.
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
     };
 }
 

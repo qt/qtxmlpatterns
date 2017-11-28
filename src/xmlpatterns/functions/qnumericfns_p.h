@@ -75,7 +75,7 @@ namespace QPatternist
     class FloorFN : public Aggregator
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -87,7 +87,7 @@ namespace QPatternist
     class AbsFN : public Aggregator
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -99,7 +99,7 @@ namespace QPatternist
     class RoundFN : public Aggregator
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -111,7 +111,7 @@ namespace QPatternist
     class CeilingFN : public Aggregator
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -125,7 +125,7 @@ namespace QPatternist
     class RoundHalfToEvenFN : public Aggregator
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 }
 

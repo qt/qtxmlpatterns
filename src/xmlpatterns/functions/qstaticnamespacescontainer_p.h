@@ -78,8 +78,8 @@ namespace QPatternist
         /**
          * Reimplemented to store data from the @p context.
          */
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
     protected:
         /**

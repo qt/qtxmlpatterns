@@ -64,8 +64,8 @@ namespace QPatternist
     class TraceFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
 
         /**
          * Formally speaking, the type inference is:
@@ -79,7 +79,7 @@ statEnv |-  (FN-URI,"trace")(Type) : prime(Type) * quantifier(Type)
          * an example of where the type inference is used
          * @returns the static type of the function's first argument.
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
     };
 }
 

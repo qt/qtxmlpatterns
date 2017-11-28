@@ -72,9 +72,9 @@ namespace QPatternist
         {
         }
 
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
         inline AtomicComparator::Operator operatorID() const
         {

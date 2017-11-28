@@ -68,13 +68,13 @@ namespace QPatternist
     class FunctionAvailableFN : public StaticNamespacesContainer
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
         /**
          * Reimplemented to store data from the @p context which is needed at runtime.
          */
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
     private:
         FunctionFactory::Ptr    m_functionFactory;

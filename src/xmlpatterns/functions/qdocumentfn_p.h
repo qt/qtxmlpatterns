@@ -108,8 +108,8 @@ namespace QPatternist
     class DocumentFN : public FunctionCall
     {
     public:
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
     };
 }
 

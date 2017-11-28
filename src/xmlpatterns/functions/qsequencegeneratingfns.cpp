@@ -87,9 +87,9 @@ class StringSplitter : public QAbstractXmlForwardIterator<QString>
 {
 public:
     StringSplitter(const Item::Iterator::Ptr &source);
-    virtual QString next();
-    virtual QString current() const;
-    virtual qint64 position() const;
+    QString next() override;
+    QString current() const override;
+    qint64 position() const override;
 private:
     QString loadNext();
     const Item::Iterator::Ptr   m_source;

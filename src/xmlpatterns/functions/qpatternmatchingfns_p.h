@@ -75,7 +75,7 @@ namespace QPatternist
     {
     public:
         MatchesFN();
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -88,11 +88,11 @@ namespace QPatternist
     {
     public:
         ReplaceFN();
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
         /**
          * Overridden to attempt to pre-compile the replacement string.
          */
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context);
+        Expression::Ptr compress(const StaticContext::Ptr &context) override;
 
     private:
         /**
@@ -121,7 +121,7 @@ namespace QPatternist
     public:
         TokenizeFN();
         inline Item mapToItem(const QString &subject, const DynamicContext::Ptr &) const;
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
 
     private:
         typedef QExplicitlySharedDataPointer<const TokenizeFN> ConstPtr;

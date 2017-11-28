@@ -71,7 +71,7 @@ namespace QPatternist
          */
         ComparesCaseAware();
 
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context);
+        Expression::Ptr compress(const StaticContext::Ptr &context) override;
 
         /**
          * Tells whether the return value of the two operands must be compared

@@ -80,15 +80,15 @@ namespace QPatternist
     class BooleanFN : public FunctionCall
     {
     public:
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const;
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override;
 
         /**
          * If @p reqType is CommonSequenceTypes::EBV, the type check of
          * the operand is returned. Hence, this removes redundant calls
          * to <tt>fn:boolean()</tt>.
          */
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
     };
 
     /**
@@ -105,9 +105,9 @@ namespace QPatternist
         {
         }
 
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
         inline AtomicComparator::Operator operatorID() const
         {
@@ -128,7 +128,7 @@ namespace QPatternist
     class Existence : public FunctionCall
     {
     public:
-        virtual bool evaluateEBV(const DynamicContext::Ptr &context) const
+        bool evaluateEBV(const DynamicContext::Ptr &context) const override
         {
             if(Id == IDExistsFN)
                 return !m_operands.first()->evaluateSequence(context)->isEmpty();
@@ -140,7 +140,7 @@ namespace QPatternist
          * Attempts to rewrite to @c false or @c true by looking at the static
          * cardinality of its operand.
          */
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context)
+        Expression::Ptr compress(const StaticContext::Ptr &context) override
         {
             // RVCT doesn't like using template parameter in trinary operator when the trinary operator result is
             // passed directly into another constructor.
@@ -191,14 +191,14 @@ namespace QPatternist
         {
         }
 
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
         /**
          * Performs necessary type checks, but also implements the optimization
          * of rewriting to its operand if the operand's cardinality is zero-or-one
          * or exactly-one.
          */
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
         /**
          * @returns a type whose item type is the type of the first operand, and
          * a cardinality which is non-empty if the first operand's type is non-empty
@@ -206,7 +206,7 @@ namespace QPatternist
          * cardinality 2+, since distinct-values possibly removes items from the
          * source sequence.
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
     protected:
         inline AtomicComparator::Operator operatorID() const
@@ -226,8 +226,8 @@ namespace QPatternist
     class InsertBeforeFN : public FunctionCall
     {
     public:
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
         /**
          * Implements the static enferences rules. The function's static item type
@@ -238,7 +238,7 @@ namespace QPatternist
          * @see <a href="http://www.w3.org/TR/xquery-semantics/#sec_fn_insert_before">XQuery 1.0
          * and XPath 2.0 Formal Semantics, 7.2.15 The fn:insert-before function</a>
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
     };
 
     /**
@@ -250,8 +250,8 @@ namespace QPatternist
     class RemoveFN : public FunctionCall
     {
     public:
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
         /**
          * Implements the static enferences rules, "Since one item may be removed
@@ -265,7 +265,7 @@ namespace QPatternist
          * @see <a href="http://www.w3.org/TR/xquery-semantics/#sec_fn_remove">XQuery 1.0
          * and XPath 2.0 Formal Semantics, 7.2.11 The fn:remove function</a>
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
     };
 
     /**
@@ -278,9 +278,9 @@ namespace QPatternist
     {
     public:
 
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
         /**
          * Formally speaking, the type inference is:
@@ -293,7 +293,7 @@ statEnv |-  (FN-URI,"reverse")(Type) : prime(Type) * quantifier(Type)
          * and XPath 2.0 Formal Semantics, 7.2.12 The fn:reverse function</a>
          * @returns the static type of the function's first argument.
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
     };
 
     /**
@@ -307,18 +307,18 @@ statEnv |-  (FN-URI,"reverse")(Type) : prime(Type) * quantifier(Type)
     {
     public:
         SubsequenceFN();
-        virtual Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const;
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item::Iterator::Ptr evaluateSequence(const DynamicContext::Ptr &context) const override;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
 
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
 
         /**
          * This function implements rewrites the SubsequenceFN instance into an
          * empty sequence if its third argument, the sequence length argument, is
          * evaluated and is effectively equal or less than zero.
          */
-        virtual Expression::Ptr compress(const StaticContext::Ptr &context);
+        Expression::Ptr compress(const StaticContext::Ptr &context) override;
 
         /**
          * Partially implements the static type inference rules.
@@ -326,7 +326,7 @@ statEnv |-  (FN-URI,"reverse")(Type) : prime(Type) * quantifier(Type)
          * @see <a href="http://www.w3.org/TR/xquery-semantics/#sec_fn_subsequence">XQuery 1.0
          * and XPath 2.0 Formal Semantics, 7.2.13 The fn:subsequence function</a>
          */
-        virtual SequenceType::Ptr staticType() const;
+        SequenceType::Ptr staticType() const override;
 
     private:
         bool m_hasTypeChecked;

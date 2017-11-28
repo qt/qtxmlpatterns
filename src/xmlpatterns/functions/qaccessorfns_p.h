@@ -74,7 +74,7 @@ namespace QPatternist
     class NodeNameFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -86,7 +86,7 @@ namespace QPatternist
     class NilledFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -98,9 +98,9 @@ namespace QPatternist
     class StringFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
-        virtual Expression::Ptr typeCheck(const StaticContext::Ptr &context,
-                                          const SequenceType::Ptr &reqType);
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
+        Expression::Ptr typeCheck(const StaticContext::Ptr &context,
+                                  const SequenceType::Ptr &reqType) override;
     };
 
     /**
@@ -111,7 +111,7 @@ namespace QPatternist
     class BaseURIFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 
     /**
@@ -123,7 +123,7 @@ namespace QPatternist
     class DocumentURIFN : public FunctionCall
     {
     public:
-        virtual Item evaluateSingleton(const DynamicContext::Ptr &context) const;
+        Item evaluateSingleton(const DynamicContext::Ptr &context) const override;
     };
 }
 
