@@ -76,10 +76,10 @@ namespace QPatternist
         {
         }
 
-        virtual Item calculate(const Item &o1,
-                                    const Operator op,
-                                    const Item &o2,
-                                    const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item calculate(const Item &o1,
+                       const Operator op,
+                       const Item &o2,
+                       const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
 #include "qabstractfloatmathematician_tpl_p.h"

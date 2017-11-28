@@ -175,7 +175,7 @@ namespace QPatternist
         static AnyURI::Ptr resolveURI(const QString &relative,
                                       const QString &base);
 
-        virtual ItemType::Ptr type() const;
+        ItemType::Ptr type() const override;
 
         /**
          * @short Returns this @c xs:anyURI value in a QUrl.

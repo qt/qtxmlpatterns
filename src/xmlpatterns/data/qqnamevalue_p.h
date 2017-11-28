@@ -85,9 +85,9 @@ namespace QPatternist
          */
         static QNameValue::Ptr fromValue(const NamePool::Ptr &np, const QXmlName name);
 
-        virtual QString stringValue() const;
+        QString stringValue() const override;
 
-        virtual ItemType::Ptr type() const;
+        ItemType::Ptr type() const override;
 
         inline QXmlName qName() const
         {

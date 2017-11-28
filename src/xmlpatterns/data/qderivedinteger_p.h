@@ -472,63 +472,63 @@ namespace QPatternist
          *
          * @returns @c false if the number is 0, otherwise @c true.
          */
-        bool evaluateEBV(const QExplicitlySharedDataPointer<DynamicContext> &) const
+        bool evaluateEBV(const QExplicitlySharedDataPointer<DynamicContext> &) const override
         {
             return m_value != 0;
         }
 
-        virtual QString stringValue() const
+        QString stringValue() const override
         {
             return QString::number(m_value);
         }
 
-        virtual ItemType::Ptr type() const
+        ItemType::Ptr type() const override
         {
             return itemType();
         }
 
-        virtual xsDouble toDouble() const
+        xsDouble toDouble() const override
         {
             return static_cast<xsDouble>(m_value);
         }
 
-        virtual xsInteger toInteger() const
+        xsInteger toInteger() const override
         {
             return m_value;
         }
 
-        virtual xsFloat toFloat() const
+        xsFloat toFloat() const override
         {
             return static_cast<xsFloat>(m_value);
         }
 
-        virtual xsDecimal toDecimal() const
+        xsDecimal toDecimal() const override
         {
             return static_cast<xsDecimal>(m_value);
         }
 
-        virtual Numeric::Ptr round() const
+        Numeric::Ptr round() const override
         {
             /* xs:integerS never have a mantissa. */
             return Numeric::Ptr(static_cast<Numeric *>(const_cast<AtomicValue *>(Integer::fromValue(m_value).asAtomicValue())));
         }
 
-        virtual Numeric::Ptr roundHalfToEven(const xsInteger) const
+        Numeric::Ptr roundHalfToEven(const xsInteger) const override
         {
             return Numeric::Ptr(static_cast<Numeric *>(const_cast<AtomicValue *>(Integer::fromValue(m_value).asAtomicValue())));
         }
 
-        virtual Numeric::Ptr floor() const
+        Numeric::Ptr floor() const override
         {
             return Numeric::Ptr(static_cast<Numeric *>(const_cast<AtomicValue *>(Integer::fromValue(m_value).asAtomicValue())));
         }
 
-        virtual Numeric::Ptr ceiling() const
+        Numeric::Ptr ceiling() const override
         {
             return Numeric::Ptr(static_cast<Numeric *>(const_cast<AtomicValue *>(Integer::fromValue(m_value).asAtomicValue())));
         }
 
-        virtual Numeric::Ptr abs() const
+        Numeric::Ptr abs() const override
         {
             /* We unconditionally create an Integer even if we're a positive
              * value, because one part of this is the type change to
@@ -544,7 +544,7 @@ namespace QPatternist
          * @returns always @c false, @c xs:DerivedInteger doesn't have
          * not-a-number in its value space.
          */
-        virtual bool isNaN() const
+        bool isNaN() const override
         {
             return false;
         }
@@ -553,17 +553,17 @@ namespace QPatternist
          * @returns always @c false, @c xs:DerivedInteger doesn't have
          * infinity in its value space.
          */
-        virtual bool isInf() const
+        bool isInf() const override
         {
             return false;
         }
 
-        virtual Item toNegated() const
+        Item toNegated() const override
         {
             return Integer::fromValue(-xsInteger(m_value));
         }
 
-        virtual bool isSigned() const
+        bool isSigned() const override
         {
             switch(DerivedType)
             {
@@ -587,7 +587,7 @@ namespace QPatternist
             return false;
         }
 
-        virtual qulonglong toUnsignedInteger() const
+        qulonglong toUnsignedInteger() const override
         {
             switch(DerivedType)
             {

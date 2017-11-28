@@ -73,8 +73,8 @@ namespace QPatternist
         static GMonth::Ptr fromLexical(const QString &string);
         static GMonth::Ptr fromDateTime(const QDateTime &dt);
 
-        virtual ItemType::Ptr type() const;
-        virtual QString stringValue() const;
+        ItemType::Ptr type() const override;
+        QString stringValue() const override;
 
     protected:
         friend class CommonValues;

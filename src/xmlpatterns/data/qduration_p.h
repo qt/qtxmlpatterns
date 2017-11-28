@@ -80,28 +80,28 @@ namespace QPatternist
                                             const SecondProperty seconds,
                                             const MSecondProperty mseconds);
 
-        virtual ItemType::Ptr type() const;
-        virtual QString stringValue() const;
+        ItemType::Ptr type() const override;
+        QString stringValue() const override;
 
         /**
          * Always results in an assert crash. Calling this function makes no
          * sense due to that the value space of xs:duration is not well defined.
          */
-        virtual Value value() const;
+        Value value() const override;
 
         /**
          * Always results in an assert crash. Calling this function makes no
          * sense due to that the value space of xs:duration is not well defined.
          */
-        virtual Item fromValue(const Value val) const;
+        Item fromValue(const Value val) const override;
 
-        virtual YearProperty years() const;
-        virtual MonthProperty months() const;
-        virtual DayCountProperty days() const;
-        virtual HourProperty hours() const;
-        virtual MinuteProperty minutes() const;
-        virtual SecondProperty seconds() const;
-        virtual MSecondProperty mseconds() const;
+        YearProperty years() const override;
+        MonthProperty months() const override;
+        DayCountProperty days() const override;
+        HourProperty hours() const override;
+        MinuteProperty minutes() const override;
+        SecondProperty seconds() const override;
+        MSecondProperty mseconds() const override;
 
     protected:
         friend class CommonValues;

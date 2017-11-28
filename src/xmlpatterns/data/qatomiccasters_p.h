@@ -82,8 +82,8 @@ namespace QPatternist
     class ToStringCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override
         {
             Q_ASSERT(from);
             return DerivedString<DerivedType>::fromLexical(context->namePool(), from.stringValue());
@@ -103,8 +103,8 @@ namespace QPatternist
     class ToUntypedAtomicCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -116,8 +116,8 @@ namespace QPatternist
     class ToAnyURICaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -129,8 +129,8 @@ namespace QPatternist
     class HexBinaryToBase64BinaryCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -142,8 +142,8 @@ namespace QPatternist
     class Base64BinaryToHexBinaryCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -155,8 +155,8 @@ namespace QPatternist
     class StringToBase64BinaryCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -168,8 +168,8 @@ namespace QPatternist
     class StringToHexBinaryCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -181,8 +181,8 @@ namespace QPatternist
     class NumericToBooleanCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -194,8 +194,8 @@ namespace QPatternist
     class StringToBooleanCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -219,8 +219,8 @@ namespace QPatternist
             return QtXmlPatterns::tr("When casting to %1 from %2, the source value cannot be %3.");
         }
 
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override
         {
             const ItemType::Ptr t(from.type());
             const Numeric *const num = from.template as<Numeric>();
@@ -253,8 +253,8 @@ namespace QPatternist
     class StringToDecimalCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -266,8 +266,8 @@ namespace QPatternist
     class StringToIntegerCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -279,8 +279,8 @@ namespace QPatternist
     class BooleanToDecimalCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -292,8 +292,8 @@ namespace QPatternist
     class BooleanToIntegerCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -315,8 +315,8 @@ namespace QPatternist
         /**
          * This function simply returns @p from.
          */
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -328,8 +328,8 @@ namespace QPatternist
     class StringToGYearCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -341,8 +341,8 @@ namespace QPatternist
     class StringToGDayCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -354,8 +354,8 @@ namespace QPatternist
     class StringToGMonthCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -367,8 +367,8 @@ namespace QPatternist
     class StringToGYearMonthCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -380,8 +380,8 @@ namespace QPatternist
     class StringToGMonthDayCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -393,8 +393,8 @@ namespace QPatternist
     class StringToDateTimeCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -406,8 +406,8 @@ namespace QPatternist
     class StringToTimeCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -419,8 +419,8 @@ namespace QPatternist
     class StringToDateCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -432,8 +432,8 @@ namespace QPatternist
     class StringToDurationCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -445,8 +445,8 @@ namespace QPatternist
     class StringToDayTimeDurationCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -458,8 +458,8 @@ namespace QPatternist
     class StringToYearMonthDurationCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
 
@@ -472,8 +472,8 @@ namespace QPatternist
     class AbstractDateTimeToGYearCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -485,8 +485,8 @@ namespace QPatternist
     class AbstractDateTimeToGYearMonthCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -498,8 +498,8 @@ namespace QPatternist
     class AbstractDateTimeToGMonthCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -511,8 +511,8 @@ namespace QPatternist
     class AbstractDateTimeToGMonthDayCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -524,8 +524,8 @@ namespace QPatternist
     class AbstractDateTimeToGDayCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -537,8 +537,8 @@ namespace QPatternist
     class AbstractDateTimeToDateTimeCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -550,8 +550,8 @@ namespace QPatternist
     class AbstractDateTimeToDateCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -563,8 +563,8 @@ namespace QPatternist
     class AbstractDateTimeToTimeCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -576,8 +576,8 @@ namespace QPatternist
     class AbstractDurationToDurationCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -589,8 +589,8 @@ namespace QPatternist
     class AbstractDurationToDayTimeDurationCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -602,8 +602,8 @@ namespace QPatternist
     class AbstractDurationToYearMonthDurationCaster : public AtomicCaster
     {
     public:
-        virtual Item castFrom(const Item &from,
-                              const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -616,9 +616,8 @@ namespace QPatternist
     class StringToDerivedIntegerCaster : public AtomicCaster
     {
     public:
-        virtual Item
-        castFrom(const Item &from,
-                 const QExplicitlySharedDataPointer<DynamicContext> &context) const
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override
         {
             return DerivedInteger<type>::fromLexical(context->namePool(), from.stringValue());
         }
@@ -634,9 +633,8 @@ namespace QPatternist
     class BooleanToDerivedIntegerCaster : public AtomicCaster
     {
     public:
-        virtual Item
-        castFrom(const Item &from,
-                 const QExplicitlySharedDataPointer<DynamicContext> &context) const
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override
         {
             return DerivedInteger<type>::fromValue(context->namePool(), from.template as<AtomicValue>()->evaluateEBV(context) ? 1 : 0);
         }
@@ -652,9 +650,8 @@ namespace QPatternist
     class AnyToDerivedStringCaster : public AtomicCaster
     {
     public:
-        virtual Item
-        castFrom(const Item &from,
-                 const QExplicitlySharedDataPointer<DynamicContext> &context) const
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override
         {
             return DerivedString<type>::fromLexical(context->namePool(), from.stringValue());
         }
@@ -670,9 +667,8 @@ namespace QPatternist
     class NumericToDerivedIntegerCaster : public AtomicCaster
     {
     public:
-        virtual Item
-        castFrom(const Item &from,
-                 const QExplicitlySharedDataPointer<DynamicContext> &context) const
+        Item castFrom(const Item &from,
+                      const QExplicitlySharedDataPointer<DynamicContext> &context) const override
         {
             const ItemType::Ptr t(from.type());
             const Numeric *const num = from.template as<Numeric>();

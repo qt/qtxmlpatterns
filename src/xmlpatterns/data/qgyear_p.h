@@ -73,8 +73,8 @@ namespace QPatternist
         static GYear::Ptr fromLexical(const QString &string);
         static GYear::Ptr fromDateTime(const QDateTime &dt);
 
-        virtual ItemType::Ptr type() const;
-        virtual QString stringValue() const;
+        ItemType::Ptr type() const override;
+        QString stringValue() const override;
 
     protected:
         friend class CommonValues;

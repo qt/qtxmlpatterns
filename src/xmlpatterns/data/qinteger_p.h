@@ -84,44 +84,44 @@ namespace QPatternist
          *
          * @returns @c false if the number is 0, otherwise @c true.
          */
-        bool evaluateEBV(const QExplicitlySharedDataPointer<DynamicContext> &) const;
+        bool evaluateEBV(const QExplicitlySharedDataPointer<DynamicContext> &) const override;
 
-        virtual QString stringValue() const;
+        QString stringValue() const override;
 
         /**
          * @returns always BuiltinTypes::xsInteger
          */
-        virtual ItemType::Ptr type() const;
+        ItemType::Ptr type() const override;
 
-        virtual xsDouble toDouble() const;
-        virtual xsInteger toInteger() const;
-        virtual xsFloat toFloat() const;
-        virtual xsDecimal toDecimal() const;
+        xsDouble toDouble() const override;
+        xsInteger toInteger() const override;
+        xsFloat toFloat() const override;
+        xsDecimal toDecimal() const override;
 
-        virtual Numeric::Ptr round() const;
-        virtual Numeric::Ptr roundHalfToEven(const xsInteger scale) const;
-        virtual Numeric::Ptr floor() const;
-        virtual Numeric::Ptr ceiling() const;
-        virtual Numeric::Ptr abs() const;
-        virtual qulonglong toUnsignedInteger() const;
+        Numeric::Ptr round() const override;
+        Numeric::Ptr roundHalfToEven(const xsInteger scale) const override;
+        Numeric::Ptr floor() const override;
+        Numeric::Ptr ceiling() const override;
+        Numeric::Ptr abs() const override;
+        qulonglong toUnsignedInteger() const override;
 
         /**
          * @returns always @c false, @c xs:integer doesn't have
          * not-a-number in its value space.
          */
-        virtual bool isNaN() const;
+        bool isNaN() const override;
 
         /**
          * @returns always @c false, @c xs:integer doesn't have
          * infinity in its value space.
          */
-        virtual bool isInf() const;
-        virtual Item toNegated() const;
+        bool isInf() const override;
+        Item toNegated() const override;
 
         /**
          * @short Returns always @c true.
          */
-        virtual bool isSigned() const;
+        bool isSigned() const override;
     protected:
         Integer(const xsInteger num);
 

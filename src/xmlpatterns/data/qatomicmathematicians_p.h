@@ -76,10 +76,10 @@ namespace QPatternist
         {
         }
 
-        virtual Item calculate(const Item &o1,
-                               const Operator op,
-                               const Item &o2,
-                               const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item calculate(const Item &o1,
+                       const Operator op,
+                       const Item &o2,
+                       const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -96,10 +96,10 @@ namespace QPatternist
         {
         }
 
-        virtual Item calculate(const Item &o1,
-                               const Operator op,
-                               const Item &o2,
-                               const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item calculate(const Item &o1,
+                       const Operator op,
+                       const Item &o2,
+                       const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -117,10 +117,10 @@ namespace QPatternist
         {
         }
 
-        virtual Item calculate(const Item &o1,
-                               const Operator op,
-                               const Item &o2,
-                               const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item calculate(const Item &o1,
+                       const Operator op,
+                       const Item &o2,
+                       const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -133,10 +133,10 @@ namespace QPatternist
     class DurationDurationDivisor : public AtomicMathematician
     {
     public:
-        virtual Item calculate(const Item &o1,
-                               const Operator op,
-                               const Item &o2,
-                               const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item calculate(const Item &o1,
+                       const Operator op,
+                       const Item &o2,
+                       const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -149,10 +149,10 @@ namespace QPatternist
     class DurationDurationMathematician : public AtomicMathematician
     {
     public:
-        virtual Item calculate(const Item &o1,
-                               const Operator op,
-                               const Item &o2,
-                               const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item calculate(const Item &o1,
+                       const Operator op,
+                       const Item &o2,
+                       const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -188,10 +188,10 @@ namespace QPatternist
          * Switch @p o1 and @p o2, and returns the value from the AtomicMathematician
          * this OperandSwitcherMathematician represents.
          */
-        virtual Item calculate(const Item &o1,
-                               const Operator op,
-                               const Item &o2,
-                               const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item calculate(const Item &o1,
+                       const Operator op,
+                       const Item &o2,
+                       const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     private:
         const AtomicMathematician::Ptr m_mather;
     };
@@ -216,10 +216,10 @@ namespace QPatternist
          * @p o1 is an AbstractDateTime and @p o2 is an AbstractDuration.
          *
          */
-        virtual Item calculate(const Item &o1,
-                               const Operator op,
-                               const Item &o2,
-                               const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item calculate(const Item &o1,
+                       const Operator op,
+                       const Item &o2,
+                       const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 
     /**
@@ -231,10 +231,10 @@ namespace QPatternist
     class AbstractDateTimeMathematician : public AtomicMathematician
     {
     public:
-        virtual Item calculate(const Item &o1,
-                               const Operator op,
-                               const Item &o2,
-                               const QExplicitlySharedDataPointer<DynamicContext> &context) const;
+        Item calculate(const Item &o1,
+                       const Operator op,
+                       const Item &o2,
+                       const QExplicitlySharedDataPointer<DynamicContext> &context) const override;
     };
 }
 

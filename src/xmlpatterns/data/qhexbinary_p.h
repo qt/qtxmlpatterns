@@ -74,8 +74,8 @@ namespace QPatternist
 
         typedef AtomicValue::Ptr Ptr;
 
-        virtual QString stringValue() const;
-        virtual ItemType::Ptr type() const;
+        QString stringValue() const override;
+        ItemType::Ptr type() const override;
 
         /**
          * Creates a @c xs:hexBinary from the lexical representation @p value.
