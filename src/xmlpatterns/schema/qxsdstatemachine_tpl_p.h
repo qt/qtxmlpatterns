@@ -359,18 +359,13 @@ XsdStateMachine<TransitionType> XsdStateMachine<TransitionType>::toDFA() const
     QList< QSet<StateId> > workStates;
 
     // add the start state to the list of to processed state sets
-    workStates.append(epsilonClosure(QSet<StateId>() << startState));
+    auto firstDfaState = epsilonClosure(QSet<StateId>() << startState);
+    workStates.append(firstDfaState);
+    isMarked.append(firstDfaState);
 
     while (!workStates.isEmpty()) { // as long as there are state sets to process left
-
         // enqueue set of states
         const QSet<StateId> states = workStates.takeFirst();
-
-        if (isMarked.contains(states)) // we processed this state set already
-            continue;
-
-        // mark as processed
-        isMarked.append(states);
 
         // select a list of all inputs that are possible for
         // the 'states' set
@@ -395,7 +390,10 @@ XsdStateMachine<TransitionType> XsdStateMachine<TransitionType>::toDFA() const
             dfa.addTransition(dfaBegin, input.at(i), dfaEnd);
 
             // add the 'followStates' to the list of to be processed state sets
-            workStates.append(followStates);
+            if (!isMarked.contains(followStates)) {
+                workStates.append(followStates);
+                isMarked.append(followStates); // only needs to be processed once
+            }
         }
     }
 
