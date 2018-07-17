@@ -4772,7 +4772,7 @@ XsdTerm::Ptr XsdSchemaParser::parseLocalElement(const XsdParticle::Ptr &particle
     } else {
         element->setScope(XsdElement::Scope::Ptr(new XsdElement::Scope()));
         element->scope()->setVariety(XsdElement::Scope::Local);
-        element->scope()->setParent(parent);
+        element->scope()->setParent(parent.data());
 
         if (hasAttribute(QString::fromLatin1("name"))) {
             const QString elementName = readNameAttribute("element");
