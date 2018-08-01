@@ -47,7 +47,6 @@ QT_BEGIN_NAMESPACE
 
 
 class QUrl;
-class QAbstractUriResolverPrivate;
 
 class Q_XMLPATTERNS_EXPORT QAbstractUriResolver : public QObject
 {
@@ -61,7 +60,6 @@ public:
 
 private:
     Q_DISABLE_COPY(QAbstractUriResolver)
-    Q_DECLARE_PRIVATE(QAbstractUriResolver)
 };
 
 QT_END_NAMESPACE
