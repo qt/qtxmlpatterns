@@ -74,7 +74,7 @@ typedef QPair<int, int> QQuickXmlListRange;
 #define XMLLISTMODEL_CLEAR_ID 0
 
 /*!
-    \qmlmodule QtQuick.XmlListModel 2.11
+    \qmlmodule QtQuick.XmlListModel 2.12
     \title Qt Quick XmlListModel QML Types
     \ingroup qmlmodules
     \brief Provides QML types for creating models from XML data
@@ -84,7 +84,7 @@ typedef QPair<int, int> QQuickXmlListRange;
     To use the types in this module, import the module with the following line:
 
     \code
-    import QtQuick.XmlListModel 2.11
+    import QtQuick.XmlListModel 2.12
     \endcode
 */
 
@@ -92,7 +92,7 @@ typedef QPair<int, int> QQuickXmlListRange;
     \qmltype XmlRole
     \instantiates QQuickXmlListModelRole
     \inqmlmodule QtQuick.XmlListModel
-    \brief For specifying a role to an XmlListModel
+    \brief For specifying a role to an XmlListModel.
     \ingroup qtquick-models
 
     \sa {Qt QML}
@@ -628,7 +628,7 @@ void QQuickXmlListModelPrivate::clear_role(QQmlListProperty<QQuickXmlListModelRo
     \qmltype XmlListModel
     \instantiates QQuickXmlListModel
     \inqmlmodule QtQuick.XmlListModel
-    \brief For specifying a read-only model using XPath expressions
+    \brief For specifying a read-only model using XPath expressions.
     \ingroup qtquick-models
 
 
