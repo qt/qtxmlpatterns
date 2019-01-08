@@ -15,7 +15,7 @@ imagedirs += images
 sourcedirs += .. \
               ../../imports/xmllistmodel
 
-depends += qtcore qtxml qtwidgets qtdesigner qtdoc qmake qtwebkitexamples
+depends += qtcore qtxml qtwidgets qtdesigner qtdoc qmake qtquick
 
 qhp.projects = QtXmlPatterns
 
