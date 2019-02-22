@@ -91,7 +91,6 @@ typedef QPair<int, int> QQuickXmlListRange;
 
 /*!
     \qmltype XmlRole
-    \instantiates QQuickXmlListModelRole
     \inqmlmodule QtQuick.XmlListModel
     \brief For specifying a role to an XmlListModel.
     \ingroup qtquick-models
@@ -133,7 +132,7 @@ typedef QPair<int, int> QQuickXmlListRange;
 
     For example, if there is an XML document like this:
 
-    \quotefile qml/xmlrole.xml
+    \quotefile qml/xmlrole.qml
     Here are some valid XPath expressions for XmlRole queries on this document:
 
     \snippet qml/xmlrole.qml 0
@@ -627,7 +626,6 @@ void QQuickXmlListModelPrivate::clear_role(QQmlListProperty<QQuickXmlListModelRo
 
 /*!
     \qmltype XmlListModel
-    \instantiates QQuickXmlListModel
     \inqmlmodule QtQuick.XmlListModel
     \brief For specifying a read-only model using XPath expressions.
     \ingroup qtquick-models
