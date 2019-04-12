@@ -115,7 +115,7 @@ public:
     QString namespaceDeclarations() const;
     void setNamespaceDeclarations(const QString&);
 
-    Q_INVOKABLE QQmlV4Handle get(int index) const;
+    Q_INVOKABLE QJSValue get(int index) const;
 
     enum Status { Null, Ready, Loading, Error };
     Q_ENUM(Status)

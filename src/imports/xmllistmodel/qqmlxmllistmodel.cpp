@@ -922,13 +922,13 @@ void QQuickXmlListModel::setNamespaceDeclarations(const QString &declarations)
     var title = model.get(0).title;
     \endjs
 */
-QQmlV4Handle QQuickXmlListModel::get(int index) const
+QJSValue QQuickXmlListModel::get(int index) const
 {
     // Must be called with a context and handle scope
     Q_D(const QQuickXmlListModel);
 
     if (index < 0 || index >= count())
-        return QQmlV4Handle(Encode::undefined());
+        return QJSValue(QJSValue::UndefinedValue);
 
     QQmlEngine *engine = qmlContext(this)->engine();
     ExecutionEngine *v4engine = engine->handle();
@@ -942,7 +942,7 @@ QQmlV4Handle QQuickXmlListModel::get(int index) const
         o->insertMember(name.getPointer(), value);
     }
 
-    return QQmlV4Handle(o);
+    return QJSValue(v4engine, o->asReturnedValue());
 }
 
 /*!
