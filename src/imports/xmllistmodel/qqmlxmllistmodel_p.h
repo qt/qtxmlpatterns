@@ -53,11 +53,11 @@
 
 #include <qqml.h>
 #include <qqmlinfo.h>
+#include <qjsvalue.h>
 
 #include <QtCore/qurl.h>
 #include <QtCore/qstringlist.h>
 #include <QtCore/qabstractitemmodel.h>
-#include <private/qv8engine_p.h>
 
 QT_BEGIN_NAMESPACE
 
