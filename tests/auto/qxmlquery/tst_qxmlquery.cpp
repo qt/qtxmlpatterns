@@ -1215,9 +1215,9 @@ void tst_QXmlQuery::basicXQueryToQtTypeCheck() const
     expectedValues.append(QVariant(QByteArray::fromHex(QByteArray("FFFF"))));                   /* xs:hexBinary("FFFF"), */
     expectedValues.append(QVariant(QString::fromLatin1("http://example.com/")));                /* xs:anyURI("http://example.com/"), */
     QXmlNamePool np(query.namePool());
-    expectedValues.append(QVariant(qVariantFromValue(QXmlName(np, QLatin1String("localName"),
-                                                              QLatin1String("http://example.com/2"),
-                                                              QLatin1String("prefix")))));
+    expectedValues.append(QVariant::fromValue(QXmlName(np, QLatin1String("localName"),
+                                                           QLatin1String("http://example.com/2"),
+                                                           QLatin1String("prefix"))));
 
     expectedValues.append(QVariant(QString::fromLatin1("An xs:string")));
     expectedValues.append(QVariant(QString::fromLatin1("normalizedString")));
