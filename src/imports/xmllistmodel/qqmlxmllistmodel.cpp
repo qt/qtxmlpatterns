@@ -275,12 +275,12 @@ int QQuickXmlQueryEngine::doQuery(QString query, QString namespaces, QByteArray 
     {
         QMutexLocker m1(&m_mutex);
         m_queryIds.ref();
-        if (m_queryIds.load() <= 0)
-            m_queryIds.store(1);
+        if (m_queryIds.loadRelaxed() <= 0)
+            m_queryIds.storeRelaxed(1);
     }
 
     XmlQueryJob job;
-    job.queryId = m_queryIds.load();
+    job.queryId = m_queryIds.loadRelaxed();
     job.data = data;
     job.query = QLatin1String("doc($src)") + query;
     job.namespaces = namespaces;
