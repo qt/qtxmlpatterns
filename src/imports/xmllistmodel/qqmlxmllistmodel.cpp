@@ -40,6 +40,7 @@
 #include "qqmlxmllistmodel_p.h"
 
 #include <qqmlcontext.h>
+#include <qqmlfile.h>
 #include <private/qqmlengine_p.h>
 #include <private/qv4value_p.h>
 #include <private/qv4engine_p.h>
