@@ -2595,13 +2595,16 @@ void tst_QXmlQuery::setQueryQUrlFailure() const
 
 void tst_QXmlQuery::setQueryQUrlFailure_data() const
 {
+    const auto localFileUrl = [](const QString &relPath) {
+        return QUrl::fromLocalFile(QCoreApplication::applicationFilePath()).resolved(QUrl(relPath));
+    };
     QTest::addColumn<QUrl>("queryURI");
 
     QTest::newRow("Query via file:// that does not exist.")
         << QUrl::fromEncoded("file://example.com/does/not/exist");
 
     QTest::newRow("A query via file:// that is completely empty, but readable.")
-        << QUrl::fromLocalFile(QCoreApplication::applicationFilePath()).resolved(QUrl("../xmlpatterns/queries/completelyEmptyQuery.xq"));
+        << localFileUrl(QStringLiteral("../xmlpatterns/queries/completelyEmptyQuery.xq"));
 
     {
         const QString name(QLatin1String("nonReadableFile.xq"));
@@ -2610,10 +2613,10 @@ void tst_QXmlQuery::setQueryQUrlFailure_data() const
         outFile.write(QByteArray("1"));
         outFile.close();
         /* On some windows versions, this fails, so we don't check that this works with QVERIFY. */
-        outFile.setPermissions(QFile::Permissions(QFile::Permissions()));
-
-        QTest::newRow("Query via file:/ that does not have read permissions.")
-            << QUrl::fromLocalFile(QCoreApplication::applicationFilePath()).resolved(QUrl("nonReadableFile.xq"));
+        if (outFile.setPermissions(QFile::Permissions())) {
+            QTest::newRow("Query via file:/ that does not have read permissions.")
+                << localFileUrl(name);
+        }
     }
 
     if(!m_testNetwork)
