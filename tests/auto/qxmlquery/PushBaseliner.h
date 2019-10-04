@@ -80,62 +80,62 @@ bool PushBaseliner::isValid() const
 
 void PushBaseliner::startElement(const QXmlName &name)
 {
-    m_out << "startElement(" << name.toClarkName(m_namePool) << ')'<< endl;
+    m_out << "startElement(" << name.toClarkName(m_namePool) << ')'<< Qt::endl;
 }
 
 void PushBaseliner::endElement()
 {
-    m_out << "endElement()" << endl;
+    m_out << "endElement()" << Qt::endl;
 }
 
 void PushBaseliner::attribute(const QXmlName &name, const QStringRef &value)
 {
-    m_out << "attribute(" << name.toClarkName(m_namePool) << ", " << value.toString() << ')'<< endl;
+    m_out << "attribute(" << name.toClarkName(m_namePool) << ", " << value.toString() << ')'<< Qt::endl;
 }
 
 void PushBaseliner::comment(const QString &value)
 {
-    m_out << "comment(" << value << ')' << endl;
+    m_out << "comment(" << value << ')' << Qt::endl;
 }
 
 void PushBaseliner::characters(const QStringRef &value)
 {
-    m_out << "characters(" << value.toString() << ')' << endl;
+    m_out << "characters(" << value.toString() << ')' << Qt::endl;
 }
 
 void PushBaseliner::startDocument()
 {
-    m_out << "startDocument()" << endl;
+    m_out << "startDocument()" << Qt::endl;
 }
 
 void PushBaseliner::endDocument()
 {
-    m_out << "endDocument()" << endl;
+    m_out << "endDocument()" << Qt::endl;
 }
 
 void PushBaseliner::processingInstruction(const QXmlName &name, const QString &data)
 {
-    m_out << "processingInstruction(" << name.toClarkName(m_namePool) << ", " << data << ')' << endl;
+    m_out << "processingInstruction(" << name.toClarkName(m_namePool) << ", " << data << ')' << Qt::endl;
 }
 
 void PushBaseliner::atomicValue(const QVariant &val)
 {
-    m_out << "atomicValue(" << val.toString() << ')' << endl;
+    m_out << "atomicValue(" << val.toString() << ')' << Qt::endl;
 }
 
 void PushBaseliner::namespaceBinding(const QXmlName &name)
 {
-    m_out << "namespaceBinding(" << name.toClarkName(m_namePool) << ')' << endl;
+    m_out << "namespaceBinding(" << name.toClarkName(m_namePool) << ')' << Qt::endl;
 }
 
 void PushBaseliner::startOfSequence()
 {
-    m_out << "startOfSequence()" << endl;
+    m_out << "startOfSequence()" << Qt::endl;
 }
 
 void PushBaseliner::endOfSequence()
 {
-    m_out << "endOfSequence()" << endl;
+    m_out << "endOfSequence()" << Qt::endl;
 }
 
 #endif

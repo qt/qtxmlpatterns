@@ -487,7 +487,7 @@ void MainWindow::on_actionRestart_triggered()
     else
     {
         QTextStream err(stderr);
-        err << "Failed to start " << qPrintable(QCoreApplication::applicationFilePath()) << endl;
+        err << "Failed to start " << qPrintable(QCoreApplication::applicationFilePath()) << Qt::endl;
     }
 }
 
