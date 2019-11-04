@@ -57,6 +57,7 @@
 
 #include <QUrl>
 #include <QVariant>
+#include <qcontainerfwd.h>
 
 /**
  * @file
@@ -72,8 +73,6 @@
 
 QT_BEGIN_NAMESPACE
 
-template<typename T> class QList;
-template<typename T> class QVector;
 template<typename T> class QAbstractXmlForwardIterator;
 
 class QSourceLocation;

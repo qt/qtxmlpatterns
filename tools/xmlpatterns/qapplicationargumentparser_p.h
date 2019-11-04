@@ -40,15 +40,13 @@
 #define QApplicationArgumentParser_H
 
 #include <QtCore/QVariant> /* Needed, because we can't forward declare QVariantList. */
+#include <qcontainerfwd.h>
 
 QT_BEGIN_NAMESPACE
 
 class QApplicationArgument;
 class QApplicationArgumentParserPrivate;
 class QStringList;
-template<typename A, typename B> struct QPair;
-template<typename T> class QList;
-template<typename Value> class QList;
 
 class QApplicationArgumentParser
 {

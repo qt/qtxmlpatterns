@@ -30,6 +30,7 @@
 #define PatternistSDK_TestBaseLine_H
 
 #include <QString>
+#include <qcontainerfwd.h>
 
 #include "Global.h"
 #include "TestResult.h"
@@ -39,7 +40,6 @@ QT_BEGIN_NAMESPACE
 class QDomNamedNodeMap;
 class QDomNode;
 class QDomNodeList;
-template<typename T> class QList;
 
 namespace QPatternistSDK
 {

@@ -52,6 +52,7 @@
 
 #include <QFlags>
 #include <QSharedData>
+#include <qcontainerfwd.h>
 
 #include <private/qcppcastinghelper_p.h>
 #include <private/qxmldebug_p.h>
@@ -63,9 +64,6 @@
 #include <private/qstaticcontext_p.h>
 
 QT_BEGIN_NAMESPACE
-
-template<typename T> class QList;
-template<typename T> class QVector;
 
 namespace QPatternist
 {

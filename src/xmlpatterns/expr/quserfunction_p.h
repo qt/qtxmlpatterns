@@ -51,14 +51,13 @@
 #define Patternist_UserFunction_H
 
 #include <QSharedData>
+#include <qcontainerfwd.h>
 
 #include <private/qexpression_p.h>
 #include <private/qfunctionsignature_p.h>
 #include <private/qvariabledeclaration_p.h>
 
 QT_BEGIN_NAMESPACE
-
-template<typename T> class QList;
 
 namespace QPatternist
 {

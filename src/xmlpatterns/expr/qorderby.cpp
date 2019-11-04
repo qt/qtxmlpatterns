@@ -183,7 +183,7 @@ Item::Iterator::Ptr OrderBy::mapToSequence(const Item &i,
 
 Item::Iterator::Ptr OrderBy::evaluateSequence(const DynamicContext::Ptr &context) const
 {
-    Item::List tuples(m_operand->evaluateSequence(context)->toList());
+    Item::List tuples(m_operand->evaluateSequence(context)->toVector());
 
     const std::less<Item::List> sorter(m_orderSpecs, context);
 

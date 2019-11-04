@@ -30,13 +30,13 @@
 #define PatternistSDK_TreeItem_H
 
 #include <QObject>
+#include <qcontainerfwd.h>
 
 #include "Global.h"
 
 QT_BEGIN_NAMESPACE
 
 class QVariant;
-template<typename T> class QList;
 template<typename T> class QPointer;
 
 namespace QPatternistSDK

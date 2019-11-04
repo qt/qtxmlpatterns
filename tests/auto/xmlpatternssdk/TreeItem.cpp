@@ -30,6 +30,8 @@
 
 #include "TreeItem.h"
 
+#include <limits.h>
+
 using namespace QPatternistSDK;
 
 int TreeItem::row() const

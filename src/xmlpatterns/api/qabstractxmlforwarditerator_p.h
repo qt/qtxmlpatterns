@@ -103,7 +103,7 @@ public:
     virtual qint64 position() const = 0;
 
     virtual typename QAbstractXmlForwardIterator<T>::Ptr toReversed();
-    virtual QList<T> toList();
+    virtual QVector<T> toVector();
     virtual typename QAbstractXmlForwardIterator<T>::Ptr copy() const;
     virtual T last();
     virtual bool isEmpty();
@@ -193,39 +193,14 @@ namespace QPatternist
 
         using ListIteratorPlatform<T, T, ListIterator<T, ListType>, ListType>::m_list;
 
-        static inline QVector<T> toVector(const QVector<T> &vector)
-        {
-            return vector;
-        }
-
-        static inline QVector<T> toVector(const QList<T> &list)
-        {
-            return list.toVector();
-        }
-
-        static inline QList<T> toList(const QVector<T> &vector)
-        {
-            return vector.toList();
-        }
-
-        static inline QList<T> toList(const QList<T> &list)
-        {
-            return list;
-        }
-
     public:
         inline ListIterator(const ListType &list) : ListIteratorPlatform<T, T, ListIterator<T, ListType>, ListType>(list)
         {
         }
 
-        QList<T> toList() override
+        QVector<T> toVector() override
         {
-            return toList(m_list);
-        }
-
-        virtual QVector<T> toVector()
-        {
-            return toVector(m_list);
+            return m_list;
         }
 
     private:
@@ -257,9 +232,9 @@ namespace QPatternist
 }
 
 template<typename T>
-QList<T> QAbstractXmlForwardIterator<T>::toList()
+QVector<T> QAbstractXmlForwardIterator<T>::toVector()
 {
-    QList<T> result;
+    QVector<T> result;
     T item(next());
 
     while(!qIsForwardIteratorEnd(item))

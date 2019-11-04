@@ -86,9 +86,9 @@ void Expression::typeCheckOperands(const StaticContext::Ptr &context)
 
     /* If we create a focus, we handle the last one specially, so avoid it in the loop. */
     const bool createsFocus = has(CreatesFocusForLast);
-    const SequenceType::List::const_iterator typeEnd(createsFocus ? --opTypes.constEnd()
+    const SequenceType::List::const_iterator typeEnd(createsFocus ? (opTypes.constEnd() - 1)
                                                                   : opTypes.constEnd());
-    const Expression::List::const_iterator end(createsFocus ? --ops.constEnd()
+    const Expression::List::const_iterator end(createsFocus ? (ops.constEnd() - 1)
                                                             : ops.constEnd());
 
     SequenceType::List::const_iterator reqType(opTypes.constBegin());

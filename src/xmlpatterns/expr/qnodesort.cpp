@@ -75,7 +75,7 @@ Item::Iterator::Ptr NodeSortExpression::evaluateSequence(const DynamicContext::P
     Q_ASSERT_X(m_operand->staticType()->cardinality().allowsMany(), Q_FUNC_INFO,
                "It makes no sense to sort a single node.");
 
-    Item::List nodes(m_operand->evaluateSequence(context)->toList());
+    Item::List nodes(m_operand->evaluateSequence(context)->toVector());
 
     if(nodes.isEmpty())
         return CommonValues::emptyIterator;

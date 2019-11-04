@@ -51,13 +51,11 @@
 #define Patternist_CallTargetDescription_H
 
 #include <QSharedData>
+#include <qcontainerfwd.h>
 
 #include <private/qexpression_p.h>
 
 QT_BEGIN_NAMESPACE
-
-template<typename Key, typename Value> class QHash;
-template<typename T> class QList;
 
 namespace QPatternist
 {

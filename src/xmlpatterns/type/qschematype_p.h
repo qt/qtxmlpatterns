@@ -53,9 +53,7 @@
 #include <private/qnamepool_p.h>
 #include <private/qschemacomponent_p.h>
 #include <QXmlName>
-
-template<typename N, typename M> class QHash;
-template<typename N> class QList;
+#include <qcontainerfwd.h>
 
 QT_BEGIN_NAMESPACE
 

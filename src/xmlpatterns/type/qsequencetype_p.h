@@ -50,9 +50,8 @@
 #ifndef Patternist_SequenceType_H
 #define Patternist_SequenceType_H
 
-template<typename T> class QList;
-
 #include <QSharedData>
+#include <qcontainerfwd.h>
 
 #include <private/qcardinality_p.h>
 #include <private/qitemtype_p.h>

@@ -31,11 +31,10 @@
 
 #include "Global.h"
 #include "qabstractmessagehandler.h"
+#include <qcontainerfwd.h>
 
 
 QT_BEGIN_NAMESPACE
-
-template<typename T> class QList;
 
 namespace QPatternistSDK
 {

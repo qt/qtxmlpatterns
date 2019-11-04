@@ -1016,7 +1016,7 @@ bool QAbstractXmlNodeModel::isDeepEqual(const QXmlNodeModelIndex &n1,
             QXmlNodeModelIndexIteratorPointer atts1(n1.iterate(QXmlNodeModelIndex::AxisAttribute));
             QXmlNodeModelIndex node(atts1->next());
 
-            const QXmlNodeModelIndex::List atts2(n2.iterate(QXmlNodeModelIndex::AxisAttribute)->toList());
+            const QXmlNodeModelIndex::List atts2(n2.iterate(QXmlNodeModelIndex::AxisAttribute)->toVector());
             const QXmlNodeModelIndex::List::const_iterator end(atts2.constEnd());
 
             while(!node.isNull())

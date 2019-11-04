@@ -62,7 +62,7 @@ ReturnOrderBy::ReturnOrderBy(const OrderBy::Stability aStability,
 Item ReturnOrderBy::evaluateSingleton(const DynamicContext::Ptr &context) const
 {
     Q_ASSERT(m_operands.size() > 1);
-    const Item::Iterator::Ptr value(makeListIterator(m_operands.first()->evaluateSequence(context)->toList()));
+    const Item::Iterator::Ptr value(makeListIterator(m_operands.first()->evaluateSequence(context)->toVector()));
     Item::Vector sortKeys;
 
     /* We're skipping the first operand. */

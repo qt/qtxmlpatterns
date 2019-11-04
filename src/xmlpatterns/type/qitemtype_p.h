@@ -51,12 +51,11 @@
 #define Patternist_ItemType_H
 
 #include <QSharedData>
+#include <qcontainerfwd.h>
 
 #include <QtXmlPatterns/private/qnamepool_p.h>
 
 QT_BEGIN_NAMESPACE
-
-template<typename T> class QList;
 
 namespace QPatternist
 {

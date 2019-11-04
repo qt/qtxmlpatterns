@@ -52,10 +52,9 @@
 
 #include <private/qxsdparticle_p.h>
 #include <private/qxsdterm_p.h>
+#include <qcontainerfwd.h>
 
 QT_BEGIN_NAMESPACE
-
-template<typename N> class QList;
 
 namespace QPatternist
 {
