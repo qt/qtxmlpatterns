@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright (C) 2016 The Qt Company Ltd.
+** Copyright (C) 2019 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
 ** This file is part of the test suite of the Qt Toolkit.
@@ -26,32 +26,32 @@
 **
 ****************************************************************************/
 
-#include <QEventLoop>
+#ifndef XMLPARSEHELPER_H
+#define XMLPARSEHELPER_H
 
-#include "ResultThreader.h"
+#include <qxmlstream.h>
 
-using namespace QPatternistSDK;
+QT_BEGIN_NAMESPACE
 
-ResultThreader::ResultThreader(QFile *file,
-                               const Type t,
-                               QObject *p) : QThread(p)
-                                           , m_file(file)
-                                           , m_type(t)
+namespace QPatternistSDK {
+class XmlParseHelper
 {
-    Q_ASSERT_X(p,       Q_FUNC_INFO, "Should have a parent");
-    Q_ASSERT_X(file,    Q_FUNC_INFO, "Should have a valid file");
-    Q_ASSERT(m_type == Baseline || m_type == Result);
-}
+public:
+    virtual ~XmlParseHelper() = default;
 
-void ResultThreader::run()
-{
-    parse(m_file);
-    m_file->close();
-}
+    bool parse(QIODevice *input);
 
-ResultThreader::Type ResultThreader::type() const
-{
-    return m_type;
-}
+protected:
+    virtual bool startElement(const QStringRef &namespaceURI, const QStringRef &localName,
+                              const QStringRef &qName, const QXmlStreamAttributes &atts);
+    virtual bool endElement(const QStringRef &namespaceURI, const QStringRef &localName,
+                            const QStringRef &qName);
+    virtual bool characters(const QStringRef &text);
+    virtual bool endDocument();
+};
 
-// vim: et:ts=4:sw=4:sts=4
+} // namespace QPatternistSDK
+
+QT_END_NAMESPACE
+
+#endif // XMLPARSEHELPER_H

@@ -28,13 +28,12 @@
 
 #include <QFileInfo>
 #include <QVariant>
-#include <QXmlInputSource>
-#include <QXmlSimpleReader>
 #include <QtDebug>
 
 #include "Global.h"
 #include "TestSuiteHandler.h"
 #include "TestSuiteResult.h"
+#include "XmlParseHelper.h"
 #include "XMLWriter.h"
 #include "XSLTTestSuiteHandler.h"
 #include "XSDTestSuiteHandler.h"
@@ -125,8 +124,7 @@ TestSuite *TestSuite::openCatalog(QIODevice *input,
 {
     Q_ASSERT(input);
 
-    QXmlSimpleReader reader;
-    typedef QPatternist::AutoPtr<QXmlDefaultHandler> HandlerPtr;
+    typedef QPatternist::AutoPtr<XmlParseHelper> HandlerPtr;
 
     HandlerPtr loader;
 
@@ -137,12 +135,7 @@ TestSuite *TestSuite::openCatalog(QIODevice *input,
         default: Q_ASSERT(false); break;
     }
 
-    reader.setContentHandler(loader.data());
-
-    QXmlInputSource source(input);
-
-    if(!reader.parse(source))
-    {
+    if (!loader.data()->parse(input)) {
         errorMsg = QString::fromLatin1("Couldn't parse %1").arg(fileName.toString());
         return 0;
     }
