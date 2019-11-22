@@ -164,32 +164,22 @@ void TestSuite::toXML(XMLWriter &receiver, TestCase *const tc) const
 
     receiver.startDocument();
     /* <test-suite> */
-    QXmlAttributes test_suiteAtts;
-    test_suiteAtts.append(QLatin1String("CatalogDesignDate"), QString(),
-                          QLatin1String("CatalogDesignDate"), m_designDate.toString(Qt::ISODate));
-    test_suiteAtts.append(QLatin1String("version"), QString(),
-                          QLatin1String("version"), m_version);
-    test_suiteAtts.append(QLatin1String("SourceOffsetPath"), QString(),
-                          QLatin1String("SourceOffsetPath"), QString());
-    test_suiteAtts.append(QLatin1String("ResultOffsetPath"), QString(),
-                          QLatin1String("ResultOffsetPath"), QString());
-    test_suiteAtts.append(QLatin1String("XQueryQueryOffsetPath"), QString(),
-                          QLatin1String("XQueryQueryOffsetPath"), QString());
-    test_suiteAtts.append(QLatin1String("QueryXQueryOffsetPath"), QString(),
-                          QLatin1String("QueryXQueryOffsetPath"), QString());
-    test_suiteAtts.append(QLatin1String("XQueryFileExtension"), QString(),
-                          QLatin1String("XQueryFileExtension"), QString());
-    test_suiteAtts.append(QLatin1String("XQueryXFileExtension"), QString(),
-                          QLatin1String("XQueryXFileExtension"), QString());
+    QXmlStreamAttributes test_suiteAtts;
+    test_suiteAtts.append(QLatin1String("CatalogDesignDate"), m_designDate.toString(Qt::ISODate));
+    test_suiteAtts.append(QLatin1String("version"), m_version);
+    test_suiteAtts.append(QLatin1String("SourceOffsetPath"), QString());
+    test_suiteAtts.append(QLatin1String("ResultOffsetPath"), QString());
+    test_suiteAtts.append(QLatin1String("XQueryQueryOffsetPath"), QString());
+    test_suiteAtts.append(QLatin1String("QueryXQueryOffsetPath"), QString());
+    test_suiteAtts.append(QLatin1String("XQueryFileExtension"), QString());
+    test_suiteAtts.append(QLatin1String("XQueryXFileExtension"), QString());
 
     receiver.startPrefixMapping(QString(), Global::xqtsCatalogNS);
     receiver.startElement(QLatin1String("test-suite"), test_suiteAtts);
-    receiver.endPrefixMapping(QString());
 
     /* <test-group> */
-    QXmlAttributes test_groupAtts;
-    test_groupAtts.append(QLatin1String("GeneratedGroupByPatternistSDKRunSuite"), QString(),
-                          QLatin1String("GeneratedGroupByPatternistSDKRunSuite"), QString());
+    QXmlStreamAttributes test_groupAtts;
+    test_groupAtts.append(QLatin1String("GeneratedGroupByPatternistSDKRunSuite"), QString());
     receiver.startElement(QLatin1String("test-group"), test_groupAtts);
 
     /* <GroupInfo> */

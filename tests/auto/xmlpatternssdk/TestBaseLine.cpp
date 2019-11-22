@@ -127,11 +127,9 @@ void TestBaseLine::toXML(XMLWriter &receiver) const
         case SchemaIsValid: /* Fallthrough. */
         case Text:
         {
-            QXmlAttributes inspectAtts;
-            inspectAtts.append(QLatin1String("role"), QString(),
-                               QLatin1String("role"), QLatin1String("principal"));
-            inspectAtts.append(QLatin1String("compare"), QString(),
-                               QLatin1String("compare"), displayName(m_type));
+            QXmlStreamAttributes inspectAtts;
+            inspectAtts.append(QLatin1String("role"), QLatin1String("principal"));
+            inspectAtts.append(QLatin1String("compare"), displayName(m_type));
             receiver.startElement(QLatin1String("output-file"), inspectAtts);
             receiver.characters(m_details);
             receiver.endElement(QLatin1String("output-file"));
@@ -144,11 +142,9 @@ void TestBaseLine::toXML(XMLWriter &receiver) const
         }
         case Inspect:
         {
-            QXmlAttributes inspectAtts;
-            inspectAtts.append(QLatin1String("role"), QString(),
-                               QLatin1String("role"), QLatin1String("principal"));
-            inspectAtts.append(QLatin1String("compare"), QString(),
-                               QLatin1String("compare"), QLatin1String("Inspect"));
+            QXmlStreamAttributes inspectAtts;
+            inspectAtts.append(QLatin1String("role"), QLatin1String("principal"));
+            inspectAtts.append(QLatin1String("compare"), QLatin1String("Inspect"));
             receiver.startElement(QLatin1String("output-file"), inspectAtts);
             receiver.characters(m_details);
             receiver.endElement(QLatin1String("output-file"));
