@@ -1107,7 +1107,7 @@ void QQuickXmlListModel::requestFinished()
     }
     d->redirectCount = 0;
 
-    if (d->reply->error() != QNetworkReply::NoError) {
+    if (d->reply->networkError() != QNetworkReply::NoError) {
         d->errorString = d->reply->errorString();
         d->deleteReply();
 
