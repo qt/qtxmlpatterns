@@ -66,7 +66,7 @@ QueryMainWindow::QueryMainWindow()
     ui_defaultQueries = findChild<QComboBox*>("defaultQueries");
     QMetaObject::connectSlotsByName(this);
 
-    connect(ui_defaultQueries, QOverload<int>::of(&QComboBox::currentIndexChanged),
+    connect(ui_defaultQueries, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged),
             this, &QueryMainWindow::displayQuery);
 
     loadInputFile();
