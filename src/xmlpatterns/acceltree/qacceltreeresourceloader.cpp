@@ -129,7 +129,7 @@ QNetworkReply *AccelTreeResourceLoader::load(const QUrl &uri,
         ftpNetworkLoop.exec(QEventLoop::ExcludeUserInputEvents);
     }
 
-    if (reply->networkError() != QNetworkReply::NoError) {
+    if (reply->error() != QNetworkReply::NoError) {
         const QString errorMessage(escape(reply->errorString()));
 
         /* Note, we delete reply before we exit this function with error(). */
