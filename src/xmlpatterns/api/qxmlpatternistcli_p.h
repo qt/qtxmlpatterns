@@ -51,6 +51,7 @@
 #define Patternist_Cli_h
 
 #include <QCoreApplication>
+#include <private/qglobal_p.h>
 
 QT_BEGIN_NAMESPACE
 

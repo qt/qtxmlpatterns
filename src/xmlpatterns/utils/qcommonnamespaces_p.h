@@ -51,6 +51,7 @@
 #define Patternist_CommonNamespaces_H
 
 #include <QLatin1String>
+#include <private/qglobal_p.h>
 
 QT_BEGIN_NAMESPACE
 

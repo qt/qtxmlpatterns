@@ -54,6 +54,7 @@
 #define QPatternist_XsdSchemaToken_h
 
 #include <QtCore/QString>
+#include <QtCore/private/qglobal_p.h>
 
 QT_BEGIN_NAMESPACE
 

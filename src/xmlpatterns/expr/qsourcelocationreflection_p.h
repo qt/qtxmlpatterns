@@ -47,6 +47,8 @@
 //
 // We mean it.
 
+#include <QtCore/private/qglobal_p.h>
+
 #ifndef Patternist_SourceLocationReflection_H
 #define Patternist_SourceLocationReflection_H
 

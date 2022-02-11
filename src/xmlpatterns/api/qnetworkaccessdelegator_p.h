@@ -53,6 +53,7 @@
 #include <QObject>
 #include <QPointer>
 #include <QSharedData>
+#include <private/qglobal_p.h>
 
 QT_BEGIN_NAMESPACE
 

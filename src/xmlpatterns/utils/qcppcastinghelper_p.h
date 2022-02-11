@@ -51,6 +51,7 @@
 #define Patternist_CppCastingHelper_H
 
 #include <QtCore/QtGlobal>
+#include <QtCore/private/qglobal_p.h>
 
 QT_BEGIN_NAMESPACE
 

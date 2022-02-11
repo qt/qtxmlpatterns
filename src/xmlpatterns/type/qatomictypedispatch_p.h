@@ -51,6 +51,7 @@
 #define Patternist_AtomicTypeDispatch_H
 
 #include <QSharedData>
+#include <private/qglobal_p.h>
 
 
 QT_BEGIN_NAMESPACE

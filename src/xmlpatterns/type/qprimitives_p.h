@@ -53,6 +53,7 @@
 #include <QtGlobal>
 #include <QtCore/QHash>
 #include <QtCore/QUrl>
+#include <QtCore/private/qglobal_p.h>
 
 /**
  * @file

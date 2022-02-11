@@ -52,6 +52,7 @@
 
 #include <QtCore/QTimer>
 #include <QtNetwork/QNetworkReply>
+#include <QtCore/private/qglobal_p.h>
 
 QT_BEGIN_NAMESPACE
 

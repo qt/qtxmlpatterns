@@ -53,6 +53,7 @@
 template<typename T> class QVector;
 
 #include <QXmlName>
+#include <private/qglobal_p.h>
 
 QT_BEGIN_NAMESPACE
 

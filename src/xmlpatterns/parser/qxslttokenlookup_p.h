@@ -54,6 +54,7 @@
 #define qxslttokenlookup_p_H
 
 #include <QtCore/QString>
+#include <QtCore/private/qglobal_p.h>
 
 QT_BEGIN_NAMESPACE
 

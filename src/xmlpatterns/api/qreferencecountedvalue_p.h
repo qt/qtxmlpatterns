@@ -47,6 +47,8 @@
 //
 // We mean it.
 
+#include <QtCore/private/qglobal_p.h>
+
 #ifndef QPatternist_ReferenceCountedValue_p_h
 #define QPatternist_ReferenceCountedValue_p_h
 

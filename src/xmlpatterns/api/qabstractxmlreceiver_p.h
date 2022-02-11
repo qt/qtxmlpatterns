@@ -47,6 +47,8 @@
 //
 // We mean it.
 
+#include <QtCore/private/qglobal_p.h>
+
 #ifndef QABSTRACTXMLRECEIVER_P_H
 #define QABSTRACTXMLRECEIVER_P_H
 

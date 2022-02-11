@@ -51,6 +51,7 @@
 #define QPatternist_AutoPtr_p_h
 
 #include <QtGlobal>
+#include <QtCore/private/qglobal_p.h>
 
 QT_BEGIN_NAMESPACE
 

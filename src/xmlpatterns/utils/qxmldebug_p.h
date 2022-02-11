@@ -51,6 +51,7 @@
 #define Patternist_Debug_H
 
 #include <QtDebug>
+#include <QtCore/private/qglobal_p.h>
 /**
  * @file
  * @short Contains macros for debugging.
