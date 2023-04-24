@@ -998,7 +998,7 @@ bool XsdValidatingInstanceReader::validateKeyIdentityConstraint(const XsdElement
         return false;
 
     // 4.2.3
-    for (const TargetNode node : qualifiedNodeSet) {
+    for (const TargetNode &node : qualifiedNodeSet) {
         const QVector<QXmlItem> fieldItems = node.fieldItems();
         for (int i = 0; i < fieldItems.count(); ++i) {
             const QXmlNodeModelIndex index = fieldItems.at(i).toNodeModelIndex();
