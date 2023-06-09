@@ -366,7 +366,7 @@ bool AccelTreeResourceLoader::retrieveUnparsedText(const QUrl &uri,
     /* This code is a candidate for threading. Divide and conqueror. */
     for(int i = 0; i < len; ++i)
     {
-        if(!QXmlUtils::isChar(result.at(i)))
+        if(!QXmlUtils::isChar(result.at(i).unicode()))
         {
             if(context)
             {
