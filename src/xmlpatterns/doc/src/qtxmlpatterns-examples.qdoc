@@ -28,7 +28,6 @@
     \group xmlpattern_examples
     \title Qt XML Patterns Examples
     \brief Examples in the Qt XML Patterns module.
-    \ingroup all-examples
 
     These are the examples available in the \l{Qt XML Patterns} module.
 */
